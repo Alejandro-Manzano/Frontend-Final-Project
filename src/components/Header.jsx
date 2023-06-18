@@ -38,7 +38,7 @@ const Header = () => {
         <div className="titleFatherContainer">
           <TbPlant2 size={30} />
           <NavLink to="/dashboard">
-            <h3 className="titleWeb">Digital Nexus</h3>
+            <h3 className="titleWeb">DevConnect</h3>
           </NavLink>
         </div>
         <nav className="navHeader" ref={navRef}>
@@ -46,16 +46,16 @@ const Header = () => {
             {user && user?.check === true && (
               <>
                 <NavLink to="/dashboard">
-                  <button className="buttonNav">Home</button>
+                  <button className="buttonNav">Inicio</button>
                 </NavLink>
                 <NavLink to="/mobileDevs">
-                  <button className="buttonNav">Brands</button>
+                  <button className="buttonNav">Desarrolladores</button>
                 </NavLink>
                 <NavLink to="/apps">
-                  <button className="buttonNav">Apps</button>
+                  <button className="buttonNav">Ofertas</button>
                 </NavLink>
                 <NavLink to="/favorites">
-                  <button className="buttonNav">favorites</button>
+                  <button className="buttonNav">Sobre Nosotros</button>
                 </NavLink>
               </>
             )}
