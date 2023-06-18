@@ -1,0 +1,48 @@
+.cardMobileDevInApp-Data {
+  width: 350px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #b5b2b2;
+  border-radius: 1rem;
+  background-color: #e3e4e5;
+}
+
+.cardMobileDevInApp-Info > p {
+  font-size: 16px;
+  align-self: center;
+  padding: 0 10px;
+  color: white;
+  text-align: justify;
+}
+
+.cardMobileDevInApp-Info > h5 {
+  font-size: 16px;
+  align-self: center;
+  padding: 0 10px;
+  color: black;
+  text-align: justify;
+}
+
+.cardMobileDevInApp-Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.5px;
+  border: 5px solid #e3e4e5;
+  border-radius: 1rem;
+  background-color: #b5b2b2;
+  color: black;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin: 1rem;
+}
+
+.cardMobileDevInApp-img {
+  width: 100px;
+  height: 100px;
+  object-fit: scale-down;
+}
