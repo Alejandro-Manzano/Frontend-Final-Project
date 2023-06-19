@@ -4,6 +4,7 @@ import { API } from './service.config';
 
 //✔REGISTER
 export const registerUser = async (formData) => {
+  console.log(formData)
   return API.post('/users/register', formData, {
     headers: { 'Content-Type': 'multipart/form-data' },
   })

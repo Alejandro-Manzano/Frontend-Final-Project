@@ -21,10 +21,21 @@ const Register = () => {
     const inputfile = document.getElementById('file-upload').files;
     let customFormData;
 
+    const mockedJason = {
+      name: ' Aitor',
+      surname: 'gutierrez',
+      description: 'Prueba',
+      city: 'MAdrid',
+      password: 'Aitor123.',
+      email: 'aitorixx@gmail.com',
+    };
+
     if (inputfile.length !== 0) {
       customFormData = { ...formData, image: inputfile[0] };
       setSend(true);
+      console.log(registerUser(customFormData));
       setRes(await registerUser(customFormData));
+
       setSend(false);
     } else {
       customFormData = { ...formData };
@@ -35,6 +46,7 @@ const Register = () => {
   };
 
   useEffect(() => {
+    console.log(res);
     useUserError(res, setRegisterOk);
     bridgeData('ALLUSER');
   }, [res]);
@@ -46,9 +58,13 @@ const Register = () => {
   if (!role) {
     return (
       <div className="role_selection">
-        <h3 className='title-role'>Select your interested role 😊</h3>
-        <button className='btn-role' onClick={() => setRole('freelancer')}>Freelancer</button>
-        <button className='btn-role' onClick={() => setRole('company')}>Company</button>
+        <h3 className="title-role">Select your interested role 😊</h3>
+        <button className="btn-role" onClick={() => setRole('freelancer')}>
+          Freelancer
+        </button>
+        <button className="btn-role" onClick={() => setRole('company')}>
+          Company
+        </button>
       </div>
     );
   }
@@ -57,35 +73,37 @@ const Register = () => {
     <>
       <div className="form-wrap">
         <h1>Sign Up</h1>
-        <p>Collaborate with industry-leading companies and developers in no time, quicker than setting up a development environment.💻</p>
+        <p>
+          Collaborate with industry-leading companies and developers in no time, quicker
+          than setting up a development environment.💻
+        </p>
         <form onSubmit={handleSubmit(formSubmit)}>
           <div className="user_container form-group">
             <label htmlFor="custom-input" className="custom-placeholder">
-              {role === 'company' ? 'Company Name' : 'Name'}
+              {role === 'company' ? 'Razón Social' : 'Nombre'}
             </label>
             <input
               className="input_user"
               type="text"
               id="name"
-              name={role === 'company' ? 'companyName' : 'name'}
+              name="name"
               autoComplete="false"
-              {...register(role === 'company' ? 'companyName' : 'name', { required: true })}
+              {...register('name', { required: true })}
             />
-            {role !== 'company' && (
-              <>
-                <label htmlFor="custom-input" className="custom-placeholder">
-                  Surname
-                </label>
-                <input
-                  className="input_user"
-                  type="text"
-                  id="surname"
-                  name="surname"
-                  autoComplete="false"
-                  {...register('surname', { required: true })}
-                />
-              </>
-            )}
+            <>
+              <label htmlFor="custom-input" className="custom-placeholder">
+                {role != 'company' ? 'Apellidos' : 'Tipo de empresa'}
+              </label>
+              <input
+                className="input_user"
+                type="text"
+                id="surname"
+                name="surname"
+                autoComplete="false"
+                {...register('surname', { required: true })}
+              />
+            </>
+
             <label htmlFor="custom-input" className="custom-placeholder">
               City
             </label>
