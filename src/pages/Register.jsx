@@ -21,24 +21,15 @@ const Register = () => {
     const inputfile = document.getElementById('file-upload').files;
     let customFormData;
 
-    const mockedJason = {
-      name: ' Aitor',
-      surname: 'gutierrez',
-      description: 'Prueba',
-      city: 'MAdrid',
-      password: 'Aitor123.',
-      email: 'aitorixx@gmail.com',
-    };
-
     if (inputfile.length !== 0) {
-      customFormData = { ...formData, image: inputfile[0] };
+      customFormData = { ...formData, image: inputfile[0], rol: role };
       setSend(true);
       console.log(registerUser(customFormData));
       setRes(await registerUser(customFormData));
 
       setSend(false);
     } else {
-      customFormData = { ...formData };
+      customFormData = { ...formData, rol: role };
       setSend(true);
       setRes(await registerUser(customFormData));
       setSend(false);
@@ -59,7 +50,7 @@ const Register = () => {
     return (
       <div className="role_selection">
         <h3 className="title-role">Select your interested role 😊</h3>
-        <button className="btn-role" onClick={() => setRole('freelancer')}>
+        <button className="btn-role" onClick={() => setRole('freelance')}>
           Freelancer
         </button>
         <button className="btn-role" onClick={() => setRole('company')}>
