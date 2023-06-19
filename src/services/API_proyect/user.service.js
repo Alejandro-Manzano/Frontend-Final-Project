@@ -1,6 +1,8 @@
 import { updateToken } from '../../util/updateToken';
 import { API } from './service.config';
-//✔
+
+
+//✔REGISTER
 export const registerUser = async (formData) => {
   return API.post('/users/register', formData, {
     headers: { 'Content-Type': 'multipart/form-data' },

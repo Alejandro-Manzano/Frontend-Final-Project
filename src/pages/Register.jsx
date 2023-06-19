@@ -15,6 +15,7 @@ const Register = () => {
   const [res, setRes] = useState({});
   const [registerOk, setRegisterOk] = useState(false);
   const [send, setSend] = useState(false);
+  const [role, setRole] = useState(null);
 
   const formSubmit = async (formData) => {
     const inputfile = document.getElementById('file-upload').files;
@@ -41,23 +42,71 @@ const Register = () => {
   if (registerOk) {
     return <Navigate to="/verifyCode" />;
   }
+
+  if (!role) {
+    return (
+      <div className="role_selection">
+        <h3 className='title-role'>Select your interested role 😊</h3>
+        <button className='btn-role' onClick={() => setRole('freelancer')}>Freelancer</button>
+        <button className='btn-role' onClick={() => setRole('company')}>Company</button>
+      </div>
+    );
+  }
+
   return (
     <>
       <div className="form-wrap">
         <h1>Sign Up</h1>
-        <p>Get started for free in less time than it takes to make a cup of coffee 😊</p>
+        <p>Collaborate with industry-leading companies and developers in no time, quicker than setting up a development environment.💻</p>
         <form onSubmit={handleSubmit(formSubmit)}>
           <div className="user_container form-group">
             <label htmlFor="custom-input" className="custom-placeholder">
-              username
+              {role === 'company' ? 'Company Name' : 'Name'}
             </label>
             <input
               className="input_user"
               type="text"
               id="name"
-              name="name"
+              name={role === 'company' ? 'companyName' : 'name'}
               autoComplete="false"
-              {...register('name', { required: true })}
+              {...register(role === 'company' ? 'companyName' : 'name', { required: true })}
+            />
+            {role !== 'company' && (
+              <>
+                <label htmlFor="custom-input" className="custom-placeholder">
+                  Surname
+                </label>
+                <input
+                  className="input_user"
+                  type="text"
+                  id="surname"
+                  name="surname"
+                  autoComplete="false"
+                  {...register('surname', { required: true })}
+                />
+              </>
+            )}
+            <label htmlFor="custom-input" className="custom-placeholder">
+              City
+            </label>
+            <input
+              className="input_user"
+              type="text"
+              id="city"
+              name="city"
+              autoComplete="false"
+              {...register('city', { required: true })}
+            />
+            <label htmlFor="custom-input" className="custom-placeholder">
+              Description
+            </label>
+            <input
+              className="input_user"
+              type="text"
+              id="description"
+              name="description"
+              autoComplete="false"
+              {...register('description', { required: true })}
             />
           </div>
           <div className="password_container form-group">
@@ -87,28 +136,6 @@ const Register = () => {
               {...register('email', { required: true })}
             />
 
-            <div className="sexo">
-              <input
-                type="radio"
-                name="sexo"
-                id="hombre"
-                value="hombre"
-                {...register('gender')}
-              />
-              <label htmlFor="hombre" className="label-radio hombre">
-                Male
-              </label>
-              <input
-                type="radio"
-                name="sexo"
-                id="mujer"
-                value="mujer"
-                {...register('gender')}
-              />
-              <label htmlFor="mujer" className="label-radio mujer">
-                Female
-              </label>
-            </div>
             <Uploadfile />
           </div>
 

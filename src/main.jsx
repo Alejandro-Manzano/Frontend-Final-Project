@@ -11,6 +11,7 @@ import ForgotPassword from './pages/ForgotPassword.jsx';
 import { Home } from './pages/Home.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
+import Profile from './pages/Profile';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -18,9 +19,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={<App />}>
-            <Route index element={<Home />} />
+            {/* he cambiado home por register */}
+            <Route index element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/register" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/verifyCode" element={<CheckCode />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
