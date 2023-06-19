@@ -1,5 +1,6 @@
-import "./Footer.css";
-import { useMediaQuery } from "react-responsive";
+import './Footer.css';
+
+import { useMediaQuery } from 'react-responsive';
 
 const Footer = () => {
   const isLargeScreen = useMediaQuery({ minWidth: 530 });

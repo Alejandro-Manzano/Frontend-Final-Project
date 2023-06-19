@@ -1,4 +1,4 @@
-import Swal from "sweetalert2/dist/sweetalert2.all.js";
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 
 const useLoginError = (res, setLoginOk, userlogin) => {
   // -------404 o un 500  en este caso --------->res.response
@@ -7,9 +7,9 @@ const useLoginError = (res, setLoginOk, userlogin) => {
 
   if (res?.response?.status == 500)
     Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Internal Server Error ❎!",
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Internal Server Error ❎!',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -28,19 +28,19 @@ const useLoginError = (res, setLoginOk, userlogin) => {
     userlogin(dataSting);
     setLoginOk(() => true);
     Swal.fire({
-      icon: "success",
-      title: "Hey there, welcome to my tech page!",
-      text: "Succesfully logged in ✅",
+      icon: 'success',
+      title: 'Hey there, welcome to my tech page!',
+      text: 'Succesfully logged in ✅',
       showConfirmButton: false,
       timer: 1500,
     });
   }
 
   //! ---------- 404: password dont match
-  if (res?.response?.data?.includes("Fail matching passwords"))
+  if (res?.response?.data?.includes('Fail matching passwords'))
     Swal.fire({
-      icon: "error",
-      title: "Oops...",
+      icon: 'error',
+      title: 'Oops...',
       text: "Password don't match!",
       showConfirmButton: false,
       timer: 1500,
@@ -48,33 +48,33 @@ const useLoginError = (res, setLoginOk, userlogin) => {
 
   //! ---------- 404: User no register
 
-  if (res?.response?.data?.includes("Fail registering user"))
+  if (res?.response?.data?.includes('Fail registering user'))
     Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Unregistered user!",
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Unregistered user!',
       showConfirmButton: false,
       timer: 1500,
     });
 
   //! ---------- Wrong Password
 
-  if (res?.response?.data?.includes("Wrong password, please try again"))
+  if (res?.response?.data?.includes('Wrong password, please try again'))
     Swal.fire({
-      icon: "error",
-      title: "Wrong Password",
-      text: "The password you introduced is incorrect. Please, try again",
+      icon: 'error',
+      title: 'Wrong Password',
+      text: 'The password you introduced is incorrect. Please, try again',
       showConfirmButton: false,
       timer: 1500,
     });
 
   //! ---------- Wrong Email
 
-  if (res?.response?.data?.includes("Wrong email address, please try again"))
+  if (res?.response?.data?.includes('Wrong email address, please try again'))
     Swal.fire({
-      icon: "error",
-      title: "Wrong Email",
-      text: "The email you introduced is incorrect. Please, try again",
+      icon: 'error',
+      title: 'Wrong Email',
+      text: 'The email you introduced is incorrect. Please, try again',
       showConfirmButton: false,
       timer: 1500,
     });

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { Navigate } from "react-router-dom";
-import { forgotPasswordUser } from "../services/API_proyect/user.service";
-import useForgotPasswordError from "../hooks/useForgotPasswordError";
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Navigate } from 'react-router-dom';
+
+import useForgotPasswordError from '../hooks/useForgotPasswordError';
+import { forgotPasswordUser } from '../services/API_proyect/user.service';
 
 const ForgotPassword = () => {
   const { register, handleSubmit } = useForm();
@@ -45,7 +46,7 @@ const ForgotPassword = () => {
               id="email"
               name="email"
               autoComplete="false"
-              {...register("email", { required: true })}
+              {...register('email', { required: true })}
             />
           </div>
 
@@ -54,7 +55,7 @@ const ForgotPassword = () => {
               className="btn"
               type="submit"
               disabled={send}
-              style={{ background: send ? "#49c1a388" : "#2f7a67" }}
+              style={{ background: send ? '#49c1a388' : '#2f7a67' }}
             >
               CHANGE PASSWORD
             </button>

@@ -1,11 +1,13 @@
-import { useForm } from "react-hook-form";
-import "./Register.css";
-import { registerUser } from "../services/API_proyect/user.service";
-import { useEffect, useState } from "react";
-import useUserError from "../hooks/useUserError";
-import Uploadfile from "../components/Uploadfile";
-import { Link, Navigate } from "react-router-dom";
-import { useAuth } from "../contexts/authContext";
+import './Register.css';
+
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link, Navigate } from 'react-router-dom';
+
+import Uploadfile from '../components/Uploadfile';
+import { useAuth } from '../contexts/authContext';
+import useUserError from '../hooks/useUserError';
+import { registerUser } from '../services/API_proyect/user.service';
 
 const Register = () => {
   const { bridgeData } = useAuth();
@@ -15,7 +17,7 @@ const Register = () => {
   const [send, setSend] = useState(false);
 
   const formSubmit = async (formData) => {
-    const inputfile = document.getElementById("file-upload").files;
+    const inputfile = document.getElementById('file-upload').files;
     let customFormData;
 
     if (inputfile.length !== 0) {
@@ -33,7 +35,7 @@ const Register = () => {
 
   useEffect(() => {
     useUserError(res, setRegisterOk);
-    bridgeData("ALLUSER");
+    bridgeData('ALLUSER');
   }, [res]);
 
   if (registerOk) {
@@ -43,10 +45,7 @@ const Register = () => {
     <>
       <div className="form-wrap">
         <h1>Sign Up</h1>
-        <p>
-          Get started for free in less time than it takes to make a cup of
-          coffee 😊
-        </p>
+        <p>Get started for free in less time than it takes to make a cup of coffee 😊</p>
         <form onSubmit={handleSubmit(formSubmit)}>
           <div className="user_container form-group">
             <label htmlFor="custom-input" className="custom-placeholder">
@@ -58,7 +57,7 @@ const Register = () => {
               id="name"
               name="name"
               autoComplete="false"
-              {...register("name", { required: true })}
+              {...register('name', { required: true })}
             />
           </div>
           <div className="password_container form-group">
@@ -71,7 +70,7 @@ const Register = () => {
               id="password"
               name="password"
               autoComplete="false"
-              {...register("password", { required: true })}
+              {...register('password', { required: true })}
             />
           </div>
 
@@ -85,7 +84,7 @@ const Register = () => {
               id="email"
               name="email"
               autoComplete="false"
-              {...register("email", { required: true })}
+              {...register('email', { required: true })}
             />
 
             <div className="sexo">
@@ -94,7 +93,7 @@ const Register = () => {
                 name="sexo"
                 id="hombre"
                 value="hombre"
-                {...register("gender")}
+                {...register('gender')}
               />
               <label htmlFor="hombre" className="label-radio hombre">
                 Male
@@ -104,7 +103,7 @@ const Register = () => {
                 name="sexo"
                 id="mujer"
                 value="mujer"
-                {...register("gender")}
+                {...register('gender')}
               />
               <label htmlFor="mujer" className="label-radio mujer">
                 Female
@@ -119,9 +118,7 @@ const Register = () => {
               type="submit"
               disabled={send}
               style={{
-                background: send
-                  ? "#49c1a388"
-                  : "var(--background-color-button-login)",
+                background: send ? '#49c1a388' : 'var(--background-color-button-login)',
               }}
             >
               REGISTER
@@ -129,8 +126,8 @@ const Register = () => {
           </div>
           <p className="bottom-text">
             <small>
-              By clicking the Sign Up button, you agree to our{" "}
-              <Link className="anchorCustom">Terms & Conditions</Link> and{" "}
+              By clicking the Sign Up button, you agree to our{' '}
+              <Link className="anchorCustom">Terms & Conditions</Link> and{' '}
               <Link className="anchorCustom">Privacy Policy</Link>.
             </small>
           </p>

@@ -1,15 +1,17 @@
-import "./CheckCode.css";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { useAuth } from "../contexts/authContext";
+import './CheckCode.css';
+
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Navigate } from 'react-router-dom';
+
+import { useAuth } from '../contexts/authContext';
+import useAutoLogin from '../hooks/useAutoLogin';
+import useCheckCodeError from '../hooks/useCheckCodeError';
+import useResendCodeError from '../hooks/useResendCodeError';
 import {
   checkCodeConfirmationUser,
   resendCodeConfirmationUser,
-} from "../services/API_proyect/user.service";
-import useCheckCodeError from "../hooks/useCheckCodeError";
-import { Navigate } from "react-router-dom";
-import useAutoLogin from "../hooks/useAutoLogin";
-import useResendCodeError from "../hooks/useResendCodeError";
+} from '../services/API_proyect/user.service';
 
 const CheckCode = () => {
   const { allUser, userlogin, setUser } = useAuth();
@@ -22,7 +24,7 @@ const CheckCode = () => {
 
   //! -------FUNCION QUE GESTIONA LA DATA DEL FORMULARIO-------
   const formSubmit = async (formData) => {
-    const userLocal = localStorage.getItem("user");
+    const userLocal = localStorage.getItem('user');
 
     if (userLocal == null) {
       const custFormData = {
@@ -45,7 +47,7 @@ const CheckCode = () => {
   };
 
   const handleReSend = async () => {
-    const userLocal = localStorage.getItem("user");
+    const userLocal = localStorage.getItem('user');
     if (userLocal == null) {
       const formDataCustom = { email: allUser.data?.user?.email };
       //console.log(formDataCustom);
@@ -78,10 +80,10 @@ const CheckCode = () => {
     return <Navigate to="/register" />;
   }
   if (okCheck) {
-    if (!localStorage.getItem("user")) {
+    if (!localStorage.getItem('user')) {
       useAutoLogin(allUser, userlogin);
     } else {
-      const currentUser = localStorage.getItem("user");
+      const currentUser = localStorage.getItem('user');
       const parseCurrentUser = JSON.parse(currentUser);
       const customUser = {
         ...parseCurrentUser,
@@ -94,7 +96,7 @@ const CheckCode = () => {
 
       //userlogin(customUserString);
       setUser(() => customUser);
-      localStorage.setItem("user", customUserString);
+      localStorage.setItem('user', customUserString);
 
       return <Navigate to="/dashboard" />;
     }
@@ -116,7 +118,7 @@ const CheckCode = () => {
               id="name"
               name="name"
               autoComplete="false"
-              {...register("confirmationCode", { required: false })}
+              {...register('confirmationCode', { required: false })}
             />
           </div>
 
@@ -126,7 +128,7 @@ const CheckCode = () => {
               className="btn"
               type="submit"
               disabled={send}
-              style={{ background: send ? "#2f7a67" : "#2f7a67" }}
+              style={{ background: send ? '#2f7a67' : '#2f7a67' }}
             >
               Verify Code
             </button>
@@ -136,7 +138,7 @@ const CheckCode = () => {
               id="btnResend"
               className="btn"
               disabled={send}
-              style={{ background: send ? "#2f7a67" : "#2f7a67" }}
+              style={{ background: send ? '#2f7a67' : '#2f7a67' }}
               onClick={() => handleReSend()}
             >
               Resend Code
@@ -145,8 +147,8 @@ const CheckCode = () => {
 
           <p className="bottom-text">
             <small>
-              If the code is not correct ❌, your user will be deleted from the
-              database and you will need to register again.{" "}
+              If the code is not correct ❌, your user will be deleted from the database
+              and you will need to register again.{' '}
             </small>
           </p>
         </form>

@@ -1,4 +1,4 @@
-import "./FigureUser.css";
+import './FigureUser.css';
 
 const FigureUser = (user) => {
   return (

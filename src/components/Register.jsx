@@ -1,10 +1,12 @@
-import { useForm } from "react-hook-form";
-import "./Register.css";
-import { registerUser } from "../services/API_proyect/user.service";
-import { useEffect, useState } from "react";
-import useUserError from "../hooks/useUserError";
-import Uploadfile from "../components/Uploadfile";
-import { Navigate } from "react-router-dom";
+import './Register.css';
+
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Navigate } from 'react-router-dom';
+
+import Uploadfile from '../components/Uploadfile';
+import useUserError from '../hooks/useUserError';
+import { registerUser } from '../services/API_proyect/user.service';
 
 const Register = () => {
   const { register, handleSubmit } = useForm();
@@ -12,7 +14,7 @@ const Register = () => {
   const [send, setSend] = useState(false);
 
   const formSubmit = async (formData) => {
-    const inputfile = document.getElementById("file-upload").files;
+    const inputfile = document.getElementById('file-upload').files;
     let customFormData;
 
     if (inputfile.length !== 0) {
@@ -47,7 +49,7 @@ const Register = () => {
               id="name"
               name="name"
               autoComplete="false"
-              {...register("name", { required: true })}
+              {...register('name', { required: true })}
             />
             <label htmlFor="custom-input" className="custom-placeholder">
               username
@@ -60,7 +62,7 @@ const Register = () => {
               id="password"
               name="password"
               autoComplete="false"
-              {...register("password", { required: true })}
+              {...register('password', { required: true })}
             />
             <label htmlFor="custom-input" className="custom-placeholder">
               password
@@ -74,7 +76,7 @@ const Register = () => {
               id="email"
               name="email"
               autoComplete="false"
-              {...register("email", { required: true })}
+              {...register('email', { required: true })}
             />
             <label htmlFor="custom-input" className="custom-placeholder">
               email
@@ -86,7 +88,7 @@ const Register = () => {
                 name="sexo"
                 id="hombre"
                 value="hombre"
-                {...register("gender")}
+                {...register('gender')}
               />
               <label htmlFor="hombre" className="label-radio hombre">
                 Male
@@ -96,7 +98,7 @@ const Register = () => {
                 name="sexo"
                 id="mujer"
                 value="mujer"
-                {...register("gender")}
+                {...register('gender')}
               />
               <label htmlFor="mujer" className="label-radio mujer">
                 Female
@@ -110,16 +112,15 @@ const Register = () => {
               className="btn"
               type="submit"
               disabled={send}
-              style={{ background: send ? "#49c1a388" : "#49c1a2" }}
+              style={{ background: send ? '#49c1a388' : '#49c1a2' }}
             >
               Register
             </button>
           </div>
           <p className="bottom-text">
             <small>
-              By clicking the Sign Up button, you agree to our{" "}
-              <a href="#">Terms & Conditions</a> and{" "}
-              <a href="#">Privacy Policy</a>.
+              By clicking the Sign Up button, you agree to our{' '}
+              <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.
             </small>
           </p>
         </form>

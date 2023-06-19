@@ -1,15 +1,17 @@
-import { NavLink } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { TbPlant2 } from "react-icons/tb";
-import "./Header.css";
-import { useAuth } from "../contexts/authContext";
+import './Header.css';
+
+import { useEffect, useRef, useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { TbPlant2 } from 'react-icons/tb';
+import { NavLink } from 'react-router-dom';
+
+import { useAuth } from '../contexts/authContext';
 
 const Header = () => {
   const { user, logout } = useAuth();
   const navRef = useRef();
   const showNavbar = () => {
-    navRef.current.classList.toggle("responsive_nav");
+    navRef.current.classList.toggle('responsive_nav');
   };
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const handleProfileDropdown = () => {
@@ -23,10 +25,10 @@ const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -61,15 +63,8 @@ const Header = () => {
             )}
             {user && (
               <div className="dropdown">
-                <button
-                  className="iconNav iconProfile"
-                  onClick={handleProfileDropdown}
-                >
-                  <img
-                    className="profileCircle"
-                    src={user.image}
-                    alt={user.user}
-                  />
+                <button className="iconNav iconProfile" onClick={handleProfileDropdown}>
+                  <img className="profileCircle" src={user.image} alt={user.user} />
                 </button>
                 {profileDropdownOpen && (
                   <div className="dropdown-content">

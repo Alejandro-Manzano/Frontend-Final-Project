@@ -1,5 +1,6 @@
-import { Navigate } from "react-router-dom";
-import { autoLoginUser } from "../services/API_proyect/user.service";
+import { Navigate } from 'react-router-dom';
+
+import { autoLoginUser } from '../services/API_proyect/user.service';
 
 const useAutoLogin = async (allUser, userlogin) => {
   //! Error 1: en este caso el allUser y el uselogin lo traemos como parametro y no directamente del context

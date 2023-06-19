@@ -1,5 +1,6 @@
-import { Navigate } from "react-router-dom";
-import { useAuth } from "../contexts/authContext";
+import { Navigate } from 'react-router-dom';
+
+import { useAuth } from '../contexts/authContext';
 
 const ProtectedCheckChildren = ({ children }) => {
   //allUser.data.user.check = true

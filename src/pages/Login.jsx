@@ -1,10 +1,12 @@
-import "./Login.css";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
-import useLoginError from "../hooks/useLoginError";
-import { loginUser } from "../services/API_proyect/user.service";
-import { useAuth } from "../contexts/authContext";
+import './Login.css';
+
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Link, Navigate } from 'react-router-dom';
+
+import { useAuth } from '../contexts/authContext';
+import useLoginError from '../hooks/useLoginError';
+import { loginUser } from '../services/API_proyect/user.service';
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -50,7 +52,7 @@ const Login = () => {
               id="email"
               name="email"
               autoComplete="false"
-              {...register("email", { required: true })}
+              {...register('email', { required: true })}
             />
 
             <div className="password_container form-group">
@@ -63,7 +65,7 @@ const Login = () => {
                 id="password"
                 name="password"
                 autoComplete="false"
-                {...register("password", { required: true })}
+                {...register('password', { required: true })}
               />
             </div>
           </div>
@@ -74,9 +76,7 @@ const Login = () => {
               type="submit"
               disabled={send}
               style={{
-                background: send
-                  ? "#2f7a67"
-                  : "var(--background-color-button-login)",
+                background: send ? '#2f7a67' : 'var(--background-color-button-login)',
               }}
             >
               <div className="btn_signin">SIGN IN</div>
@@ -94,7 +94,7 @@ const Login = () => {
       </div>
       <div className="footerForm">
         <p className="parrafoLogin">
-          Are you not registered?{" "}
+          Are you not registered?{' '}
           <Link className="parrafoRegisterHere" to="/register">
             Register Here
           </Link>

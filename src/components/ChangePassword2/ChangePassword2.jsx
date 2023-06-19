@@ -1,11 +1,13 @@
-import Swal from "sweetalert2";
-import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
-import { changePasswordUser } from "../../services/API_proyect/user.service";
-import useChangePasswordError from "../../hooks/useChangePasswordError";
-import { useAuth } from "../../contexts/authContext";
-import { Navigate } from "react-router-dom";
-import "./ChangePassword2.css";
+import './ChangePassword2.css';
+
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Navigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
+import { useAuth } from '../../contexts/authContext';
+import useChangePasswordError from '../../hooks/useChangePasswordError';
+import { changePasswordUser } from '../../services/API_proyect/user.service';
 
 const ChangePassword2 = () => {
   const { setUser } = useAuth();
@@ -21,13 +23,13 @@ const ChangePassword2 = () => {
       //   console.log("ChangePassword -> formSubmit: ", "kaixo swal");
 
       Swal.fire({
-        title: "You really wanna reset your password?",
-        icon: "warning",
+        title: 'You really wanna reset your password?',
+        icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: "rgb(73, 193, 162)",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes",
-        position: "center",
+        confirmButtonColor: 'rgb(73, 193, 162)',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes',
+        position: 'center',
       }).then(async (result) => {
         if (result.isConfirmed) {
           setSend(true);
@@ -37,8 +39,8 @@ const ChangePassword2 = () => {
       });
     } else {
       Swal.fire({
-        icon: "error",
-        title: "Looks like the passwords aren’t the same. Give it another go!",
+        icon: 'error',
+        title: 'Looks like the passwords aren’t the same. Give it another go!',
         showConfirmButton: false,
         timer: 2500,
       });
@@ -57,7 +59,7 @@ const ChangePassword2 = () => {
     //! no utilizamos el logout aunque no pasaria nada. No lo utlizo porque da warning
     //logout();
     setUser(null);
-    localStorage.removeItem("user");
+    localStorage.removeItem('user');
     return <Navigate to="/login" />;
   }
   return (
@@ -75,7 +77,7 @@ const ChangePassword2 = () => {
               id="password"
               name="password"
               autoComplete="false"
-              {...register("password", { required: true })}
+              {...register('password', { required: true })}
             />
           </div>
           <div className="newPassword_container form-group">
@@ -88,7 +90,7 @@ const ChangePassword2 = () => {
               id="newPassword"
               name="newPassword"
               autoComplete="false"
-              {...register("newPassword", { required: true })}
+              {...register('newPassword', { required: true })}
             />
           </div>
           <div className="confirmPassword_container form-group">
@@ -101,7 +103,7 @@ const ChangePassword2 = () => {
               id="confirmPassword"
               name="confirmPassword"
               autoComplete="false"
-              {...register("confirmPassword", { required: true })}
+              {...register('confirmPassword', { required: true })}
             />
           </div>
           <div className="btn_container">
@@ -111,9 +113,7 @@ const ChangePassword2 = () => {
               disabled={send}
               //style={{ background: send ? "#49c1a388" : "#49c1a2" }}
               style={{
-                background: send
-                  ? "#008000"
-                  : "var(--background-color-button-login)",
+                background: send ? '#008000' : 'var(--background-color-button-login)',
               }}
             >
               CHANGE PASSWORD

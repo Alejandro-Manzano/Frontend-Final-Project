@@ -1,4 +1,4 @@
-import Swal from "sweetalert2/dist/sweetalert2.all.js";
+import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 
 const useUpdateError = (res, setChangeProfileDataOk) => {
   let contador;
@@ -6,7 +6,7 @@ const useUpdateError = (res, setChangeProfileDataOk) => {
   if (res?.data) {
     contador = 0;
     res?.data?.testUpdate?.map((item) => {
-      console.log("entro");
+      console.log('entro');
       for (let clave in item) {
         if (item[clave] == false) {
           contador++;
@@ -17,7 +17,7 @@ const useUpdateError = (res, setChangeProfileDataOk) => {
 
   //! ---------- 200: cuando se ha actualizado todo
   if (contador == 0) {
-    let check = "";
+    let check = '';
     res?.data?.testUpdate?.forEach((item) => {
       for (let clave in item) {
         if (item[clave] == true) {
@@ -27,7 +27,7 @@ const useUpdateError = (res, setChangeProfileDataOk) => {
     });
     setChangeProfileDataOk(() => true);
     Swal.fire({
-      icon: "success",
+      icon: 'success',
       title: `User profile updated!`,
       text: ` Update: ${check} `,
       showConfirmButton: false,
@@ -36,7 +36,7 @@ const useUpdateError = (res, setChangeProfileDataOk) => {
   }
   //! //! ----------200:  cuando algo no se actualiza
   if (contador > 0) {
-    let error = "";
+    let error = '';
     res?.data?.testUpdate?.forEach((item) => {
       for (let clave in item) {
         if (item[clave] == false) {
@@ -45,9 +45,9 @@ const useUpdateError = (res, setChangeProfileDataOk) => {
       }
     });
     Swal.fire({
-      icon: "error",
+      icon: 'error',
       title: `Error updating user: ${error} ❎`,
-      text: "Please, try again.",
+      text: 'Please, try again.',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -57,9 +57,9 @@ const useUpdateError = (res, setChangeProfileDataOk) => {
 
   if (res?.response?.status == 500 || res?.response?.status == 404)
     Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Internal Server Error! User not updated! ",
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Internal Server Error! User not updated! ',
       showConfirmButton: false,
       timer: 1500,
     });

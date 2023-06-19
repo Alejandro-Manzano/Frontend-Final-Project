@@ -1,9 +1,11 @@
-import { useState } from "react";
-import "./Profile.css";
-import FormProfile from "../components/FormProfile";
-import useDeleteUser from "../hooks/useDeleteUser";
-import { useAuth } from "../contexts/authContext";
-import ChangePassword2 from "../components/ChangePassword2/ChangePassword2";
+import './Profile.css';
+
+import { useState } from 'react';
+
+import ChangePassword2 from '../components/ChangePassword2/ChangePassword2';
+import FormProfile from '../components/FormProfile';
+import { useAuth } from '../contexts/authContext';
+import useDeleteUser from '../hooks/useDeleteUser';
 
 const Profile = () => {
   const [changeRender, setChangeRender] = useState(true);

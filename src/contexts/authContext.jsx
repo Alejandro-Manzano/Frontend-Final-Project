@@ -1,5 +1,5 @@
-import { createContext, useContext, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { createContext, useContext, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
@@ -7,7 +7,7 @@ export const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
   //! -----> TENEMOS UN ESTADO DEL USUARIO EN GENERAL ---------------------------
   const [user, setUser] = useState(() => {
-    const data = localStorage.getItem("user");
+    const data = localStorage.getItem('user');
     const parseUser = JSON.parse(data);
 
     if (data) {
@@ -22,20 +22,20 @@ export const AuthContextProvider = ({ children }) => {
   const [allUser, setAllUser] = useState({
     data: {
       user: {
-        password: "",
-        email: "",
+        password: '',
+        email: '',
       },
     },
   });
 
   //! --------> FUNCION PUENTE PARA SETEAR ESTADOS EN CASO DE TENER PROBLEMAS CON LA ASINCRONIA DE REACT----
   const bridgeData = (state) => {
-    const data = localStorage.getItem("data");
+    const data = localStorage.getItem('data');
     const dataJson = JSON.parse(data);
     switch (state) {
-      case "ALLUSER":
+      case 'ALLUSER':
         setAllUser(dataJson);
-        localStorage.removeItem("data");
+        localStorage.removeItem('data');
         break;
 
       default:
@@ -48,7 +48,7 @@ export const AuthContextProvider = ({ children }) => {
   //! ------------- FUNCION QUE GESTIONA EL LOGIN DEL USER -----------------------------
   const userlogin = (data) => {
     // recibimos la data en formato string, es un objeto
-    localStorage.setItem("user", data);
+    localStorage.setItem('user', data);
     // parseamos la data que la recibimos en string y la metemos al estado
     const parseData = JSON.parse(data);
     setUser(() => parseData);
@@ -56,9 +56,9 @@ export const AuthContextProvider = ({ children }) => {
 
   //! ----------------FUNCION QUE GESTIONA EL LOGOUT ----------------------------------------
   const logout = () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem('user');
     setUser(null);
-    navigate("/login");
+    navigate('/login');
   };
 
   const value = useMemo(
@@ -71,7 +71,7 @@ export const AuthContextProvider = ({ children }) => {
       setAllUser,
       bridgeData,
     }),
-    [user, allUser]
+    [user, allUser],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

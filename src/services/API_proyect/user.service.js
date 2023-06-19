@@ -1,9 +1,9 @@
-import { updateToken } from "../../util/updateToken";
-import { API } from "./service.config";
+import { updateToken } from '../../util/updateToken';
+import { API } from './service.config';
 //✔
 export const registerUser = async (formData) => {
-  return API.post("/users/register", formData, {
-    headers: { "Content-Type": "multipart/form-data" },
+  return API.post('/users/register', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
   })
     .then((res) => res)
     .catch((error) => {
@@ -14,7 +14,7 @@ export const registerUser = async (formData) => {
 //! -----------------------CHECK CODE -----------------------------------
 //✔
 export const checkCodeConfirmationUser = async (formData) => {
-  return API.post("/users/check", formData)
+  return API.post('/users/check', formData)
     .then((res) => res)
     .catch((error) => {
       return error;
@@ -23,7 +23,7 @@ export const checkCodeConfirmationUser = async (formData) => {
 
 //! -------------------------LOGIN ---------------------------------------
 export const loginUser = async (formData) => {
-  return API.post("/users/login", formData)
+  return API.post('/users/login', formData)
     .then((res) => res)
     .catch((error) => {
       return error;
@@ -32,7 +32,7 @@ export const loginUser = async (formData) => {
 
 //! -------------------------AUTOLOGIN ---------------------------------------
 export const autoLoginUser = async (formData) => {
-  return API.post("/users/login/autologin", formData)
+  return API.post('/users/login/autologin', formData)
     .then((res) => res)
     .catch((error) => {
       return error;
@@ -42,7 +42,7 @@ export const autoLoginUser = async (formData) => {
 //!  ----------------------forgot password ---------------------------------
 
 export const forgotPasswordUser = async (formData) => {
-  return API.patch("/users/forgotpassword/forgotpassword", formData)
+  return API.patch('/users/forgotpassword/forgotpassword', formData)
     .then((res) => res)
     .catch((error) => {
       return error;
@@ -51,7 +51,7 @@ export const forgotPasswordUser = async (formData) => {
 //! ----------------------- RESED CODE CONFIRMATION ------------------------------
 
 export const resendCodeConfirmationUser = async (formData) => {
-  return API.post("/users/resend", formData)
+  return API.post('/users/resend', formData)
     .then((res) => res)
     .catch((error) => {
       return error;
@@ -60,7 +60,7 @@ export const resendCodeConfirmationUser = async (formData) => {
 
 //! ---------------------- CHANGE PASSWORD ---- ESTAMOS LOGADOS---------------------
 export const changePasswordUser = async (formData) => {
-  return API.patch("/users/changepassword", formData, {
+  return API.patch('/users/changepassword', formData, {
     headers: {
       Authorization: `Bearer ${updateToken()}`,
     },
@@ -74,7 +74,7 @@ export const changePasswordUser = async (formData) => {
 //! ------------------------- DELETE USER ---------------------------------------------
 
 export const deleteUser = async () => {
-  return API.delete("/users/", {
+  return API.delete('/users/', {
     headers: {
       Authorization: `Bearer ${updateToken()}`,
     },
@@ -88,10 +88,10 @@ export const deleteUser = async () => {
 //! -------------------------UPDATE USER ----------------------------------------------
 
 export const updateUser = async (formData) => {
-  return API.patch("/users/update/update", formData, {
+  return API.patch('/users/update/update', formData, {
     headers: {
       Authorization: `Bearer ${updateToken()}`,
-      "Content-Type": "multipart/form-data",
+      'Content-Type': 'multipart/form-data',
     },
   })
     .then((res) => res)

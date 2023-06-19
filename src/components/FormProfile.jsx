@@ -1,13 +1,15 @@
-import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
-import { useAuth } from "../contexts/authContext";
-import FigureUser from "./FigureUser";
-import "./FormProfile.css";
-import Uploadfile from "./Uploadfile";
-import { updateUser } from "../services/API_proyect/user.service";
-import useUpdateError from "../hooks/useUpdateError";
-import { Navigate } from "react-router-dom";
+import './FormProfile.css';
+
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Navigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
+import { useAuth } from '../contexts/authContext';
+import useUpdateError from '../hooks/useUpdateError';
+import { updateUser } from '../services/API_proyect/user.service';
+import FigureUser from './FigureUser';
+import Uploadfile from './Uploadfile';
 
 const FormProfile = () => {
   const { setUser, user } = useAuth();
@@ -21,15 +23,15 @@ const FormProfile = () => {
   //! --------- funcion que controla el formulario-----------------------
   const formSubmit = async (formData) => {
     Swal.fire({
-      title: "Ready to switch up your profile details?",
-      icon: "warning",
+      title: 'Ready to switch up your profile details?',
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "rgb(73, 193, 162)",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes",
+      confirmButtonColor: 'rgb(73, 193, 162)',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const inputfile = document.getElementById("file-upload").files;
+        const inputfile = document.getElementById('file-upload').files;
         let customFormData;
 
         if (inputfile.length !== 0) {
@@ -57,7 +59,7 @@ const FormProfile = () => {
   if (changeProfileDataOk) {
     //! no utilizamos el logout aunque no pasaria nada. No lo utlizo porque da warning
     setUser(() => false);
-    localStorage.removeItem("user");
+    localStorage.removeItem('user');
     return <Navigate to="/login" />;
   }
 
@@ -81,7 +83,7 @@ const FormProfile = () => {
                 name="name"
                 autoComplete="false"
                 defaultValue={defaultData?.name}
-                {...register("name", { required: true })}
+                {...register('name', { required: true })}
               />
             </div>
             <Uploadfile />
@@ -93,9 +95,7 @@ const FormProfile = () => {
                 //style={{ background: send ? "#49c1a388" : "#49c1a2" }}
                 //style={{ background: send ? "#008000" : "#37A08E" }}
                 style={{
-                  background: send
-                    ? "#008000"
-                    : "var(--background-color-button-login)",
+                  background: send ? '#008000' : 'var(--background-color-button-login)',
                 }}
               >
                 CHANGE PROFILE
