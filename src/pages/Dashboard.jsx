@@ -1,6 +1,7 @@
 import "./Dashboard.css";
-import UserWelcome from "../components/UserWelcome/UserWelcome";
+import { Home } from "./Home";
 
-const Dashboard = () => <UserWelcome />;
+
+const Dashboard = () => <Home></Home>;
 
 export default Dashboard;
