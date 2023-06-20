@@ -40,7 +40,7 @@ const Header = () => {
         <div className="titleFatherContainer">
           <TbPlant2 size={30} />
           <NavLink to="/dashboard">
-            <h3 className="titleWeb">DevConnect</h3>
+            <h3 className="titleWeb">Nexus</h3>
           </NavLink>
         </div>
         <nav className="navHeader" ref={navRef}>
@@ -54,10 +54,10 @@ const Header = () => {
                   <button className="buttonNav">Desarrolladores</button>
                 </NavLink>
                 <NavLink to="/register">
-                  <button className="buttonNav">Ofertas</button>
+                  <button className="buttonNav">Register</button>
                 </NavLink>
-                <NavLink to="/favorites">
-                  <button className="buttonNav">Sobre Nosotros</button>
+                <NavLink to="/login">
+                  <button className="buttonNav">Login</button>
                 </NavLink>
               </>
             )}

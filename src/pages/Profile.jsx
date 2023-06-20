@@ -10,23 +10,44 @@ import useDeleteUser from '../hooks/useDeleteUser';
 const Profile = () => {
   const [changeRender, setChangeRender] = useState(true);
   const { setUser } = useAuth();
+  const [activeButton, setActiveButton] = useState('Profile');
 
   return (
     <>
-      <div className="containerNavProfile">
-        <button className="btn-profile" onClick={() => setChangeRender(false)}>
-          Password
-        </button>
-        <button className="btn-profile" onClick={() => setChangeRender(true)}>
-          Profile
-        </button>
-        <button className="btn-profile" onClick={() => useDeleteUser(setUser)}>
-          Delete
-        </button>
-      </div>
+      <div className="mainContainer">
+        <div className="containerNavProfile">
+          <button
+            className={`btn-profile ${activeButton === 'Password' ? 'active' : ''}`}
+            onClick={() => {
+              setChangeRender(false);
+              setActiveButton('Password');
+            }}
+          >
+            Password
+          </button>
+          <button
+            className={`btn-profile ${activeButton === 'Profile' ? 'active' : ''}`}
+            onClick={() => {
+              setChangeRender(true);
+              setActiveButton('Profile');
+            }}
+          >
+            Profile
+          </button>
+          <button
+            className={`btn-profile ${activeButton === 'Delete' ? 'active' : ''}`}
+            onClick={() => {
+              useDeleteUser(setUser);
+              setActiveButton('Delete');
+            }}
+          >
+            Delete
+          </button>
+        </div>
 
-      <div className="fluidContainerProfile">
-        {changeRender ? <FormProfile /> : <ChangePassword2 />}
+        <div className="fluidContainerProfile">
+          {changeRender ? <FormProfile /> : <ChangePassword2 />}
+        </div>
       </div>
     </>
   );
