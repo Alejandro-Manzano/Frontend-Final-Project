@@ -45,14 +45,14 @@ const Header = () => {
         </div>
         <nav className="navHeader" ref={navRef}>
           <div className="navButton">
-            {user && user?.check === true && (
+            <NavLink to="/home">
+              <button className="buttonNav">Inicio</button>
+            </NavLink>
+            <NavLink to="/mobileDevs">
+              <button className="buttonNav">Desarrolladores</button>
+            </NavLink>
+            {user == null && (
               <>
-                <NavLink to="/home">
-                  <button className="buttonNav">Inicio</button>
-                </NavLink>
-                <NavLink to="/mobileDevs">
-                  <button className="buttonNav">Desarrolladores</button>
-                </NavLink>
                 <NavLink to="/register">
                   <button className="buttonNav">Register</button>
                 </NavLink>

@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,18 +9,18 @@ body {
   color: var(--mainColor);
   line-height: 1.8;
 }
-.role_selection{
+.role_selection {
   display: table-column;
   justify-content: center;
   align-items: center;
 }
-.title-role{
+.title-role {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.btn-role{
+.btn-role {
   width: 200px;
 }
 .parrafoLogin {
@@ -44,15 +43,15 @@ a {
 
 .form-wrap {
   margin-top: 2rem;
-  background: var(--mainColor);
+  /* background: var(--mainColor); */
   padding: 15px 25px 30px;
-  color: #333;
+
   border-radius: 5px;
 }
 
 .form-wrap h1,
 .form-wrap p {
-  color: var(--textColor);
+  /* //color: var(--textColor); */
   text-align: center;
 }
 
@@ -61,7 +60,7 @@ a {
 }
 
 .form-wrap .form-group label {
-  color: var(--textColor);
+  /* color: var(--textColor); */
   font-weight: normal;
 }
 
@@ -77,7 +76,7 @@ a {
 }
 
 .form-wrap .form-group input:focus {
-  outline-color: var(--textColor);
+  /* outline-color: var(--textColor); */
 }
 
 .form-wrap .btn {
@@ -85,7 +84,7 @@ a {
   padding: 10px;
   margin-top: 25px;
   background: #b5b2b2;
-  color: black;
+  /* color: black; */
   cursor: pointer;
 
   border-radius: 5px;
@@ -94,8 +93,8 @@ a {
 }
 
 .form-wrap .btn:hover {
-  background: #37a08e;
-  color: #f4f4f4;
+  /* background: #37a08e;
+  color: #f4f4f4; */
 }
 
 .form-wrap .btn:focus {

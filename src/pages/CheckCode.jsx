@@ -98,7 +98,7 @@ const CheckCode = () => {
       setUser(() => customUser);
       localStorage.setItem('user', customUserString);
 
-      return <Navigate to="/dashboard" />;
+      return <Navigate to="/home" />;
     }
   }
 
