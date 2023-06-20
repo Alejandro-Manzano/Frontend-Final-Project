@@ -3,7 +3,6 @@ import { API } from './service.config';
 
 //✔REGISTER
 export const registerUser = async (formData) => {
-  console.log(formData);
   return API.post('/users/register', formData, {
     headers: { 'Content-Type': 'multipart/form-data' },
   })
@@ -124,8 +123,19 @@ export const updateUser = async (formData) => {
       return error;
     });
 };
-
-// ----------------- Get User by Id from DB -----------
+//! -------------------------UPDATE TECHNOLOGY----------------------------------------------
+// export const updateTecnologia = async () => {
+//   return API.patch('/updateTechnology', {
+//     headers: {
+//       Authorization: `Bearer ${updateToken()}`,
+//     },
+//   })
+//     .then((res) => res)
+//     .catch((error) => {
+//       return error;
+//     });
+// };
+// // ----------------- Get User by Id from DB -----------
 export const getUserById = async (id) => {
   return API.get(`/users/${id}`)
     .then((res) => res.data)

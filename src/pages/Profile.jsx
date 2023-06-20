@@ -101,7 +101,7 @@ const Profile = () => {
               case 'Tecnologias':
                 return <Tecnologias />;
               default:
-                return <Profile />;
+                return null;
             }
           })()}
         </div>

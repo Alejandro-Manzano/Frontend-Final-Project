@@ -75,9 +75,9 @@ a {
   border: solid 2px var(--textColor);
 }
 
-.form-wrap .form-group input:focus {
+/* .form-wrap .form-group input:focus {
   /* outline-color: var(--textColor); */
-}
+/* } */
 
 .form-wrap .btn {
   width: 100%;
@@ -92,11 +92,10 @@ a {
   font-size: inherit;
 }
 
-.form-wrap .btn:hover {
+/* .form-wrap .btn:hover {
   /* background: #37a08e;
   color: #f4f4f4; */
-}
-
+/* } */
 .form-wrap .btn:focus {
   outline-color: #37a08e;
 }
