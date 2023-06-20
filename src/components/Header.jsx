@@ -47,7 +47,7 @@ const Header = () => {
           <div className="navButton">
             {user && user?.check === true && (
               <>
-                <NavLink to="/dashboard">
+                <NavLink to="/home">
                   <button className="buttonNav">Inicio</button>
                 </NavLink>
                 <NavLink to="/mobileDevs">
