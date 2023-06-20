@@ -52,7 +52,7 @@ const Register = () => {
         <h3 className="title-role">Select your interested role </h3>
         <button className="btn-role" onClick={() => setRole('freelance')}>
           Freelancer
-          <img className='photoFreelance' src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687277760/ProjectFinalBOOTCAMP/Iconos/programacion_x6kfsb.png"/>
+          <img className='photoFreelance' src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687278019/ProjectFinalBOOTCAMP/Iconos/programacion_cdn0ri.png"/>
         </button>
         <button className="btn-role" onClick={() => setRole('company')}>
           Company
