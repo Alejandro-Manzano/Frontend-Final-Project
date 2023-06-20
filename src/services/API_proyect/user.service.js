@@ -1,10 +1,9 @@
 import { updateToken } from '../../util/updateToken';
 import { API } from './service.config';
 
-
 //✔REGISTER
 export const registerUser = async (formData) => {
-  console.log(formData)
+  console.log(formData);
   return API.post('/users/register', formData, {
     headers: { 'Content-Type': 'multipart/form-data' },
   })
@@ -32,7 +31,30 @@ export const loginUser = async (formData) => {
       return error;
     });
 };
-
+//! -------------------------NEW EMAIl ---------------------------------------
+export const changeEmail = async (formData) => {
+  return API.post('/users/changeEmail', formData, {
+    headers: {
+      Authorization: `Bearer ${updateToken()}`,
+    },
+  })
+    .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};
+//! -------------------------VERIFY NEW EMAIL ---------------------------------------
+export const verifyNewEmail = async (formData) => {
+  return API.post('/users/verifyNewEmail', formData, {
+    headers: {
+      Authorization: `Bearer ${updateToken()}`,
+    },
+  })
+    .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};
 //! -------------------------AUTOLOGIN ---------------------------------------
 export const autoLoginUser = async (formData) => {
   return API.post('/users/login/autologin', formData)
