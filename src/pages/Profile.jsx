@@ -35,6 +35,15 @@ const Profile = () => {
             Profile
           </button>
           <button
+            className={`btn-profile ${activeButton === 'Profile' ? 'active' : ''}`}
+            onClick={() => {
+              setChangeRender(true);
+              setActiveButton('Profile');
+            }}
+          >
+            Cambiar
+          </button>
+          <button
             className={`btn-profile ${activeButton === 'Delete' ? 'active' : ''}`}
             onClick={() => {
               useDeleteUser(setUser);

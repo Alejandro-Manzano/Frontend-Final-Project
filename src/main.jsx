@@ -20,8 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path="/" element={<App />}>
             {/* he cambiado home por register */}
-            <Route index element={<Home/>} />
+            <Route index element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/verifyCode" element={<CheckCode />} />
