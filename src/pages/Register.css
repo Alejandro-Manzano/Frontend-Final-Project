@@ -8,20 +8,51 @@ body {
   background: white;
   color: var(--mainColor);
   line-height: 1.8;
+  
 }
-.role_selection {
-  display: table-column;
+.role_selection{
+  display:flex;
+  width: 400px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  
+
+  
+  
 }
-.title-role {
+.title-role{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-.btn-role {
-  width: 200px;
+.photoFreelance{
+height: 100px;
+width: 100px;
+
+}
+.btn-role{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  margin-bottom:30px;
+  width: 350px;
+  border-color: #61d16d;
+
+  border-radius:4px;
+  border-style:solid;
+  border-width: 1px;
+  box-shadow:#181818 0px 2px 4px 0px;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform:inherit;
+  line-height: 20px;
+  margin: 20px;
+  padding: 24px;
+  background-color:#fcfcfe;
+
 }
 .parrafoLogin {
   margin-bottom: 40px;
@@ -43,15 +74,15 @@ a {
 
 .form-wrap {
   margin-top: 2rem;
-  /* background: var(--mainColor); */
+  background: var(--mainColor);
   padding: 15px 25px 30px;
-
+  color: #333;
   border-radius: 5px;
 }
 
 .form-wrap h1,
 .form-wrap p {
-  /* //color: var(--textColor); */
+  color: var(--textColor);
   text-align: center;
 }
 
@@ -60,7 +91,7 @@ a {
 }
 
 .form-wrap .form-group label {
-  /* color: var(--textColor); */
+  color: var(--textColor);
   font-weight: normal;
 }
 
@@ -75,16 +106,16 @@ a {
   border: solid 2px var(--textColor);
 }
 
-/* .form-wrap .form-group input:focus {
-  /* outline-color: var(--textColor); */
-/* } */
+.form-wrap .form-group input:focus {
+  outline-color: var(--textColor);
+}
 
 .form-wrap .btn {
   width: 100%;
   padding: 10px;
   margin-top: 25px;
   background: #b5b2b2;
-  /* color: black; */
+  color: black;
   cursor: pointer;
 
   border-radius: 5px;
@@ -92,10 +123,11 @@ a {
   font-size: inherit;
 }
 
-/* .form-wrap .btn:hover {
-  /* background: #37a08e;
-  color: #f4f4f4; */
-/* } */
+.form-wrap .btn:hover {
+  background: #37a08e;
+  color: #f4f4f4;
+}
+
 .form-wrap .btn:focus {
   outline-color: #37a08e;
 }
@@ -171,3 +203,4 @@ a {
 .anchorCustom {
   color: var(--secondaryColor);
 }
+
