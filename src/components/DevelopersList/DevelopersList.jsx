@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import ReactPaginate from 'react-paginate';
 
 import { developer_getAll } from "../../services/API_proyect/developer.service"
-//import CardMobileDev from "../CardMobileDev/CardMobileDev";
 import CardDeveloper from "../CardDeveloper/CardDeveloper";
 import "./DevelopersList.css";
 import { Spinner } from "../Spinner/Spinner";

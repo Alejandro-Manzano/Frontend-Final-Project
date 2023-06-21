@@ -1,12 +1,13 @@
 // import ToggleButton from '../Toggle/Toggle';
 import './CardDeveloper.css';
 import { useNavigate } from 'react-router-dom';
+import ReadOnlyRating from '../ratings/ReadOnlyRating/ReadOnlyRating';
+import WriteRating from '../ratings/WriteRating/WriteRating';
 
-export const CardDeveloper = ({ developer }) => {
+const CardDeveloper = ({ developer }) => {
   const navigate = useNavigate();
   // const pathById = `/dewveloper`;
 
-  // console.log("mobileDev: ", mobileDev);
   return (
     <section className="developer-Info">
       <img src={developer.image} alt={`developer's ${developer.name.surname} pic`} />
@@ -16,8 +17,9 @@ export const CardDeveloper = ({ developer }) => {
       </div>
       <h3 className="developer-Info-Rol">{developer.rol}</h3>
       <p className="developer-Info-ratingsByOthers">
-        {' '}
-        ⭐⭐⭐⭐⭐ {developer.ratingsByOthers.length} (9)
+        <ReadOnlyRating user={developer} />
+        {/* <WriteRating /> */}
+        ({developer.ratingsByOthers.length})
       </p>
       <div className="developer-Info-grupo-technologies">
         <h4 className="developer-Info-technologies">{developer.technologies}</h4>
