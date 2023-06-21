@@ -1,7 +1,7 @@
 import { updateToken } from '../../util/updateToken';
 import { API } from './service.config';
 
-//Create experience
+//! -----------------------CREATE EXPERIENCE-----------------------------------
 export const createExperience = async (formData) => {
   return API.post('/users/register', formData, {
     headers: {
@@ -10,6 +10,43 @@ export const createExperience = async (formData) => {
     },
   })
     .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};
+
+//! -----------------------GET ALL EXPERIENCES -----------------------------------
+export const developer_getAll = async () => {
+  return API.get('/experience')
+    .then((res) => res.data)
+    .catch((error) => {
+      return error;
+    });
+};
+
+//! -----------------------DELETE EXPERIENCE-----------------------------------
+export const deleteExperience = async (id) => {
+  return API.delete(`/deleteExperience/${id}`)
+    .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};
+
+//! -----------------------GET BY ID -----------------------------------
+export const getByIdExperience = async (id) => {
+  return API.get(`/${id}`)
+    .then((res) => res.data)
+    .catch((error) => {
+      return error;
+    });
+};
+
+//! -----------------------GET BY USER-----------------------------------
+
+export const getByUserExperience = async (id) => {
+  return API.get(`/user/${id}`)
+    .then((res) => res.data)
     .catch((error) => {
       return error;
     });

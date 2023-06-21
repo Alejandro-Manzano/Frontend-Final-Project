@@ -125,8 +125,8 @@
 }
 
 .home-figure {
-  width: 200px;
-  height: 220px;
+  width: 170px;
+  height: 210px;
   background-color: #FDFCFE;
   border: 0.1px solid rgb(200,200,200);
   border-radius: 30px;
@@ -138,7 +138,7 @@
 }
 
 .home-figure-img {
-  height: 80px;
+  height: 55px;
 }
 
 .home-figure {
@@ -178,18 +178,15 @@
   gap: 30px;
 }
 
-.home-review-figure {
+.home-review-figure{
   width: 520px;
   height: 220px;
   border: 0.1px solid rgb(200,200,200);
   background-color: #FDFCFE;
-}
-
-.home-review-figure{
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .home-review-developer{
@@ -211,7 +208,7 @@
 .home-nameJob-person {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 
 .home-person{

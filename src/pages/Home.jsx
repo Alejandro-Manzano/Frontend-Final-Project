@@ -88,13 +88,13 @@ export const Home = () => {
 
         <figure className="home-review-figure">
 
-          <p className='home-review-figure-p'>Que pagina mas buenas me lo pase pirata ademas aprendi a programar de lokos que locuraaaaaa</p>
+          <p className='home-review-figure-p'>Llevo sin ducharme meses , pero es porque a mi tierra "Elda" no llueve desde 1869. Me gsutan los gusanos de seda</p>
           <div className='home-review-developer'>
-            <img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687259001/UserFTProyect/vs86srsiqyurqmqeeppt.jpg' alt='person-review'></img>
+            <img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687292684/samu_zngccx.jpg' alt='person-review'></img>
 
             <div className='home-nameJob-person'>
-              <p className='home-person'>Aitor Gutierrez</p>
-              <p className='home-job'>Pascal Developer</p>
+              <p className='home-person'>Samuel Salazar de Jerusalen</p>
+              <p className='home-job'>Desarrollador de hongos</p>
             </div>
           </div>
 
@@ -102,13 +102,13 @@ export const Home = () => {
 
         <figure className="home-review-figure">
 
-          <p className='home-review-figure-p'>Que pagina mas buenas me lo pase pirata ademas aprendi a programar de lokos que locuraaaaaa</p>
+          <p className='home-review-figure-p'>Empece a estudiar HTML y ahora estoy estudiando un poquito de Pascal bien rico</p>
           <div className='home-review-developer'>
-            <img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687259001/UserFTProyect/vs86srsiqyurqmqeeppt.jpg' alt='person-review'></img>
+            <img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687110627/UserFTProyect/rqwetuzyrv36t1j48yfz.png' alt='person-review'></img>
 
             <div className='home-nameJob-person'>
-              <p className='home-person'>Aitor Gutierrez</p>
-              <p className='home-job'>Pascal Developer</p>
+              <p className='home-person'>Cmrbolsa</p>
+              <p className='home-job'>Habitante de Telde</p>
             </div>
           </div>
 
@@ -116,13 +116,13 @@ export const Home = () => {
 
         <figure className="home-review-figure">
 
-          <p className='home-review-figure-p'>Que pagina mas buenas me lo pase pirata ademas aprendi a programar de lokos que locuraaaaaa</p>
+          <p className='home-review-figure-p'>Me he criado en Grijota, pero ahora vivo en en la periferia Grijotana, me gusta una chica que se llama MongoDB, un pequeño xascarrillo.</p>
           <div className='home-review-developer'>
-            <img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687259001/UserFTProyect/vs86srsiqyurqmqeeppt.jpg' alt='person-review'></img>
+            <img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687292673/PHOTO-2023-05-12-12-49-07_ziyeq9.jpg' alt='person-review'></img>
 
             <div className='home-nameJob-person'>
-              <p className='home-person'>Aitor Gutierrez</p>
-              <p className='home-job'>Pascal Developer</p>
+              <p className='home-person'>Jaime Fati</p>
+              <p className='home-job'>Solution architec en el lego</p>
             </div>
           </div>
 
@@ -130,12 +130,12 @@ export const Home = () => {
 
         <figure className="home-review-figure">
 
-          <p className='home-review-figure-p'>Que pagina mas buenas me lo pase pirata ademas aprendi a programar de lokos que locuraaaaaa</p>
+          <p className='home-review-figure-p'>Que pagina mas buenas me lo pase pirata ademas aprendi a comerme Monitores 4k. No tengo watsap solo Mail</p>
           <div className='home-review-developer'>
             <img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687259001/UserFTProyect/vs86srsiqyurqmqeeppt.jpg' alt='person-review'></img>
 
             <div className='home-nameJob-person'>
-              <p className='home-person'>Aitor Gutierrez</p>
+              <p className='home-person'>Aitor Cifuentes</p>
               <p className='home-job'>Pascal Developer</p>
             </div>
           </div>

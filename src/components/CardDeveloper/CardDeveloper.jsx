@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const CardDeveloper = ({ developer }) => {
   const navigate = useNavigate();
-  // const pathById = `/developer`;
+  // const pathById = `/dewveloper`;
 
   // console.log("mobileDev: ", mobileDev);
   return (
