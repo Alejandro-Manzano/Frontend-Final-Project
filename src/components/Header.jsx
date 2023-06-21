@@ -32,14 +32,14 @@ const Header = () => {
     };
   }, []);
 
-  useEffect(() => { }, [ancho]);
+  useEffect(() => {}, [ancho]);
 
   return (
     <>
       <header>
         <div className="titleFatherContainer">
           <TbPlant2 size={30} />
-          <NavLink to="/dashboard">
+          <NavLink to="/home">
             <h3 className="titleWeb">Nexus</h3>
           </NavLink>
         </div>
