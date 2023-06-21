@@ -152,6 +152,63 @@ export const Home = () => {
 
         </figure>
 
+        <figure className="home-review-figure">
+
+      <p className='home-review-figure-p'>Soy de Coruña y me dedico a hacer doumentacion sabrosona si quieres la tuya contactame por Telegram</p>
+<div className='home-review-developer'>
+  <img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687344671/Captura_de_pantalla_2023-06-21_a_las_12.50.24_vx83nc.png' alt='person-review'></img>
+
+  <div className='home-nameJob-person'>
+    <p className='home-person'>Jonatan Aquilino "Jona"</p>
+    <p className='home-job'>Jugador de Lol and Documentation Engenier</p>
+  </div>
+</div>
+
+</figure>
+
+<figure className="home-review-figure">
+
+<p className='home-review-figure-p'>Hola sóc un alcohòlic de Castefa, m'agrada la ruleta i la meva cosina, també es desenvolupar aplicacions per a fumadors a pascal</p>
+<div className='home-review-developer'>
+<img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687345050/ozi_dxjzjs.jpg' alt='person-review'></img>
+
+<div className='home-nameJob-person'>
+<p className='home-person'>Ozillo</p>
+<p className='home-job'>ASIR Data Science y Ludopata en Castefa</p>
+</div>
+</div>
+
+</figure>
+
+<figure className="home-review-figure">
+
+<p className='home-review-figure-p'>Me gusta la programacion asincronica y tu nuera, tambien se cocinar pollo al chilindron, odio a Ozillo</p>
+<div className='home-review-developer'>
+<img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687345729/yandru_idunsi.jpg' alt='person-review'></img>
+
+<div className='home-nameJob-person'>
+<p className='home-person'>Alexandru Berbatov</p>
+<p className='home-job'>Repostero</p>
+</div>
+</div>
+
+</figure>
+
+<figure className="home-review-figure">
+
+<p className='home-review-figure-p'>
+Hola soy de Rusia, y estoy aprendiendo a invertir con <a  href='https://cmrbolsa.com/'>Litos</a> muchas gracias crack, tambien odio a Ozillo</p>
+<div className='home-review-developer'>
+<img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687346367/_Jiij7cMI_720x0__1_eftkxy.jpg' alt='person-review'></img>
+
+<div className='home-nameJob-person'>
+<p className='home-person'>Hasbullah Magomedov</p>
+<p className='home-job'>Reponedor en Alcampo</p>
+</div>
+</div>
+
+</figure>
+
       </section>
 
     </div>
