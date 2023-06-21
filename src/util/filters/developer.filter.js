@@ -25,3 +25,8 @@ export const sortUsersByAverageScore_ascendingOrder = (users) =>
 
         return userA_scoreAverage - userB_scoreAverage;
     });
+
+const getUserTotalExperienceDuration = (acc, curr) => acc + curr.duration;
+
+export const getUserExperienceDuration = (user) =>
+    user.experience.reduce(getUserTotalExperienceDuration, 0)
