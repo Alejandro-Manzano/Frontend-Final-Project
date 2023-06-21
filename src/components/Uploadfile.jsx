@@ -1,7 +1,6 @@
 import './Uploadfile.css';
 
 import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
 const Uploadfile = ({ registerForm }) => {
   const ekUpload = () => {
     const Init = () => {

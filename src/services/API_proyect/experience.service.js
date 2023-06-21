@@ -3,7 +3,7 @@ import { API } from './service.config';
 
 //! -----------------------CREATE EXPERIENCE-----------------------------------
 export const createExperience = async (formData) => {
-  return API.post('/users/register', formData, {
+  return API.post('/experience/create', formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${updateToken()}`,
@@ -16,7 +16,7 @@ export const createExperience = async (formData) => {
 };
 
 //! -----------------------GET ALL EXPERIENCES -----------------------------------
-export const developer_getAll = async () => {
+export const experiences_getAll = async () => {
   return API.get('/experience')
     .then((res) => res.data)
     .catch((error) => {
@@ -26,7 +26,7 @@ export const developer_getAll = async () => {
 
 //! -----------------------DELETE EXPERIENCE-----------------------------------
 export const deleteExperience = async (id) => {
-  return API.delete(`/deleteExperience/${id}`)
+  return API.delete(`/experience/deleteExperience/${id}`)
     .then((res) => res)
     .catch((error) => {
       return error;
