@@ -76,6 +76,16 @@ export const Home = () => {
             <p className='home-figure-p'>Estabilidad laboral</p>
           </figure>
 
+          <figure className='home-figure'>
+            <img src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687340141/entrevista_ux3w0d.png' alt='icon' className='home-figure-img'></img>
+            <p className='home-figure-p'>Entrevistas online</p>
+          </figure>
+
+          <figure className='home-figure'>
+            <img src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687340135/money-management_obo14d.png' alt='icon' className='home-figure-img'></img>
+            <p className='home-figure-p'>Salarios competitiivos</p>
+          </figure>
+
         </section>
 
     </div>

@@ -45,8 +45,8 @@
 .home-contactUs {
   border: none;
   border-radius: 30px;
-  height: 35px;
-  width: 140px;
+  height: 39px;
+  width: 145px;
   background-color: #25d366;
   color: white;
 }
@@ -54,8 +54,8 @@
 .home-learnMore {
   border-color: #25d366;
   border-radius: 30px;
-  height: 35px;
-  width: 140px;
+  height: 39px;
+  width: 145px;
   background-color: transparent;
   color: #25d366;
 }
@@ -115,21 +115,18 @@
 }
 
 .home-works-section {
-  width: 80%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 80px;
   margin-top: 40px;
 }
 
 .home-figure {
-  width: 170px;
+  width: 230px;
   height: 210px;
   background-color: #FDFCFE;
-  border: 0.1px solid rgb(200,200,200);
-  border-radius: 30px;
 }
 
 .home-figur:hover {
@@ -138,7 +135,11 @@
 }
 
 .home-figure-img {
-  height: 55px;
+  height: 60px;
+}
+
+.home-figure:hover {
+  background-color: white;
 }
 
 .home-figure {
@@ -151,11 +152,11 @@
 
 .home-figure-p {
   color: #25d366;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .home-review-container {
-  margin-top: 100px;
+  margin-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,7 +181,7 @@
 
 .home-review-figure{
   width: 520px;
-  height: 220px;
+  min-height: 220px;
   border: 0.1px solid rgb(200,200,200);
   background-color: #FDFCFE;
   padding: 20px;
@@ -196,6 +197,8 @@
 
 .home-person-review {
   height: 70px;
+  width: 70px;
+  object-fit: cover;
   border-radius: 50%;
 }
 
@@ -237,8 +240,8 @@
     flex-direction: row;
   }
   .home-contactUs, .home-learnMore{
-    height: 30px;
-    width: 110px;
+    height: 38px;
+    width: 119px;
   }
 }
 @media screen and (max-width: 600px){

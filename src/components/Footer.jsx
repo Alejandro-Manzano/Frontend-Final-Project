@@ -23,7 +23,7 @@ const Footer = () => {
 
       <div className='footer-container-form'>
 
-        <p>Contacta</p>
+        <p className='footer-form-title'>Contacta</p>
 
         <form className='footer-form' action="mailto:teammates.neoland23@gmail.com" method="post">
 
