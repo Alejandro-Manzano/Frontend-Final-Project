@@ -3,7 +3,7 @@ import CreateExperienceUser from '../createExperience/createExperience';
 import MyExperience from '../myExperience/myExperience';
 
 const Experience = () => {
-  const [show, setShow] = useState('none'); // inicialmente ninguno se muestra
+  const [show, setShow] = useState('create');
 
   const handleButtonClick = (component) => () => {
     setShow(component);

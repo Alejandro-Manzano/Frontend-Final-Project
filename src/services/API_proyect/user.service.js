@@ -135,7 +135,7 @@ export const updateUser = async (formData) => {
 //       return error;
 //     });
 // };
-// // ----------------- Get User by Id from DB -----------
+// ----------------- Get User by Id from DB -----------
 export const getUserById = async (id) => {
   return API.get(`/users/${id}`)
     .then((res) => res.data)
