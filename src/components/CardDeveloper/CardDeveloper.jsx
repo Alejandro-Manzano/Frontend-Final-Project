@@ -17,7 +17,7 @@ export const CardDeveloper = ({ developer }) => {
       <h3 className="developer-Info-Rol">{developer.rol}</h3>
       <p className="developer-Info-ratingsByOthers">
         {' '}
-        ⭐⭐⭐⭐⭐ {developer.ratingsByOthers} (9)
+        ⭐⭐⭐⭐⭐ {developer.ratingsByOthers.length} (9)
       </p>
       <div className="developer-Info-grupo-technologies">
         <h4 className="developer-Info-technologies">{developer.technologies}</h4>
