@@ -43,36 +43,41 @@ const Experience = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form onSubmit={handleSubmit} className="form">
+      <label className="form-label">
         Empresa:
         <input
           type="text"
           name="workedWith"
           value={experienceData.workedWith}
           onChange={handleInputChange}
+          className="form-input"
         />
       </label>
-      <label>
+      <label className="form-label">
         Duración:
         <input
           type="number"
           name="duration"
           value={experienceData.duration}
           onChange={handleInputChange}
+          className="form-input"
         />
       </label>
-      <label>
+      <label className="form-label description-label">
         Descripción:
         <input
           type="text"
           name="description"
           value={experienceData.description}
           onChange={handleInputChange}
+          className="form-input description-input"
         />
       </label>
       <Uploadfile registerForm={{ ref: fileInput }} />
-      <button type="submit">Guardar Experiencia</button>
+      <button type="submit" className="form-button">
+        Guardar Experiencia
+      </button>
     </form>
   );
 };

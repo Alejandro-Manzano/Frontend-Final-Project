@@ -45,7 +45,11 @@ export const getByIdExperience = async (id) => {
 //! -----------------------GET BY USER-----------------------------------
 
 export const getByUserExperience = async (id) => {
-  return API.get(`/user/${id}`)
+  return API.get(`/user/${id}`, {
+    headers: {
+      Authorization: `Bearer ${updateToken()}`,
+    },
+  })
     .then((res) => res.data)
     .catch((error) => {
       return error;
