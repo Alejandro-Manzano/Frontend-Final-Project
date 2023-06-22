@@ -20,6 +20,14 @@
   border-radius: 0.7rem 0.7rem 0 0;
 }
 
+.developer-Info-img {
+  width: 100%;
+  min-height: 270px;
+  max-height: 270px;
+  object-fit: cover;
+  border-radius: 0.7rem 0.7rem 0 0;
+}
+
 .developer-Info-tabla-name {
   display: flex;
   flex-direction: column;

@@ -17,7 +17,11 @@ const CardDeveloper = ({ developer }) => {
           })
         }
       >
-        <img src={developer.image} alt={`developer's ${developer.name.surname} pic`} />
+        <img
+          className="developer-Info-img"
+          src={developer.image}
+          alt={`developer's ${developer.name.surname} pic`}
+        />
         <div className="developer-Info-tabla-name">
           {developer.name} {developer.surname}
           <p className="developer-Info-Ubicado"> ✨ Ubicado/a en {developer.city}</p>
@@ -28,7 +32,7 @@ const CardDeveloper = ({ developer }) => {
       <div className="developer-Info-ratingsByOthers">
         {/*--- Este componente hace la media de las estrellas ---*/}
         <ReadOnlyRating user={developer} />
-        {(developer?.ratingsByOthers?.length)} valoraciones
+        {developer?.ratingsByOthers?.length} valoraciones
       </div>
       <div className="developer-Info-grupo-technologies">
         <h4 className="developer-Info-technologies">{developer.technologies}</h4>
