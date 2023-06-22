@@ -1,7 +1,8 @@
 import Rating from '@mui/material/Rating';
 import { getUserAverageScore } from '../../../util/ratings';
+import './ReadOnlyUserRating.css'
 
-const ReadOnlyRating = ({ user }) => {
+const ReadOnlyUserRating = ({ user }) => {
   const averageScore = getUserAverageScore(user);
   return (
     <Rating
@@ -12,4 +13,4 @@ const ReadOnlyRating = ({ user }) => {
     />
   );
 };
-export default ReadOnlyRating;
+export default ReadOnlyUserRating;

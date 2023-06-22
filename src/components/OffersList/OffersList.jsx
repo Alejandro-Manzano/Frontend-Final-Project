@@ -4,23 +4,24 @@ import ReactPaginate from 'react-paginate';
 import { offer_getAll } from "../../services/API_proyect/offer.service"
 import "./OffersList.css";
 import { Spinner } from "../Spinner/Spinner";
-import { sortUsersByAverageScore_descendingOrder } from "../../util/filters/developer.filter";
+import { sortOfersByAverageScore_descendingOrder } from "../../util/filters/offer.filter";
 import CardOffer from "../CardOffer/CardOffer";
 
 const OffersList = ({ itemsPerPage }) => {
     const [dataDevelopersList, setDataDevelopersList] = useState([]);
     const [downloading, setDownloading] = useState(false);
+
     // Here we use item offsets; we could also use page offsets
     // following the API or data you're working with.
     const [pageCount, setPageCount] = useState(0);
     const [itemPerPage, setItemPerPage] = useState([])
 
-    const getDevelopersData = async () => {
+    const getOffersData = async () => {
         setDownloading(true);
-        const data = await offer_getAll()
+        const dataOffer = await offer_getAll()
 
         // Filter offers by average score
-        const dataSortByAverageScore = sortUsersByAverageScore_descendingOrder(dataDevelopers)
+        const dataSortByAverageScore = sortOfersByAverageScore_descendingOrder(dataOffer)
 
         const dataFilterZero = dataSortByAverageScore.slice(0, itemsPerPage)
         const numerberPage = dataSortByAverageScore.length / itemsPerPage
@@ -32,7 +33,7 @@ const OffersList = ({ itemsPerPage }) => {
     };
 
     useEffect(() => {
-        getDevelopersData();
+        getOffersData();
     }, []);
 
     const handlePageClick = (event) => {

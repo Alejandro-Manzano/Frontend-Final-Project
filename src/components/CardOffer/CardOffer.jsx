@@ -1,7 +1,8 @@
 import './CardOffer.css';
 import { useNavigate } from 'react-router-dom';
-import ReadOnlyRating from '../ratings/ReadOnlyRating/ReadOnlyRating';
-import ToggleBtnFollowUser from '../ToggleBtnFollowUser/ToggleBtnFollowUser';
+//import ReadOnlyRating from '../ratings/ReadOnlyUserRating/ReadOnlyUserRating';
+import ReadOnlyOfferRating from '../ratings/ReadOnlyOfferRating/ReadOnlyOfferRating'
+//import ToggleBtnFollowUser from '../ToggleBtnFollowUser/ToggleBtnFollowUser';
 
 const CardOffer = ({ offer }) => {
     const navigate = useNavigate();
@@ -25,9 +26,9 @@ const CardOffer = ({ offer }) => {
                     Años de experiencia: {offer.experienceYears}
                 </p>
             </a>
-            <ToggleBtnFollowUser userToFollowId={offer._id} />
+            {/* <ToggleBtnFollowUser userToFollowId={offer._id} /> */}
             <div className="cardOffer-Info-ratings">
-                <ReadOnlyRating user={offer} />
+                <ReadOnlyOfferRating offer={offer} />
             </div>
             <div className="cardOffer-Info-grupo-technologies">
                 <h4 className="cardOffer-Info-technologies">{offer.technologies}</h4>

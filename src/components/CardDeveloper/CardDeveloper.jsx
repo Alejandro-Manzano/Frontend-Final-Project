@@ -1,6 +1,6 @@
 import './CardDeveloper.css';
 import { useNavigate } from 'react-router-dom';
-import ReadOnlyRating from '../ratings/ReadOnlyRating/ReadOnlyRating';
+import ReadOnlyUserRating from '../ratings/ReadOnlyUserRating/ReadOnlyUserRating';
 import ToggleBtnFollowUser from '../ToggleBtnFollowUser/ToggleBtnFollowUser';
 
 const CardDeveloper = ({ developer }) => {
@@ -31,7 +31,7 @@ const CardDeveloper = ({ developer }) => {
       <ToggleBtnFollowUser userToFollowId={developer._id} />
       <div className="developer-Info-ratingsByOthers">
         {/*--- Este componente hace la media de las estrellas ---*/}
-        <ReadOnlyRating user={developer} />
+        <ReadOnlyUserRating user={developer} />
         {developer?.ratingsByOthers?.length} valoraciones
       </div>
       <div className="developer-Info-grupo-technologies">
