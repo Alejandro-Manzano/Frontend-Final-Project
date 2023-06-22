@@ -12,7 +12,7 @@ const OffersCreated = () => {
       try {
         const userOffer = await getUserById(user._id);
         if (userOffer) {
-          const { offersCreated } = userOffer;
+          const { offersCreated } = userOffer.data;
           setOffers(offersCreated);
         }
       } catch (error) {

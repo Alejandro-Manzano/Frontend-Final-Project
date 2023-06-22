@@ -12,7 +12,7 @@ const OffersInterested = () => {
       try {
         const userOffer = await getUserById(user._id);
         if (userOffer) {
-          const { offersInterested } = userOffer;
+          const { offersInterested } = userOffer.data;
           setOffers(offersInterested);
         }
       } catch (error) {

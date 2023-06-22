@@ -138,7 +138,7 @@ export const updateUser = async (formData) => {
 // ----------------- Get User by Id from DB -----------
 export const getUserById = async (id) => {
   return API.get(`/users/${id}`)
-    .then((res) => res.data)
+    .then((res) => res)
     .catch((error) => {
       return error;
     });
@@ -153,7 +153,7 @@ export const getUserByToken = async () => {
   })
     .then((res) => {
       // console.log("Front -> getUserByToken -> res: ", res);
-      return res.data;
+      return res;
     })
     .catch((error) => {
       return error;

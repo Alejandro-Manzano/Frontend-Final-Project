@@ -7,13 +7,15 @@ import WriteRating from '../ratings/WriteRating/WriteRating';
 const CardDeveloper = ({ developer }) => {
   const navigate = useNavigate();
   const pathById = `/developerDetails`;
+  console.log(developer._id);
 
   return (
     <section className="developer-Info">
-      <a className="button-MobileDev"
+      <a
+        className="button-MobileDev"
         onClick={() =>
           navigate(pathById, {
-            state: { developer: developer },
+            state: { id: developer._id },
           })
         }
       >
@@ -25,14 +27,12 @@ const CardDeveloper = ({ developer }) => {
         <h3 className="developer-Info-Rol">{developer.rol}</h3>
         <div className="developer-Info-ratingsByOthers">
           <ReadOnlyRating user={developer} />
-          <WriteRating userRating={developer} />
-          ({developer.ratingsByOthers.length})
+          <WriteRating userRating={developer} />({developer.ratingsByOthers.length})
         </div>
         <div className="developer-Info-grupo-technologies">
           <h4 className="developer-Info-technologies">{developer.technologies}</h4>
         </div>
       </a>
-
     </section>
   );
 };
