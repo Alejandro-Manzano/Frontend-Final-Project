@@ -1,0 +1,54 @@
+.cardOffer-Info {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    width: 300px;
+    min-height: 480px;
+    max-height: 480px;
+    border: 1px solid #e3e4e5;
+    border-radius: 0.7rem;
+    padding: 0 0 0 0;
+    background-color: white;
+    color: black;
+    /* gap: 1rem; */
+}
+
+.cardOffer-Info>img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 0.7rem 0.7rem 0 0;
+}
+
+.cardOffer-Info-tabla-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: row;
+    padding: 0 0 0 16px;
+    margin-top: -63px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    color: white;
+}
+
+.cardOffer-Info-Ubicado {
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.cardOffer-Info-ratings {
+    font-size: 12px;
+    padding: 0 0 0 16px;
+}
+
+.cardOffer-Info-Ubicado {
+    font-size: 18px;
+    padding: 0 0 0 16px;
+}
+
+.cardOffer-Info-technologies {
+    font-size: 14px;
+    padding: 0 0 0 16px;
+    margin-top: 30px;
+}

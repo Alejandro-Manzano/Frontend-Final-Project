@@ -1,0 +1,44 @@
+.offersList-container {
+    padding-top: 1.5rem;
+    min-height: 70vh;
+}
+
+.offersList-paginate-and-offers-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.offersList-offers-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.offersList-paginate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 20rem;
+    height: 3rem;
+    background-color: whitesmoke;
+    list-style-type: none;
+    /* border: 1px solid red; */
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.offersList-paginate-active-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid blue;
+    padding: 1rem;
+    border-radius: 50%;
+}

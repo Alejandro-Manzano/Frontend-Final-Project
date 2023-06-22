@@ -32,7 +32,7 @@ const Header = () => {
     };
   }, []);
 
-  useEffect(() => {}, [ancho]);
+  useEffect(() => { }, [ancho]);
 
   return (
     <>
@@ -47,6 +47,9 @@ const Header = () => {
           <div className="navButton">
             <NavLink to="/home">
               <button className="buttonNav">Inicio</button>
+            </NavLink>
+            <NavLink to="/offers">
+              <button className="buttonNav">Ofertas</button>
             </NavLink>
             <NavLink to="/developers">
               <button className="buttonNav">Desarrolladores</button>
