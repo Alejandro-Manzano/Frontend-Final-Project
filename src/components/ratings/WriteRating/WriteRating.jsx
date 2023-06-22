@@ -1,12 +1,7 @@
 import Rating from '@mui/material/Rating';
 import { useState, useEffect } from 'react';
 import { createRating, getByReference, updateRating } from '../../../services/API_proyect/rating.service';
-import CardDeveloper from '../../CardDeveloper/CardDeveloper';
 import { useAuth } from '../../../contexts/authContext';
-// {
-// 	"score": "5",
-// 	"referenceDeveloper": "6492221b3c089bb80ac079db"
-// }
 
 const WriteRating = ({ userRating }) => {
     const { user } = useAuth()    // el user que me esta en la prop es a quien hago el rating

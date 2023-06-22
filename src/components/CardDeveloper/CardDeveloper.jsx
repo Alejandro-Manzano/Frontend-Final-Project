@@ -2,7 +2,7 @@
 import './CardDeveloper.css';
 import { useNavigate } from 'react-router-dom';
 import ReadOnlyRating from '../ratings/ReadOnlyRating/ReadOnlyRating';
-import WriteRating from '../ratings/WriteRating/WriteRating';
+import WriteRatingForDeveloper from '../ratings/WriteRatingForDeveloper/WriteRatingForDeveloper';
 
 const CardDeveloper = ({ developer }) => {
   const navigate = useNavigate();
@@ -25,6 +25,7 @@ const CardDeveloper = ({ developer }) => {
           <p className="developer-Info-Ubicado"> ✨ Ubicado/a en {developer.city}</p>
         </div>
         <h3 className="developer-Info-Rol">{developer.rol}</h3>
+<<<<<<< HEAD
         <div className="developer-Info-ratingsByOthers">
           <ReadOnlyRating user={developer} />
           <WriteRating userRating={developer} />({developer.ratingsByOthers.length})
@@ -33,6 +34,18 @@ const CardDeveloper = ({ developer }) => {
           <h4 className="developer-Info-technologies">{developer.technologies}</h4>
         </div>
       </a>
+=======
+      </a>
+      <div className="developer-Info-ratingsByOthers">
+        <ReadOnlyRating user={developer} />
+        <WriteRatingForDeveloper userToRate={developer} />
+      </div>
+      <div className="developer-Info-grupo-technologies">
+        <h4 className="developer-Info-technologies">{developer.technologies}</h4>
+      </div>
+
+
+>>>>>>> 68fd69cc3aa5bce8646f65bb2c2f5a5247021a5b
     </section>
   );
 };
