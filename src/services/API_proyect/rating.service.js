@@ -2,8 +2,6 @@ import { updateToken } from '../../util/updateToken';
 import { API } from './service.config';
 
 export const createRating = async (data) => {
-    console.log('Front -> createRating -> data: ', data)
-
     return API.post('/rating', data, {
         headers: {
             Authorization: `Bearer ${updateToken()}`
@@ -17,9 +15,6 @@ export const createRating = async (data) => {
 
 
 export const updateRating = async (data, id) => {
-    console.log('Front -> createRating -> data: ', data)
-
-
     return API.patch(`/rating/${id}`, data, {
         headers: {
             Authorization: `Bearer ${updateToken()}`
