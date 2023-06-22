@@ -48,16 +48,12 @@ export const getByReference = async (refType, id) => {
     });
 };
 
-export const toggleFavoriteComment = async (id) => {
-  return API.put(
-    `/comment/favorite/${id}`,
-    {},
-    {
-      headers: {
-        Authorization: `Bearer ${updateToken()}`,
-      },
+export const toggleFavoriteComment = async (id, formdata) => {
+  return API.put(`/comment/favorite/${id}`, formdata, {
+    headers: {
+      Authorization: `Bearer ${updateToken()}`,
     },
-  )
+  })
     .then((res) => res)
     .catch((error) => {
       return error;

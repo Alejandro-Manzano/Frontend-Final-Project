@@ -1,5 +1,7 @@
 import { Divider, Avatar, Grid, Paper, TextField, Button } from '@mui/material';
-const Comments = ({ comment }) => {
+import ToggleButton from '../Toggle/Toggle';
+
+const Comments = ({ comment, setComentsByChild }) => {
   const { owner, commentContent, likes, createdAt } = comment;
   const { name, image } = owner;
   return (
@@ -12,6 +14,9 @@ const Comments = ({ comment }) => {
           <h4 style={{ margin: 0, textAlign: 'left' }}>{name}</h4>
           <p style={{ textAlign: 'left' }}>{commentContent}</p>
           <p style={{ textAlign: 'left', color: 'gray' }}>{JSON.stringify(createdAt)}</p>
+          <div>
+            <ToggleButton comment={comment} setAllElementByPather={setComentsByChild} />
+          </div>
         </Grid>
       </Grid>
       <Divider variant="fullWidth" style={{ margin: '30px 0' }} />

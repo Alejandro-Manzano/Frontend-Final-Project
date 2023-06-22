@@ -105,7 +105,11 @@ const DeveloperDetails = () => {
           <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
             {comments != null &&
               comments.map((singleComment) => (
-                <Comments key={singleComment._id} comment={singleComment} />
+                <Comments
+                  key={singleComment._id}
+                  comment={singleComment}
+                  setComentsByChild={setComments}
+                />
               ))}
           </div>
         </Paper>

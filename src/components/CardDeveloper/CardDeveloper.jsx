@@ -7,7 +7,6 @@ import WriteRatingForDeveloper from '../ratings/WriteRatingForDeveloper/WriteRat
 const CardDeveloper = ({ developer }) => {
   const navigate = useNavigate();
   const pathById = `/developerDetails`;
-  console.log(developer._id);
 
   return (
     <section className="developer-Info">
@@ -25,27 +24,16 @@ const CardDeveloper = ({ developer }) => {
           <p className="developer-Info-Ubicado"> ✨ Ubicado/a en {developer.city}</p>
         </div>
         <h3 className="developer-Info-Rol">{developer.rol}</h3>
-<<<<<<< HEAD
-        <div className="developer-Info-ratingsByOthers">
-          <ReadOnlyRating user={developer} />
-          <WriteRating userRating={developer} />({developer.ratingsByOthers.length})
-        </div>
-        <div className="developer-Info-grupo-technologies">
-          <h4 className="developer-Info-technologies">{developer.technologies}</h4>
-        </div>
-      </a>
-=======
       </a>
       <div className="developer-Info-ratingsByOthers">
+        {/*--- Este componente hace la media de las estrellas ---*/}
         <ReadOnlyRating user={developer} />
-        <WriteRatingForDeveloper userToRate={developer} />
+        {developer?.ratingsByOthers?.length} valoraciones
+        {/* <WriteRatingForDeveloper userToRate={developer} /> */}
       </div>
       <div className="developer-Info-grupo-technologies">
         <h4 className="developer-Info-technologies">{developer.technologies}</h4>
       </div>
-
-
->>>>>>> 68fd69cc3aa5bce8646f65bb2c2f5a5247021a5b
     </section>
   );
 };
