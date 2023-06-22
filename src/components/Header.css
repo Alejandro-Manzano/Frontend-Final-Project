@@ -20,6 +20,19 @@ body {
   width: 300px;
 }
 
+.header-logo {
+  width: 115px;
+  height: 75px;
+  object-fit: cover;
+  
+}
+
+.titleFatherContainer > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ProfileNav {
   font-size: 150;
 }
@@ -30,7 +43,7 @@ body {
 }
 
 .titleWeb {
-  margin-left: 5px;
+  color: black;
 }
 
 .titleWeb:hover {

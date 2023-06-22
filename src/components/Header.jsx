@@ -38,9 +38,9 @@ const Header = () => {
     <>
       <header>
         <div className="titleFatherContainer">
-          <TbPlant2 size={30} />
           <NavLink to="/home">
-            <h3 className="titleWeb">Nexus</h3>
+            <img alt='icon' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687191076/ProjectFinalBOOTCAMP/LogoWeb/logoWEBfinalProject_qvzlbq.png' className='header-logo'></img>
+            <h3 className="titleWeb">Code</h3>
           </NavLink>
         </div>
         <nav className="navHeader" ref={navRef}>
