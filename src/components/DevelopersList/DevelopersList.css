@@ -34,7 +34,7 @@
     height: 3rem;
     background-color:transparent;
     list-style-type:none;
-    /* border: 1px solid red;  */
+    /* border: 1px solid red;   */
     gap: 2rem;
     cursor: pointer;
 }
@@ -47,7 +47,7 @@
     height: 1rem;
 
      border: 1px solid #61d16d;
-    /* background-color:#61d16d; */
+   
     padding: 1rem;
     border-radius: 50%;
     
