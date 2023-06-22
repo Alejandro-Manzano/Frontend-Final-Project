@@ -4,12 +4,10 @@ import { getUserById } from '../../services/API_proyect/user.service';
 import { Divider, Avatar, Grid, Paper, TextField, Button } from '@mui/material';
 import {
   createComment,
-  getAll,
-  deleteComment,
   getByReference,
-  toggleFavoriteComment,
 } from '../../services/API_proyect/comment.service';
 import Comments from '../../components/Comments/Comments';
+import "./DeveloperDetails.css"
 
 const DeveloperDetails = () => {
   const { state } = useLocation();
@@ -74,10 +72,39 @@ const DeveloperDetails = () => {
   }, [resComment]);
 
   return (
-    <div>
-      <div style={{ padding: 14 }} className="App">
-        <h1>Comments</h1>
+
+    <div className='DeveloperDetails-container'>
+
+      <div className="DeveloperDetails-container-one">
+
+        <div className="DeveloperDetails-header">
+          <h2>¡Hola, soy {developer?.name}!</h2>
+          <p>Java Developer</p>
+        </div>
+
+        <div className="DeveloperDetails-body">
+          <div className="DeveloperDetails-img">
+            <img className="dev-img" src={developer?.image} alt="developer-img"></img>
+          </div>
+
+          <div className="DeveloperDetails-about">
+            <h3>Acerca de mi:</h3>
+            <p>- Nombre: {developer?.name} {developer?.surname}</p>
+            <p>- Localización: {developer?.city}</p>
+            <p>- Technologies: <br></br>{developer?.technologies}</p>
+          </div>
+
+          <div className="DeveloperDetails-description">
+            <h3>Descripción:</h3>
+            <p>{developer?.description}</p>
+          </div>
+
+        </div>
+
+        <div style={{ padding: 14 }} className="DeveloperDetails-description-container-App">
+       
         <Paper style={{ padding: '40px 20px' }}>
+        <h3>Comments</h3>
           <Grid container wrap="nowrap" spacing={2}>
             <Grid item>
               <Avatar alt="Remy Sharp" src={imgLink} />
@@ -102,7 +129,7 @@ const DeveloperDetails = () => {
             </Grid>
           </Grid>
           <Divider variant="fullWidth" style={{ margin: '30px 0' }} />
-          <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
+          <div className='Dev-comments' style={{ maxHeight: '400px', overflowY: 'auto' }}>
             {comments != null &&
               comments.map((singleComment) => (
                 <Comments
@@ -114,6 +141,9 @@ const DeveloperDetails = () => {
           </div>
         </Paper>
       </div>
+
+      </div> 
+      
     </div>
   );
 };
