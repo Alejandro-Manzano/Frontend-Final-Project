@@ -77,12 +77,12 @@ export const Home = () => {
           </figure>
 
           <figure className='home-figure'>
-            <img src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687340141/entrevista_ux3w0d.png' alt='icon' className='home-figure-img'></img>
+            <img src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687379221/ProjectFinalBOOTCAMP/Iconos/entrevista_ux3w0d_auwekn.png' alt='icon' className='home-figure-img'></img>
             <p className='home-figure-p'>Entrevistas online</p>
           </figure>
 
           <figure className='home-figure'>
-            <img src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687340135/money-management_obo14d.png' alt='icon' className='home-figure-img'></img>
+            <img src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687379203/ProjectFinalBOOTCAMP/Iconos/money-management_obo14d_j2kdm8.png' alt='icon' className='home-figure-img'></img>
             <p className='home-figure-p'>Salarios competitiivos</p>
           </figure>
 
