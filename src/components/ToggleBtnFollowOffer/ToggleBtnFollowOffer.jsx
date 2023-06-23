@@ -12,7 +12,7 @@ const ToggleBtnFollowOffer = ({ offerToFollowId }) => {
             try {
                 const isFav = await offer_getFollowingStatus(offerToFollowId);
 
-                console.log("ToggleBtnFollowOffer -> initializeFavoriteState -> isFav", isFav)
+                // console.log("ToggleBtnFollowOffer -> initializeFavoriteState -> isFav", isFav)
                 if (isFav?.data?.status === "Offer is in user's offersInterested arr") {
                     setIsFavorite(true);
                 } else {
