@@ -16,8 +16,26 @@ import {
 } from "../../util/filters/offer.filter";
 import CardOffer from "../CardOffer/CardOffer";
 import { filterOffersByOfferType } from "../../util/filters/offer.filter";
+import {
+    OfferType,
+    OfferState,
+    JobType,
+    AverageScoreType,
+    AnnualSalaryType,
+    ExperienceYearsType,
+} from "../../types/filters/filter.types";
 
-const OffersList = ({ itemsPerPage }) => {
+
+const initFiltersToApply_AllFilterOff = {
+    byExperienceYears: ExperienceYearsType.FilterOff,
+    byAnnualSalary: AnnualSalaryType.FilterOff,
+    byOfferState: OfferState.FilterOff,
+    byJobType: JobType.FilterOff,
+    byOfferType: OfferType.FilterOff,
+    byAverageScore: AverageScoreType.FilterOff,
+}
+
+const OffersList = ({ filters, itemsPerPage }) => {
     const [dataDevelopersList, setDataDevelopersList] = useState([]);
     const [downloading, setDownloading] = useState(false);
 
@@ -26,86 +44,84 @@ const OffersList = ({ itemsPerPage }) => {
     const [pageCount, setPageCount] = useState(0);
     const [itemPerPage, setItemPerPage] = useState([])
 
+
+    //
+    //const [filtersToApply, setFiltersToApply] = useState(initFiltersToApply_AllFilterOff)
+    //
+
+    //const initFiltersToApply = filtersToApply
+
     // const FilterOnOffType = {
     //     FilterOn: "FilterOn",
     //     FilterOff: "FilterOff"
     // }
 
-    const OfferType = {
-        CompanyOffer: "CompanyOffer",
-        FreelandOffer: "FreelandOffer",
-        FilterOff: "FilterOff"
-    }
+    // const OfferType = {
+    //     CompanyOffer: "CompanyOffer",
+    //     FreelandOffer: "FreelandOffer",
+    //     FilterOff: "FilterOff"
+    // }
 
-    const OfferState = {
-        Close: "Close",
-        Suspended: "Suspended",
-        Open: "Open",
-        FilterOff: "FilterOff"
-    }
+    // const OfferState = {
+    //     Close: "Close",
+    //     Suspended: "Suspended",
+    //     Open: "Open",
+    //     FilterOff: "FilterOff"
+    // }
 
-    const JobType = {
-        Remote: "Remote",
-        Office: "Office",
-        Hybrid: "Hybrid",
-        FilterOff: "FilterOff"
-    }
+    // const JobType = {
+    //     Remote: "Remote",
+    //     Office: "Office",
+    //     Hybrid: "Hybrid",
+    //     FilterOff: "FilterOff"
+    // }
 
-    const AverageScoreType = {
-        DescendingOrder: "DescendingOrder",
-        AscendingOrder: "AscendingOrder",
-        FilterOff: "FilterOff"
-    }
+    // const AverageScoreType = {
+    //     DescendingOrder: "DescendingOrder",
+    //     AscendingOrder: "AscendingOrder",
+    //     FilterOff: "FilterOff"
+    // }
 
-    const AnnualSalaryType = {
-        GreaterOrEqualThanAnnualSalary: "GreaterOrEqualThanAnnualSalary",
-        LessOrEqualThanAnnualSalary: "LessOrEqualThanAnnualSalary",
-        FilterOff: "FilterOff"
-    }
+    // const AnnualSalaryType = {
+    //     GreaterOrEqualThanAnnualSalary: "GreaterOrEqualThanAnnualSalary",
+    //     LessOrEqualThanAnnualSalary: "LessOrEqualThanAnnualSalary",
+    //     FilterOff: "FilterOff"
+    // }
 
-    const ExperienceYearsType = {
-        GreaterOrEqualThanExperienceYears: "GreaterOrEqualThanExperienceYears",
-        LessOrEqualThanExperienceYears: "LessOrEqualThanExperienceYears",
-        FilterOff: "FilterOff"
-    }
+    // const ExperienceYearsType = {
+    //     GreaterOrEqualThanExperienceYears: "GreaterOrEqualThanExperienceYears",
+    //     LessOrEqualThanExperienceYears: "LessOrEqualThanExperienceYears",
+    //     FilterOff: "FilterOff"
+    // }
 
-    const initFiltersType = {
-        ByOfferType: OfferType,
-        ByAverageScore: AverageScoreType,
-    }
+    // const initFiltersType = {
+    //     ByOfferType: OfferType,
+    //     ByAverageScore: AverageScoreType,
+    // }
 
-    const initFiltersToApply_AllFilterOff = {
-        byExperienceYears: ExperienceYearsType.FilterOff,
-        byAnnualSalary: AnnualSalaryType.FilterOff,
-        byOfferState: OfferState.FilterOff,
-        byJobType: JobType.FilterOff,
-        byOfferType: OfferType.FilterOff,
-        byAverageScore: AverageScoreType.FilterOff,
-    }
+    // const initFiltersToApply = {
+    //     // GreaterOrEqualThanExperienceYears, LessOrEqualThanExperienceYears
+    //     byExperienceYears: ExperienceYearsType.FilterOff,
+    //     experinceYears: 5,
 
-    const initFiltersToApply = {
-        // GreaterOrEqualThanExperienceYears, LessOrEqualThanExperienceYears
-        byExperienceYears: ExperienceYearsType.FilterOff,
-        experinceYears: 5,
+    //     // GreaterOrEqualThanAnnualSalary, LessOrEqualThanAnnualSalary
+    //     byAnnualSalary: AnnualSalaryType.FilterOff,
+    //     annualSalary: 100,
 
-        // GreaterOrEqualThanAnnualSalary, LessOrEqualThanAnnualSalary
-        byAnnualSalary: AnnualSalaryType.FilterOff,
-        annualSalary: 100,
+    //     // Close, Suspended, Open
+    //     byOfferState: OfferState.FilterOff,
 
-        // Close, Suspended, Open
-        byOfferState: OfferState.FilterOff,
+    //     // Remote, Office, Hybrid
+    //     byJobType: JobType.FilterOff,
 
-        // Remote, Office, Hybrid
-        byJobType: JobType.FilterOff,
+    //     // CompanyOffer, FreelandOffer
+    //     byOfferType: OfferType.FilterOff,
 
-        // CompanyOffer, FreelandOffer
-        byOfferType: OfferType.FilterOff,
+    //     // DescendingOrder, AscendingOrder
+    //     byAverageScore: AverageScoreType.DescendingOrder,
+    // }
 
-        // DescendingOrder, AscendingOrder
-        byAverageScore: AverageScoreType.DescendingOrder,
-    }
-
-    const [filtersToApply, setFilterToApply] = useState(initFiltersToApply)
+    const [filtersToApply, setFiltersToApply] = useState(filters)
 
     const getOffersData = async () => {
         setDownloading(true);
@@ -116,17 +132,19 @@ const OffersList = ({ itemsPerPage }) => {
         //       This filters are not gonna be here!
         //////////////////////////////////////////
 
-        console.log("dataOffer: ", dataOffer)
+        //console.log("dataOffer: ", dataOffer)
 
-        let dataFilterByOfferType = null
+        //let dataFilterByOfferType = null
         let dataToRender = dataOffer
+
+        console.log("getOffersData -> filtersToApply: ", filtersToApply)
 
         //applyFiltersToData(dataOffer)
         Object.keys(filtersToApply)
             .filter((filter) => filtersToApply[filter] !== "FilterOff")
             .map(filterType => {
-                // console.log("map -> Filter type: ", filterType)
-                // console.log("map -> Filter By: ", filtersToApply[filterType])
+                console.log("map -> Filter type: ", filterType)
+                console.log("map -> Filter By: ", filtersToApply[filterType])
 
 
 
@@ -267,7 +285,7 @@ const OffersList = ({ itemsPerPage }) => {
                     }
                 } else if (filterType === 'byExperienceYears') {
                     // ----- Filter offers by years of experice  ------
-
+                    console.log("Filter type: byExperienceYears -> ", filterType)
                     //switch (initFiltersToApply[filterType]) {
                     switch (filtersToApply[filterType]) {
 
@@ -305,6 +323,8 @@ const OffersList = ({ itemsPerPage }) => {
         const dataFilterZero = dataToRender.slice(0, itemsPerPage)
         const numerberPage = dataToRender.length / itemsPerPage
 
+        console.log("At the end of getDataDB --> dataToRender ", dataToRender)
+
         setPageCount(numerberPage)
         //setDataDevelopersList(dataSortByAverageScore)
         setDataDevelopersList(dataToRender)
@@ -312,9 +332,22 @@ const OffersList = ({ itemsPerPage }) => {
         setDownloading(false);
     };
 
+    // useEffect(() => {
+    //     console.log("Before --> setFiltersToApply(filters)", filters)
+    //     setFiltersToApply(filters)
+    //     console.log("After --> setFiltersToApply(filters)", filters)
+    // }, [filters]);
+
     useEffect(() => {
+        console.log("OffersList --> filters: ", filters)
+        setFiltersToApply(filters)
+        //console.log("After --> setFiltersToApply(filters)", filters)
+    }, [filters]);
+
+    useEffect(() => {
+        console.log("OffersList --> getOffersData: ")
         getOffersData();
-    }, []);
+    }, [filters]);
 
     const handlePageClick = (event) => {
         console.log(event) /// selected empieza por 0

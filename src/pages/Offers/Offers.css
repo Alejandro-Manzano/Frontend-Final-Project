@@ -1,0 +1,32 @@
+.offers-filters-and-offersList-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 4rem;
+}
+
+.offers-filters-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 30%;
+    height: 100%;
+}
+
+.offers-filter-experienceYears {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.offers-offersList-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 70%;
+    height: 100%;
+}
