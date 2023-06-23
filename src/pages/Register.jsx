@@ -71,83 +71,72 @@ const Register = () => {
   }
 
   return (
-    <>
-      <div className="form-wrap">
-        <h1>Sign Up</h1>
-        <p>
-          Collaborate with industry-leading companies and developers in no time, quicker
-          than setting up a development environment.💻
-        </p>
-        <form onSubmit={handleSubmit(formSubmit)}>
-          <div className="user_container form-group">
-            <label htmlFor="custom-input" className="custom-placeholder">
-              {role === 'company' ? 'Razón Social' : 'Nombre'}
-            </label>
+    
+      <div className="register-container">
+
+        <h2>Registro</h2>
+        
+        <form className='register-form' onSubmit={handleSubmit(formSubmit)}>
+
             <input
-              className="input_user"
+              htmlFor="custom-input"
+              placeholder={role === 'company' ? 'Nombre de la empresa' : 'Nombre'}
+              className="register-input-user"
               type="text"
               id="name"
               name="name"
               autoComplete="false"
               {...register('name', { required: true })}
             />
-            <>
-              <label htmlFor="custom-input" className="custom-placeholder">
-                {role != 'company' ? 'Apellidos' : 'Tipo de empresa'}
-              </label>
+
               <input
-                className="input_user"
+                htmlFor="custom-input"
+                placeholder={role === 'company' ? 'Tipo de empresa' : 'Apellidos'}
+                className="register-input-user"
                 type="text"
                 id="surname"
                 name="surname"
                 autoComplete="false"
                 {...register('surname', { required: true })}
-              />
-            </>
-
-            <label htmlFor="custom-input" className="custom-placeholder">
-              City
-            </label>
+            />
+       
             <input
-              className="input_user"
+              placeholder='Ubicación'
+              htmlFor="custom-input"
+              className="register-input-user"
               type="text"
               id="city"
               name="city"
               autoComplete="false"
               {...register('city', { required: true })}
             />
-            <label htmlFor="custom-input" className="custom-placeholder">
-              Description
-            </label>
+          
             <input
-              className="input_user"
+              placeholder='Descripción'
+              htmlFor="custom-input"
+              className="register-input-user"
               type="text"
               id="description"
               name="description"
               autoComplete="false"
               {...register('description', { required: true })}
             />
-          </div>
-          <div className="password_container form-group">
-            <label htmlFor="custom-input" className="custom-placeholder">
-              password
-            </label>
+
             <input
-              className="input_user"
+              htmlFor="custom-input"
+              placeholder='Contraseña'
+              className="register-input-user"
               type="password"
               id="password"
               name="password"
               autoComplete="false"
               {...register('password', { required: true })}
             />
-          </div>
 
-          <div className="email_container form-group">
-            <label htmlFor="custom-input" className="custom-placeholder">
-              email
-            </label>
             <input
-              className="input_user"
+              placeholder='Email'
+              htmlFor="custom-input"
+              className="register-input-user"
               type="email"
               id="email"
               name="email"
@@ -156,35 +145,16 @@ const Register = () => {
             />
 
             <Uploadfile />
-          </div>
 
-          <div className="btn_container">
-            <button
-              className="btn"
-              type="submit"
-              disabled={send}
-              style={{
-                background: send ? '#49c1a388' : 'var(--background-color-button-login)',
-              }}
-            >
-              REGISTER
-            </button>
-          </div>
-          <p className="bottom-text">
-            <small>
-              By clicking the Sign Up button, you agree to our{' '}
-              <Link className="anchorCustom">Terms & Conditions</Link> and{' '}
-              <Link className="anchorCustom">Privacy Policy</Link>.
-            </small>
-          </p>
+            <button className="register-button" type="submit" disabled={send}><p>Registarse</p></button>
+
+            <p className="register-parrafoLogin">
+              Tienes ya una cuenta? <Link to="/login">Iniciar sesión</Link>
+            </p>
+        
         </form>
+      
       </div>
-      <div className="footerForm">
-        <p className="parrafoLogin">
-          Already have an account? <Link to="/login">Login Here</Link>
-        </p>
-      </div>
-    </>
   );
 };
 

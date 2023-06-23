@@ -17,8 +17,9 @@
 }
 
 .uploader.hover {
-  border: 3px solid #2f7a67;
-  box-shadow: inset 0 0 0 6px #eee;
+  border: 1px solid #25d366;
+  box-shadow: inset 0 0 0 6px #25d366;
+  cursor: pointer;
 }
 #start > i.fa {
   transform: scale(0.8);
@@ -82,6 +83,10 @@ i.fa {
 
 #file-upload-form {
   margin-top: 20px;
+}
+
+.uploader:focus {
+  cursor: pointer;
 }
 
 .uploader > div {

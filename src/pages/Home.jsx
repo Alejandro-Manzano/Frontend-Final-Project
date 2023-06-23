@@ -183,7 +183,7 @@ export const Home = () => {
 
 <p className='home-review-figure-p'>Me gusta la programacion asincronica y tu nuera, tambien se cocinar pollo al chilindron, odio a Ozillo</p>
 <div className='home-review-developer'>
-<img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687345729/yandru_idunsi.jpg' alt='person-review'></img>
+<img className='home-person-review' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687353969/yandru_v7oq8i.jpg' alt='person-review'></img>
 
 <div className='home-nameJob-person'>
 <p className='home-person'>Alexandru Berbatov</p>
