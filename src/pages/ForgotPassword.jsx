@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Navigate } from 'react-router-dom';
-
+import "./ForgotPassword.css"
 import useForgotPasswordError from '../hooks/useForgotPasswordError';
 import { forgotPasswordUser } from '../services/API_proyect/user.service';
 
@@ -31,42 +31,34 @@ const ForgotPassword = () => {
   }
 
   return (
-    <>
-      <div className="form-wrap">
-        <h1>Change your password 🔓</h1>
+    <div className='forgotPassword-container'>
 
-        <form onSubmit={handleSubmit(formSubmit)}>
-          <div className="user_container form-group">
-            <label htmlFor="custom-input" className="custom-placeholder">
-              Email
-            </label>
+      <div className="forgotPassword-form-wrap">
+
+        <h2 className='forgotPassword-title'>Cambia tu contraseña</h2>
+
+        <form className='forgotPassword-form' onSubmit={handleSubmit(formSubmit)}>
+          
             <input
-              className="input_user"
+              htmlFor="custom-input"
+              placeholder='Email'
+              className="forgotPassword-input_user"
               type="text"
               id="email"
               name="email"
               autoComplete="false"
               {...register('email', { required: true })}
             />
-          </div>
 
-          <div className="btn_container">
-            <button
-              className="btn"
-              type="submit"
-              disabled={send}
-              style={{ background: send ? '#49c1a388' : '#2f7a67' }}
-            >
-              CHANGE PASSWORD
-            </button>
-          </div>
+          <button className="forgotPassword-btn" type="submit" disabled={send}>Cambiar</button>
 
-          <p className="bottom-text">
-            <small>Enter your email to send you the new password 💌</small>
-          </p>
+          <p className='forgotPassword-form-p'>Comprueba tu correo para ver la nueva contraseña</p>
+         
         </form>
+
       </div>
-    </>
+
+    </div>
   );
 };
 

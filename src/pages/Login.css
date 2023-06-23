@@ -6,7 +6,7 @@
     background-color: rgb(250, 250, 250);
     padding-bottom: 35px;
     margin: 80px auto;
-    width: 500px;
+    width: 450px;
     padding-top: 40px;
 }
 
@@ -53,6 +53,7 @@
 
 .login-button:hover {
     cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  
 }
 
 .login-text{
