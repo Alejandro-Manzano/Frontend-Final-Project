@@ -80,12 +80,12 @@ const Login = () => {
         <p className="parrafoLogin">
           Estás registrado?
           <Link className="parrafoRegisterHere" to="/register">
-            <span className='login-span-two'>Register Here</span>
+            <span className='login-span-two'>Registrate aquí</span>
           </Link>
         </p>
         <p> Has olvidado la contraseña?</p>
       <Link to="/forgotpassword" className="anchorCustom">
-                &nbsp;&nbsp;<span className='login-span-one'>Change password</span>
+                &nbsp;&nbsp;<span className='login-span-one'>Cambiar Contraseña</span>
               </Link>
       </div>
     </div>

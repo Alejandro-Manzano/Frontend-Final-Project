@@ -7,7 +7,7 @@ const useUserError = (res, setRegisterOk) => {
     setRegisterOk(() => true);
     Swal.fire({
       icon: 'success',
-      title: 'Hey there, welcome to my tech page!',
+      title: '¡Hola, bienvenidos a mi página web de desarrolladores!',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -19,7 +19,7 @@ const useUserError = (res, setRegisterOk) => {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Looks like that user already exists. Try a different one!',
+      text: 'Parece que ese usuario ya existe. ¡Prueba uno diferente!',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -42,7 +42,7 @@ const useUserError = (res, setRegisterOk) => {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'That email is taken. Let’s try another one!',
+      text: 'Ese email ya está en la base e datos. ¡Probemos con otro!',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -53,9 +53,9 @@ const useUserError = (res, setRegisterOk) => {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Make sure your password has at least 8 characters, including an uppercase, a lowercase, and a special character.',
+      text: 'Asegúrese de que su contraseña tenga al menos 8 caracteres, incluidas mayúsculas, minúsculas y un carácter especial.',
       showConfirmButton: false,
-      timer: 1500,
+      timer: 1800,
     });
 };
 

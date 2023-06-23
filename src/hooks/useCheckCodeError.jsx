@@ -20,7 +20,7 @@ const useCheckCodeError = (res, setDeleteUser, setOkCheck) => {
     Swal.fire({
       icon: 'error',
       title: 'No correct Code ❎.',
-      text: 'Oops, your user is no longer active. Let’s get you set up again!',
+      text: 'Oops, tu usuario ya no está activo. ¡Vamos a configurarlo de nuevo!',
       showConfirmButton: false,
       timer: 2500,
     });
@@ -41,7 +41,7 @@ const useCheckCodeError = (res, setDeleteUser, setOkCheck) => {
     setOkCheck(() => true);
     Swal.fire({
       icon: 'success',
-      title: 'Ok correct code ✅',
+      title: 'Ok, código correcto ✅',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -52,7 +52,7 @@ const useCheckCodeError = (res, setDeleteUser, setOkCheck) => {
     Swal.fire({
       icon: 'error',
       title: 'Internal Server Error ❎.',
-      text: 'No delete user. Try again, please.',
+      text: 'Usuario no eliminado. Por favor, inténtalo de nuevo',
       showConfirmButton: false,
       timer: 2500,
     });
@@ -62,8 +62,8 @@ const useCheckCodeError = (res, setDeleteUser, setOkCheck) => {
   if (res?.response?.status == 404)
     Swal.fire({
       icon: 'error',
-      title: 'Wrong Confirmation Code ❎.',
-      text: 'User deleted from the database. Please register again.',
+      title: 'Código de confirmación incorrecto ❎.',
+      text: 'Usuario eliminado de la base de datos. Regístrese de nuevo.',
       showConfirmButton: false,
       timer: 1500,
     });

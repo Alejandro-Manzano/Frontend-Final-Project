@@ -19,7 +19,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 2rem;
+  gap: 0.7rem;
+  padding: 0 0 70px 0rem;
   border: 0px solid white;
+  margin: 0 50px 50px 70px;
 }
+
+.dataProfile > img {
+  display: flex;
+}
+

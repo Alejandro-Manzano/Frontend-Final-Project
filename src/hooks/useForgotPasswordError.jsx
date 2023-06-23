@@ -8,8 +8,8 @@ const useForgotPasswordError = (res, setForgetOk) => {
       setForgetOk(() => true);
       return Swal.fire({
         icon: 'success',
-        title: 'Password changed correctly',
-        text: 'Email sended with your new password',
+        title: 'Contraseña cambiada correctamente',
+        text: 'Email enviado con su nueva contraseña',
         showConfirmButton: false,
         timer: 3000,
       });
@@ -19,7 +19,7 @@ const useForgotPasswordError = (res, setForgetOk) => {
       return Swal.fire({
         icon: 'error',
         title: 'Not valid email',
-        text: 'Oops, we can’t change your password because your email isn’t valid',
+        text: 'Oops, no podemos cambiar su contraseña porque su email no es válido',
         showConfirmButton: false,
         timer: 1500,
       });
@@ -30,7 +30,7 @@ const useForgotPasswordError = (res, setForgetOk) => {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'User not registered ❎. Enter a valid email address',
+      text: 'Usuario no registrado ❎. Introduzca un email válido',
       showConfirmButton: false,
       timer: 3000,
     });
@@ -40,7 +40,7 @@ const useForgotPasswordError = (res, setForgetOk) => {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Internal server error ❎, please try again!',
+      text: 'Internal server error ❎, por favor, pruebe otra vez!',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -50,7 +50,7 @@ const useForgotPasswordError = (res, setForgetOk) => {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Password not updated. Try again, please!',
+      text: 'Contraseña no actualizada. Por favor, inténtalo de nuevo!',
       showConfirmButton: false,
       timer: 3000,
     });

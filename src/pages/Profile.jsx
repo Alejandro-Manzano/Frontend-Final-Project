@@ -27,7 +27,7 @@ const Profile = () => {
               setActiveButton('Password');
             }}
           >
-            Password
+          🔑 Contraseña
           </button>
           <button
             className={`btn-profile ${activeButton === 'Profile' ? 'active' : ''}`}
@@ -36,7 +36,7 @@ const Profile = () => {
               setActiveButton('Profile');
             }}
           >
-            Profile
+          👨🏻‍⚕️  Perfil
           </button>
           <button
             className={`btn-profile ${activeButton === 'Email' ? 'active' : ''}`}
@@ -45,7 +45,7 @@ const Profile = () => {
               setActiveButton('Email');
             }}
           >
-            Cambiar Email
+          💌  Cambiar Email
           </button>
           <button
             className={`btn-profile ${activeButton === 'Experience' ? 'active' : ''}`}
@@ -54,7 +54,7 @@ const Profile = () => {
               setActiveButton('Experience');
             }}
           >
-            Experience
+          👷🏻‍♀️  Experiencia
           </button>
           <button
             className={`btn-profile ${activeButton === 'Offers' ? 'active' : ''}`}
@@ -63,7 +63,7 @@ const Profile = () => {
               setActiveButton('Offers');
             }}
           >
-            Offers
+          📋  Ofertas
           </button>
           <button
             className={`btn-profile ${activeButton === 'Tecnologias' ? 'active' : ''}`}
@@ -72,7 +72,7 @@ const Profile = () => {
               setActiveButton('Tecnologias');
             }}
           >
-            Tecnologias
+          📳  Tecnologías
           </button>
           <button
             className={`btn-profile ${activeButton === 'Delete' ? 'active' : ''}`}
@@ -81,7 +81,7 @@ const Profile = () => {
               setActiveButton('Delete');
             }}
           >
-            Delete
+          🚮   Borrar Perfil
           </button>
         </div>
 

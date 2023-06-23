@@ -30,8 +30,8 @@ const useLoginError = (res, setLoginOk, userlogin) => {
     setLoginOk(() => true);
     Swal.fire({
       icon: 'success',
-      title: 'Hey there, welcome to my tech page!',
-      text: 'Succesfully logged in ✅',
+      title: '¡Hola, bienvenidos a nuestra web de desarrolladores!',
+      text: 'Iniciado sesión con éxito ✅',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -53,7 +53,7 @@ const useLoginError = (res, setLoginOk, userlogin) => {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Unregistered user!',
+      text: 'Usuario no registrado',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -63,8 +63,8 @@ const useLoginError = (res, setLoginOk, userlogin) => {
   if (res?.response?.data?.includes('Wrong password, please try again'))
     Swal.fire({
       icon: 'error',
-      title: 'Wrong Password',
-      text: 'The password you introduced is incorrect. Please, try again',
+      title: 'Contraseña incorrecta',
+      text: 'La contraseña que introducida es incorrecta. Inténtalo de nuevo',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -74,8 +74,8 @@ const useLoginError = (res, setLoginOk, userlogin) => {
   if (res?.response?.data?.includes('Wrong email address, please try again'))
     Swal.fire({
       icon: 'error',
-      title: 'Wrong Email',
-      text: 'The email you introduced is incorrect. Please, try again',
+      title: 'Email incorrecto',
+      text: 'El correo electrónico introducido es incorrecto. Inténtalo de nuevo',
       showConfirmButton: false,
       timer: 1500,
     });

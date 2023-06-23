@@ -23,7 +23,7 @@ const FormProfile = () => {
   //! --------- funcion que controla el formulario-----------------------
   const formSubmit = async (formData) => {
     Swal.fire({
-      title: 'Ready to switch up your profile details?',
+      title: '¿Deseas para cambiar los detalles de tu perfil?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: 'rgb(73, 193, 162)',
@@ -70,11 +70,11 @@ const FormProfile = () => {
           <FigureUser user={user} />
         </div>
         <div className="form-wrap formProfile">
-          <p className="formProfile-text-new-profile">Your new profile</p>
+          <p className="formProfile-text-new-profile">Cambiar datos del perfil</p>
           <form onSubmit={handleSubmit(formSubmit)}>
             <div className="user_container form-group">
               <label htmlFor="custom-input" className="custom-placeholder">
-                name
+                Nombre
               </label>
               <input
                 className="input_user"
@@ -87,6 +87,7 @@ const FormProfile = () => {
               />
             </div>
             <Uploadfile />
+            <div className="btn_container-perfil">
             <div className="btn_container">
               <button
                 className="btn"
@@ -98,8 +99,9 @@ const FormProfile = () => {
                   background: send ? '#008000' : 'var(--background-color-button-login)',
                 }}
               >
-                CHANGE PROFILE
+                CAMBIAR PERFIL
               </button>
+            </div>
             </div>
           </form>
         </div>

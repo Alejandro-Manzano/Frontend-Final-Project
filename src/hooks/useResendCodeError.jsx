@@ -15,7 +15,7 @@ const useResendCodeError = (res) => {
   if (res?.status == 200)
     Swal.fire({
       icon: 'success',
-      title: 'We’ve sent an email with your code. Check it out!',
+      title: 'Hemos enviado un email con su código. ¡Échale un vistazo!',
       showConfirmButton: false,
       timer: 1500,
     });

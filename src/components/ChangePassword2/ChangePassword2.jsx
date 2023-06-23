@@ -65,27 +65,30 @@ const ChangePassword2 = () => {
   return (
     <>
       <div className="form-wrap">
-        <p className="changePassword-text-new-password">Your new password</p>
+        <p className="changePassword-text-new-password">Cambiar Contraseña</p>
         <form onSubmit={handleSubmit(formSubmit)}>
           <div className="password_container form-group">
             <label htmlFor="custom-input" className="custom-placeholder">
-              current password
+            
             </label>
+            <div className="password_container_form-current-new-confirm">
             <input
               className="input_user"
+              placeholder='Contraseña actual'
               type="password"
               id="password"
               name="password"
               autoComplete="false"
               {...register('password', { required: true })}
             />
-          </div>
+          
           <div className="newPassword_container form-group">
             <label htmlFor="custom-input" className="custom-placeholder">
-              new password
+              
             </label>
             <input
               className="input_user"
+              placeholder='Nueva contraseña'
               type="password"
               id="newPassword"
               name="newPassword"
@@ -95,17 +98,21 @@ const ChangePassword2 = () => {
           </div>
           <div className="confirmPassword_container form-group">
             <label htmlFor="custom-input" className="custom-placeholder">
-              confirm new password
+              
             </label>
             <input
               className="input_user"
+              placeholder='confirmar nueva contraseña'
               type="password"
               id="confirmPassword"
               name="confirmPassword"
               autoComplete="false"
               {...register('confirmPassword', { required: true })}
             />
+            </div>
           </div>
+          </div>
+          <div className="btn_container-center">
           <div className="btn_container">
             <button
               className="btn"
@@ -113,11 +120,12 @@ const ChangePassword2 = () => {
               disabled={send}
               //style={{ background: send ? "#49c1a388" : "#49c1a2" }}
               style={{
-                background: send ? '#008000' : 'var(--background-color-button-login)',
+                // background: send ? '#008000' : 'var(--background-color-button-login)',
               }}
             >
-              CHANGE PASSWORD
+              CAMBIAR CONTRASEÑA
             </button>
+          </div>
           </div>
         </form>
       </div>
