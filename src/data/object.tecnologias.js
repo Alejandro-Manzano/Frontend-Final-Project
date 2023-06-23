@@ -1,6 +1,4 @@
-import { react } from '@babel/types';
-
-const technologies = [
+export const technologies = [
   {
     name: 'JavaScript',
     image:

@@ -124,17 +124,17 @@ export const updateUser = async (formData) => {
     });
 };
 //! -------------------------UPDATE TECHNOLOGY----------------------------------------------
-// export const updateTecnologia = async () => {
-//   return API.patch('/updateTechnology', {
-//     headers: {
-//       Authorization: `Bearer ${updateToken()}`,
-//     },
-//   })
-//     .then((res) => res)
-//     .catch((error) => {
-//       return error;
-//     });
-// };
+export const updateTecnologia = async (formData) => {
+  return API.patch('/users/updateTechnology', formData, {
+    headers: {
+      Authorization: `Bearer ${updateToken()}`,
+    },
+  })
+    .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};
 // ----------------- Get User by Id from DB -----------
 export const getUserById = async (id) => {
   return API.get(`/users/${id}`)

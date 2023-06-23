@@ -17,27 +17,25 @@ import DeveloperDetails from './pages/DeveloperDetails/DeveloperDetails';
 import Offers from './pages/Offers/Offers';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter basename="/">
-      <AuthContextProvider>
-        <Routes>
-          <Route path="/" element={<App />}>
-            {/* he cambiado home por register */}
-            <Route index element={<Home />} />
-            <Route path="/developers" element={<Developers />} />
-            <Route path="/offers" element={<Offers />} />
-            <Route path="/developerDetails" element={<DeveloperDetails />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/verifyCode" element={<CheckCode />} />
-            <Route path="/forgotpassword" element={<ForgotPassword />} />
-          </Route>
-        </Routes>
-      </AuthContextProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <BrowserRouter basename="/">
+    <AuthContextProvider>
+      <Routes>
+        <Route path="/" element={<App />}>
+          {/* he cambiado home por register */}
+          <Route index element={<Home />} />
+          <Route path="/developers" element={<Developers />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/developerDetails" element={<DeveloperDetails />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/verifyCode" element={<CheckCode />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+        </Route>
+      </Routes>
+    </AuthContextProvider>
+  </BrowserRouter>,
 );
 
 // "eslint-plugin-react": "^7.32.2",
