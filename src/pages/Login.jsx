@@ -37,70 +37,58 @@ const Login = () => {
     }
   }
   return (
-    <>
-      <div className="form-wrap">
-        <h1>Sign In</h1>
-        <p>We are happy to see you again 💌</p>
-        <form onSubmit={handleSubmit(formSubmit)}>
-          <div className="email_container form-group">
-            <label htmlFor="custom-input" className="custom-placeholder">
-              email
-            </label>
+    <div className='login-container'>
+
+      <div className="login-form-wrap">
+
+        <h2 className='login-title'>Inicia sesión</h2>
+
+        <p>Bienvenido de nuevo!</p>
+
+        <form className='login-form-container' onSubmit={handleSubmit(formSubmit)}>
+          
             <input
-              className="input_user"
+              htmlFor="custom-input"
+              placeholder='Email'
+              className="login-input_user"
               type="email"
               id="email"
               name="email"
               autoComplete="false"
               {...register('email', { required: true })}
             />
+            
+            <input
+              htmlFor="custom-input"
+              placeholder='Password'
+              className="login-input_user"
+              type="password"
+              id="password"
+              name="password"
+              autoComplete="false"
+              {...register('password', { required: true })}
+            />
 
-            <div className="password_container form-group">
-              <label htmlFor="custom-input" className="custom-placeholder">
-                password
-              </label>
-              <input
-                className="input_user"
-                type="password"
-                id="password"
-                name="password"
-                autoComplete="false"
-                {...register('password', { required: true })}
-              />
-            </div>
-          </div>
-
-          <div className="btn_container">
-            <button
-              className="btn"
-              type="submit"
-              disabled={send}
-              style={{
-                background: send ? '#2f7a67' : 'var(--background-color-button-login)',
-              }}
-            >
-              <div className="btn_signin">SIGN IN</div>
+            <button className="login-button" type="submit" disabled={send}>
+             Iniciar sesión
             </button>
-          </div>
-          <p className="bottom-text">
-            <small>
-              Have you forgotten the password?
-              <Link to="/forgotpassword" className="anchorCustom">
-                &nbsp;&nbsp;Change password
-              </Link>
-            </small>
-          </p>
+
         </form>
       </div>
-      <div className="footerForm">
+
+      <div className="login-text">
         <p className="parrafoLogin">
-          Are you not registered?{' '}
+          Estás registrado?
           <Link className="parrafoRegisterHere" to="/register">
-            Register Here
+            <span className='login-span-two'>Register Here</span>
           </Link>
         </p>
+        <p> Has olvidado la contraseña?</p>
+      <Link to="/forgotpassword" className="anchorCustom">
+                &nbsp;&nbsp;<span className='login-span-one'>Change password</span>
+              </Link>
       </div>
-    </>
+    </div>
   );
 };
 
