@@ -9,6 +9,9 @@ const CardOffer = ({ offer }) => {
 
     return (
         <section className="cardOffer-Info">
+            <div className="cardOffer-BtnToggle">
+            <ToggleBtnFollowOffer offerToFollowId={offer._id} />
+            </div>
             <a className="cardOffer-link-to-offerDetails"
                 onClick={() =>
                     navigate(pathToOfferDetails, {
@@ -16,7 +19,9 @@ const CardOffer = ({ offer }) => {
                     })
                 }
             >
+                
                 <img className="cardOffer-Info-img"src={offer.image} alt={`offer's ${offer.offerTitle} pic`} />
+                <div className="cardOffer-Profile">
                 <div className="cardOffer-Info-tabla-name">
                     {offer.offerTitle}
                     <p className="cardOffer-Info-Ubicado"> 📋 Ubicado/a en {offer.city}</p>
@@ -24,16 +29,15 @@ const CardOffer = ({ offer }) => {
                 <p className="cardOffer-Info-Ubicado">
                     Años de experiencia: {offer.experienceYears}
                 </p>
-            </a>
-            <ToggleBtnFollowOffer offerToFollowId={offer._id} />
+                <div className="cardOffer-Info-grupo-technologies">
+                <h4 className="cardOffer-Info-technologies">{offer.technologies}</h4>
+            </div>
+                </div>
+            </a>           
             <div className="cardOffer-Info-ratings">
                 <ReadOnlyOfferRating offer={offer} />
             </div>
-            <div className="cardOffer-Info-grupo-technologies">
-                <h4 className="cardOffer-Info-technologies">{offer.technologies}</h4>
-            </div>
-
-
+            
         </section>
     );
 };

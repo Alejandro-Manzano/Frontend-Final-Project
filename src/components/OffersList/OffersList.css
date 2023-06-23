@@ -1,11 +1,12 @@
 .offersList-container {
     padding-top: 1.5rem;
     min-height: 70vh;
+    
+   
 }
 
 .offersList-paginate-and-offers-list-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
@@ -13,7 +14,9 @@
 
 .offersList-offers-container {
     display: flex;
+   
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1.4rem;

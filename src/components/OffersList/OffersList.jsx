@@ -60,11 +60,11 @@ const OffersList = ({ itemsPerPage }) => {
                         className="offersList-paginate"
                         activeClassName="offersList-paginate-active-element"
                         breakLabel="..."
-                        nextLabel="next >"
+                        nextLabel="siguiente >"
                         onPageChange={handlePageClick}
                         pageRangeDisplayed={10}
                         pageCount={pageCount}
-                        previousLabel="< previous"
+                        previousLabel="< anterior"
                         renderOnZeroPageCount={null}
                     />
                     
