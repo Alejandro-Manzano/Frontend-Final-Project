@@ -18,7 +18,7 @@ export const createExperience = async (formData) => {
 //! -----------------------GET ALL EXPERIENCES -----------------------------------
 export const experiences_getAll = async () => {
   return API.get('/experience')
-    .then((res) => res.data)
+    .then((res) => res)
     .catch((error) => {
       return error;
     });
@@ -36,7 +36,7 @@ export const deleteExperience = async (id) => {
 //! -----------------------GET BY ID -----------------------------------
 export const getByIdExperience = async (id) => {
   return API.get(`/${id}`)
-    .then((res) => res.data)
+    .then((res) => res)
     .catch((error) => {
       return error;
     });
@@ -50,7 +50,7 @@ export const getByUserExperience = async (id) => {
       Authorization: `Bearer ${updateToken()}`,
     },
   })
-    .then((res) => res.data)
+    .then((res) => res)
     .catch((error) => {
       return error;
     });

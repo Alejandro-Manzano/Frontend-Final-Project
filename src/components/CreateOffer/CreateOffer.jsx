@@ -6,42 +6,58 @@ import { createOffer } from '../../services/API_proyect/offer.service';
 import './createOffer.css';
 
 const CreateOffer = () => {
+  const [res, setRes] = useState({});
+  const [send, setSend] = useState(false);
+  const offerTypes = ['CompanyOffer', 'FreelandOffer'];
+  const jobTypes = ['Remote', 'Office', 'Hybrid'];
+  const offerStates = ['Close', 'Suspended', 'Open'];
+  const { user } = useAuth();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { user } = useAuth();
+
   const [serverMessage, setServerMessage] = useState(null);
-  console.log(user);
+
   const onSubmit = async (data) => {
-    const formData = new FormData();
-    for (let key in data) {
-      formData.append(key, data[key]);
-    }
-    console.log(user._id);
-    const result = await createOffer(formData, user._id);
-    console.log(result);
-    if (result.statusText === 'OK') {
-      setServerMessage('Offer created successfully!');
-    } else {
-      setServerMessage('There was an error creating the offer, please try again');
-    }
+    // offerTitle: req.body.offerTitle,
+    // offerType: req.body.offerType,
+    // experienceYears: req.body.experienceYears,
+    // annualSalary: req.body.annualSalary,
+    // description: req.body.description,
+    // city: req.body.city,
+    // jobType: req.body.jobType,
+    // technologies: arrayTechnology,
+
+    const customFormData = {
+      ...data,
+      annualSalary: parseInt(data.annualSalary),
+      offerState: 'Open',
+    };
+
+    console.log(customFormData);
+    setSend(true);
+    setRes(await createOffer(customFormData));
+    setSend(false);
   };
+  useEffect(() => {
+    if (res.status == 200) {
+      console.log(res);
+    }
+  }, []);
+
   const handleFileChange = (e) => {
     setValue('image', e.target.files[0]);
   };
-
-  const offerTypes = ['Company', 'Freelance'];
-  const jobTypes = ['Remote', 'Office', 'Hybrid'];
-  const offerStates = ['Close', 'Suspended', 'Open'];
 
   return (
     <div className="form-container">
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-field">
           <label className={`form-label ${errors.offerTitle ? 'required-label' : ''}`}>
-            Offer Title
+            Titulo de la oferta
           </label>
           <input
             className="input-create-offer"
@@ -82,6 +98,18 @@ const CreateOffer = () => {
         </div>
 
         <div className="form-field">
+          <label className={`form-label ${errors.technologies ? 'required-label' : ''}`}>
+            Technologies
+          </label>
+          <input
+            className="input-create-offer"
+            {...register('technologies', { required: true })}
+            placeholder="Technologies"
+          />
+          {errors.technologies && <p className="error-message">This field is required</p>}
+        </div>
+
+        <div className="form-field">
           <label className={`form-label ${errors.city ? 'required-label' : ''}`}>
             City
           </label>
@@ -94,27 +122,27 @@ const CreateOffer = () => {
         </div>
 
         <div className="form-field">
-          <label className="form-label">Annual Salary</label>
+          <label className="form-label">Salario anual</label>
           <input
             className="input-create-offer"
             {...register('annualSalary')}
-            placeholder="Annual Salary"
+            placeholder="Salario anual"
           />
         </div>
 
         <div className="form-field">
           <label className={`form-label ${errors.description ? 'required-label' : ''}`}>
-            Description
+            Descripción
           </label>
           <textarea
             {...register('description', { required: true })}
             className="textarea-description"
-            placeholder="Description"
+            placeholder="Descripción"
           />
           {errors.description && <p className="error-message">This field is required</p>}
         </div>
 
-        <div className="form-field">
+        {/* <div className="form-field">
           <label className="form-label">Offer State</label>
           <select
             className={`input-create-offer ${errors.offerState ? 'required-label' : ''}`}
@@ -127,9 +155,9 @@ const CreateOffer = () => {
             ))}
           </select>
           {errors.offerState && <p className="error-message">This field is required</p>}
-        </div>
+        </div> */}
 
-        <div className="form-field">
+        {/* <div className="form-field">
           <label className="form-label">Image</label>
           <input
             type="file"
@@ -139,7 +167,7 @@ const CreateOffer = () => {
           />
         </div>
 
-        <Uploadfile register={register} />
+        <Uploadfile register={register} /> */}
 
         <input className="btn-submit-create-offer" type="submit" value="Submit" />
       </form>

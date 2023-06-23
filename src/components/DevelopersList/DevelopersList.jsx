@@ -15,25 +15,14 @@ const DevelopersList = ({ itemsPerPage }) => {
   const [pageCount, setPageCount] = useState(0);
   const [itemPerPage, setItemPerPage] = useState([]);
 
-  // const getDevelopersData = async () => {
-  //     setDownloading(true);
-  //     const data = await developer_getAll()
-  //     console.log("🧨", data)
-  //     const dataDevelopers = data.filter((developer) => developer.rol === "freelance")
-  //     const dataFilterZero = dataDevelopers.slice(0, itemsPerPage)
-  //     const numerberPage = dataDevelopers.length / itemsPerPage
-  //     setPageCount(numerberPage)
-  //     setDataDevelopersList(dataDevelopers)
-  //     setItemPerPage(dataFilterZero)
-  //     setDownloading(false);
-  // };
-
   const getDevelopersData = async () => {
     setDownloading(true);
     const dataDeveloperDB = await developer_getAll();
-console.log("dataDeveloperDB: =>", dataDeveloperDB);
+    console.log('dataDeveloperDB: =>', dataDeveloperDB);
     // Filter to show only freelances
-    const dataDevelopers = dataDeveloperDB?.data.filter((developer) => developer.rol === 'freelance');
+    const dataDevelopers = dataDeveloperDB?.data.filter(
+      (developer) => developer.rol === 'freelance',
+    );
 
     // Filter developers by average score
     const dataSortByAverageScore =

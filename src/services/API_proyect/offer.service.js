@@ -4,7 +4,7 @@ import { API } from './service.config';
 // ----------------- Get All Offers from DB -----------
 export const offer_getAll = async () => {
   return API.get('/offers/')
-    .then((res) => res.data)
+    .then((res) => res)
     .catch((error) => {
       return error;
     });
@@ -39,7 +39,6 @@ export const offer_getFollowingStatus = async (id) => {
 export const createOffer = async (formData) => {
   return API.post('/offers/createOffer', formData, {
     headers: {
-      'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${updateToken()}`,
     },
   })
