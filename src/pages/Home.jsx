@@ -89,7 +89,6 @@ export const Home = () => {
         </section>
 
     </div>
-
     <div className='home-review-container'>
 
       <p className='home-review-title'>Algunos de nuestros clientes <br></br>satisfechos</p>
