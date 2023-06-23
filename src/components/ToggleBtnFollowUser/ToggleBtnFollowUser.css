@@ -1,11 +1,9 @@
+.ToggleButtonDeveloper {
+  color: red;
+  background-color: transparent;
+  border: 0px;
+}
 
-
-
-.ToggleButtonMobileDev .favorite-icon{
-    color:red;
- 
- 
-   
-    
-
+.favorite-icon {
+  margin: 16px;
 }

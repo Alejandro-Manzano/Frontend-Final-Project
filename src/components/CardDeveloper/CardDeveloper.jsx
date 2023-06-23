@@ -10,25 +10,29 @@ const CardDeveloper = ({ developer }) => {
   return (
     <section className="developer-Info">
       <a
-        className="button-MobileDev"
+        className="button-Developer"
         onClick={() =>
           navigate(pathById, {
             state: { id: developer._id },
           })
         }
       >
+        <div className="developer-Info-Toggle-Heart">
+          <ToggleBtnFollowUser userToFollowId={developer._id} />
+        </div>
         <img
           className="developer-Info-img"
           src={developer.image}
           alt={`developer's ${developer.name.surname} pic`}
         />
+
         <div className="developer-Info-tabla-name">
           {developer.name} {developer.surname}
           <p className="developer-Info-Ubicado"> ✨ Ubicado/a en {developer.city}</p>
         </div>
         <h3 className="developer-Info-Rol">{developer.rol}</h3>
       </a>
-      <ToggleBtnFollowUser userToFollowId={developer._id} />
+
       <div className="developer-Info-ratingsByOthers">
         {/*--- Este componente hace la media de las estrellas ---*/}
         <ReadOnlyUserRating user={developer} />

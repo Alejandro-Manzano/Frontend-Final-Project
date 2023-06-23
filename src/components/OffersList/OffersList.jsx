@@ -49,23 +49,25 @@ const OffersList = ({ itemsPerPage }) => {
                 <Spinner />
             ) : (
                 <div className="offersList-paginate-and-offers-list-container">
-                    < ReactPaginate
-                        className="offersList-paginate"
-                        activeClassName="offersList-paginate-active-element"
-                        breakLabel="..."
-                        nextLabel="next >"
-                        onPageChange={handlePageClick}
-                        pageRangeDisplayed={5}
-                        pageCount={pageCount}
-                        previousLabel="< previous"
-                        renderOnZeroPageCount={null}
-                    />
                     <div className="offersList-offers-container">
                         {itemPerPage.map((offer) => (
                             <div key={offer._id}>
                                 <CardOffer offer={offer} />
                             </div>
                         ))}
+                
+                    < ReactPaginate
+                        className="offersList-paginate"
+                        activeClassName="offersList-paginate-active-element"
+                        breakLabel="..."
+                        nextLabel="next >"
+                        onPageChange={handlePageClick}
+                        pageRangeDisplayed={10}
+                        pageCount={pageCount}
+                        previousLabel="< previous"
+                        renderOnZeroPageCount={null}
+                    />
+                    
                     </div>
                 </div>
             )}

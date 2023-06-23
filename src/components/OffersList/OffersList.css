@@ -13,7 +13,7 @@
 
 .offersList-offers-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1.4rem;
@@ -22,12 +22,14 @@
 .offersList-paginate {
     display: flex;
     justify-content: center;
+    font-size: 20px;
+    font-weight:900;
     align-items: center;
     min-width: 20rem;
     height: 3rem;
-    background-color: whitesmoke;
-    list-style-type: none;
-    /* border: 1px solid red; */
+    background-color:transparent;
+    list-style-type:none;
+    /* border: 1px solid red;   */
     gap: 2rem;
     cursor: pointer;
 }
@@ -38,7 +40,7 @@
     align-items: center;
     width: 1rem;
     height: 1rem;
-    border: 1px solid blue;
+    border: 1px solid #61d16d;
     padding: 1rem;
     border-radius: 50%;
 }

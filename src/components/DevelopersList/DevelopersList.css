@@ -11,8 +11,6 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
-  
-
 }
 
 .developersList-developers-container {
@@ -21,7 +19,6 @@
     justify-content: center;
     align-items: center;
     gap: 1.4rem;
-   
 }
 
 .developerList-paginate {
@@ -45,10 +42,7 @@
     align-items: center;
     width: 1rem;
     height: 1rem;
-
-     border: 1px solid #61d16d;
-   
+    border: 1px solid #61d16d;
     padding: 1rem;
     border-radius: 50%;
-    
 }

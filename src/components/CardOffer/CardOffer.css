@@ -3,22 +3,24 @@
     flex-direction: column;
     /* justify-content: space-between; */
     width: 300px;
-    min-height: 480px;
-    max-height: 480px;
+    min-height: 450px;
+    max-height: 450px;
     border: 1px solid #e3e4e5;
     border-radius: 0.7rem;
     padding: 0 0 0 0;
     background-color: white;
     color: black;
-    /* gap: 1rem; */
+   
 }
 
-.cardOffer-Info>img {
+
+.cardOffer-Info-img {
     width: 100%;
-    max-height: 320px;
+    min-height: 210px;
+    max-height: 210px;
     object-fit: cover;
     border-radius: 0.7rem 0.7rem 0 0;
-}
+  }
 
 .cardOffer-Info-tabla-name {
     display: flex;
@@ -26,14 +28,14 @@
     justify-content: right;
     align-items: row;
     padding: 0 0 0 16px;
-    margin-top: -63px;
+    margin-top: 0px;
     margin-bottom: 30px;
     font-weight: 900;
-    color: white;
+    color: Black;
 }
 
 .cardOffer-Info-Ubicado {
-    font-size: 12px;
+    font-size: 7px;
     font-weight: 200;
 }
 

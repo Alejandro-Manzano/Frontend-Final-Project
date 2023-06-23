@@ -30,10 +30,10 @@ const DevelopersList = ({ itemsPerPage }) => {
 
   const getDevelopersData = async () => {
     setDownloading(true);
-    const data = await developer_getAll();
-
+    const dataDeveloperDB = await developer_getAll();
+console.log("dataDeveloperDB: =>", dataDeveloperDB);
     // Filter to show only freelances
-    const dataDevelopers = data.filter((developer) => developer.rol === 'freelance');
+    const dataDevelopers = dataDeveloperDB?.data.filter((developer) => developer.rol === 'freelance');
 
     // Filter developers by average score
     const dataSortByAverageScore =

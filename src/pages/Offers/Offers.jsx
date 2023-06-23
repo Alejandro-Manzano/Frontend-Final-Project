@@ -18,7 +18,7 @@ const Offers = () => {
             }
 
             <div className="spinner"></div>
-            <OffersList itemsPerPage={4} />
+            <OffersList itemsPerPage={10} />
         </div>
     );
 }
