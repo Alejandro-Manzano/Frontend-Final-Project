@@ -24,7 +24,6 @@ body {
   width: 115px;
   height: 75px;
   object-fit: cover;
-  
 }
 
 .titleFatherContainer > a {
@@ -148,7 +147,11 @@ nav {
   opacity: 1;
   visibility: visible;
 }
-
+.header-logo {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
 @media only screen and (max-width: 870px) {
   .navButton {
     margin-left: 70px;

@@ -1,8 +1,6 @@
 import './Header.css';
-
 import { useEffect, useRef, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { TbPlant2 } from 'react-icons/tb';
 import { NavLink } from 'react-router-dom';
 
 import { useAuth } from '../contexts/authContext';
@@ -13,6 +11,7 @@ const Header = () => {
   const showNavbar = () => {
     navRef.current.classList.toggle('responsive_nav');
   };
+
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const handleProfileDropdown = () => {
     setProfileDropdownOpen(!profileDropdownOpen);
@@ -32,14 +31,18 @@ const Header = () => {
     };
   }, []);
 
-  useEffect(() => { }, [ancho]);
+  useEffect(() => {}, [ancho]);
 
   return (
     <>
       <header>
         <div className="titleFatherContainer">
           <NavLink to="/home">
-            <img alt='icon' src='https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687191076/ProjectFinalBOOTCAMP/LogoWeb/logoWEBfinalProject_qvzlbq.png' className='header-logo'></img>
+            <img
+              className="header-logo"
+              alt="icon"
+              src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687191076/ProjectFinalBOOTCAMP/LogoWeb/logoWEBfinalProject_qvzlbq.png"
+            ></img>
             <h3 className="titleWeb">Code</h3>
           </NavLink>
         </div>

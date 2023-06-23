@@ -1,0 +1,49 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+.form-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.textarea-description {
+  height: 150px;
+  width: 40vw;
+}
+
+.input-create-offer {
+  width: 40vw;
+  height: 30px;
+}
+
+.error-message {
+  color: red;
+}
+.btn-submit-create-offer {
+  border: none;
+  border-radius: 30px;
+  height: 40px;
+  width: 180px;
+  background-color: #25d366;
+  color: white;
+  margin-bottom: 1rem;
+}

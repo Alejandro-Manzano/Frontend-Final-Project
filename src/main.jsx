@@ -15,6 +15,7 @@ import Profile from './pages/Profile';
 import Developers from './pages/Developers/Developers';
 import DeveloperDetails from './pages/DeveloperDetails/DeveloperDetails';
 import Offers from './pages/Offers/Offers';
+import CreateOffer from './components/CreateOffer/CreateOffer';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter basename="/">
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/developerDetails" element={<DeveloperDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/createOffer" element={<CreateOffer />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/verifyCode" element={<CheckCode />} />
