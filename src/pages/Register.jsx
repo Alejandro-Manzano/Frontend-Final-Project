@@ -48,16 +48,24 @@ const Register = () => {
 
   if (!role) {
     return (
-      <div className="role_selection">
-        <h3 className="title-role">Select your interested role </h3>
-        <button className="btn-role" onClick={() => setRole('freelance')}>
-          Freelancer
-          <img className='photoFreelance' src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687278019/ProjectFinalBOOTCAMP/Iconos/programacion_cdn0ri.png"/>
+      <div className="register-role_selection">
+
+        <h3 className="register-title-role">Selecciona tu rol</h3>
+
+        <div className='register-buttons-container'>
+
+        <button className="register-btn-role" onClick={() => setRole('freelance')}>
+          <p>Freelance</p>
+          <img className='register-photo' src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687278019/ProjectFinalBOOTCAMP/Iconos/programacion_cdn0ri.png"/>
         </button>
-        <button className="btn-role" onClick={() => setRole('company')}>
-          Company
-          <img className='photoFreelance' src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687277523/ProjectFinalBOOTCAMP/Iconos/edificio-de-oficinas_1_s9ifty.png"/>
+        
+        <button className="register-btn-role" onClick={() => setRole('company')}>
+          <p>Empresa</p>
+          <img className='register-photo' src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687277523/ProjectFinalBOOTCAMP/Iconos/edificio-de-oficinas_1_s9ifty.png"/>
         </button>
+
+        </div>
+
       </div>
     );
   }
