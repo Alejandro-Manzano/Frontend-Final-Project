@@ -11,6 +11,7 @@ const MyExperience = () => {
     const fetchExperiences = async () => {
       try {
         const userExperiences = await getByUserExperience(user._id);
+        console.log(userExperiences);
         setExperiences(userExperiences);
       } catch (error) {
         console.error(error);
