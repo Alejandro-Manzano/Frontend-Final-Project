@@ -57,6 +57,9 @@ const Header = () => {
             <NavLink to="/developers">
               <button className="buttonNav">Desarrolladores</button>
             </NavLink>
+            <NavLink to="/aboutUs">
+              <button className="buttonNav">AboutUs</button>
+            </NavLink>
 
             {user == null && (
               <>

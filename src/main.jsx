@@ -16,6 +16,7 @@ import Developers from './pages/Developers/Developers';
 import DeveloperDetails from './pages/DeveloperDetails/DeveloperDetails';
 import Offers from './pages/Offers/Offers';
 import CreateOffer from './components/CreateOffer/CreateOffer';
+import AboutUs from './pages/AboutUs/AboutUs';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter basename="/">
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           {/* he cambiado home por register */}
           <Route index element={<Home />} />
           <Route path="/developers" element={<Developers />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/offers" element={<Offers />} />
           <Route path="/developerDetails" element={<DeveloperDetails />} />
           <Route path="/login" element={<Login />} />
