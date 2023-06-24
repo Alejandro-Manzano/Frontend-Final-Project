@@ -15,7 +15,7 @@ const Offers = () => {
   };
 
   return (
-    <div>
+    <div className="Offers-Btn-filter">
       <div>
         <button onClick={handleShowCreated}>Mis ofertas</button>
         <button onClick={handleShowInterested}>Ofertas que sigo</button>
