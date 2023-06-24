@@ -1,13 +1,13 @@
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
-import './JobTypeSelect.css'
+import './OrderByRatingSelect.css'
 
-const JobTypeSelect = ({ valueJobType, onChange }) => {
+const OrderByRatingSelect = ({ valueJobType, onChange }) => {
     return (
         <FormControl fullWidth>
-            <InputLabel id="JobTypeSelect-label">Job Type</InputLabel>
+            <InputLabel id="orderByRatingSelect-label"></InputLabel>
             <Select
-                labelId="JobTypeSelect-label"
-                id="JobTypeSelect-select"
+                labelId="orderByRatingSelect-label"
+                id="orderByRatingSelect-select"
                 value={valueJobType}
                 label="Job Type"
                 onChange={onChange}
@@ -22,5 +22,5 @@ const JobTypeSelect = ({ valueJobType, onChange }) => {
 }
 
 
-export default JobTypeSelect
+export default OrderByRatingSelect
 

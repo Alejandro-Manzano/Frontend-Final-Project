@@ -5,7 +5,7 @@ import { developer_getAll } from '../../services/API_proyect/developer.service';
 import CardDeveloper from '../CardDeveloper/CardDeveloper';
 import './DevelopersList.css';
 import { Spinner } from '../Spinner/Spinner';
-import { sortUsersByAverageScore_descendingOrder } from '../../util/filters/developer.filter';
+import { sortUsersByAverageScore_ascendingOrder, sortUsersByAverageScore_descendingOrder } from '../../util/filters/developer.filter';
 
 const DevelopersList = ({ itemsPerPage }) => {
   const [dataDevelopersList, setDataDevelopersList] = useState([]);
@@ -27,6 +27,9 @@ const DevelopersList = ({ itemsPerPage }) => {
     // Filter developers by average score
     const dataSortByAverageScore =
       sortUsersByAverageScore_descendingOrder(dataDevelopers);
+
+    // const dataSortByAverageScore =
+    //   sortUsersByAverageScore_ascendingOrder(dataDevelopers);
 
     const dataFilterZero = dataSortByAverageScore.slice(0, itemsPerPage);
     const numerberPage = Math.ceil(dataSortByAverageScore.length / itemsPerPage);

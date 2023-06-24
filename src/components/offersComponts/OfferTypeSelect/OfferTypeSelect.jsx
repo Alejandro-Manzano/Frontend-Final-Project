@@ -4,10 +4,10 @@ import './OfferTypeSelect.css'
 const OfferTypeSelect = ({ valueOfferType, onChange }) => {
     return (
         <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Offer Type</InputLabel>
+            <InputLabel id="OfferTypeSelect-label">Offer Type</InputLabel>
             <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId="OfferTypeSelect-label"
+                id="OfferTypeSelect-select"
                 value={valueOfferType}
                 label="Offer Type"
                 onChange={onChange}
@@ -19,6 +19,7 @@ const OfferTypeSelect = ({ valueOfferType, onChange }) => {
         </FormControl>
     );
 }
+
 
 
 export default OfferTypeSelect

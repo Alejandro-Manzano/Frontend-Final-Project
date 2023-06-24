@@ -4,10 +4,10 @@ import './OfferStateSelect.css'
 const OfferStateSelect = ({ valueOfferState, onChange }) => {
     return (
         <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Offer State</InputLabel>
+            <InputLabel id="OfferStateSelect-label">Offer State</InputLabel>
             <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId="OfferStateSelect-label"
+                id="OfferStateSelect-select"
                 value={valueOfferState}
                 label="Offer State"
                 onChange={onChange}
