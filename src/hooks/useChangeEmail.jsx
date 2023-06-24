@@ -30,7 +30,7 @@ const useChangeEmailError = (res, setChangeEmailOK) => {
       icon: 'success',
       title: `Success updating email change`,
       showConfirmButton: false,
-      timer: 4000,
+      timer: 1500,
     });
   }
   //! //! ----------200:  cuando algo no se actualiza

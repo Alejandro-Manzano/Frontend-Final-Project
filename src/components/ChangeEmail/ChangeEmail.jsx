@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { changeEmail, verifyNewEmail } from '../../services/API_proyect/user.service';
 import './ChangeEmail.css';
-import useChangeEmailError from '../../hooks/useChangeEmail'; // replace with your actual path
+import useChangeEmailError from '../../hooks/useChangeEmail';
 
 const ChangeEmail = () => {
   const [newEmail, setNewEmail] = useState('');

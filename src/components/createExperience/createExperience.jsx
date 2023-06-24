@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { createExperience } from '../../services/API_proyect/experience.service';
 import Uploadfile from '../Uploadfile';
 import './createExperience.css';
+import handleExperienceResponse from '../../hooks/useExperience';
 
 const createExperienceUser = () => {
   const [experienceData, setExperienceData] = useState({
@@ -33,12 +34,13 @@ const createExperienceUser = () => {
     if (file) {
       formData.append('image', file);
     }
-
     try {
       const res = await createExperience(formData);
       console.log(res.data);
+      handleExperienceResponse(res);
     } catch (err) {
       console.log(err);
+      handleExperienceResponse(err.response);
     }
   };
 

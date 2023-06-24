@@ -5,6 +5,7 @@ import ToggleTech from '../Toggle tecnologies/Toggle';
 import { getUserById, updateTecnologia } from '../../services/API_proyect/user.service';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/authContext';
+import handleTechnologyUpdateResponse from '../../hooks/useSaveTecnologia';
 
 const Tecnologias = () => {
   const [arrayTecn, setArrayTecn] = useState(() => []);
@@ -16,7 +17,9 @@ const Tecnologias = () => {
   const handleServiceAdd = async () => {
     setSend(true);
     let arrayString = JSON.stringify(arrayTecn);
-    setRes(await updateTecnologia({ technologies: arrayTecn }));
+    const updateRes = await updateTecnologia({ technologies: arrayTecn });
+    setRes(updateRes);
+    handleTechnologyUpdateResponse(updateRes);
     setSend(false);
   };
 
@@ -64,9 +67,9 @@ const Tecnologias = () => {
           </figure>
         ))}
         <button onClick={() => handleServiceAdd()} disabled={send}>
-        {' '}
-        enviar tech
-      </button>
+          {' '}
+          enviar tech
+        </button>
       </div>
     </>
   );
