@@ -4,83 +4,42 @@ import './Offers.css'
 import OffersList from "../../components/OffersList/OffersList";
 import ExperienceYearsSlider from "../../components/offersComponts/ExperienceYearsSlider/ExperienceYearsSlider";
 import JobTypeSelect from "../../components/offersComponts/JobTypeSelect/JobTypeSelect";
-import {
-    OfferType,
-    OfferState,
-    JobType,
-    AverageScoreType,
-    AnnualSalaryType,
-    ExperienceYearsType,
-    getJoTypeValue,
-    getOfferStateValue,
-} from "../../types/filters/filter.types";
 import OfferStateSelect from "../../components/offersComponts/OfferStateSelect/OfferStateSelect";
-
-const initFiltersToApply_AllFilterOff = {
-    byExperienceYears: ExperienceYearsType.FilterOff,
-    byAnnualSalary: AnnualSalaryType.FilterOff,
-    byOfferState: OfferState.FilterOff,
-    byJobType: JobType.FilterOff,
-    byOfferType: OfferType.FilterOff,
-    byAverageScore: AverageScoreType.FilterOff,
-}
-
-// const filters = {
-//     // GreaterOrEqualThanExperienceYears, LessOrEqualThanExperienceYears
-//     byExperienceYears: ExperienceYearsType.GreaterOrEqualThanExperienceYears,
-//     //experinceYears: valueExperienceYearsSlider,
-//     experinceYears: 0,
-
-//     // GreaterOrEqualThanAnnualSalary, LessOrEqualThanAnnualSalary
-//     byAnnualSalary: AnnualSalaryType.FilterOff,
-//     annualSalary: 100,
-
-//     // Close, Suspended, Open
-//     byOfferState: OfferState.FilterOff,
-
-//     // Remote, Office, Hybrid
-//     byJobType: JobType.FilterOff,
-
-//     // CompanyOffer, FreelandOffer
-//     byOfferType: OfferType.FilterOff,
-
-//     // DescendingOrder, AscendingOrder
-//     byAverageScore: AverageScoreType.DescendingOrder,
-// }
+import OfferTypeSelect from "../../components/offersComponts/OfferTypeSelect/OfferTypeSelect";
+import AnnualSalarySlider from "../../components/offersComponts/AnnualSalarySlider/AnnualSalarySlider";
 
 const Offers = () => {
     const isLargeScreen = useMediaQuery({ minWidth: 880 });
     const [valueExperienceYearsSlider, setValueExperienceYearsSlider] = useState(0);
+    const [valueAnnualSalarySlider, setValueAnnualSalarySlider] = useState(50000);
     const [valueJobTypeSelect, setValueJobTypeSelect] = useState('All');
     const [valueOfferStateSelect, setValueOfferStateSelect] = useState('All');
+    const [valueOfferTypeSelect, setValueOfferTypeSelect] = useState('All');
 
-    const [filtersToApply, setFiltersToApply] = useState(initFiltersToApply_AllFilterOff)
-
-    const filters = {
-        // GreaterOrEqualThanExperienceYears, LessOrEqualThanExperienceYears
-        byExperienceYears: ExperienceYearsType.FilterOff,
-        experinceYears: valueExperienceYearsSlider,
-        //experinceYears: 10,
-
-        // GreaterOrEqualThanAnnualSalary, LessOrEqualThanAnnualSalary
-        byAnnualSalary: AnnualSalaryType.FilterOff,
-        annualSalary: 100,
-
-        // Close, Suspended, Open
-        byOfferState: getOfferStateValue(valueOfferStateSelect),
-
-        // Remote, Office, Hybrid
-        byJobType: getJoTypeValue(valueJobTypeSelect),
+    const [filtersToApply, setFiltersToApply] = useState({
 
         // CompanyOffer, FreelandOffer
-        byOfferType: OfferType.FilterOff,
+        offerType: "",
 
-        // DescendingOrder, AscendingOrder
-        byAverageScore: AverageScoreType.DescendingOrder,
-    }
+        // 0 to 100
+        experienceYears: "",
+
+        // number
+        annualSalary: "",
+
+        // Remote, Office, Hybrid
+        jobType: "",
+
+        // Close, Suspended, Open
+        offerState: "",
+    })
 
     const handleChangeExperienceYearsSlider = (event, newValue) => {
         setValueExperienceYearsSlider(newValue);
+    };
+
+    const handleChangeAnnualSalarySlider = (event, newValue) => {
+        setValueAnnualSalarySlider(newValue);
     };
 
     const handleChangeJobTypeSelect = (event) => {
@@ -91,39 +50,53 @@ const Offers = () => {
         setValueOfferStateSelect(event.target.value);
     };
 
+    const handleChangeOfferTypeSelect = (event) => {
+        setValueOfferTypeSelect(event.target.value);
+    };
+
     useEffect(() => {
         //console.log("Offers --> Before --> setFiltersToApply(filters)", filters)
-        setFiltersToApply(filters)
+        setFiltersToApply({ ...filtersToApply, experienceYears: valueExperienceYearsSlider })
         //console.log("Offers --> After --> setFiltersToApply(filters)", filters)
     }, [valueExperienceYearsSlider]);
 
     useEffect(() => {
-        //console.log("Offers --> Before --> setFiltersToApply(filters)", filters)
-        setFiltersToApply(filters)
-        //console.log("Offers --> After --> setFiltersToApply(filters)", filters)
+        setFiltersToApply({ ...filtersToApply, annualSalary: valueAnnualSalarySlider })
+    }, [valueAnnualSalarySlider]);
+
+    useEffect(() => {
+        setFiltersToApply({ ...filtersToApply, jobType: valueJobTypeSelect })
     }, [valueJobTypeSelect]);
 
     useEffect(() => {
-        //console.log("Offers --> Before --> setFiltersToApply(filters)", filters)
-        setFiltersToApply(filters)
-        //console.log("Offers --> After --> setFiltersToApply(filters)", filters)
+        setFiltersToApply({ ...filtersToApply, offerState: valueOfferStateSelect })
     }, [valueOfferStateSelect]);
+
+    useEffect(() => {
+        setFiltersToApply({ ...filtersToApply, offerType: valueOfferTypeSelect })
+    }, [valueOfferTypeSelect]);
 
     return (
         <div className="outletContainer">
             {isLargeScreen ?
                 <h1>
-                    Ven y consulta nuestras ofertas de trabajo para <u>Desarrolladores</u>!
+                    Come and check our <u>Developers</u> job offers!
                 </h1>
                 :
                 <h1>
-                    Sigue nuestras <u>ofertas de trabajo</u>
+                    Follow our <u>job offers</u>
                 </h1>
             }
 
             <div className="spinner"></div>
             <div className="offers-filters-and-offersList-container">
                 <div className="offers-filters-container">
+                    <div className="offers-filter-offerType-container">
+                        <OfferTypeSelect
+                            value={valueOfferTypeSelect}
+                            onChange={handleChangeOfferTypeSelect}
+                        />
+                    </div>
                     <div className="offers-filter-jobType-container">
                         <JobTypeSelect
                             value={valueJobTypeSelect}
@@ -143,9 +116,17 @@ const Offers = () => {
                             onChange={handleChangeExperienceYearsSlider}
                         />
                     </div>
+                    <div className="offers-filter-annualSalary-container">
+                        <p>Salario anual:</p>
+                        <AnnualSalarySlider
+                            value={valueAnnualSalarySlider}
+                            onChange={handleChangeAnnualSalarySlider}
+                        />
+                    </div>
                 </div>
                 <div className="offers-offersList-container">
                     {/* {console.log("send --> filters to apply: ", filtersToApply)} */}
+
                     <OffersList filters={filtersToApply} itemsPerPage={10} />
                 </div>
             </div>

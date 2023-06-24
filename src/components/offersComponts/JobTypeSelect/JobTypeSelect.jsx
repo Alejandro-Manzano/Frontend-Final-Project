@@ -1,18 +1,7 @@
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
-//import { useState, useEffect } from 'react';
 import './JobTypeSelect.css'
 
 const JobTypeSelect = ({ valueJobType, onChange }) => {
-    // const [jobType, setJobType] = useState('');
-
-    // const handleChange = (event) => {
-    //     setJobType(event.target.value);
-    // };
-
-    // useEffect(() => {
-    //     console.log("JobTypeSelect --> JobType", jobType)
-    // }, [jobType]);
-
     return (
         <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Job Type</InputLabel>

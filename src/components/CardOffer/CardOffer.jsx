@@ -27,6 +27,12 @@ const CardOffer = ({ offer }) => {
                         {offer.offerTitle}
                         <p className="cardOffer-Info-Ubicado"> 📋 Ubicado/a en {offer.city}</p>
                     </div>
+                    <p className="cardOffer-Info-OfferType">
+                        Tipo de oferta: {offer.offerType}
+                    </p>
+                    <p className="cardOffer-Info-AnnualSalary">
+                        Salario anual: {offer.annualSalary}
+                    </p>
                     <p className="cardOffer-Info-Ubicado">
                         Años de experiencia: {offer.experienceYears}
                     </p>

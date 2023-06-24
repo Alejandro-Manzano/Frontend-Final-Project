@@ -1,7 +1,7 @@
 .cardOffer-Info {
     display: flex;
     flex-direction: column;
-    width:80vw;
+    width: 80vw;
     min-height: 300px;
     max-height: 300px;
     border: 1px solid #e3e4e5;
@@ -12,10 +12,9 @@
     gap: 1rem;
 }
 
-.cardOffer-Profile{
+.cardOffer-Profile {
     display: flex;
     flex-direction: column;
-
 }
 
 .cardOffer-BtnToggle {
@@ -49,6 +48,16 @@
     margin-bottom: 30px;
     font-weight: 900;
     color: black;
+}
+
+.cardOffer-Info-OfferType {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.cardOffer-Info-AnnualSalary {
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .cardOffer-Info-Ubicado {
