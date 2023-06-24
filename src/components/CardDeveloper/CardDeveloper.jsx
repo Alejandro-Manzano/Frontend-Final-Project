@@ -9,7 +9,11 @@ const CardDeveloper = ({ developer }) => {
 
   return (
     <section className="developer-Info">
-      <a
+      
+        <div className="developer-Info-Toggle-Heart">
+          <ToggleBtnFollowUser userToFollowId={developer._id} />
+        </div>
+        <a
         className="button-Developer"
         onClick={() =>
           navigate(pathById, {
@@ -17,9 +21,6 @@ const CardDeveloper = ({ developer }) => {
           })
         }
       >
-        <div className="developer-Info-Toggle-Heart">
-          <ToggleBtnFollowUser userToFollowId={developer._id} />
-        </div>
         <img
           className="developer-Info-img"
           src={developer.image}
