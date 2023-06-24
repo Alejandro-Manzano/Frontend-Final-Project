@@ -27,36 +27,36 @@ const AboutUs = () => {
               />
               <h3>CARLOS MARTIN</h3>
               <div class="team-info">
-                <p>Habitante de Telde</p>
+                <p>Las Palmas de Gran Canaria</p>
               </div>
               <p>
                 Me apasionó la programación por su inmenso potencial para crear e innovar.
-                Es una herramienta con la que podemos transformar ideas abstractas en
-                soluciones tangibles y hacer la vida más fácil y emocionante.
+                Es a través de esta herramienta que podemos transformar ideas abstractas en
+                soluciones tangibles y eficientes, para hacer así la vida más fácil y emocionante.
               </p>
 
-              <ul class="team-icon">
+              <ul className="team-icon">
                 <li>
                   <a href="#" class="gitHub">
-                    <AiFillGithub size={35} />
+                    <AiFillGithub size={38} />
                   </a>
                 </li>
 
                 <li>
                   <a href="#" class="youTube">
-                    <AiFillYoutube size={37} />
+                    <AiFillYoutube size={44} />
                   </a>
                 </li>
 
                 <li>
                   <a href="#" class="twitter">
-                    <AiFillTwitterCircle size={37} />
+                    <AiFillTwitterCircle size={40} />
                   </a>
                 </li>
 
                 <li>
                   <a href="#" class="facebook">
-                    <BsFacebook size={35} />
+                    <BsFacebook size={33} />
                   </a>
                 </li>
               </ul>
@@ -74,38 +74,40 @@ const AboutUs = () => {
               <h3>AITOR GUTIÉRREZ</h3>
 
               <div class="team-info">
-                <p>NO SE ME OCURRE</p>
+                <p>Madrid</p>
               </div>
 
               <p>
-                Me sumergí en la programación para desentrañar su potencial disruptivo en
-                la esfera del marketing, con la ambición de trascender las fronteras
-                convencionales y crear experiencias que hablen a los corazones de los
-                usuarios.
+                
+                  Me adentré en la programación para explorar su impacto 
+                  innovador en el campo del marketing, determinado en 
+                  superar los límites tradicionales y crear experiencias 
+                  que conecten de manera profunda con los usuarios.
+
               </p>
 
-              <ul class="team-icon">
+              <ul className="team-icon">
                 <li>
                   <a href="#" class="gitHub">
-                    <AiFillGithub size={35} />
+                    <AiFillGithub size={38} />
                   </a>
                 </li>
 
                 <li>
                   <a href="#" class="youTube">
-                    <AiFillYoutube size={37} />
+                    <AiFillYoutube size={44} />
                   </a>
                 </li>
 
                 <li>
                   <a href="#" class="twitter">
-                    <AiFillTwitterCircle size={37} />
+                    <AiFillTwitterCircle size={40} />
                   </a>
                 </li>
 
                 <li>
                   <a href="#" class="facebook">
-                    <BsFacebook size={35} />
+                    <BsFacebook size={33} />
                   </a>
                 </li>
               </ul>
@@ -119,41 +121,180 @@ const AboutUs = () => {
                 class="team-img"
               />
 
-              <h3>Ozillo</h3>
+              <h3>MARC MATEO</h3>
 
               <div class="team-info">
-                <p>Habitante del norte</p>
+                <p>Barcelona</p>
               </div>
 
               <p>
-                Descubrí la programación como un universo ilimitado de posibilidades,
-                donde cada línea de código es una pincelada en el lienzo de la innovación.
-                Me he dedicado a este arte porque me permite soñar y construir,
-                transformando los desafíos en oportunidades de cambio y progreso.
+              Para mi la programación es como un universo infinito de posibilidades, 
+              realmente con cada linea de código puedes llegar tan lejos como quieras. 
+              Me sumerjo en este mundo para convertir desafíos en oportunidades, siempre con el usuario como foco principal.
               </p>
 
-              <ul class="team-icon">
+              <ul className="team-icon">
                 <li>
                   <a href="#" class="gitHub">
-                    <AiFillGithub size={35} />
+                    <AiFillGithub size={38} />
                   </a>
                 </li>
 
                 <li>
                   <a href="#" class="youTube">
-                    <AiFillYoutube size={37} />
+                    <AiFillYoutube size={44} />
                   </a>
                 </li>
 
                 <li>
                   <a href="#" class="twitter">
-                    <AiFillTwitterCircle size={37} />
+                    <AiFillTwitterCircle size={40} />
                   </a>
                 </li>
 
                 <li>
                   <a href="#" class="facebook">
-                    <BsFacebook size={35} />
+                    <BsFacebook size={33} />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="team-item">
+              <img
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687353969/yandru_v7oq8i.jpg"
+                alt="person-review"
+                class="team-img"
+              />
+              <h3>ALEX MANZANO</h3>
+              <div class="team-info">
+                <p>Madrid</p>
+              </div>
+              <p>
+              La programación despertó en mi una curiosidad especial. Me apasiona por su capacidad transformadora y creativa. 
+              Es el medio para convertir visiones en realidades. 
+              Descubrir nuevas posibilidades y hacer una diferencia impulsa mi dedicación.
+              </p>
+
+              <ul className="team-icon">
+                <li>
+                  <a href="#" class="gitHub">
+                    <AiFillGithub size={38} />
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="youTube">
+                    <AiFillYoutube size={44} />
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="twitter">
+                    <AiFillTwitterCircle size={40} />
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="facebook">
+                    <BsFacebook size={33} />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <div class="team-item">
+              <img
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687627364/vegano_rvseme.jpg"
+                alt="person-review"
+                class="team-img"
+              />
+
+              <h3>IGOR LUZARRAGA</h3>
+
+              <div class="team-info">
+                <p>Barcelona</p>
+              </div>
+
+              <p>
+              Soy un apasionado programador con una paciencia incansable. 
+              Disfruto cada línea de código como un desafío creativo, 
+              encontrando soluciones con perseverancia. 
+              La programación es mi lenguaje para dar vida a ideas y superar obstáculos con determinación.
+              </p>
+
+              <ul className="team-icon">
+                <li>
+                  <a href="#" class="gitHub">
+                    <AiFillGithub size={38} />
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="youTube">
+                    <AiFillYoutube size={44} />
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="twitter">
+                    <AiFillTwitterCircle size={40} />
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="facebook">
+                    <BsFacebook size={33} />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="team-item">
+              <img
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687627660/1675093921794_r3evad.jpg"
+                alt="person-review"
+                class="team-img"
+              />
+
+              <h3>Jonathan Rodríguez</h3>
+
+              <div class="team-info">
+                <p>A Coruña</p>
+              </div>
+
+              <p>
+              Soy un programador al que le apasiona crear soluciones completas y eficientes. 
+              Mi atención a los pequeños detalles asegura que cada aspecto del desarrollo 
+              esté cuidadosamente diseñado para ofrecer una user experience excepcional.
+              </p>
+
+              <ul className="team-icon">
+                <li>
+                  <a href="#" class="gitHub">
+                    <AiFillGithub size={38} />
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="youTube">
+                    <AiFillYoutube size={44} />
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="twitter">
+                    <AiFillTwitterCircle size={40} />
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="facebook">
+                    <BsFacebook size={33} />
                   </a>
                 </li>
               </ul>
