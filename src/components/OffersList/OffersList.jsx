@@ -44,83 +44,6 @@ const OffersList = ({ filters, itemsPerPage }) => {
     const [pageCount, setPageCount] = useState(0);
     const [itemPerPage, setItemPerPage] = useState([])
 
-
-    //
-    //const [filtersToApply, setFiltersToApply] = useState(initFiltersToApply_AllFilterOff)
-    //
-
-    //const initFiltersToApply = filtersToApply
-
-    // const FilterOnOffType = {
-    //     FilterOn: "FilterOn",
-    //     FilterOff: "FilterOff"
-    // }
-
-    // const OfferType = {
-    //     CompanyOffer: "CompanyOffer",
-    //     FreelandOffer: "FreelandOffer",
-    //     FilterOff: "FilterOff"
-    // }
-
-    // const OfferState = {
-    //     Close: "Close",
-    //     Suspended: "Suspended",
-    //     Open: "Open",
-    //     FilterOff: "FilterOff"
-    // }
-
-    // const JobType = {
-    //     Remote: "Remote",
-    //     Office: "Office",
-    //     Hybrid: "Hybrid",
-    //     FilterOff: "FilterOff"
-    // }
-
-    // const AverageScoreType = {
-    //     DescendingOrder: "DescendingOrder",
-    //     AscendingOrder: "AscendingOrder",
-    //     FilterOff: "FilterOff"
-    // }
-
-    // const AnnualSalaryType = {
-    //     GreaterOrEqualThanAnnualSalary: "GreaterOrEqualThanAnnualSalary",
-    //     LessOrEqualThanAnnualSalary: "LessOrEqualThanAnnualSalary",
-    //     FilterOff: "FilterOff"
-    // }
-
-    // const ExperienceYearsType = {
-    //     GreaterOrEqualThanExperienceYears: "GreaterOrEqualThanExperienceYears",
-    //     LessOrEqualThanExperienceYears: "LessOrEqualThanExperienceYears",
-    //     FilterOff: "FilterOff"
-    // }
-
-    // const initFiltersType = {
-    //     ByOfferType: OfferType,
-    //     ByAverageScore: AverageScoreType,
-    // }
-
-    // const initFiltersToApply = {
-    //     // GreaterOrEqualThanExperienceYears, LessOrEqualThanExperienceYears
-    //     byExperienceYears: ExperienceYearsType.FilterOff,
-    //     experinceYears: 5,
-
-    //     // GreaterOrEqualThanAnnualSalary, LessOrEqualThanAnnualSalary
-    //     byAnnualSalary: AnnualSalaryType.FilterOff,
-    //     annualSalary: 100,
-
-    //     // Close, Suspended, Open
-    //     byOfferState: OfferState.FilterOff,
-
-    //     // Remote, Office, Hybrid
-    //     byJobType: JobType.FilterOff,
-
-    //     // CompanyOffer, FreelandOffer
-    //     byOfferType: OfferType.FilterOff,
-
-    //     // DescendingOrder, AscendingOrder
-    //     byAverageScore: AverageScoreType.DescendingOrder,
-    // }
-
     const [filtersToApply, setFiltersToApply] = useState(filters)
 
     const getOffersData = async () => {
@@ -135,7 +58,9 @@ const OffersList = ({ filters, itemsPerPage }) => {
         //console.log("dataOffer: ", dataOffer)
 
         //let dataFilterByOfferType = null
-        let dataToRender = dataOffer
+
+        /// ÑAPA solo para pruebas!!!
+        let dataToRender = dataOffer?.data
 
         console.log("getOffersData -> filtersToApply: ", filtersToApply)
 
@@ -143,8 +68,8 @@ const OffersList = ({ filters, itemsPerPage }) => {
         Object.keys(filtersToApply)
             .filter((filter) => filtersToApply[filter] !== "FilterOff")
             .map(filterType => {
-                console.log("map -> Filter type: ", filterType)
-                console.log("map -> Filter By: ", filtersToApply[filterType])
+                // console.log("map -> Filter type: ", filterType)
+                // console.log("map -> Filter By: ", filtersToApply[filterType])
 
 
 

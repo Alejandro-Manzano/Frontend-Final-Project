@@ -12,15 +12,32 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     min-width: 30%;
     height: 100%;
 }
 
-.offers-filter-experienceYears {
+.offers-filter-experienceYears-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.offers-filter-jobType-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.offers-filter-offerState-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }
 
 .offers-offersList-container {

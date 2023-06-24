@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import './Offers.css'
 import OffersList from "../../components/OffersList/OffersList";
 import ExperienceYearsSlider from "../../components/offersComponts/ExperienceYearsSlider/ExperienceYearsSlider";
+import JobTypeSelect from "../../components/offersComponts/JobTypeSelect/JobTypeSelect";
 import {
     OfferType,
     OfferState,
@@ -10,7 +11,10 @@ import {
     AverageScoreType,
     AnnualSalaryType,
     ExperienceYearsType,
+    getJoTypeValue,
+    getOfferStateValue,
 } from "../../types/filters/filter.types";
+import OfferStateSelect from "../../components/offersComponts/OfferStateSelect/OfferStateSelect";
 
 const initFiltersToApply_AllFilterOff = {
     byExperienceYears: ExperienceYearsType.FilterOff,
@@ -44,16 +48,17 @@ const initFiltersToApply_AllFilterOff = {
 //     byAverageScore: AverageScoreType.DescendingOrder,
 // }
 
-
-
 const Offers = () => {
     const isLargeScreen = useMediaQuery({ minWidth: 880 });
     const [valueExperienceYearsSlider, setValueExperienceYearsSlider] = useState(0);
+    const [valueJobTypeSelect, setValueJobTypeSelect] = useState('All');
+    const [valueOfferStateSelect, setValueOfferStateSelect] = useState('All');
+
     const [filtersToApply, setFiltersToApply] = useState(initFiltersToApply_AllFilterOff)
 
     const filters = {
         // GreaterOrEqualThanExperienceYears, LessOrEqualThanExperienceYears
-        byExperienceYears: ExperienceYearsType.GreaterOrEqualThanExperienceYears,
+        byExperienceYears: ExperienceYearsType.FilterOff,
         experinceYears: valueExperienceYearsSlider,
         //experinceYears: 10,
 
@@ -62,10 +67,10 @@ const Offers = () => {
         annualSalary: 100,
 
         // Close, Suspended, Open
-        byOfferState: OfferState.FilterOff,
+        byOfferState: getOfferStateValue(valueOfferStateSelect),
 
         // Remote, Office, Hybrid
-        byJobType: JobType.FilterOff,
+        byJobType: getJoTypeValue(valueJobTypeSelect),
 
         // CompanyOffer, FreelandOffer
         byOfferType: OfferType.FilterOff,
@@ -78,11 +83,31 @@ const Offers = () => {
         setValueExperienceYearsSlider(newValue);
     };
 
+    const handleChangeJobTypeSelect = (event) => {
+        setValueJobTypeSelect(event.target.value);
+    };
+
+    const handleChangeOfferStateSelect = (event) => {
+        setValueOfferStateSelect(event.target.value);
+    };
+
     useEffect(() => {
-        console.log("Offers --> Before --> setFiltersToApply(filters)", filters)
+        //console.log("Offers --> Before --> setFiltersToApply(filters)", filters)
         setFiltersToApply(filters)
-        console.log("Offers --> After --> setFiltersToApply(filters)", filters)
+        //console.log("Offers --> After --> setFiltersToApply(filters)", filters)
     }, [valueExperienceYearsSlider]);
+
+    useEffect(() => {
+        //console.log("Offers --> Before --> setFiltersToApply(filters)", filters)
+        setFiltersToApply(filters)
+        //console.log("Offers --> After --> setFiltersToApply(filters)", filters)
+    }, [valueJobTypeSelect]);
+
+    useEffect(() => {
+        //console.log("Offers --> Before --> setFiltersToApply(filters)", filters)
+        setFiltersToApply(filters)
+        //console.log("Offers --> After --> setFiltersToApply(filters)", filters)
+    }, [valueOfferStateSelect]);
 
     return (
         <div className="outletContainer">
@@ -99,7 +124,19 @@ const Offers = () => {
             <div className="spinner"></div>
             <div className="offers-filters-and-offersList-container">
                 <div className="offers-filters-container">
-                    <div className="offers-filter-experienceYears">
+                    <div className="offers-filter-jobType-container">
+                        <JobTypeSelect
+                            value={valueJobTypeSelect}
+                            onChange={handleChangeJobTypeSelect}
+                        />
+                    </div>
+                    <div className="offers-filter-offerState-container">
+                        <OfferStateSelect
+                            value={valueOfferStateSelect}
+                            onChange={handleChangeOfferStateSelect}
+                        />
+                    </div>
+                    <div className="offers-filter-experienceYears-container">
                         <p>Años de experiencia:</p>
                         <ExperienceYearsSlider
                             value={valueExperienceYearsSlider}

@@ -35,3 +35,35 @@ export const ExperienceYearsType = {
     LessOrEqualThanExperienceYears: "LessOrEqualThanExperienceYears",
     FilterOff: "FilterOff"
 }
+
+export const getJoTypeValue = (jobType) => {
+    //console.log("getJoTypeValue --> jobType: ", jobType)
+    switch (jobType) {
+        case "All":
+            return JobType.FilterOff
+        case "Remote":
+            return JobType.Remote
+        case "Office":
+            return JobType.Office
+        case "Hybrid":
+            return JobType.Hybrid
+        default:
+            return JobType.FilterOff
+    }
+}
+
+export const getOfferStateValue = (offerState) => {
+    //console.log("getJoTypeValue --> jobType: ", jobType)
+    switch (offerState) {
+        case "All":
+            return OfferState.FilterOff
+        case "Close":
+            return OfferState.Close
+        case "Open":
+            return OfferState.Open
+        case "Suspended":
+            return OfferState.Suspended
+        default:
+            return OfferState.FilterOff
+    }
+}

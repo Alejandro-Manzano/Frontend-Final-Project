@@ -1,6 +1,6 @@
 .cardOffer-Info {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     width: 1000px;
     min-height: 300px;
     max-height: 300px;
@@ -9,17 +9,15 @@
     padding: 0 0 0 0;
     background-color: white;
     color: black;
-    gap:1rem;
+    gap: 1rem;
 }
 
-.cardOffer-BtnToggle{
-position:absolute;
-flex-direction:row;
-gap:1rem;
+.cardOffer-BtnToggle {
+    position: absolute;
+    flex-direction: row;
+    gap: 1rem;
 
 }
-
-
 
 .cardOffer-Info-img {
     width: 25%;
@@ -29,8 +27,8 @@ gap:1rem;
     border-radius: 0.7rem 0.7rem 0 0;
 }
 
-.cardOffer-link-to-offerDetails{
-    display:flex;
+.cardOffer-link-to-offerDetails {
+    display: flex;
     flex-direction: row;
 
 }
@@ -50,6 +48,16 @@ gap:1rem;
 .cardOffer-Info-Ubicado {
     font-size: 7px;
     font-weight: 200;
+}
+
+.cardOffer-Info-JobType {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.cardOffer-Info-OfferState {
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .cardOffer-Info-ratings {
