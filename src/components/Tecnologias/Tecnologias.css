@@ -1,31 +1,51 @@
+.choose_technologies-container-choose {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin: 20px;
+}
+
+.choose_technologies-container-choose:hover {
+  color:#25d366 ;
+}
+
 .father-container-technologies {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 60vw;
   align-items: center;
-  gap: 0.5rem;
+  width: 60vw;
+  gap: 0.7rem;
+  max-width: 950px;
+  margin-left: 36px;
+  font-size: 12px;
 }
 
 .tech-image {
-  width: 80px;
+  width: 39px;
+  height: 30px;
+  margin-top: 16px;
 }
 
 .tecnologia-item {
-  width: 150px;
+  width: 81px;
   border: 1px solid rgba(0, 0, 0, 0.088);
-  height: 200px;
+  height: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 .image-container {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 1%;
+  margin-top: 7px;
+  padding: 10px 0;
 }

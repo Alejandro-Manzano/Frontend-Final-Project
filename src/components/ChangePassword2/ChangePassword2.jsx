@@ -23,7 +23,7 @@ const ChangePassword2 = () => {
       //   console.log("ChangePassword -> formSubmit: ", "kaixo swal");
 
       Swal.fire({
-        title: 'You really wanna reset your password?',
+        title: '¿De verdad quieres restablecer tu contraseña?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: 'rgb(73, 193, 162)',
@@ -40,7 +40,7 @@ const ChangePassword2 = () => {
     } else {
       Swal.fire({
         icon: 'error',
-        title: 'Looks like the passwords aren’t the same. Give it another go!',
+        title: 'Parece que las contraseñas no son las mismas. ¡Prueba otra vez!',
         showConfirmButton: false,
         timer: 2500,
       });

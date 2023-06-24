@@ -51,10 +51,7 @@ const Tecnologias = () => {
 
   return (
     <>
-      <button onClick={() => handleServiceAdd()} disabled={send}>
-        {' '}
-        enviar tech
-      </button>
+      <p className="choose_technologies-container-choose">Selecciona tus tecnologías</p>
       <div className="father-container-technologies">
         {technologies.map((technology, index) => (
           <figure key={index} className="tecnologia-item" id={technology.name}>
@@ -66,6 +63,10 @@ const Tecnologias = () => {
             <ToggleTech setArrayTecn={setArrayTecn} arrayTecn={arrayTecn} />
           </figure>
         ))}
+        <button onClick={() => handleServiceAdd()} disabled={send}>
+        {' '}
+        enviar tech
+      </button>
       </div>
     </>
   );

@@ -35,13 +35,13 @@ const ToggleButton = ({ comment, setAllElementByPather }) => {
     >
       {user ? (
         comment.likes.includes(user._id) ? (
-          <AiTwotoneHeart size={15} className="favorite-icon-red" />
+          <AiTwotoneHeart size={16} className="favorite-icon-red" />
         ) : (
-          <AiOutlineHeart size={15} className="favorite-icon" />
+          <AiOutlineHeart size={16} className="favorite-icon" />
         )
       ) : null}
 
-      {!user && <AiTwotoneHeart size={15} className="favorite-icon-red" />}
+      {!user && <AiTwotoneHeart size={16} className="favorite-icon-red" />}
 
       {comment.likes.length}
     </button>
