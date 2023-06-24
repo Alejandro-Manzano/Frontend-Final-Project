@@ -14,7 +14,7 @@ const AnnualSalarySlider = ({ value, onChange }) =>
         onChange={onChange}
         step={1}
         min={10000}
-        max={100000}
+        max={120000}
         marks={marks}
     />
 

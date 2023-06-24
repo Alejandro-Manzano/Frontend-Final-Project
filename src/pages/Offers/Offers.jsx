@@ -10,8 +10,8 @@ import AnnualSalarySlider from "../../components/offersComponts/AnnualSalarySlid
 
 const Offers = () => {
     const isLargeScreen = useMediaQuery({ minWidth: 880 });
-    const [valueExperienceYearsSlider, setValueExperienceYearsSlider] = useState(0);
-    const [valueAnnualSalarySlider, setValueAnnualSalarySlider] = useState(50000);
+    const [valueExperienceYearsSlider, setValueExperienceYearsSlider] = useState(() => "");
+    const [valueAnnualSalarySlider, setValueAnnualSalarySlider] = useState(10000);
     const [valueJobTypeSelect, setValueJobTypeSelect] = useState('All');
     const [valueOfferStateSelect, setValueOfferStateSelect] = useState('All');
     const [valueOfferTypeSelect, setValueOfferTypeSelect] = useState('All');
@@ -35,7 +35,7 @@ const Offers = () => {
     })
 
     const handleChangeExperienceYearsSlider = (event, newValue) => {
-        setValueExperienceYearsSlider(newValue);
+        setValueExperienceYearsSlider(event.target.value);
     };
 
     const handleChangeAnnualSalarySlider = (event, newValue) => {
@@ -112,9 +112,10 @@ const Offers = () => {
                     <div className="offers-filter-experienceYears-container">
                         <p>Años de experiencia:</p>
                         <ExperienceYearsSlider
-                            value={valueExperienceYearsSlider}
+
                             onChange={handleChangeExperienceYearsSlider}
                         />
+                        {typeof filtersToApply.experienceYears == "string" && (<p style={{ color: "red" }}>No utilizado</p>)}
                     </div>
                     <div className="offers-filter-annualSalary-container">
                         <p>Salario anual:</p>
@@ -122,6 +123,7 @@ const Offers = () => {
                             value={valueAnnualSalarySlider}
                             onChange={handleChangeAnnualSalarySlider}
                         />
+                        {typeof filtersToApply.annualSalary == "string" && (<p style={{ color: "red" }}>No utilizado</p>)}
                     </div>
                 </div>
                 <div className="offers-offersList-container">

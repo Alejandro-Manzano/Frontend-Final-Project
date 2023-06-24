@@ -4,35 +4,8 @@ import ReactPaginate from 'react-paginate';
 import { offer_getAll } from "../../services/API_proyect/offer.service"
 import "./OffersList.css";
 import { Spinner } from "../Spinner/Spinner";
-import {
-    filterOffersByJobType,
-    filterOffersByLessOrEqualThanAnnualSalary,
-    filterOffersByGreaterOrEqualThanAnnualSalary,
-    filterOffersByOfferState,
-    sortOfersByAverageScore_descendingOrder,
-    sortOffersByAverageScore_ascendingOrder,
-    filterOffersByGreaterOrEqualThanExperienceYears,
-    filterOffersByLessOrEqualThanExperienceYears
-} from "../../util/filters/offer.filter";
 import CardOffer from "../CardOffer/CardOffer";
-import { filterOffersByOfferType } from "../../util/filters/offer.filter";
-import {
-    OfferType,
-    OfferState,
-    JobType,
-    AverageScoreType,
-    AnnualSalaryType,
-    ExperienceYearsType,
-} from "../../types/filters/filter.types";
 
-const initFiltersToApply_AllFilterOff = {
-    byExperienceYears: ExperienceYearsType.FilterOff,
-    byAnnualSalary: AnnualSalaryType.FilterOff,
-    byOfferState: OfferState.FilterOff,
-    byJobType: JobType.FilterOff,
-    byOfferType: OfferType.FilterOff,
-    byAverageScore: AverageScoreType.FilterOff,
-}
 
 const OffersList = ({ filters, itemsPerPage }) => {
     const [dataDevelopersList, setDataDevelopersList] = useState([]);
@@ -43,6 +16,7 @@ const OffersList = ({ filters, itemsPerPage }) => {
     const [pageCount, setPageCount] = useState(0);
     const [itemPerPage, setItemPerPage] = useState([])
 
+
     const [filtersToApply, setFiltersToApply] = useState(filters)
 
     const getOffersData = async () => {
@@ -50,19 +24,31 @@ const OffersList = ({ filters, itemsPerPage }) => {
         const dataOffer = await offer_getAll()
         const dataToRender = dataOffer.data
 
+
         ////! filtramos la data
 
-        //console.log(filters)
-        if (filters.experienceYears == "") filters.experienceYears = 0
-        if (filters.jobType == "All") filters.jobType = ""
-        if (filters.offerState == "All") filters.offerState = ""
+        console.log(typeof filters.experienceYears)
+        const copyFilters = { ...filters }
+        if (typeof filters.experienceYears == "string") copyFilters.experienceYears = 10
+        if (filters.experienceYears == 1.0001) copyFilters.experienceYears = 1
+        if (filters.jobType == "All") copyFilters.jobType = ""
+        if (filters.offerState == "All") copyFilters.offerState = ""
+        if (typeof filters.annualSalary == "string") copyFilters.annualSalary = 10000
+        if (filters.offerType == "All") copyFilters.offerType = ""
+
         //console.log(filters)
         if (dataOffer?.status == 200) {
-            const dataFiltered = dataToRender.filter((offer) => (
-                //offer.offerType.includes(filters.offerType) &&
-                //offer.offerState.includes(filters.offerState) &&
-                //offer.jobType.includes(filters.jobType) &&
-                offer.experienceYears <= parseInt(filters.experienceYears))
+            const dataFiltered = dataToRender.filter((offer) => {
+                // console.log("offer: ", offer)
+                // console.log("filters: ", filters)
+                return (
+                    offer.offerType.includes(copyFilters.offerType) &&
+                    offer.offerState.includes(copyFilters.offerState) &&
+                    offer.jobType.includes(copyFilters.jobType) &&
+                    offer.annualSalary >= parseInt(copyFilters.annualSalary) &&
+                    offer.experienceYears <= parseInt(copyFilters.experienceYears)
+                )
+            }
             )
 
             //console.log("🚴‍♂️", dataFiltered)
