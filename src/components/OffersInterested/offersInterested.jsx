@@ -12,8 +12,7 @@ const OffersInterested = () => {
       try {
         const userOffer = await getUserById(user._id);
         if (userOffer) {
-          const { offersInterested } = userOffer.data;
-          setOffers(offersInterested);
+          setOffers(userOffer);
         }
       } catch (error) {
         console.error('Error al obtener el usuario:', error);

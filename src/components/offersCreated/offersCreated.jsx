@@ -6,14 +6,15 @@ import './offersCreated.css';
 const OffersCreated = () => {
   const [offers, setOffers] = useState([]);
   const { user } = useAuth();
-
+  let data = user.data;
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const userOffer = await getUserById(user._id);
+
+        console.log(userOffer);
         if (userOffer) {
-          const { offersCreated } = userOffer.data;
-          setOffers(offersCreated);
+          setOffers(userOffer);
         }
       } catch (error) {
         console.error('Error al obtener el usuario:', error);

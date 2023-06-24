@@ -29,7 +29,7 @@ const DevelopersList = ({ itemsPerPage }) => {
       sortUsersByAverageScore_descendingOrder(dataDevelopers);
 
     const dataFilterZero = dataSortByAverageScore.slice(0, itemsPerPage);
-    const numerberPage = dataSortByAverageScore.length / itemsPerPage;
+    const numerberPage = Math.ceil(dataSortByAverageScore.length / itemsPerPage);
 
     setPageCount(numerberPage);
     setDataDevelopersList(dataSortByAverageScore);

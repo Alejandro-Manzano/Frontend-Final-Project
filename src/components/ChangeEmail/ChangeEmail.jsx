@@ -38,14 +38,15 @@ const ChangeEmail = () => {
         <div>
           <p className="changeEmail-text-new-email">Cambio del Email</p>
           <div className="changeEmail_container-new-email-general">
-          <input className="changeEmail_container-new-email"
-            type="email"
-            placeholder="Introduzca el nuevo email"
-            value={newEmail}
-            onChange={(e) => setNewEmail(e.target.value)}
-          />
-          <button onClick={handleEmailChange}>Change Email</button>
-        </div>
+            <input
+              className="changeEmail_container-new-email"
+              type="email"
+              placeholder="Introduzca el nuevo email"
+              value={newEmail}
+              onChange={(e) => setNewEmail(e.target.value)}
+            />
+            <button onClick={handleEmailChange}>Change Email</button>
+          </div>
         </div>
       ) : (
         <div>

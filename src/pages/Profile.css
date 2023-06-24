@@ -12,6 +12,8 @@
 }
 .btn-profile.active {
   background-color: #25d366;
+  color: white;
+  font-weight: 700;
 }
 .containerNavProfile {
   /* flex: 0.5; */
@@ -24,14 +26,14 @@
 .fluidContainerProfile {
   flex: 2;
   width: 53vw;
-  border: 1px solid #e3e4e5; 
-  border-radius: 12px; 
+  border: 1px solid #e3e4e5;
+  border-radius: 12px;
   margin-left: 30px;
 }
 
 .btn-profile {
   display: flex;
-  justify-content:flex-start ;
+  justify-content: flex-start;
   align-items: center;
   padding: 30px;
   width: 100%;

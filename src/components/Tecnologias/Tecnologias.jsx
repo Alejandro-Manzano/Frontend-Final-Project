@@ -32,7 +32,10 @@ const Tecnologias = () => {
 
   useEffect(() => {
     console.log(resInit);
-    if (resInit?.status == 200) setArrayTecn(resInit.data.technologies);
+    if (resInit?.status == 200) {
+      console.log(resInit.data.technologies);
+      setArrayTecn(resInit.data.technologies);
+    }
   }, [resInit]);
 
   useEffect(() => {
@@ -40,7 +43,10 @@ const Tecnologias = () => {
   }, [arrayTecn]);
 
   useEffect(() => {
-    if (res?.status == '200') setArrayTecn(res.data.newUser.technologies);
+    if (res?.status == '200') {
+      console.log(res.data.newUser.technologies);
+      setArrayTecn(res.data.newUser.technologies);
+    }
   }, [res]);
 
   return (

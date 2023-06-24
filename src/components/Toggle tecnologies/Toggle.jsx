@@ -54,6 +54,9 @@ const ToggleTech = ({ setArrayTecn, arrayTecn }) => {
           : 'noFavorite'
       }
     >
+      {console.log(valuePather)}
+      {console.log(elementId)}
+      {console.log(arrayTecn)}
       {arrayTecn.includes(valuePather) || arrayTecn.includes(elementId) ? (
         <AiTwotoneHeart size={15} className="favorite-icon-red" />
       ) : (

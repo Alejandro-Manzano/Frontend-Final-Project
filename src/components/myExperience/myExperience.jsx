@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getByUserExperience } from '../../services/API_proyect/experience.service';
 import { useAuth } from '../../contexts/authContext';
+import DeleteExperienceButton from '../DeleteExperience/DeleteExperience';
 
 const MyExperience = () => {
   const [experiences, setExperiences] = useState([]);
@@ -34,6 +35,11 @@ const MyExperience = () => {
                 <p>Duration: {experience.duration}</p>
                 <p>Description: {experience.description}</p>
                 <p>Worked with: {experience.workedWith}</p>
+                <DeleteExperienceButton
+                  id={experience._id}
+                  experiences={experiences}
+                  setExperiences={setExperiences}
+                />
               </div>
             </div>
           </li>

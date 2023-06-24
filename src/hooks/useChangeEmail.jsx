@@ -28,8 +28,7 @@ const useChangeEmailError = (res, setChangeEmailOK) => {
     setChangeEmailOK(() => true);
     Swal.fire({
       icon: 'success',
-      title: `Success email change`,
-      text: ` Update: ${check} `,
+      title: `Success updating email change`,
       showConfirmButton: false,
       timer: 4000,
     });

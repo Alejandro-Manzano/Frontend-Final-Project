@@ -23,9 +23,7 @@ const createExperienceUser = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const formData = {
-      ...data,
-    };
+    const formData = new FormData();
 
     for (const key in experienceData) {
       formData.append(key, experienceData[key]);
@@ -38,7 +36,7 @@ const createExperienceUser = () => {
 
     try {
       const res = await createExperience(formData);
-      console.log(res.status == 200);
+      console.log(res.data);
     } catch (err) {
       console.log(err);
     }
