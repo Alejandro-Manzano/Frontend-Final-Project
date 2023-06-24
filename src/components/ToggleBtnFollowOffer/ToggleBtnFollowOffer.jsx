@@ -47,7 +47,7 @@ const ToggleBtnFollowOffer = ({ offerToFollowId }) => {
     return (
         <button
             onClick={handleAddToFavorites}
-            className={`ToggleButtonMobileDev ${isFavorite ? "favorite" : ""}`}
+            className={`ToggleHeartOffer ${isFavorite ? "favorite" : ""}`}
         >
             {isFavorite ? (
                 <AiTwotoneHeart size={25} className="favorite-icon" />
