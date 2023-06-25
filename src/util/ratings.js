@@ -7,7 +7,15 @@ export const getUserAverageScore = (user) => {
 }
 
 export const getOfferAverageScore = (offer) => {
-    if (offer.ratings.length === 0) return 0
+    if (offer === null) {
+        console.log("ERROR: getOfferAverageScore -> offer = null")
+        return 0
+    }
+
+    if (offer.ratings.length === 0) {
+        console.log("getOfferAverageScore -> offer.ratings.length === 0")
+        return 0
+    }
 
     const totalScore = offer.ratings.reduce((acc, curr) => acc + curr.score, 0)
     const averageScore = totalScore / offer.ratings.length

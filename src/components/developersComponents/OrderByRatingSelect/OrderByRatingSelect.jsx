@@ -1,21 +1,19 @@
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import './OrderByRatingSelect.css'
 
-const OrderByRatingSelect = ({ valueJobType, onChange }) => {
+const OrderByRatingSelect = ({ valueByRating, onChange }) => {
     return (
         <FormControl fullWidth>
-            <InputLabel id="orderByRatingSelect-label"></InputLabel>
+            <InputLabel id="orderByRatingSelect-label">Ordenar por valoración</InputLabel>
             <Select
                 labelId="orderByRatingSelect-label"
                 id="orderByRatingSelect-select"
-                value={valueJobType}
-                label="Job Type"
+                value={valueByRating}
+                label="Ordenar por valoración"
                 onChange={onChange}
             >
-                <MenuItem value={"All"}>All</MenuItem>
-                <MenuItem value={"Remote"}>Remote</MenuItem>
-                <MenuItem value={"Office"}>Office</MenuItem>
-                <MenuItem value={"Hybrid"}>Hybrid</MenuItem>
+                <MenuItem value={"Descendente"}>Descendente</MenuItem>
+                <MenuItem value={"Ascendente"}>Ascendente</MenuItem>
             </Select>
         </FormControl>
     );

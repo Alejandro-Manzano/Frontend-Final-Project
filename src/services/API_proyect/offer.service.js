@@ -10,6 +10,16 @@ export const offer_getAll = async () => {
     });
 };
 
+// ----------------- Get Offer by Id from DB -----------
+export const getOfferById = async (id) => {
+  return API.get(`/offers/${id}`)
+    .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};
+
+
 // ---------- Toggle the offer taht the user is interested in -----------
 export const offer_toggleInterestedOfferToUser = async (id) => {
   return API.post(`/offers/toggleInterestedOfferToUser/${id}`, {

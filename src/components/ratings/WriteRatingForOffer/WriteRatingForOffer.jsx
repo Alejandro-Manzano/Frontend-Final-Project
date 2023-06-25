@@ -15,17 +15,47 @@ const WriteRatingForOffer = ({ offerToRate }) => {
 
     const userLoged = user
 
+    if (offerToRate === null) {
+        console.log("WriteRatingForOffer -> offerToRate: ", offerToRate)
+        return null
+    }
+
+    // const getOfferRatingsFromDB = async () => {
+    //     setOfferRatingsFromDB(await getByReference("Offer", offerToRate._id))
+    // }
+
+    // const getOfferRatingsFromDBFirstTime = async () => {
+    //     setOfferRatingsFromDBFirstTime(await getByReference("Offer", offerToRate._id))
+    // }
+
     const getOfferRatingsFromDB = async () => {
-        setOfferRatingsFromDB(await getByReference("Offer", offerToRate._id))
+        const dataFromDB = await getByReference("Offer", offerToRate._id)
+
+        if (dataFromDB.status == 200) {
+            setOfferRatingsFromDB(dataFromDB)
+        } else {
+            console.log("error: Fail getByReference in getOfferRatingsFromDB")
+        }
+
+        // TODO: Show error with swal
     }
 
     const getOfferRatingsFromDBFirstTime = async () => {
-        setOfferRatingsFromDBFirstTime(await getByReference("Offer", offerToRate._id))
+
+        const dataFromDB = await await getByReference("Offer", offerToRate._id)
+
+        if (dataFromDB.status == 200) {
+            setOfferRatingsFromDBFirstTime(dataFromDB)
+        } else {
+            console.log("error: Fail getByReference in getOfferRatingsFromDB")
+        }
+
+        // TODO: Show error with swal
     }
 
     const createOrUpdateRating = async (offerRatingsFromDB) => {
         if (offerRatingsFromDB?.data) {
-            const filterRating = offerRatingsFromDB.data.filter((rating) => rating.owner == userLoged._id);
+            const filterRating = offerRatingsFromDB.data.filter((rating) => rating.owner._id == userLoged._id);
 
             if (filterRating.length == 0) {
                 setResponseCreateRating(await createRating({ "score": ratingValue, "referenceOffer": offerToRate._id }));
@@ -40,7 +70,9 @@ const WriteRatingForOffer = ({ offerToRate }) => {
     const showFirstTimeRating = async (offerRatingsFromDB) => {
         if (offerRatingsFromDB?.data) {
             const filterRating = offerRatingsFromDB.data
-                .filter((rating) => rating.referenceOffer == offerToRate._id);
+                .filter((rating) => {
+                    return rating.referenceOffer._id == offerToRate._id
+                });
 
             if (filterRating.length == 0) {
                 setRatingValue(0)
@@ -51,6 +83,18 @@ const WriteRatingForOffer = ({ offerToRate }) => {
             }
         }
     };
+
+    useEffect(() => {
+        if (ratingValue != -1) {
+            getOfferRatingsFromDB()
+        }
+    }, [ratingValue]);
+
+    ////////////////////////////////////
+    useEffect(() => {
+        getOfferRatingsFromDBFirstTime()
+    }, []);
+    ////////////////////////////////////
 
     useEffect(() => {
         console.log("response create Rating: ", responseCreateRating)
@@ -64,20 +108,16 @@ const WriteRatingForOffer = ({ offerToRate }) => {
         createOrUpdateRating(offerRatingsFromDB);
     }, [offerRatingsFromDB]);
 
+    ///////////////////////////////////
     useEffect(() => {
         showFirstTimeRating(offerRatingsFromDBFirstTime)
     }, [offerRatingsFromDBFirstTime]);
-
-    useEffect(() => {
-        if (ratingValue != -1) {
-            getOfferRatingsFromDB()
-        }
-    }, [ratingValue]);
+    ////////////////////////////////////
 
 
-    useEffect(() => {
-        getOfferRatingsFromDBFirstTime()
-    }, []);
+
+
+
 
     return (
         <div>

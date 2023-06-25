@@ -14,6 +14,7 @@ import Register from './pages/Register.jsx';
 import Profile from './pages/Profile';
 import Developers from './pages/Developers/Developers';
 import DeveloperDetails from './pages/DeveloperDetails/DeveloperDetails';
+import OfferDetails from './pages/OfferDetails/OfferDetails';
 import Offers from './pages/Offers/Offers';
 import CreateOffer from './components/CreateOffer/CreateOffer';
 import AboutUs from './pages/AboutUs/AboutUs';
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/offers" element={<Offers />} />
           <Route path="/developerDetails" element={<DeveloperDetails />} />
+          <Route path="/offerDetails" element={<OfferDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/createOffer" element={<CreateOffer />} />
