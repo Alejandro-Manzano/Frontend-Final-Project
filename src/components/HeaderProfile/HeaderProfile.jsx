@@ -11,8 +11,8 @@ const UserProfile = () => {
     const fetchUser = async () => {
       try {
         const userDataProfile = await getUserById(user._id);
+        console.log(userDataProfile);
         if (userDataProfile) {
-          console.log(userDataProfile);
           setUserData(userDataProfile.data);
         }
       } catch (error) {
@@ -20,19 +20,21 @@ const UserProfile = () => {
       }
     };
 
-    if (user && user._id) {
-      fetchUser();
-    }
+    fetchUser();
   }, [user]);
 
   return (
     <div className="user-profile">
       <div className="user-image">
-        <img src={userData.image} alt={`${userData.name}`} />
+        {userData && <img src={userData.image} alt={userData.name} />}
       </div>
       <div className="user-info">
-        <p>{userData.following.length} Following </p>
-        <p>{userData.followers.length} Followers </p>
+        {userData && (
+          <>
+            <p className="follower-container">{userData.following?.length} Following </p>
+            <p className="follower-container">{userData.followers?.length} Followers </p>
+          </>
+        )}
       </div>
     </div>
   );
