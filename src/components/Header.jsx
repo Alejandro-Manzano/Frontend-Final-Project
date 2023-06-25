@@ -37,7 +37,7 @@ const Header = () => {
     <>
       <header>
         <div className="titleFatherContainer">
-          <NavLink to="/home">
+          <NavLink to="/home" className="header-link-one">
             <img
               className="header-logo"
               alt="icon"
