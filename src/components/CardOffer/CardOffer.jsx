@@ -10,47 +10,57 @@ const CardOffer = ({ offer }) => {
     //console.log("CardOffer --> offer: ", offer)
     return (
         <section className="cardOffer-Info">
-            <div className="cardOffer-BtnToggle">
-                <ToggleBtnFollowOffer offerToFollowId={offer._id} />
-            </div>
-            <a className="cardOffer-link-to-offerDetails"
+            
+            <section className="cardOffer-link-to-offerDetails"
                 onClick={() =>
                     navigate(pathToOfferDetails, {
                         state: { offer: offer },
                     })
                 }
             >
-
-                <img className="cardOffer-Info-img" src={offer.image} alt={`offer's ${offer.offerTitle} pic`} />
+                <div className="cardOffer-BtnToggle">
+                <ToggleBtnFollowOffer offerToFollowId={offer._id} />
+            </div>
+<img className="cardOffer-Info-img" src={offer.image} alt={`offer's ${offer.offerTitle} pic`} />
+<div className="cardOffer-Info-ratings">
+                <ReadOnlyOfferRating offer={offer} />
+            </div>
+            </section>
+                <section className="cardOffer-paragraph">
                 <div className="cardOffer-Profile">
+
+          
                     <div className="cardOffer-Info-tabla-name">
                         {offer.offerTitle}
-                        <p className="cardOffer-Info-Ubicado"> 📋 Ubicado/a en {offer.city}</p>
+                       
                     </div>
-                    <p className="cardOffer-Info-OfferType">
-                        Tipo de oferta: {offer.offerType}
-                    </p>
                     <p className="cardOffer-Info-AnnualSalary">
-                        Salario anual: {offer.annualSalary}
+                        (&euro;): {offer.annualSalary}
                     </p>
+                    <p className="cardOffer-Info-OfferType">
+                         {offer.offerType} 
+                    </p>
+                    
                     <p className="cardOffer-Info-Ubicado">
-                        Años de experiencia: {offer.experienceYears}
+                    📅 {offer.experienceYears} año/s
                     </p>
                     <p className="cardOffer-Info-JobType">
-                        Tipo de trabajo: {offer.jobType}
+                    💻 {offer.jobType}
                     </p>
-                    <p className="cardOffer-Info-OfferState">
-                        Estado: {offer.offerState}
-                    </p>
+                  
                     <div className="cardOffer-Info-grupo-technologies">
                         <h4 className="cardOffer-Info-technologies">{offer.technologies}</h4>
                     </div>
                 </div>
-            </a>
-            <div className="cardOffer-Info-ratings">
-                <ReadOnlyOfferRating offer={offer} />
-            </div>
+                </section>
+                <section>
+                <p className="cardOffer-Info-OfferState">
+                         {offer.offerState}
+                    </p>
 
+                    <p className="cardOffer-Info-Ubicado"> 📋  {offer.city}</p>
+
+                </section>             
         </section>
     );
 };
