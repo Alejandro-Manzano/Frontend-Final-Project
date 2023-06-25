@@ -71,10 +71,8 @@ const DeveloperDetails = () => {
     }
   }, [resComment]);
 
-  console.log(developer);
-
   return (
-    
+
     <div className='DeveloperDetails-container'>
 
       <div className="DeveloperDetails-container-one">
@@ -103,12 +101,10 @@ const DeveloperDetails = () => {
 
         </div>
 
-        <div style={{ padding: 14, textAlign: 'center', padding: "30px", margin: "0 , auto" }} className="DeveloperDetails-description-container-App">
+        <div style={{ padding: 14 }} className="DeveloperDetails-description-container-App">
        
         <Paper style={{ padding: '40px 20px' }}>
-
-        <h3 style={ font }>Comments</h3>
-
+        <h3>Comments</h3>
           <Grid container wrap="nowrap" spacing={2}>
             <Grid item>
               <Avatar alt="Remy Sharp" src={imgLink} />
@@ -153,3 +149,4 @@ const DeveloperDetails = () => {
 };
 
 export default DeveloperDetails;
+
