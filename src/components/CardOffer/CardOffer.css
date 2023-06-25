@@ -1,12 +1,27 @@
-.cardOffer-Info{
+
+  .cardOffer-BtnToggle {
+    position: absolute;
+  }
+  
+  .cardOffer-Info{
     display:flex;
   
 
 }
 
 .cardOffer-Info-img{
-    height:70px;
-    width: 70px;
+    height:110px;
+    width: 120px;
     object-fit: cover;
    
+}
+
+.cardOffer-paragraph{
+   margin: 1rem;
+
+}
+
+.cardOffer-Info-technologies{
+font-size: 15px;
+gap: 2rem;
 }
