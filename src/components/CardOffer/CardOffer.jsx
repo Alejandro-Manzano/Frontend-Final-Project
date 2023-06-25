@@ -41,29 +41,36 @@ const CardOffer = ({ offer }) => {
                     <p className="cardOffer-Info-OfferType">
                         {offer.offerType}
                     </p>
+                    <p className="cardOffer-Info-Description">
+                        {offer.description}
+                    </p>
 
                     <p className="cardOffer-Info-Ubicado">
                         📅 {offer.experienceYears} año/s
                     </p>
-                    <p className="cardOffer-Info-JobType">
-                        💻 {offer.jobType}
-                    </p>
+                    
 
                     <div className="cardOffer-Info-grupo-technologies">
                     <h4 className="cardOffer-Info-technologies">{offer.technologies.join(', ')}</h4>
                     </div>
                 </div>
             </section>
-            <section>
-                <p className="cardOffer-Info-OfferState">
-                    {offer.offerState}
-                </p>
+            
+            
+            
+            <section className='cardOffer-Info-UbiJob'>
+               
 
                 <p className="cardOffer-Info-Ubicado"> 📋  {offer.city}</p>
-
+                <p className="cardOffer-Info-JobType">
+                        💻 {offer.jobType}
+                    </p>
                 
             </section>
-            
+            <p className="cardOffer-Info-OfferState">
+                    {offer.offerState}
+                </p>
+                            
         </section>
     );
 };

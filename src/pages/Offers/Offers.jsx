@@ -80,7 +80,8 @@ const Offers = () => {
         <div className="outletContainer">
             {isLargeScreen ?
                 <h1>
-                    Come and check our <u>Developers</u> job offers!
+                    ¡Ven y consulta nuestras ofertas de trabajo para <u>Desarrolladores</u>!
+                    
                 </h1>
                 :
                 <h1>

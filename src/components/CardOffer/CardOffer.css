@@ -8,6 +8,12 @@
     
   }
   
+  .cardOffer-link-to-offerDetails{
+    display: flex;
+    flex-direction: column;
+    
+
+  }
   .cardOffer-Info{
     display:flex;
     border: 1px solid #e3e4e5;
@@ -27,9 +33,11 @@
   }
 
 .cardOffer-Info-img{
-    height:110px;
-    width: 120px;
+    
+  height:110px;
+    width: 140px;
     object-fit: cover;
+    border-radius: 7px;
    
 }
 
@@ -47,7 +55,9 @@ font-family: var(--font-bold);
 .cardOffer-Profile{
     display: flex;
     flex-direction:column;
-   justify-content:center;
+   justify-content:flex-start;
+   align-items: space-around;
+   width: 25vw;
 }
 
 .cardOffer-Info-Ubicado{
@@ -58,6 +68,23 @@ font-family: var(--font-bold);
 }
 .cardOffer-Info-OfferState{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items:flex-start;
+    /* margin-left: 300px; */
+    
+    
+}
+.cardOffer-Info-JobType{
+  display: flex;
+  /* flex-direction: column;
+  justify-content:end;
+  align-items:end; */
+}
+
+.cardOffer-Info-UbiJob{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
 }
