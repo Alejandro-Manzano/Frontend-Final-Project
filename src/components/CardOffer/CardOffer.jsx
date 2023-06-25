@@ -7,10 +7,11 @@ const CardOffer = ({ offer }) => {
     const navigate = useNavigate();
     const pathToOfferDetails = `/offerDetails`;
 
+
     //console.log("CardOffer --> offer: ", offer)
     return (
         <section className="cardOffer-Info">
-
+            
             <section className="cardOffer-link-to-offerDetails"
                 onClick={() =>
                     navigate(pathToOfferDetails, {
@@ -60,7 +61,9 @@ const CardOffer = ({ offer }) => {
 
                 <p className="cardOffer-Info-Ubicado"> 📋  {offer.city}</p>
 
+                
             </section>
+            
         </section>
     );
 };
