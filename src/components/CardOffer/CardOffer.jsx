@@ -35,24 +35,26 @@ const CardOffer = ({ offer }) => {
                         {offer.offerTitle}
 
                     </div>
-                    <p className="cardOffer-Info-AnnualSalary">
-                        (&euro;): {offer.annualSalary}
-                    </p>
-                    <p className="cardOffer-Info-OfferType">
-                        {offer.offerType}
-                    </p>
-                    <p className="cardOffer-Info-Description">
-                        {offer.description}
-                    </p>
-
-                    <p className="cardOffer-Info-Ubicado">
-                        📅 {offer.experienceYears} año/s
-                    </p>
-                    
-
                     <div className="cardOffer-Info-grupo-technologies">
                     <h4 className="cardOffer-Info-technologies">{offer.technologies.join(', ')}</h4>
                     </div>
+                    <p className="cardOffer-Info-Description">
+                        {offer.description}
+                    </p>
+                    <p className="cardOffer-Info-Ubicado"> 📋  {offer.city}</p>
+                    <p className="cardOffer-Info-Ubicado">
+                        📅 {offer.experienceYears} año/s de experiencia
+                    </p>
+                    <p className="cardOffer-Info-AnnualSalary">
+                        (&euro;): {offer.annualSalary}
+                    </p>
+                    
+                   
+
+                    
+                    
+
+                    
                 </div>
             </section>
             
@@ -61,16 +63,21 @@ const CardOffer = ({ offer }) => {
             <section className='cardOffer-Info-UbiJob'>
                
 
-                <p className="cardOffer-Info-Ubicado"> 📋  {offer.city}</p>
-                <p className="cardOffer-Info-JobType">
-                        💻 {offer.jobType}
-                    </p>
+                
+                
                 
             </section>
+            <span className='cardOffer-Info-State-Type-JobType'>
             <p className="cardOffer-Info-OfferState">
                     {offer.offerState}
-                </p>
-                            
+                    </p>
+             <p className="cardOffer-Info-OfferType">
+                        {offer.offerType}
+                    </p>
+             <p className="cardOffer-Info-JobType">
+                        💻 {offer.jobType}
+                    </p>
+             </span>              
         </section>
     );
 };

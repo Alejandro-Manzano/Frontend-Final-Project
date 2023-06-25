@@ -1,26 +1,31 @@
 
   .cardOffer-BtnToggle {
-    position: absolute;
-    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
-  .favorite-icon{
-    margin: 2px;
-    
-  }
+ 
   
   .cardOffer-link-to-offerDetails{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 14px;
+     
     
-
   }
+
   .cardOffer-Info{
     display:flex;
-    border: 1px solid #e3e4e5;
+    border: 0.7px solid #e3e4e5;
     width: 900px;
+    background-color: #fcfcfc;
   }
 .cardOffer-Info-tabla-name{
-    margin-bottom: 10px;
+    
+    font-size: 21px;
 }
 .cardOffer-Info-AnnualSalary{
     font-size:smaller;
@@ -34,9 +39,9 @@
 
 .cardOffer-Info-img{
     
-  height:110px;
-    width: 140px;
-    object-fit: cover;
+  height:90px;
+    width: 125px;
+    
     border-radius: 7px;
    
 }
@@ -48,7 +53,7 @@
 
 .cardOffer-Info-technologies{
 font-size: 15px;
-gap: 2rem;
+/* gap: 2rem; */
 font-family: var(--font-bold);
 }
 
@@ -87,4 +92,20 @@ font-family: var(--font-bold);
   flex-direction: column;
   justify-content: end;
   align-items: center;
+}
+
+.cardOffer-Info-Description{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cardOffer-Info-State-Type-JobType{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+  justify-content:right;
+  width: 230px;
+  margin-right: 18px;
+  margin-top: 12px;
 }

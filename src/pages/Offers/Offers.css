@@ -4,7 +4,7 @@
     align-items: flex-start;
     width: 100%;
     height: 100%;
-    gap: 4rem;
+   
 }
 
 .offers-filters-container {
@@ -15,13 +15,14 @@
     gap: 2rem;
     min-width: 23%;
     max-width: 23%;
-    height: 100%;
-    margin: 2rem;
-    padding: 1rem;
-    border: 1px solid black;
+    height: 700px;
+    margin-top: 25px;   
+    border: 0.7px solid #e3e4e5;
+    background-color: #fcfcfc;
 }
 
 .offers-filter-offerType-container {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
