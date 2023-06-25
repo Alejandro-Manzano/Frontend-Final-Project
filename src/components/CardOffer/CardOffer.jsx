@@ -49,7 +49,7 @@ const CardOffer = ({ offer }) => {
                     </p>
 
                     <div className="cardOffer-Info-grupo-technologies">
-                        <h4 className="cardOffer-Info-technologies">{offer.technologies}</h4>
+                    <h4 className="cardOffer-Info-technologies">{offer.technologies.join(', ')}</h4>
                     </div>
                 </div>
             </section>
