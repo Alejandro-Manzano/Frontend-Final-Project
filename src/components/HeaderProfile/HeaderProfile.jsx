@@ -12,6 +12,7 @@ const UserProfile = () => {
       try {
         const userDataProfile = await getUserById(user._id);
         if (userDataProfile) {
+          console.log(userDataProfile);
           setUserData(userDataProfile.data);
         }
       } catch (error) {
