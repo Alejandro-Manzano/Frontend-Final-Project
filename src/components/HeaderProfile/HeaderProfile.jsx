@@ -12,7 +12,7 @@ const UserProfile = () => {
       try {
         const userDataProfile = await getUserById(user._id);
         if (userDataProfile) {
-          setUserData(userDataProfile.data); // Asegúrate de guardar solo los datos del usuario
+          setUserData(userDataProfile.data);
         }
       } catch (error) {
         console.error('Error al obtener el usuario:', error);
