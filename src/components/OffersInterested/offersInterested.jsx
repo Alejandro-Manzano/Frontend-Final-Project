@@ -23,8 +23,8 @@ const OffersInterested = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Ofertas en las que estoy interesado/a</h1>
+    <section className="experience-p-container_general">
+      <h3>Ofertas en las que estoy interesado/a</h3>
       {offers.length > 0 ? (
         <ul>
           {offers.map((offer) => (
@@ -41,7 +41,7 @@ const OffersInterested = () => {
       ) : (
         <p>No hay ofertas en las que estés interesado/a.</p>
       )}
-    </div>
+    </section>
   );
 };
 

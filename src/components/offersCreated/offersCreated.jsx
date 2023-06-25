@@ -25,25 +25,25 @@ const OffersCreated = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Ofertas Creadas</h1>
+    <section className="offer-create-container_general experience-p-container_general">
+      <h3>Ofertas Creadas</h3>
       {offers.length > 0 ? (
         <ul>
           {offers.map((offer) => (
             <li key={offer._id}>
               <h3>{offer.offerTitle}</h3>
-              <p>Description: {offer.description}</p>
-              <p>City: {offer.city}</p>
-              <p>Job Type: {offer.jobType}</p>
-              <p>Offer State: {offer.offerState}</p>
-              <p>Technologies: {offer.technologies.join(', ')}</p>
+              <p>Descripción: {offer.description}</p>
+              <p>Ciudad: {offer.city}</p>
+              <p>Tipo de trabajo: {offer.jobType}</p>
+              <p>Estado de la oferta: {offer.offerState}</p>
+              <p>Tecnologías: {offer.technologies.join(', ')}</p>
             </li>
           ))}
         </ul>
       ) : (
         <p>No hay ofertas creadas.</p>
       )}
-    </div>
+    </section>
   );
 };
 
