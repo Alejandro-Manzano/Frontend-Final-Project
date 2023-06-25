@@ -78,6 +78,8 @@
 .cardOffer-Info-ratings {
     font-size: 12px;
     padding: 0 0 0 16px;
+    position: absolute;
+    margin-top: 230px;
 }
 
 .cardOffer-Info-Ubicado {

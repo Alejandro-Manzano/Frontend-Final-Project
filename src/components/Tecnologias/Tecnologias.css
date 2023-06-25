@@ -7,7 +7,7 @@
 }
 
 .choose_technologies-container-choose:hover {
-  color:#25d366 ;
+  font-weight: 650 ;
 }
 
 .father-container-technologies {
@@ -19,13 +19,17 @@
   gap: 0.7rem;
   max-width: 950px;
   margin-left: 36px;
-  font-size: 12px;
+  
 }
 
 .tech-image {
   width: 39px;
   height: 30px;
-  margin-top: 16px;
+  margin-top: 7px;
+}
+
+.tech-image-text{
+  font-size: 12px;
 }
 
 .tecnologia-item {
@@ -48,4 +52,8 @@
   border-radius: 1%;
   margin-top: 7px;
   padding: 10px 0;
+}
+
+.btn_profile_general_tech {
+  margin-top: 10px;
 }

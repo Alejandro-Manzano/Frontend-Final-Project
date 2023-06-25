@@ -3,13 +3,12 @@
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  margin-top: 30px;
+  margin-top: 3rem;
 }
 
 .changeEmail-text-new-email:hover {
-    color:#25d366 ;
+    font-weight: 650;
 }
-
 
 .changeEmail_container-new-email-general {
     display: flex;
@@ -32,5 +31,9 @@
 .changeEmail_container-new-email:hover {
     cursor: pointer;
     box-shadow: 1px 1px 5px 1px #25d366;
+}
+
+.btn_profile_general-send-code {
+    
 }
 

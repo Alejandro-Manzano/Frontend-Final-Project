@@ -1,46 +1,54 @@
-.form {
+
+.form_Create {
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 10px;
-  width: 300px;
-  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 18px;
+  padding: 14px 0 0 57px;
 }
 
-.form-label {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  width: 100%;
+.form-empresa-duracion{
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+}
+
+.form-label:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px 1px #25d366;
 }
 
 .form-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.description-input {
-  height: 80px;
-}
-
-.form-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 15px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  width: 390px;
+  padding: 12px;
+  margin-top: 7px;
+  border: 1px solid #e3e4e5;  
+  border-radius: 12px;
   font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
+  
 }
 
-.form-button:hover {
-  background-color: #45a049;
+.form-input-description-input {
+  width: 520px;
+  border: 1px solid #e3e4e5;  
+  border-radius: 12px;
+  padding: 44px;
+  font-size: 16px;
+  align-items: flex-start;
 }
+
+.form-input-description-input:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px 1px #25d366;
+}
+
+.form-Uploadfile_photo_profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 30px;
+}
+

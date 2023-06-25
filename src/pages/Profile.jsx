@@ -38,7 +38,7 @@ const Profile = () => {
           >
           👨🏻‍⚕️  Perfil
           </button>
-          <button
+          <button btn_profile_general
             className={`btn-profile ${activeButton === 'Email' ? 'active' : ''}`}
             onClick={() => {
               setChangeRender('Email');

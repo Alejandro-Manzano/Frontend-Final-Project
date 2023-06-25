@@ -62,13 +62,13 @@ const Tecnologias = () => {
               <img className="tech-image" src={technology.image} alt={technology.name} />
             </div>
 
-            <p>{technology.name}</p>
+            <p className="tech-image-text">{technology.name}</p>
             <ToggleTech setArrayTecn={setArrayTecn} arrayTecn={arrayTecn} />
           </figure>
         ))}
-        <button onClick={() => handleServiceAdd()} disabled={send}>
+        <button className="btn_profile_general btn_profile_general_tech" onClick={() => handleServiceAdd()} disabled={send}>
           {' '}
-          enviar tech
+          GUARDAR MIS TECH
         </button>
       </div>
     </>

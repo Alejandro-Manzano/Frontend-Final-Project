@@ -45,42 +45,55 @@ const createExperienceUser = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form">
+    <>
+    <form onSubmit={handleSubmit} className="form_Create">
+      <div className="form-empresa-duracion">
       <label className="form-label">
-        Empresa:
         <input
           type="text"
+          placeholder='Empresa'
           name="workedWith"
           value={experienceData.workedWith}
           onChange={handleInputChange}
           className="form-input"
         />
       </label>
+      
       <label className="form-label">
-        Duración:
+
         <input
           type="number"
+          placeholder={experienceData.duration ? '' : 'Duración'}
           name="duration"
-          value={experienceData.duration}
+          // value={experienceData.duration}
           onChange={handleInputChange}
           className="form-input"
         />
       </label>
-      <label className="form-label description-label">
-        Descripción:
+      </div>
+      <label className="form-label-description-label">
         <input
+        
           type="text"
+          placeholder='Descripción'
           name="description"
           value={experienceData.description}
           onChange={handleInputChange}
-          className="form-input description-input"
+          className="form-input-description-input"
         />
+      
       </label>
-      <Uploadfile registerForm={{ ref: fileInput }} />
-      <button type="submit" className="form-button">
-        Guardar Experiencia
+      
+      
+      
+      </form>
+      <div className="form-Uploadfile_photo_profile"> 
+      <Uploadfile className="form-Uploadfile_photo_profile" registerForm={{ ref: fileInput }} />
+      <button  type="submit" className="btn_profile_general">
+        GUARDAR EXPERIENCIA
       </button>
-    </form>
+      </div>
+      </>
   );
 };
 

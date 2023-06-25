@@ -45,18 +45,22 @@ const ChangeEmail = () => {
               value={newEmail}
               onChange={(e) => setNewEmail(e.target.value)}
             />
-            <button onClick={handleEmailChange}>Change Email</button>
+            < button className="btn_profile_general" onClick={handleEmailChange}>CAMBIAR EMAIL</button>
           </div>
         </div>
       ) : (
         <div>
+          <p className="changeEmail-text-new-email">Enviar el código de confirmación</p>
+          <div className="changeEmail_container-new-email-general">
           <input
+          className="changeEmail_container-new-email" 
             type="text"
-            placeholder="Enter confirmation code"
+            placeholder="Introducir el código de confirmación"
             value={confirmationCode}
             onChange={(e) => setConfirmationCode(e.target.value)}
           />
-          <button onClick={handleCodeConfirmation}>Confirm Code</button>
+          <button className="btn_profile_general btn_profile_general-send-code" onClick={handleCodeConfirmation}>ENVIAR CÓDIGO</button>
+          </div>
         </div>
       )}
     </div>

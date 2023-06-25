@@ -33,9 +33,9 @@ const MyExperience = () => {
                 <img src={experience.image} alt={experience.title} />
               </div>
               <div className="experience-p-container">
-                <p>Duration: {experience.duration}</p>
-                <p>Description: {experience.description}</p>
-                <p>Worked with: {experience.workedWith}</p>
+                <p className="Experiencia_Negrita"> Duración: {experience.duration} año/s</p>
+                <p>Descripción: {experience.description}</p>
+                <p>Trabajado con: {experience.workedWith} año/s </p>
                 <DeleteExperienceButton
                   id={experience._id}
                   experiences={experiences}

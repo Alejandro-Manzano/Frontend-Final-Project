@@ -4,7 +4,8 @@ import { deleteUser } from '../services/API_proyect/user.service';
 
 const useDeleteUser = (setUser) => {
   Swal.fire({
-    title: 'Are you sure you want to remove your profile?',
+    title: 'Estás seguro de que quieres borrar tu perfil?',
+    text: 'Al borrarlo perderás toda la información del perfil ⛔',
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: 'rgb(73, 193, 162)',

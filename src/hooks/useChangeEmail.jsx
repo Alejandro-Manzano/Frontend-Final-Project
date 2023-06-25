@@ -28,7 +28,7 @@ const useChangeEmailError = (res, setChangeEmailOK) => {
     setChangeEmailOK(() => true);
     Swal.fire({
       icon: 'success',
-      title: `Success updating email change`,
+      title: `Actualizado correctamente el cambio del email`,
       showConfirmButton: false,
       timer: 1500,
     });
@@ -46,7 +46,7 @@ const useChangeEmailError = (res, setChangeEmailOK) => {
     Swal.fire({
       icon: 'error',
       title: `Error updating email: ${error} ❎`,
-      text: 'Please, try again.',
+      text: 'Por favor, prueba otra vez.',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -55,7 +55,7 @@ const useChangeEmailError = (res, setChangeEmailOK) => {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Confirmation code is incorrect! Please, check and try again.',
+      text: 'El código de confirmación es incorrecto! Por favor intentalo de nuevo.',
       showConfirmButton: false,
       timer: 1500,
     });
@@ -64,7 +64,7 @@ const useChangeEmailError = (res, setChangeEmailOK) => {
     Swal.fire({
       icon: 'warning',
       title: 'Oops...',
-      text: 'Email already in use! Please, use a different email.',
+      text: '¡El email ya está en uso! Por favor, utilice un email diferente.',
       showConfirmButton: false,
       timer: 1500,
     });

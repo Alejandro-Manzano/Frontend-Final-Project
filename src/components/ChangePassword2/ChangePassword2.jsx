@@ -115,7 +115,7 @@ const ChangePassword2 = () => {
           <div className="btn_container-center">
           <div className="btn_container">
             <button
-              className="btn"
+              className="btn_profile_general"
               type="submit"
               disabled={send}
               //style={{ background: send ? "#49c1a388" : "#49c1a2" }}

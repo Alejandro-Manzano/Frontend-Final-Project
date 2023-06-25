@@ -43,7 +43,7 @@ const ToggleTech = ({ setArrayTecn, arrayTecn }) => {
   }, []);
 
   return (
-    <button
+    <button 
       style={{ background: 'none', border: 'none' }}
       onClick={handleAddTech}
       disabled={loading || user == null}
