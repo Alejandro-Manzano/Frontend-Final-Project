@@ -1,20 +1,39 @@
+.toda-la-pagina-maki {
+  background-image: url('https://res.cloudinary.com/djglk3cso/image/upload/v1687804422/Game%20Hub/Dise%C3%B1o_sin_t%C3%ADtulo_11_doiydf.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  background-origin: content-box;
+}
+
+.crear-oferta-titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: bold;
+}
+.h3-oferta {
+  color: #61d61d;
+}
+#oferta-h3-general {
+  font-weight: 800;
+  font-size: bold;
+  letter-spacing: 1px;
+}
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-}
-
-.form-createOffer {
-  width: 60vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  min-height: 90vh;
 }
 
 .form-field {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-label {
@@ -30,19 +49,38 @@
   height: 150px;
   width: 40vw;
 }
-
+.tecnologies-Offer {
+  margin-top: 5px;
+  /* padding-left: 30px; */
+  overflow: auto;
+  height: 200px;
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 .input-create-offer {
   width: 40vw;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 350px;
+  padding: 12px;
+  margin-top: 7px;
+  border: 2px solid #cecfd0;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 16px;
 }
 
 .error-message {
   color: red;
 }
 .btn-submit-create-offer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 30px;
   height: 40px;
@@ -50,4 +88,7 @@
   background-color: #25d366;
   color: white;
   margin-bottom: 1rem;
+}
+#btn-offer {
+  margin-top: 10px;
 }

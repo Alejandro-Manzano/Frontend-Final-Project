@@ -29,7 +29,7 @@ const CreateOffer = () => {
       ...data,
       annualSalary: parseInt(data.annualSalary),
       offerState: 'Open',
-      technologies: arrayTech, // Agrega las tecnologías al objeto de los datos
+      technologies: arrayTech,
     };
 
     setSend(true);
@@ -67,116 +67,148 @@ const CreateOffer = () => {
   };
 
   return (
-    <div className="form-container">
-      <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-field">
-          <label className={`form-label ${errors.offerTitle ? 'required-label' : ''}`}>
-            Titulo de la oferta
-          </label>
-          <input
-            className="input-create-offer"
-            {...register('offerTitle', { required: true })}
-            placeholder="Offer Title"
-          />
-          {errors.offerTitle && <p className="error-message">This field is required</p>}
+    <>
+      <div className="toda-la-pagina-maki">
+        <div className="crear-oferta-titulo">
+          <h3 id="oferta-h3-general">¡Crea tu</h3>
+          <p> </p>
+          <h3 id="oferta-h3-general" className="h3-oferta">
+            oferta!
+          </h3>
         </div>
+        <div className="form-container">
+          <form className="form" onSubmit={handleSubmit(onSubmit)}>
+            <div className="form-field">
+              <label
+                className={`form-label ${errors.offerTitle ? 'required-label' : ''}`}
+              >
+                Titulo de la oferta
+              </label>
+              <input
+                className="input-create-offer"
+                {...register('offerTitle', { required: true })}
+                placeholder="Offer Title"
+              />
+              {errors.offerTitle && (
+                <p className="error-message">This field is required</p>
+              )}
+            </div>
 
-        <div className="form-field">
-          <label className="form-label">Offer Type</label>
-          <select
-            className={`input-create-offer ${errors.offerType ? 'required-label' : ''}`}
-            {...register('offerType', { required: true })}
-          >
-            {offerTypes.map((type, index) => (
-              <option key={index} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-          {errors.offerType && <p className="error-message">This field is required</p>}
+            <div className="form-field">
+              <label className="form-label">Offer Type</label>
+              <select
+                className={`input-create-offer ${
+                  errors.offerType ? 'required-label' : ''
+                }`}
+                {...register('offerType', { required: true })}
+              >
+                {offerTypes.map((type, index) => (
+                  <option key={index} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </select>
+              {errors.offerType && (
+                <p className="error-message">This field is required</p>
+              )}
+            </div>
+
+            <div className="form-field">
+              <label className="form-label">Job Type</label>
+              <select
+                className={`input-create-offer ${errors.jobType ? 'required-label' : ''}`}
+                {...register('jobType', { required: true })}
+              >
+                {jobTypes.map((type, index) => (
+                  <option key={index} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </select>
+              {errors.jobType && <p className="error-message">This field is required</p>}
+            </div>
+
+            <div className="form-field">
+              <label
+                className={`form-label ${errors.technologies ? 'required-label' : ''}`}
+              >
+                Technologies
+              </label>
+              <div className="tecnologies-Offer">
+                {technologies.map((technology, index) => (
+                  <figure key={index} className="tecnologia-item" id={technology.name}>
+                    <div className="image-container">
+                      <img
+                        className="tech-image"
+                        src={technology.image}
+                        alt={technology.name}
+                      />
+                    </div>
+                    <p className="tech-image-text">{technology.name}</p>
+                    <input
+                      type="checkbox"
+                      name={technology.name}
+                      id={technology.name}
+                      onChange={createArrayTech}
+                    />
+                  </figure>
+                ))}
+              </div>
+              {errors.technologies && (
+                <p className="error-message">This field is required</p>
+              )}
+            </div>
+
+            <div className="form-field">
+              <label
+                className={`form-label ${errors.description ? 'required-label' : ''}`}
+              >
+                Description
+              </label>
+              <textarea
+                className="input-create-offer"
+                {...register('description', { required: true })}
+                placeholder="Offer Description"
+              ></textarea>
+              {errors.description && (
+                <p className="error-message">This field is required</p>
+              )}
+            </div>
+
+            <div className="form-field">
+              <label
+                className={`form-label ${errors.annualSalary ? 'required-label' : ''}`}
+              >
+                Salario anual
+              </label>
+              <input
+                className="input-create-offer"
+                {...register('annualSalary', { required: true })}
+                placeholder="Annual Salary"
+              />
+              {errors.annualSalary && (
+                <p className="error-message">This field is required</p>
+              )}
+            </div>
+
+            <div className="form-field">
+              <label className={`form-label ${errors.city ? 'required-label' : ''}`}>
+                Ciudad
+              </label>
+              <input
+                className="input-create-offer"
+                {...register('city', { required: true })}
+                placeholder="City"
+              />
+              {errors.city && <p className="error-message">This field is required</p>}
+            </div>
+            <div id="btn-offer" className="form-field">
+              <input className="btn-submit-create-offer" type="submit" value="Submit" />
+            </div>
+          </form>
         </div>
-
-        <div className="form-field">
-          <label className="form-label">Job Type</label>
-          <select
-            className={`input-create-offer ${errors.jobType ? 'required-label' : ''}`}
-            {...register('jobType', { required: true })}
-          >
-            {jobTypes.map((type, index) => (
-              <option key={index} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-          {errors.jobType && <p className="error-message">This field is required</p>}
-        </div>
-
-        <div className="form-field">
-          <label className={`form-label ${errors.technologies ? 'required-label' : ''}`}>
-            Technologies
-          </label>
-          <div className="tecnologies-experience">
-            {technologies.map((technology, index) => (
-              <figure key={index} className="tecnologia-item" id={technology.name}>
-                <div className="image-container">
-                  <img
-                    className="tech-image"
-                    src={technology.image}
-                    alt={technology.name}
-                  />
-                </div>
-                <p className="tech-image-text">{technology.name}</p>
-                <input
-                  type="checkbox"
-                  name={technology.name}
-                  id={technology.name}
-                  onChange={createArrayTech}
-                />
-              </figure>
-            ))}
-          </div>
-          {errors.technologies && <p className="error-message">This field is required</p>}
-        </div>
-
-        <div className="form-field">
-          <label className={`form-label ${errors.description ? 'required-label' : ''}`}>
-            Description
-          </label>
-          <textarea
-            className="input-create-offer"
-            {...register('description', { required: true })}
-            placeholder="Offer Description"
-          ></textarea>
-          {errors.description && <p className="error-message">This field is required</p>}
-        </div>
-
-        <div className="form-field">
-          <label className={`form-label ${errors.annualSalary ? 'required-label' : ''}`}>
-            Salario anual
-          </label>
-          <input
-            className="input-create-offer"
-            {...register('annualSalary', { required: true })}
-            placeholder="Annual Salary"
-          />
-          {errors.annualSalary && <p className="error-message">This field is required</p>}
-        </div>
-
-        <div className="form-field">
-          <label className={`form-label ${errors.city ? 'required-label' : ''}`}>
-            Ciudad
-          </label>
-          <input
-            className="input-create-offer"
-            {...register('city', { required: true })}
-            placeholder="City"
-          />
-          {errors.city && <p className="error-message">This field is required</p>}
-        </div>
-
-        <input className="btn-submit-create-offer" type="submit" value="Submit" />
-      </form>
-    </div>
+      </div>
+    </>
   );
 };
 
