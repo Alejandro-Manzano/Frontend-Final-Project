@@ -213,17 +213,6 @@
     margin-top: 52px;
 }
 
-.offerDetails-offer-description {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    border: 0.7px solid #e3e4e5;
-    border-radius: 9px;
-    background-color: #fcfcfc;
-    padding: 1rem;
-}
-
 .offerDetails-offer-comments {
     width: 80%;
     display: flex;
