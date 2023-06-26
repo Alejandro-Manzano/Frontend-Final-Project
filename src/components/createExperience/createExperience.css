@@ -1,18 +1,17 @@
-
 .form_Create {
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
+
   gap: 18px;
   padding: 14px 0 0 57px;
 }
 
-.form-empresa-duracion{
- display: flex;
- flex-direction: column;
- justify-content: flex-start;
+.form-empresa-duracion {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .form-label:hover {
@@ -20,19 +19,24 @@
   box-shadow: 1px 1px 5px 1px #25d366;
 }
 
+/* maquetar el focus */
+/* input:focus {
+  cursor: pointer;
+  border: 1px solid #25d366;
+} */
+
 .form-input {
   width: 390px;
   padding: 12px;
   margin-top: 7px;
-  border: 1px solid #e3e4e5;  
+  border: 1px solid #e3e4e5;
   border-radius: 12px;
   font-size: 16px;
-  
 }
 
 .form-input-description-input {
   width: 520px;
-  border: 1px solid #e3e4e5;  
+  border: 1px solid #e3e4e5;
   border-radius: 12px;
   padding: 44px;
   font-size: 16px;
@@ -52,3 +56,19 @@
   padding-right: 30px;
 }
 
+.tecnologies-experience {
+  margin-top: 5px;
+  /* padding-left: 30px; */
+  overflow: auto; /* Habilita el desplazamiento vertical cuando el contenido excede el tamaño */
+  height: 200px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
