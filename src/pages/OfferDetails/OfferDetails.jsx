@@ -1,4 +1,5 @@
 import "./OfferDetails.css"
+import "./OfferDetailsDescription.css"
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getOfferById } from "../../services/API_proyect/offer.service";
@@ -172,9 +173,10 @@ const OfferDetails = () => {
                 </div>
             </div>
             <div className="offerDetails-horizontal-line"></div>
-            <div className="offerDetails-offer-description">
-                {offer?.description}
-            </div>
+            <div
+                className="offerDetails-offer-description"
+                dangerouslySetInnerHTML={{ __html: offer?.description }}
+            />
 
             <div className="offerDetails-horizontal-line"></div>
             <div className="offerDetails-offer-comments">

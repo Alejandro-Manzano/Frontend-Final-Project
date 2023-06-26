@@ -7,7 +7,7 @@
 }
 
 .choose_technologies-container-choose:hover {
-  font-weight: 650 ;
+  font-weight: 650;
 }
 
 .father-container-technologies {
@@ -19,16 +19,15 @@
   gap: 0.7rem;
   max-width: 950px;
   margin-left: 36px;
-  
+
 }
 
 .tech-image {
   width: 39px;
-  height: 30px;
   margin-top: 5px;
 }
 
-.tech-image-text{
+.tech-image-text {
   font-size: 12px;
   margin: 9px 0 0 0px;
 
@@ -47,8 +46,8 @@
 }
 
 .image-container {
-  /* width: 70px;
-  height: 70px; */
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;

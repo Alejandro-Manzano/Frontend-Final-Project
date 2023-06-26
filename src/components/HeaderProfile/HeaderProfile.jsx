@@ -31,8 +31,8 @@ const UserProfile = () => {
       <div className="user-info">
         {userData && (
           <>
-            <p className="follower-container">{userData.following?.length} Following </p>
-            <p className="follower-container">{userData.followers?.length} Followers </p>
+            <p className="follower-container">{userData.following?.length} Siguiendo </p>
+            <p className="follower-container">{userData.followers?.length} Seguidores </p>
           </>
         )}
       </div>
