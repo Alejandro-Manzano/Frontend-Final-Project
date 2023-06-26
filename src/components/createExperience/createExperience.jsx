@@ -91,6 +91,15 @@ const createExperienceUser = () => {
           />
         </label>
         <label className="form-label">
+          <input
+            type="text"
+            placeholder="Descripción"
+            name="description"
+            className="form-input-description-input"
+            {...register('description')}
+          />
+        </label>
+        <label className="form-label">
           {' '}
           Tecnologias
           <div className="tecnologies-experience">
@@ -114,15 +123,7 @@ const createExperienceUser = () => {
             ))}
           </div>
         </label>
-        <label className="form-label">
-          <input
-            type="text"
-            placeholder="Descripción"
-            name="description"
-            className="form-input-description-input"
-            {...register('description')}
-          />
-        </label>
+        
 
         <div className="form-Uploadfile_photo_profile">
           <Uploadfile
