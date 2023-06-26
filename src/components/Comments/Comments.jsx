@@ -4,6 +4,12 @@ import ToggleButton from '../Toggle/Toggle';
 const Comments = ({ comment, setComentsByChild }) => {
   const { owner, commentContent, likes, createdAt } = comment;
   const { name, image } = owner;
+
+  const creationDate = new Date(createdAt);
+  const formattedDate = creationDate.toLocaleString('es-ES', {
+    timeZone: 'Europe/Madrid',
+  });
+
   return (
     <>
       <Grid container wrap="nowrap" spacing={2}>
@@ -13,7 +19,8 @@ const Comments = ({ comment, setComentsByChild }) => {
         <Grid justifyContent="left" item xs zeroMinWidth>
           <h4 style={{ margin: 0, textAlign: 'left' }}>{name}</h4>
           <p style={{ textAlign: 'left' }}>{commentContent}</p>
-          <p style={{ textAlign: 'left', color: 'gray' }}>{JSON.stringify(createdAt)}</p>
+          <p style={{ textAlign: 'left', color: 'gray' }}>{formattedDate}</p>{' '}
+          {/* Modificación aquí */}
           <div>
             <ToggleButton comment={comment} setAllElementByPather={setComentsByChild} />
           </div>

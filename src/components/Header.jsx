@@ -2,7 +2,6 @@ import './Header.css';
 import { useEffect, useRef, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
-
 import { useAuth } from '../contexts/authContext';
 
 const Header = () => {
@@ -38,12 +37,20 @@ const Header = () => {
       <header>
         <div className="titleFatherContainer">
           <NavLink to="/home" className="header-link-one">
-            <img
+            {/* <FontAwesomeIcon
+              icon="fa-duotone fa-code-simple"
+              style={{
+                '--fa-primary-color': '#5bd61d',
+                '--fa-secondary-color': '#75807c',
+              }}
+            /> */}
+            {/* <img
               className="header-logo"
               alt="icon"
-              src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687191076/ProjectFinalBOOTCAMP/LogoWeb/logoWEBfinalProject_qvzlbq.png"
-            ></img>
-            <h3 className="titleWeb">Code</h3>
+              src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687797744/ProjectFinalBOOTCAMP/LogoWeb/logoWEBVerde_xvuqzi.png"
+            ></img> */}
+            <h3 className="titleWeb">Dev</h3>
+            <h3 className="titleWeb-second">Link</h3>
           </NavLink>
         </div>
         <nav className="navHeader" ref={navRef}>

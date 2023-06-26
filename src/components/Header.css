@@ -19,7 +19,7 @@ body {
 .header-link-one {
   display: flex;
   align-items: center;
-  gap: 10px;
+
   justify-content: center;
 }
 
@@ -49,12 +49,17 @@ body {
 }
 
 .titleWeb {
-  color: black;
-  font-size: 20px;
+  color: #75809a;
+  /* font-size: 20px; */
+  font-size: bold;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
-
-.titleWeb:hover {
-  color: black;
+.titleWeb-second {
+  color: #61d61d;
+  font-size: bold;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .buttonNav.active {
@@ -88,7 +93,7 @@ body {
 }
 
 .navHeader button:hover {
-  color: var(--secondaryColor);
+  color: #61d61d;
 }
 
 header .nav-btn {
