@@ -1,11 +1,10 @@
 .form_Create {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-
-  gap: 18px;
-  padding: 14px 0 0 57px;
+  gap: 1px;
+  padding: 0 0 0 0;
 }
 
 .form-empresa-duracion {
@@ -53,7 +52,7 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  padding-right: 30px;
+  padding-right: 0px;
 }
 
 .tecnologies-experience {
@@ -71,4 +70,24 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 880px) {
+  /* .form_Create {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+} */
+.form-label {
+  /* padding-left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; */
+
+}
+
+
+
 }

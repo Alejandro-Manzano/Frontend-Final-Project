@@ -13,6 +13,8 @@
 .emailUser {
   text-align: center;
   color: var(--textColor);
+  font-size: 16px;
+
 }
 
 .dataProfile {
@@ -21,11 +23,12 @@
   justify-content: center;
   align-items: center;
   gap: 0.7rem;
-  padding: 0 0 70px 0rem;
+  padding: 0 0 0 0;
   border: 0px solid white;
-  margin: 0 50px 50px 70px;
+  margin: 0 30px 30px 30px;
 }
 
 .dataProfile > img {
-  display: flex;
+  display: none;
+  
 }

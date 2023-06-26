@@ -8,7 +8,8 @@
 .mainContainer {
   display: flex;
   /* border: 2px solid black; */
-  padding: 75px;
+  padding: 18px;
+  gap: 20px;
 }
 .btn-profile.active {
   background-color: #25d366;
@@ -25,10 +26,10 @@
 
 .fluidContainerProfile {
   flex: 2;
-  width: 53vw;
+  width: 100%;
   border: 1px solid #e3e4e5;
   border-radius: 12px;
-  margin-left: 30px;
+  /* margin-left: 30px; */
 }
 
 .btn-profile {
@@ -52,7 +53,7 @@
   font-weight: 700;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 880px) {
   .btn-profile {
     width: 130px;
     background-color: var(--mainColor);
@@ -61,6 +62,7 @@
     border-radius: 5px;
     height: 30px;
     font-weight: bold;
+    
   }
 
   .containerNavProfile {
@@ -73,6 +75,25 @@
     margin-top: 5vh;
     gap: 8px;
   }
+
+  .mainContainer {
+    display: flex;
+    /* border: 2px solid black; */
+    padding: 0px;
+  }
+  /* No tocar, rompe las tecnologías*/
+  .fluidContainerProfile {
+    margin-left: 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+  }
+
 }
 
 /*  -------------------------------------------------------------------*/

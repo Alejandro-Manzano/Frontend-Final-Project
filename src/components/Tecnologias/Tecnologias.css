@@ -59,3 +59,26 @@
 .btn_profile_general_tech {
   margin-top: 12px;
 }
+
+
+@media screen and (max-width: 880px) {
+
+  .father-container-technologies {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 30px 0px;
+  }
+  
+
+  .choose_technologies-container-choose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: center;
+
+  }
+  .choose_technologies-container-choose:hover {
+    font-weight: 650;
+  }
+}

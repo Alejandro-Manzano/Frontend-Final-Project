@@ -67,10 +67,12 @@ const FormProfile = () => {
     <>
       <div className="containerProfile">
         <div className="containerDataNoChange">
-          <FigureUser user={user} />
         </div>
         <div className="form-wrap formProfile">
           <p className="formProfile-text-new-profile">Cambiar datos del perfil</p>
+          <div className="containerDataNoChange">
+          <FigureUser user={user} />
+        </div>
           <form onSubmit={handleSubmit(formSubmit)}>
             <div className="user_container-form-group">
               <label htmlFor="custom-input" className="custom-placeholder">

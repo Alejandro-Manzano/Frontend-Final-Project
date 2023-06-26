@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 
@@ -12,7 +13,7 @@
   align-items: center;
   font-size: 30px;
   margin-bottom: 0.5rem;
-  margin-top: 2rem;
+  margin-top: 18px;
 }
 
 
@@ -29,6 +30,8 @@
 
 .form-wrap {
   border-radius: 20px;
+  /* width: 270px;
+  height: 270px; */
 }
 
 .formProfile {
@@ -59,7 +62,7 @@
   color: white;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 880px) {
   .containerProfile {
     flex-direction: column;
   }

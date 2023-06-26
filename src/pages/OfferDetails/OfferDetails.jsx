@@ -40,7 +40,7 @@ const OfferDetails = () => {
         const customFormData = {
             commentContent: inputValue,
             commentType: 'Publico',
-            referenceUser: id,
+            referenceOfferComment: id,
         };
         setLoading(true);
         setResComment(await createComment(customFormData));

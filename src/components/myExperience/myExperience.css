@@ -27,3 +27,37 @@
   
 }
 
+
+
+@media screen and (max-width: 880px) {
+
+  .experience-p-container_general {
+    margin-top: 5px;
+    /* padding-left: 30px; */
+    overflow: auto; /* Habilita el desplazamiento vertical cuando el contenido excede el tamaño */
+    height: 210px;
+  }
+  
+  
+  .experience-p-container {
+    border: 0.3px dotted #25d366;
+    width: 100%;
+    padding-left: 20px;
+    border-radius: 10px;
+  
+  }
+  
+  .experience-p-container > p{
+    padding: 3px 0 9px 3px;
+    margin: 3px 0 0 0;
+    margin-top: px;
+    font-size: 16px;
+  }
+  
+  .experience-p-container_general > h3{
+    padding-left: 1px;
+    
+  }
+  
+}
+
