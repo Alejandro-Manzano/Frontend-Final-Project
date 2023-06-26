@@ -45,7 +45,7 @@ export const getByIdExperience = async (id) => {
 //! -----------------------GET BY USER-----------------------------------
 
 export const getByUserExperience = async (id) => {
-  return API.get(`/experience/user/${id}`, {
+  return API.get(`/experience/experience/${id}`, {
     headers: {
       Authorization: `Bearer ${updateToken()}`,
     },
