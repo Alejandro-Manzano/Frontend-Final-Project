@@ -10,14 +10,22 @@ const Experience = () => {
   };
 
   return (
-<>
+    <>
       <section className="btn_profile_general-create-my-experience">
-      <button className="btn_profile_general-my-expe" onClick={handleButtonClick('create')}>Crear Experiencia</button>
-      {show === 'create' && <CreateExperienceUser />}
-      <button  className="btn_profile_general-my-expe" onClick={handleButtonClick('my')}>Mi Experiencia</button>
-      {show === 'my' && <MyExperience />}
+        <button
+          className="btn_profile_general-my-expe"
+          onClick={handleButtonClick('create')}
+        >
+          Crear Experiencia
+        </button>
+        <button className="btn_profile_general-my-expe" onClick={handleButtonClick('my')}>
+          Mi Experiencia
+        </button>
+        {show === 'create' && <CreateExperienceUser />}
+
+        {show === 'my' && <MyExperience />}
       </section>
-</>
+    </>
   );
 };
 

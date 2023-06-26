@@ -2,23 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { getByUserExperience } from '../../services/API_proyect/experience.service';
 import { useAuth } from '../../contexts/authContext';
 import DeleteExperienceButton from '../DeleteExperience/DeleteExperience';
-import "./myExperience.css"
+import './myExperience.css';
 
 const MyExperience = () => {
   const [experiences, setExperiences] = useState([]);
   const { user } = useAuth();
 
-  useEffect(() => {
-    const fetchExperiences = async () => {
-      try {
-        const userExperiences = await getByUserExperience(user._id);
-        console.log(userExperiences);
-        setExperiences(userExperiences);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  const fetchExperiences = async () => {
+    try {
+      const userExperiences = await getByUserExperience(user._id);
+      console.log(userExperiences);
+      setExperiences(userExperiences);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
+  useEffect(() => {
     fetchExperiences();
   }, []);
 
@@ -26,6 +26,7 @@ const MyExperience = () => {
     <section className="experience-p-container_general">
       <h3>Mi experiencia laboral</h3>
       <div className="experience-p-container_general_section">
+        {' '}
         {experiences.map((experience, index) => (
           <span key={experience.title + '-' + index}>
             <h4>{experience.title}</h4>
@@ -34,11 +35,23 @@ const MyExperience = () => {
                 <img src={experience.image} alt={experience.title} />
               </div> */}
               <div className="experience-p-container">
-              <p> <u>Proyecto/Empresa</u>: {experience.workedWith}</p> 
-                <p> <u>Duración:</u>  {experience.duration} año/s</p>
-                <p> <u>Tecnologías:</u>  {experience.technologies} </p>
-                <p> <u>Descripción:</u> {experience.description}</p>
-                < DeleteExperienceButton
+                <p>
+                  {' '}
+                  <u>Proyecto/Empresa</u>: {experience.workedWith}
+                </p>
+                <p>
+                  {' '}
+                  <u>Duración:</u> {experience.duration} año/s
+                </p>
+                <p>
+                  {' '}
+                  <u>Tecnologías:</u> {experience.technologies}{' '}
+                </p>
+                <p>
+                  {' '}
+                  <u>Descripción:</u> {experience.description}
+                </p>
+                <DeleteExperienceButton
                   id={experience._id}
                   experiences={experiences}
                   setExperiences={setExperiences}
