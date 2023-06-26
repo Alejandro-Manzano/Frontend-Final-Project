@@ -4,10 +4,13 @@ import { useAuth } from '../../contexts/authContext';
 import Uploadfile from '../Uploadfile';
 import { createOffer } from '../../services/API_proyect/offer.service';
 import './createOffer.css';
+import { technologies } from '../../data/object.tecnologias';
+import handleOfferCreationResponse from '../../hooks/useCreateOffer';
 
 const CreateOffer = () => {
   const [res, setRes] = useState({});
   const [send, setSend] = useState(false);
+  const [arrayTech, setArrayTech] = useState([]);
   const offerTypes = ['CompanyOffer', 'FreelandOffer'];
   const jobTypes = ['Remote', 'Office', 'Hybrid'];
   const offerStates = ['Close', 'Suspended', 'Open'];
@@ -22,26 +25,20 @@ const CreateOffer = () => {
   const [serverMessage, setServerMessage] = useState(null);
 
   const onSubmit = async (data) => {
-    // offerTitle: req.body.offerTitle,
-    // offerType: req.body.offerType,
-    // experienceYears: req.body.experienceYears,
-    // annualSalary: req.body.annualSalary,
-    // description: req.body.description,
-    // city: req.body.city,
-    // jobType: req.body.jobType,
-    // technologies: arrayTechnology,
-
     const customFormData = {
       ...data,
       annualSalary: parseInt(data.annualSalary),
       offerState: 'Open',
+      technologies: arrayTech, // Agrega las tecnologías al objeto de los datos
     };
 
-    console.log(customFormData);
     setSend(true);
-    setRes(await createOffer(customFormData));
+    const response = await createOffer(customFormData);
+    setRes(response);
+    handleOfferCreationResponse(response);
     setSend(false);
   };
+
   useEffect(() => {
     if (res.status == 200) {
       console.log(res);
@@ -50,6 +47,23 @@ const CreateOffer = () => {
 
   const handleFileChange = (e) => {
     setValue('image', e.target.files[0]);
+  };
+
+  const createArrayTech = ({ target }) => {
+    if (arrayTech.includes(target.id)) {
+      setArrayTech((value) => {
+        const customArray = [];
+        value.forEach((element) => {
+          if (target.id != element) customArray.push(element);
+        });
+        return customArray;
+      });
+    } else {
+      setArrayTech((value) => {
+        const customArray = [...value, target.id];
+        return customArray;
+      });
+    }
   };
 
   return (
@@ -101,17 +115,56 @@ const CreateOffer = () => {
           <label className={`form-label ${errors.technologies ? 'required-label' : ''}`}>
             Technologies
           </label>
-          <input
-            className="input-create-offer"
-            {...register('technologies', { required: true })}
-            placeholder="Technologies"
-          />
+          <div className="tecnologies-experience">
+            {technologies.map((technology, index) => (
+              <figure key={index} className="tecnologia-item" id={technology.name}>
+                <div className="image-container">
+                  <img
+                    className="tech-image"
+                    src={technology.image}
+                    alt={technology.name}
+                  />
+                </div>
+                <p className="tech-image-text">{technology.name}</p>
+                <input
+                  type="checkbox"
+                  name={technology.name}
+                  id={technology.name}
+                  onChange={createArrayTech}
+                />
+              </figure>
+            ))}
+          </div>
           {errors.technologies && <p className="error-message">This field is required</p>}
         </div>
 
         <div className="form-field">
+          <label className={`form-label ${errors.description ? 'required-label' : ''}`}>
+            Description
+          </label>
+          <textarea
+            className="input-create-offer"
+            {...register('description', { required: true })}
+            placeholder="Offer Description"
+          ></textarea>
+          {errors.description && <p className="error-message">This field is required</p>}
+        </div>
+
+        <div className="form-field">
+          <label className={`form-label ${errors.annualSalary ? 'required-label' : ''}`}>
+            Salario anual
+          </label>
+          <input
+            className="input-create-offer"
+            {...register('annualSalary', { required: true })}
+            placeholder="Annual Salary"
+          />
+          {errors.annualSalary && <p className="error-message">This field is required</p>}
+        </div>
+
+        <div className="form-field">
           <label className={`form-label ${errors.city ? 'required-label' : ''}`}>
-            City
+            Ciudad
           </label>
           <input
             className="input-create-offer"
@@ -120,54 +173,6 @@ const CreateOffer = () => {
           />
           {errors.city && <p className="error-message">This field is required</p>}
         </div>
-
-        <div className="form-field">
-          <label className="form-label">Salario anual</label>
-          <input
-            className="input-create-offer"
-            {...register('annualSalary')}
-            placeholder="Salario anual"
-          />
-        </div>
-
-        <div className="form-field">
-          <label className={`form-label ${errors.description ? 'required-label' : ''}`}>
-            Descripción
-          </label>
-          <textarea
-            {...register('description', { required: true })}
-            className="textarea-description"
-            placeholder="Descripción"
-          />
-          {errors.description && <p className="error-message">This field is required</p>}
-        </div>
-
-        {/* <div className="form-field">
-          <label className="form-label">Offer State</label>
-          <select
-            className={`input-create-offer ${errors.offerState ? 'required-label' : ''}`}
-            {...register('offerState', { required: true })}
-          >
-            {offerStates.map((state, index) => (
-              <option key={index} value={state}>
-                {state}
-              </option>
-            ))}
-          </select>
-          {errors.offerState && <p className="error-message">This field is required</p>}
-        </div> */}
-
-        {/* <div className="form-field">
-          <label className="form-label">Image</label>
-          <input
-            type="file"
-            name="image"
-            className="file-input"
-            onChange={handleFileChange}
-          />
-        </div>
-
-        <Uploadfile register={register} /> */}
 
         <input className="btn-submit-create-offer" type="submit" value="Submit" />
       </form>
