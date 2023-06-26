@@ -90,7 +90,7 @@ const createExperienceUser = () => {
             {...register('duration')}
           />
         </label>
-        <label className="form-label-description-label">
+        <label className="form-label">
           {' '}
           Tecnologias
           <div className="tecnologies-experience">
@@ -114,7 +114,7 @@ const createExperienceUser = () => {
             ))}
           </div>
         </label>
-        <label className="form-label-description-label">
+        <label className="form-label">
           <input
             type="text"
             placeholder="Descripción"
