@@ -74,12 +74,9 @@ const OfferDetails = () => {
         if (offer != null) {
             getComments();
         }
-
-        //console.log("offer: ", offer)
     }, [offer]);
 
     useEffect(() => {
-        //console.log(res);
         if (res.status == 200) {
             getComments();
         }
@@ -167,7 +164,23 @@ const OfferDetails = () => {
                     <div className="offerDetails-info-technologies">
                         <h5><BiCodeAlt /> Tecnologías</h5>
                         <div className="offerDetails-info-technology">
-                            {offer && showTechnologies(offer.technologies, technologies)}
+                            {/* {offer && showTechnologies(offer.technologies, technologies)} */}
+
+                            {/* //------------------------ Show Offer Tecnologies -------------------- */}
+                            <div className="offerDetails-icons-technologies-container">
+                                {technologies
+                                    .filter(tech => offer?.technologies.includes(tech.name))
+                                    .map((tech, index) => (
+                                        <figure key={`${tech.name}_${index}`} className="offerDetails-tecnologia-item" id={tech.name}>
+                                            <div className="offerDetails-icon-container">
+                                                <img className="offerDetails-tech-image" src={tech.image} alt={tech.name} />
+                                                <p>{tech.name}</p>
+                                            </div>
+                                        </figure>
+                                    ))}
+                            </div>
+                            {/* //------------------------ Show Offer Tecnologies -------------------- */}
+
                         </div>
                     </div>
                 </div>
@@ -188,19 +201,27 @@ const OfferDetails = () => {
     );
 }
 
-const showTechnologies = (offerTechnologies, technologies) =>
-    <div className="offerDetails-icons-technologies-container">
-        {technologies
-            .filter(tech => offerTechnologies.includes(tech.name))
-            .map((tech, index) => (
-                <figure key={`${tech.name}_${index}`} className="offerDetails-tecnologia-item" id={tech.name}>
-                    <div className="offerDetails-icon-container">
-                        <img className="offerDetails-tech-image" src={tech.image} alt={tech.name} />
-                        <p>{tech.name}</p>
-                    </div>
+// const showTechnologies = (offerTechnologies, technologies) => {
+//     console.log("showTechnologies -> offerTechnologies: ", offerTechnologies)
+//     console.log("showTechnologies -> technologies: ", technologies)
+//     return (<div className="offerDetails-icons-technologies-container">
+//         {technologies
+//             .filter(tech => offerTechnologies.includes(tech.name))
+//             .map((tech, index) => (
+//                 <figure key={`${tech.name}_${index}`} className="offerDetails-tecnologia-item" id={tech.name}>
+//                     <div className="offerDetails-icon-container">
+//                         <img className="offerDetails-tech-image" src={tech.image} alt={tech.name} />
+//                         <p>{tech.name}</p>
+//                     </div>
 
-                </figure>
-            ))}
-    </div>
+//                 </figure>
+//             ))}
+//     </div>
+//     )
+// }
+
+
+
+
 
 export default OfferDetails

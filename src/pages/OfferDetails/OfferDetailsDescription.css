@@ -1,10 +1,10 @@
-.offerDetails-offer-description h3{
+.offerDetails-offer-description h3 {
     font-size: 23px;
     font-weight: 900;
     padding: 9px 0;
 }
 
-.offerDetails-offer-description{
+.offerDetails-offer-description {
     text-align: justify;
     max-width: 1236px;
 }
@@ -12,4 +12,10 @@
 .offerDetails-offer-description h5 {
     font-size: 18px;
     margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+    .offerDetails-offer-description {
+        height: 100%;
+    }
 }

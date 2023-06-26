@@ -25,17 +25,14 @@
     gap: 1rem;
 }
 
-/* .offerDetails-info-container {} */
-
 .offerDetails-info-city-salary-jobtype-expYears {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid red; */
+    border: 0px solid red;
     background-color: #FCFCFC;
     padding: 0;
-    /* gap: 1rem; */
 }
 
 .offerDetails-image {
@@ -162,18 +159,19 @@
     font-size: 25px;
 }
 
-/* .offerDetails-technologies>h3 {
+.offerDetails-technologies>h3 {
     font-weight: 900;
     font-size: 25px;
-} */
+}
 
 .offerDetails-info-technologies {
     border: 0px solid red;
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
 .offerDetails-info-technology {
     margin: 20px 0 0 25px;
+    min-height: 150px;
     border: 0px solid red;
 }
 
@@ -183,8 +181,8 @@
 }
 
 .offerDetails-icons-technologies-container {
-    min-height: 60%;
-    min-width: 90%;
+    min-height: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -192,6 +190,7 @@
     border: 0px solid #e3e4e5;
     gap: 2rem;
     margin-bottom: 1rem;
+    /* overflow-y: scroll; */
 }
 
 .offerDetails-city-localization,
@@ -259,4 +258,63 @@
     border-radius: 9px;
     background-color: #fcfcfc;
     margin: 1rem;
+}
+
+
+@media (max-width: 600px) {
+    .offerDetails-image-and-info-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .offerDetails-info-city,
+    .offerDetails-info-annualSalary,
+    .offerDetails-info-jobType,
+    .offerDetails-info-experienceYears {
+        gap: 1rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    .offerDetails-offer-rating-writeRating-container {
+        width: 100%;
+    }
+
+    .offerDetails-city-jobType {
+        display: none;
+    }
+
+    .offerDetails-technologies {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .offerDetails-icons-technologies-container {
+        min-height: 800px;
+        margin: 0 0 0 0;
+        gap: 40px;
+        /* overflow-y: scroll; */
+    }
+
+    .offerDetails-city-jobType-technologies {
+        padding: 0;
+    }
+
+    .offerDetails-technologies>h3 {
+        font-size: 20px;
+        margin-top: 12px;
+    }
+
+    .offerDetails-info-technologies>h5 {
+        text-align: center;
+    }
+
+    .offerDetails-horizontal-line {
+        width: 100%;
+    }
 }
