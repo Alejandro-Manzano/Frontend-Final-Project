@@ -103,57 +103,35 @@ const CheckCode = () => {
   }
 
   return (
-    <>
-      <div className="form-wrap">
-        <h1>Verify your code 👌</h1>
-        <p>Write the code sent to your email</p>
-        <form onSubmit={handleSubmit(formSubmit)}>
-          <div className="user_container form-group">
-            <label htmlFor="custom-input" className="custom-placeholder">
-              Registration code
-            </label>
+    
+      <div className="checkCode-container">
+        <h2 className='checkCode-title'>Verifica tu código</h2>
+      
+        <form className='checkCode-form' onSubmit={handleSubmit(formSubmit)}>
+
             <input
-              className="input_user"
+              placeholder='Escribe el código'
+              htmlFor="custom-input"
+              className="checkCode-input_user"
               type="text"
               id="name"
               name="name"
               autoComplete="false"
               {...register('confirmationCode', { required: false })}
             />
-          </div>
 
-          <div className="btn_container">
-            <button
-              id="btnCheck"
-              className="btn"
-              type="submit"
-              disabled={send}
-              style={{ background: send ? '#2f7a67' : '#2f7a67' }}
-            >
-              Verify Code
-            </button>
-          </div>
-          <div className="btn_container">
-            <button
-              id="btnResend"
-              className="btn"
-              disabled={send}
-              style={{ background: send ? '#2f7a67' : '#2f7a67' }}
-              onClick={() => handleReSend()}
-            >
-              Resend Code
-            </button>
-          </div>
-
-          <p className="bottom-text">
-            <small>
-              If the code is not correct ❌, your user will be deleted from the database
-              and you will need to register again.{' '}
-            </small>
+            <button id="btnCheck" className="checkCode-btn-res" type="submit" disabled={send}>Verificar</button>
+        
+         
+            <button id="btnResend" className="checkCode-btn-res" disabled={send} onClick={() => handleReSend()}>Reenviar</button>
+        
+          <p className="checkCode-bottom-text">
+              Si el códifo no es correcto tu usuario será borrado y tendras que registrarte de nuevo.{' '}
           </p>
+
         </form>
       </div>
-    </>
+    
   );
 };
 
