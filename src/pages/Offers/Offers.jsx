@@ -85,7 +85,7 @@ const Offers = () => {
                 </h1>
                 :
                 <h1>
-                    Follow our <u>job offers</u>
+                    Sigue nuestras <u>ofertas de trabajo</u>
                 </h1>
             }
 

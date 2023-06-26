@@ -21,6 +21,42 @@
     background-color: #fcfcfc;
 }
 
+/* Media query para pantallas de hasta 768px de ancho */
+@media (max-width: 768px) {
+    .offers-filters-and-offersList-container {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .cardOffer-Info{
+        display: flexbox;
+        flex-direction: row;
+        justify-content: center;
+        /* min-width: 70%;
+        max-width:70%; */
+       
+    }
+
+    /* .offers-filters-container {
+        min-width: 90%;
+        max-width: 90%;
+    } */
+     /* .offersList-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 95%;
+        max-width: 95%;
+    }  */
+}
+
+/* Otra media query para pantallas de hasta 480px de ancho */
+@media (max-width: 480px) {
+   
+}
+
+
 .offers-filter-offerType-container {
     margin-top: 20px;
     display: flex;
@@ -68,3 +104,4 @@
     min-width: 70%;
     height: 100%;
 }
+
