@@ -79,14 +79,14 @@ const Offers = () => {
     return (
         <div className="outletContainer">
             {isLargeScreen ?
-                <h1>
-                    ¡Ven y consulta nuestras ofertas de trabajo para <u>Desarrolladores</u>!
+                <h2 className="offerTit">
+                    ¡Ven y consulta nuestras ofertas de trabajo para Desarrolladores!
                     
-                </h1>
+                </h2>
                 :
-                <h1>
-                    Sigue nuestras <u>ofertas de trabajo</u>
-                </h1>
+                <h2 className="offerTit">
+                    Sigue nuestras ofertas de trabajo
+                </h2>
             }
 
             <div className="spinner"></div>
@@ -126,11 +126,14 @@ const Offers = () => {
                         />
                         {typeof filtersToApply.annualSalary == "string" && (<p style={{ color: "red" }}>No utilizado</p>)}
                     </div>
+                    <button className="offer-button-Create">
+                        Crear Oferta
+                    </button>
                 </div>
                 <div className="offers-offersList-container">
                     {/* {console.log("send --> filters to apply: ", filtersToApply)} */}
 
-                    <OffersList filters={filtersToApply} itemsPerPage={10} />
+                    { <OffersList filters={filtersToApply} itemsPerPage={10} /> }
                 </div>
             </div>
         </div>
@@ -138,4 +141,3 @@ const Offers = () => {
 }
 
 export default Offers
-

@@ -1,107 +1,129 @@
-.offers-filters-and-offersList-container {
+.outletContainer {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    height: 100%;
-   
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 28px;
+    padding: 20px;
+}
+
+.offerTit {
+    font-size: 22px;
+    align-items: center;
+    font-family: var(--font-bold);
 }
 
 .offers-filters-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    gap: 2rem;
-    min-width: 23%;
-    max-width: 23%;
-    height: 700px;
-    margin-top: 25px;   
-    border: 0.7px solid #e3e4e5;
-    background-color: #fcfcfc;
-}
-
-/* Media query para pantallas de hasta 768px de ancho */
-@media (max-width: 768px) {
-    .offers-filters-and-offersList-container {
-        flex-direction: column;
-        align-items: center;
-        
-    }
-    .cardOffer-Info{
-        display: flexbox;
-        flex-direction: row;
-        justify-content: center;
-        /* min-width: 70%;
-        max-width:70%; */
-       
-    }
-
-    /* .offers-filters-container {
-        min-width: 90%;
-        max-width: 90%;
-    } */
-     /* .offersList-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-width: 95%;
-        max-width: 95%;
-    }  */
-}
-
-/* Otra media query para pantallas de hasta 480px de ancho */
-@media (max-width: 480px) {
-   
-}
-
-
-.offers-filter-offerType-container {
+    justify-content: center;
+    gap: 10px;
     margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
 }
 
-.offers-filter-experienceYears-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.offers-filters-container > div {
+    width: 400px;
 }
 
-
-.offers-filter-annualSalary-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.offer-button-Create{
+    border: none;
+    border-radius: 30px;
+    height: 39px;
+    width: 145px;
+    background-color: #25d366;
+    color: white;
 }
 
-.offers-filter-jobType-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-}
-
-.offers-filter-offerState-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
+.offer-button-Create:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  
 }
 
 .offers-offersList-container {
+    margin-top: 25px;
+    padding: 20px;
+    width: 90%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 70%;
-    height: 100%;
+    flex-wrap: wrap;
 }
 
+.offersList-paginate-and-offers-list-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.offersList-paginate {
+    display: flex;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.offers-offersList-container {
+    align-items: center;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 494px) {
+    .offers-filters-container > div {
+        width: 200px;
+    }
+    .offerTit {
+        font-size: 20px;
+        align-items: center;
+        font-family: var(--font-bold);
+        text-align: center;
+    }
+}
+@media screen and (max-width:991px) {
+    .offersList-offers-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cardOffer-Info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        max-width: 300px;
+        margin-left: 19px;
+        gap: 5px;
+    }
+    .cardOffer-link-to-offerDetails {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    .cardOffer-Profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 5px;
+    }
+
+    .cardOffer-Info-Description{
+        max-width: 200px;
+    }
+    .cardOffer-Info-tabla-name {
+        text-align: center;
+    }
+    
+}
+
+
+@media screen and (max-width: 458px) {
+    .cardOffer-Info {
+        margin-right: 10px;
+    }
+}

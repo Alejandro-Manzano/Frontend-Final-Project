@@ -23,4 +23,3 @@ const OfferTypeSelect = ({ valueOfferType, onChange }) => {
 
 
 export default OfferTypeSelect
-
