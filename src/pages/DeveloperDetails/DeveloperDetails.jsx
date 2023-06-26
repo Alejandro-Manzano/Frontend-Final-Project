@@ -8,6 +8,7 @@ import {
 } from '../../services/API_proyect/comment.service';
 import Comments from '../../components/Comments/Comments';
 import "./DeveloperDetails.css"
+import WriteRatingForDeveloper from '../../components/ratings/WriteRatingForDeveloper/WriteRatingForDeveloper';
 
 const DeveloperDetails = () => {
   const { state } = useLocation();
@@ -81,7 +82,7 @@ const DeveloperDetails = () => {
           <h2>¡Hola, soy {developer?.name}!</h2>
           <p>Java Developer</p>
         </div>
-
+        {developer && <WriteRatingForDeveloper userToRate={developer} />}
         <div className="DeveloperDetails-body">
           <div className="DeveloperDetails-img">
             <img className="dev-img" src={developer?.image} alt="developer-img"></img>
@@ -102,48 +103,48 @@ const DeveloperDetails = () => {
         </div>
 
         <div style={{ padding: 14 }} className="DeveloperDetails-description-container-App">
-       
-        <Paper style={{ padding: '40px 20px' }}>
-        <h3>Comments</h3>
-          <Grid container wrap="nowrap" spacing={2}>
-            <Grid item>
-              <Avatar alt="Remy Sharp" src={imgLink} />
-            </Grid>
-            <Grid justifyContent="left" item xs zeroMinWidth>
-              <TextField
-                id="newComent"
-                label="Pon tu comentario"
-                variant="outlined"
-                style={{ width: '100%' }}
-                onChange={(e) => setInputValue(e.target.value)}
-              />
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{ margin: 1 }}
-                onClick={() => handleComment()}
-                disabled={loading}
-              >
-                Enviar
-              </Button>
-            </Grid>
-          </Grid>
-          <Divider variant="fullWidth" style={{ margin: '30px 0' }} />
-          <div className='Dev-comments' style={{ maxHeight: '400px', overflowY: 'auto' }}>
-            {comments != null &&
-              comments.map((singleComment) => (
-                <Comments
-                  key={singleComment._id}
-                  comment={singleComment}
-                  setComentsByChild={setComments}
+
+          <Paper style={{ padding: '40px 20px' }}>
+            <h3>Comments</h3>
+            <Grid container wrap="nowrap" spacing={2}>
+              <Grid item>
+                <Avatar alt="Remy Sharp" src={imgLink} />
+              </Grid>
+              <Grid justifyContent="left" item xs zeroMinWidth>
+                <TextField
+                  id="newComent"
+                  label="Pon tu comentario"
+                  variant="outlined"
+                  style={{ width: '100%' }}
+                  onChange={(e) => setInputValue(e.target.value)}
                 />
-              ))}
-          </div>
-        </Paper>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  sx={{ margin: 1 }}
+                  onClick={() => handleComment()}
+                  disabled={loading}
+                >
+                  Enviar
+                </Button>
+              </Grid>
+            </Grid>
+            <Divider variant="fullWidth" style={{ margin: '30px 0' }} />
+            <div className='Dev-comments' style={{ maxHeight: '400px', overflowY: 'auto' }}>
+              {comments != null &&
+                comments.map((singleComment) => (
+                  <Comments
+                    key={singleComment._id}
+                    comment={singleComment}
+                    setComentsByChild={setComments}
+                  />
+                ))}
+            </div>
+          </Paper>
+        </div>
+
       </div>
 
-      </div> 
-      
     </div>
   );
 };

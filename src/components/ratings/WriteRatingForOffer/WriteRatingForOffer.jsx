@@ -42,7 +42,7 @@ const WriteRatingForOffer = ({ offerToRate }) => {
 
     const getOfferRatingsFromDBFirstTime = async () => {
 
-        const dataFromDB = await await getByReference("Offer", offerToRate._id)
+        const dataFromDB = await getByReference("Offer", offerToRate._id)
 
         if (dataFromDB.status == 200) {
             setOfferRatingsFromDBFirstTime(dataFromDB)
@@ -75,7 +75,7 @@ const WriteRatingForOffer = ({ offerToRate }) => {
                 });
 
             if (filterRating.length == 0) {
-                setRatingValue(0)
+                setRatingValue(-1)
                 setOfferRatingsFromDBFirstTime({});
             } else {
                 setRatingValue(filterRating[0].score)
@@ -122,7 +122,7 @@ const WriteRatingForOffer = ({ offerToRate }) => {
     return (
         <div>
             <Rating
-                name="simple Rating component"
+                name="Write Ratings For Offer"
                 value={ratingValue}
                 onChange={(event, newRatingValue) => {
                     setRatingValue(newRatingValue);

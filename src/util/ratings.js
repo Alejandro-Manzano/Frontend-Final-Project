@@ -1,5 +1,12 @@
 export const getUserAverageScore = (user) => {
-    if (user.ratingsByOthers.length === 0) return 0
+    if (user === null) {
+        console.log("ERROR: getUserAverageScore -> user = null")
+        return 0
+    }
+    if (user.ratingsByOthers.length === 0) {
+        console.log("getUserAverageScore -> user.ratingsByOthers.length === 0")
+        return 0
+    }
 
     const totalScore = user.ratingsByOthers.reduce((acc, curr) => acc + curr.score, 0)
     const averageScore = totalScore / user.ratingsByOthers.length
