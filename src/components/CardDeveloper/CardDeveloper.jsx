@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import ReadOnlyUserRating from '../ratings/ReadOnlyUserRating/ReadOnlyUserRating';
 import ToggleBtnFollowUser from '../ToggleBtnFollowUser/ToggleBtnFollowUser';
 // import WriteRatingForDeveloper from '../ratings/WriteRatingForDeveloper/WriteRatingForDeveloper'
+import { FaMapMarker } from 'react-icons/fa';
 
 const CardDeveloper = ({ developer }) => {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ const CardDeveloper = ({ developer }) => {
 
         <div className="developer-Info-tabla-name">
           {developer.name} {developer.surname}
-          <p className="developer-Info-Ubicado"> ✨ Ubicado/a en {developer.city}</p>
+          <p className="developer-Info-Ubicado">  <FaMapMarker />  Ubicado/a en {developer.city}</p>
         </div>
         <h3 className="developer-Info-Rol">{developer.rol}</h3>
       </a>
@@ -39,7 +40,7 @@ const CardDeveloper = ({ developer }) => {
         {/*--- Este componente hace la media de las estrellas ---*/}
         <ReadOnlyUserRating user={developer} />
         {/* {developer && <WriteRatingForDeveloper userToRate={developer} />} */}
-        {developer?.ratingsByOthers?.length} valoraciones
+        <p>({developer?.ratingsByOthers?.length} valoraciones)</p>
       </div>
       <div className="developer-Info-grupo-technologies">
         <h4 className="developer-Info-technologies">{developer.technologies}</h4>
