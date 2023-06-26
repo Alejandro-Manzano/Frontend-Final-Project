@@ -88,20 +88,22 @@ const FormProfile = () => {
             </div>
             <Uploadfile />
             <div className="btn_container-perfil">
-            <div className="btn_container">
-              <button
-                className="btn_profile_general"
-                type="submit"
-                disabled={send}
-                //style={{ background: send ? "#49c1a388" : "#49c1a2" }}
-                //style={{ background: send ? "#008000" : "#37A08E" }}
-                style={{
-                  // background: send ? '#008000' : 'var(--background-color-button-login)',
-                }}
-              >
-                CAMBIAR PERFIL
-              </button>
-            </div>
+              <div className="btn_container">
+                <button
+                  className="btn_profile_general"
+                  type="submit"
+                  disabled={send}
+                  //style={{ background: send ? "#49c1a388" : "#49c1a2" }}
+                  //style={{ background: send ? "#008000" : "#37A08E" }}
+                  style={
+                    {
+                      // background: send ? '#008000' : 'var(--background-color-button-login)',
+                    }
+                  }
+                >
+                  CAMBIAR PERFIL
+                </button>
+              </div>
             </div>
           </form>
         </div>

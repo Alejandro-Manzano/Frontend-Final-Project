@@ -1,114 +1,173 @@
-import './Profile.css';
-
-import { useState } from 'react';
-
+import React, { useState, useRef, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { slide as Menu } from 'react-burger-menu';
 import ChangePassword2 from '../components/ChangePassword2/ChangePassword2';
 import FormProfile from '../components/FormProfile';
 import { useAuth } from '../contexts/authContext';
 import useDeleteUser from '../hooks/useDeleteUser';
 import ChangeEmail from '../components/ChangeEmail/ChangeEmail';
 import Experience from '../components/Experience/Experience';
-import Offers from '../components/Offers/Offers';
+import Offer from '../components/Offers/Offers';
 import Tecnologias from '../components/Tecnologias/Tecnologias';
 import UserProfile from '../components/HeaderProfile/HeaderProfile';
+import './Profile.css';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
-  const [changeRender, setChangeRender] = useState(true);
+  const navigate = useNavigate();
   const { setUser } = useAuth();
   const [activeButton, setActiveButton] = useState('Profile');
+  // const navRef = useRef();
+  // const showNavbar = () => {
+  //   navRef.current.classList.toggle('responsive_nav');
+  // };
+
+  const [ancho, setAncho] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setAncho(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
       <div className="profile-father-Container">
+        {ancho < 800 && (
+          <>
+            <div id="wrap">
+              <div id="sidebar">
+                <NavLink to="/profile">
+                  <div className="cambiar-contrasena">
+                    <span>Editar perfil</span>
+                  </div>
+                </NavLink>
+
+                <NavLink to="/profile/changePassword">
+                  <div className="perfil-responsive">
+                    <span>Cambiar contraseña</span>
+                  </div>
+                </NavLink>
+
+                <NavLink to="/profile/changeEmail">
+                  <div className="cambiar-email">
+                    <span>Cambiar email</span>
+                  </div>
+                </NavLink>
+
+                <NavLink to="/profile/experience">
+                  <div className="profile-experience">
+                    <span>Experiencia</span>
+                  </div>
+                </NavLink>
+
+                <NavLink to="/profile/Offer">
+                  <div className="offers-responsive">
+                    <span>Oferta</span>
+                  </div>
+                </NavLink>
+
+                <NavLink to="/profile/tecnologias">
+                  <div className="tecnologies-responsive">
+                    <span>Tecnologías</span>
+                  </div>
+                </NavLink>
+
+                <div
+                  className="borrar-perfil"
+                  onClick={() => {
+                    useDeleteUser(setUser);
+                    setActiveButton('Delete');
+                  }}
+                >
+                  <span>Borrar perfil </span>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
         <div className="header-profile">
           <UserProfile />
         </div>
         <div className="mainContainer">
-          <div className="containerNavProfile">
-            <button
-              className={`btn-profile ${activeButton === 'Password' ? 'active' : ''}`}
-              onClick={() => {
-                setChangeRender('Password');
-                setActiveButton('Password');
-              }}
-            >
-              🔑 Contraseña
-            </button>
-            <button
-              className={`btn-profile ${activeButton === 'Profile' ? 'active' : ''}`}
-              onClick={() => {
-                setChangeRender('Profile');
-                setActiveButton('Profile');
-              }}
-            >
-              👨🏻‍⚕️ Perfil
-            </button>
-            <button
-              className={`btn-profile ${activeButton === 'Email' ? 'active' : ''}`}
-              onClick={() => {
-                setChangeRender('Email');
-                setActiveButton('Email');
-              }}
-            >
-              💌 Cambiar Email
-            </button>
-            <button
-              className={`btn-profile ${activeButton === 'Experience' ? 'active' : ''}`}
-              onClick={() => {
-                setChangeRender('Experience');
-                setActiveButton('Experience');
-              }}
-            >
-              👷🏻‍♀️ Experiencia
-            </button>
-            <button
-              className={`btn-profile ${activeButton === 'Offers' ? 'active' : ''}`}
-              onClick={() => {
-                setChangeRender('Offers');
-                setActiveButton('Offers');
-              }}
-            >
-              📋 Ofertas
-            </button>
-            <button
-              className={`btn-profile ${activeButton === 'Tecnologias' ? 'active' : ''}`}
-              onClick={() => {
-                setChangeRender('Tecnologias');
-                setActiveButton('Tecnologias');
-              }}
-            >
-              📳 Tecnologías
-            </button>
-            <button
-              className={`btn-profile ${activeButton === 'Delete' ? 'active' : ''}`}
-              onClick={() => {
-                useDeleteUser(setUser);
-                setActiveButton('Delete');
-              }}
-            >
-              🚮 Borrar Perfil
-            </button>
-          </div>
+          {ancho > 800 ? (
+            <div className={`containerNavProfile `}>
+              <button
+                className={`btn-profile ${activeButton === 'Password' ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveButton('Password');
+                  navigate('/profile/changePassword');
+                }}
+              >
+                🔑 Contraseña
+              </button>
+              <button
+                className={`btn-profile ${activeButton === 'Profile' ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveButton('Profile');
+                  navigate('/profile');
+                }}
+              >
+                👨🏻‍⚕️ Perfil
+              </button>
+              <button
+                className={`btn-profile ${activeButton === 'Email' ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveButton('Email');
+                  navigate('/profile/changeEmail');
+                }}
+              >
+                💌 Cambiar Email
+              </button>
+              <button
+                className={`btn-profile ${activeButton === 'Experience' ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveButton('Experience');
+                  navigate('/profile/experience');
+                }}
+              >
+                👷🏻‍♀️ Experiencia
+              </button>
+              <button
+                className={`btn-profile ${activeButton === 'Offers' ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveButton('Offers');
+                  navigate('/profile/Offer');
+                }}
+              >
+                📋 Ofertas
+              </button>
+              <button
+                className={`btn-profile ${
+                  activeButton === 'Tecnologias' ? 'active' : ''
+                }`}
+                onClick={() => {
+                  setActiveButton('Tecnologias');
+                  navigate('/profile/tecnologias');
+                }}
+              >
+                📳 Tecnologías
+              </button>
+              <button
+                className={`btn-profile ${activeButton === 'Delete' ? 'active' : ''}`}
+                onClick={() => {
+                  useDeleteUser(setUser);
+                  setActiveButton('Delete');
+                }}
+              >
+                🚮 Borrar Perfil
+              </button>
+            </div>
+          ) : null}
 
           <div className="fluidContainerProfile">
-            {(() => {
-              switch (changeRender) {
-                case 'Password':
-                  return <ChangePassword2 />;
-                case 'Profile':
-                  return <FormProfile />;
-                case 'Email':
-                  return <ChangeEmail />;
-                case 'Experience':
-                  return <Experience />;
-                case 'Offers':
-                  return <Offers />;
-                case 'Tecnologias':
-                  return <Tecnologias />;
-                default:
-                  return null;
-              }
-            })()}
+            <Outlet />
           </div>
         </div>
       </div>
@@ -117,3 +176,12 @@ const Profile = () => {
 };
 
 export default Profile;
+
+{
+  /* <button className="nav-icon close-icon" onClick={handleNav}>
+              <FaTimes />
+            </button> */
+}
+//   <button className="nav-icon" onClick={handleNav}>
+//   OPCIONES
+// </button>
