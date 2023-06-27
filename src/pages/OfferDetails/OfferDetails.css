@@ -182,15 +182,15 @@
 
 .offerDetails-icons-technologies-container {
     min-height: 100%;
-    width: 90%;
+    min-width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: 0px solid #e3e4e5;
+    /* border: 0px solid #e3e4e5; */
+    border: 0px solid red;
     gap: 2rem;
     margin-bottom: 1rem;
-    /* overflow-y: scroll; */
 }
 
 .offerDetails-city-localization,
@@ -295,9 +295,9 @@
     }
 
     .offerDetails-icons-technologies-container {
-        min-height: 800px;
+        max-height: 800px;
         margin: 0 0 0 0;
-        gap: 40px;
+        gap: 12px;
         /* overflow-y: scroll; */
     }
 
