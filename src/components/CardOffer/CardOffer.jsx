@@ -33,7 +33,6 @@ const CardOffer = ({ offer }) => {
 
                     <div className="cardOffer-Info-tabla-name">
                         {offer.offerTitle}
-
                     </div>
                     <div className="cardOffer-Info-grupo-technologies">
                     <h4 className="cardOffer-Info-technologies">{offer.technologies.join(', ')}</h4>
@@ -48,36 +47,10 @@ const CardOffer = ({ offer }) => {
                     <p className="cardOffer-Info-AnnualSalary">
                         (&euro;): {offer.annualSalary}
                     </p>
-                    
-                   
 
-                    
-                    
-
-                    
                 </div>
             </section>
             
-            
-            
-            <section className='cardOffer-Info-UbiJob'>
-               
-
-                
-                
-                
-            </section>
-            <span className='cardOffer-Info-State-Type-JobType'>
-            <p className="cardOffer-Info-OfferState">
-                    {offer.offerState}
-                    </p>
-             <p className="cardOffer-Info-OfferType">
-                        {offer.offerType}
-                    </p>
-             <p className="cardOffer-Info-JobType">
-                        💻 {offer.jobType}
-                    </p>
-             </span>              
         </section>
     );
 };

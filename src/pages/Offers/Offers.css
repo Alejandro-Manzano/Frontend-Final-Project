@@ -24,6 +24,7 @@
 
 .offers-filters-container > div {
     width: 400px;
+   
 }
 
 .offer-button-Create{
@@ -63,6 +64,10 @@
 
 .offers-offersList-container {
     align-items: center;
+    margin-top: 10px;
+}
+
+.cardOffer-Info {
     margin-top: 10px;
 }
 
@@ -118,7 +123,12 @@
     .cardOffer-Info-tabla-name {
         text-align: center;
     }
-    
+    .cardOffer-Info-Ubicado, .cardOffer-Info-AnnualSalary {
+        text-align: center;
+    }
+    .cardOffer-Info-technologies{
+        text-align: center;        
+    }
 }
 
 
