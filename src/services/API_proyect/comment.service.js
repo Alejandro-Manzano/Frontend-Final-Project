@@ -12,12 +12,9 @@ export const createComment = async (data) => {
       return error;
     });
 };
+
 export const getAll = async () => {
-  return API.get('/comment', {
-    headers: {
-      Authorization: `Bearer ${updateToken()}`,
-    },
-  })
+  return API.get('/comment')
     .then((res) => res)
     .catch((error) => {
       return error;

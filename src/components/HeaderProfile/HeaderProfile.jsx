@@ -9,8 +9,10 @@ const UserProfile = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
+      console.log(user._id);
       try {
         const userDataProfile = await getUserById(user._id);
+        console.log(user._id);
         console.log(userDataProfile);
         if (userDataProfile) {
           setUserData(userDataProfile.data);

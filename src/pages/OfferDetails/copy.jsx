@@ -25,6 +25,7 @@ const OfferDetails = () => {
   const [res, setRes] = useState({});
   const [resComment, setResComment] = useState({});
   const [resNewChat, setResNewChat] = useState({});
+  const [resCommentPrivate, setResCommentPrivate] = useState({});
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
   const [inputValue, setInputValue] = useState(null);
@@ -62,7 +63,7 @@ const OfferDetails = () => {
     console.log(customFormData);
     setLoading(true);
     setResNewChat(await createMasChat(customFormData));
-    setLoading(false);
+    setLoading(true);
   };
 
   // const newCommentPrivate = async () => {
@@ -79,14 +80,8 @@ const OfferDetails = () => {
   useEffect(() => {
     if (resNewChat?.status == 200) {
       console.log(resNewChat);
-      setShow(!show);
-      Swal.fire({
-        icon: 'success',
-        title: '¡Mensaje enviado!',
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      setResNewChat({});
+
+      //newCommentPrivate(resNewChat.data.chat);
     }
   }, [resNewChat]);
 
@@ -98,7 +93,7 @@ const OfferDetails = () => {
     );
 
     console.log(filterData);
-    setComments(filterData);
+    //setComments(filterData);
   };
 
   useEffect(() => {
@@ -128,6 +123,19 @@ const OfferDetails = () => {
 
     // TODO: swal alert in case of error !!!!
   }, [resComment]);
+
+  useEffect(() => {
+    if (resCommentPrivate?.status == 200) {
+      setShow(!show);
+      setResCommentPrivate({});
+      Swal.fire({
+        icon: 'success',
+        title: '¡Mensaje enviado!',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  }, [resCommentPrivate]);
 
   //return offer ? offerLayout(offer) : null
 

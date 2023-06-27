@@ -19,7 +19,6 @@ export const getOfferById = async (id) => {
     });
 };
 
-
 // ---------- Toggle the offer taht the user is interested in -----------
 export const offer_toggleInterestedOfferToUser = async (id) => {
   return API.post(`/offers/toggleInterestedOfferToUser/${id}`, {
@@ -49,6 +48,7 @@ export const offer_getFollowingStatus = async (id) => {
 export const createOffer = async (formData) => {
   return API.post('/offers/createOffer', formData, {
     headers: {
+      'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${updateToken()}`,
     },
   })

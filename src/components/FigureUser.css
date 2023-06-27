@@ -14,7 +14,6 @@
   text-align: center;
   color: var(--textColor);
   font-size: 16px;
-
 }
 
 .dataProfile {
@@ -30,5 +29,4 @@
 
 .dataProfile > img {
   display: none;
-  
 }

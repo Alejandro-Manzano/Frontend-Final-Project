@@ -19,18 +19,26 @@ const CreateOffer = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm();
 
   const [serverMessage, setServerMessage] = useState(null);
 
   const onSubmit = async (data) => {
-    const customFormData = {
-      ...data,
-      annualSalary: parseInt(data.annualSalary),
-      offerState: 'Open',
-      technologies: arrayTech,
-    };
+    const inputfile = document.getElementById('file-upload').files;
+    console.log(inputfile);
+    let customFormData;
+
+    if (inputfile.length !== 0) {
+      customFormData = {
+        ...data,
+        annualSalary: parseInt(data.annualSalary),
+        offerState: 'Open',
+        technologies: arrayTech,
+        image: inputfile[0],
+      };
+    }
 
     setSend(true);
     const response = await createOffer(customFormData);
@@ -44,10 +52,6 @@ const CreateOffer = () => {
       console.log(res);
     }
   }, []);
-
-  const handleFileChange = (e) => {
-    setValue('image', e.target.files[0]);
-  };
 
   const createArrayTech = ({ target }) => {
     if (arrayTech.includes(target.id)) {
@@ -248,6 +252,11 @@ const CreateOffer = () => {
               />
               {errors.city && <p className="error-message">This field is required</p>}
             </div>
+
+            <div className="form-field">
+              <Uploadfile />
+            </div>
+
             <div id="btn-offer" className="form-field">
               <input className="btn-submit-create-offer" type="submit" value="Submit" />
             </div>

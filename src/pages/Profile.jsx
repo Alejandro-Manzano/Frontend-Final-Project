@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import { slide as Menu } from 'react-burger-menu';
+
 import ChangePassword2 from '../components/ChangePassword2/ChangePassword2';
 import FormProfile from '../components/FormProfile';
 import { useAuth } from '../contexts/authContext';
@@ -79,6 +79,12 @@ const Profile = () => {
                   </div>
                 </NavLink>
 
+                <NavLink to="/profile/mensajePrivado">
+                  <div className="mensajes-responsive">
+                    <span>Mensajes privados</span>
+                  </div>
+                </NavLink>
+
                 <div
                   className="borrar-perfil"
                   onClick={() => {
@@ -99,15 +105,6 @@ const Profile = () => {
           {ancho > 800 ? (
             <div className={`containerNavProfile `}>
               <button
-                className={`btn-profile ${activeButton === 'Password' ? 'active' : ''}`}
-                onClick={() => {
-                  setActiveButton('Password');
-                  navigate('/profile/changePassword');
-                }}
-              >
-                🔑 Contraseña
-              </button>
-              <button
                 className={`btn-profile ${activeButton === 'Profile' ? 'active' : ''}`}
                 onClick={() => {
                   setActiveButton('Profile');
@@ -116,6 +113,17 @@ const Profile = () => {
               >
                 👨🏻‍⚕️ Perfil
               </button>
+
+              <button
+                className={`btn-profile ${activeButton === 'Password' ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveButton('Password');
+                  navigate('/profile/changePassword');
+                }}
+              >
+                🔑 Contraseña
+              </button>
+
               <button
                 className={`btn-profile ${activeButton === 'Email' ? 'active' : ''}`}
                 onClick={() => {
@@ -154,6 +162,17 @@ const Profile = () => {
               >
                 📳 Tecnologías
               </button>
+
+              <button
+                className={`btn-profile ${activeButton === 'Message' ? 'active' : ''}`}
+                onClick={() => {
+                  setActiveButton('Message');
+                  navigate('/profile/mensajePrivado');
+                }}
+              >
+                💬 Tus mensajes
+              </button>
+
               <button
                 className={`btn-profile ${activeButton === 'Delete' ? 'active' : ''}`}
                 onClick={() => {
