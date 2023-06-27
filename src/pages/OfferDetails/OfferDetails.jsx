@@ -187,7 +187,7 @@ const OfferDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className="offerDetails-horizontal-line"></div>
+            {/* <div className="offerDetails-horizontal-line"></div> */}
             {/* <div
                 className="offerDetails-offer-description"
                 dangerouslySetInnerHTML={{ __html: offer?.description }}
@@ -205,7 +205,7 @@ const OfferDetails = () => {
                 <p>{offer?.descriptionSalary}</p>
             </div>
 
-            <div className="offerDetails-horizontal-line"></div>
+            {/* <div className="offerDetails-horizontal-line"></div> */}
 
             {/* -------------------COMMENTS ----------------------------- */}
             <div style={{ padding: 14 }} className="offerDetails-comments-container">

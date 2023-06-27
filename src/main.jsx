@@ -13,7 +13,8 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Profile from './pages/Profile';
 import Developers from './pages/Developers/Developers';
-import DeveloperDetails from './pages/DeveloperDetails/DeveloperDetails';
+// import DeveloperDetails from './pages/DeveloperDetails/DeveloperDetails';
+import DeveloperDetails2 from './pages/DeveloperDetails2/DeveloperDetails2';
 import OfferDetails from './pages/OfferDetails/OfferDetails';
 import Offers from './pages/Offers/Offers';
 import CreateOffer from './components/CreateOffer/CreateOffer';
@@ -36,7 +37,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/developers" element={<Developers />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/offers" element={<Offers />} />
-          <Route path="/developerDetails" element={<DeveloperDetails />} />
+          {/* <Route path="/developerDetails" element={<DeveloperDetails />} /> */}
+          <Route path="/developerDetails" element={<DeveloperDetails2 />} />
           <Route path="/offerDetails" element={<OfferDetails />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
