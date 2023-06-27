@@ -44,11 +44,12 @@ const Header = () => {
                 '--fa-secondary-color': '#75807c',
               }}
             /> */}
-            {/* <img
+             <img
               className="header-logo"
               alt="icon"
-              src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687797744/ProjectFinalBOOTCAMP/LogoWeb/logoWEBVerde_xvuqzi.png"
-            ></img> */}
+              src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687877185/ProjectFinalBOOTCAMP/Home/logoVerdesep120_wpsaja.png"
+            ></img> 
+           
             <h3 className="titleWeb">Dev</h3>
             <h3 className="titleWeb-second">Link</h3>
           </NavLink>
