@@ -21,7 +21,7 @@ const AboutUs = () => {
           <div className="col-sm-6 col-md-4">
             <div className="team-item">
               <img
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687110627/UserFTProyect/rqwetuzyrv36t1j48yfz.png"
+                src="https://res.cloudinary.com/djglk3cso/image/upload/v1686559547/UserFTProyect/rfimrylpbiixauupnmwq.png"
                 alt="person-review"
                 className="team-img"
               />

@@ -20,7 +20,6 @@ const Comments = ({ comment, setComentsByChild }) => {
           <h4 style={{ margin: 0, textAlign: 'left' }}>{name}</h4>
           <p style={{ textAlign: 'left' }}>{commentContent}</p>
           <p style={{ textAlign: 'left', color: 'gray' }}>{formattedDate}</p>{' '}
-          {/* Modificación aquí */}
           <div>
             <ToggleButton comment={comment} setAllElementByPather={setComentsByChild} />
           </div>

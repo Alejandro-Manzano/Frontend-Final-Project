@@ -82,7 +82,7 @@ const CreateOffer = () => {
               <label
                 className={`form-label ${errors.offerTitle ? 'required-label' : ''}`}
               >
-                Titulo de la oferta
+                Título de la oferta
               </label>
               <input
                 className="input-create-offer"
@@ -95,11 +95,9 @@ const CreateOffer = () => {
             </div>
 
             <div className="form-field">
-              <label className="form-label">Offer Type</label>
+              <label className="form-label">Tipo de oferta</label>
               <select
-                className={`input-create-offer ${
-                  errors.offerType ? 'required-label' : ''
-                }`}
+                className={`input-select ${errors.offerType ? 'required-label' : ''}`}
                 {...register('offerType', { required: true })}
               >
                 {offerTypes.map((type, index) => (
@@ -114,9 +112,9 @@ const CreateOffer = () => {
             </div>
 
             <div className="form-field">
-              <label className="form-label">Job Type</label>
+              <label className="form-label">Modalidad de trabajo</label>
               <select
-                className={`input-create-offer ${errors.jobType ? 'required-label' : ''}`}
+                className={`input-select ${errors.jobType ? 'required-label' : ''}`}
                 {...register('jobType', { required: true })}
               >
                 {jobTypes.map((type, index) => (
@@ -132,7 +130,7 @@ const CreateOffer = () => {
               <label
                 className={`form-label ${errors.technologies ? 'required-label' : ''}`}
               >
-                Technologies
+                Tecnologías requeridas
               </label>
               <div className="tecnologies-Offer">
                 {technologies.map((technology, index) => (
@@ -163,12 +161,60 @@ const CreateOffer = () => {
               <label
                 className={`form-label ${errors.description ? 'required-label' : ''}`}
               >
-                Description
+                Descripción general
               </label>
               <textarea
                 className="input-create-offer"
-                {...register('description', { required: true })}
-                placeholder="Offer Description"
+                {...register('descriptionGeneral', { required: true })}
+                placeholder=" Descripción general"
+              ></textarea>
+              {errors.description && (
+                <p className="error-message">This field is required</p>
+              )}
+            </div>
+
+            <div className="form-field">
+              <label
+                className={`form-label ${errors.description ? 'required-label' : ''}`}
+              >
+                Responsabilidades
+              </label>
+              <textarea
+                className="input-create-offer"
+                {...register('descriptionResponsabilities', { required: true })}
+                placeholder="Responsabilidades"
+              ></textarea>
+              {errors.description && (
+                <p className="error-message">This field is required</p>
+              )}
+            </div>
+
+            <div className="form-field">
+              <label
+                className={`form-label ${errors.description ? 'required-label' : ''}`}
+              >
+                Requisitos
+              </label>
+              <textarea
+                className="input-create-offer"
+                {...register('descriptionRequires', { required: true })}
+                placeholder="Requisitos"
+              ></textarea>
+              {errors.description && (
+                <p className="error-message">This field is required</p>
+              )}
+            </div>
+
+            <div className="form-field">
+              <label
+                className={`form-label ${errors.description ? 'required-label' : ''}`}
+              >
+                Remuneración
+              </label>
+              <textarea
+                className="input-create-offer"
+                {...register('descriptionSalary', { required: true })}
+                placeholder="Remuneración"
               ></textarea>
               {errors.description && (
                 <p className="error-message">This field is required</p>
