@@ -18,11 +18,13 @@ const Footer = () => {
 
         <div className="footer-container-img">
           <img
-            src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687191076/ProjectFinalBOOTCAMP/LogoWeb/logoWEBfinalProject_qvzlbq.png"
+            src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687877185/ProjectFinalBOOTCAMP/Home/logoVerdesep120_wpsaja.png"
             alt="icon"
             className="footer-icon"
           ></img>
-          <p className="footer-icon-p">Code</p>
+          <h3 className="titleWeb">Dev</h3>
+            <h3 className="titleWeb-second">Link</h3>
+       
         </div>
       </div>
 
