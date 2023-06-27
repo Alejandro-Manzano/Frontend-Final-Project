@@ -112,7 +112,7 @@ const ChangePassword2 = () => {
             </div>
           </div>
           </div>
-          <div className="btn_container-center">
+          <div className="btn_container-center-papa">
           <div className="btn_container">
             <button
               className="btn_profile_general"

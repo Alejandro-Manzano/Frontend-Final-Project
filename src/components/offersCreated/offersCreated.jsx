@@ -41,7 +41,7 @@ const OffersCreated = () => {
           ))}
         </ul>
       ) : (
-        <p>No hay ofertas creadas.</p>
+        <p className="offer-create-container_general_no_ofertas">No hay ofertas creadas.</p>
       )}
     </section>
   );

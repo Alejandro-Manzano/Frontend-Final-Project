@@ -1,0 +1,15 @@
+.offer-create-container_general_no_ofertas{
+    margin-left: 23px;
+}
+
+
+
+@media only screen and (max-width: 880px) {
+.offer-create-container_general_no_ofertas, .ffer-create-container_general_no_ofertas{
+    margin-left: 75px;
+}
+
+.offer-create-container_general h3, .experience-p-container_general h3{
+    margin-left: 75px;
+}
+}

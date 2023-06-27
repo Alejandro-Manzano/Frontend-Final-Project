@@ -37,8 +37,8 @@ main {
 
 .btn {
   width: 100%;
-  padding: 10px;
-  margin-top: 25px;
+  /* padding: 10px;
+  margin-top: 25px; */
   background: var(--background-color-button-login);
   color: #fff;
   cursor: pointer;

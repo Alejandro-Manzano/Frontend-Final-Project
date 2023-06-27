@@ -47,7 +47,8 @@ i.fa {
   gap: 2rem;
   clear: both;
   width: 100%;
-  padding: 2rem 1.5rem;
+  max-height: 225px;
+  padding: 9px 9px;
   text-align: center;
   background: #fff;
   border-radius: 7px;
@@ -131,10 +132,10 @@ strong {
 }
 
 #file-upload-btn {
-  margin: 50px;
+  margin: 5px;
 }
 
 .divSelect {
-  margin: 20px;
+  margin: 2px;
   color: rgb(58, 54, 54);
 }

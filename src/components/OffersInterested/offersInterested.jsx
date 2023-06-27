@@ -39,7 +39,7 @@ const OffersInterested = () => {
           ))}
         </ul>
       ) : (
-        <p>No hay ofertas en las que estés interesado/a.</p>
+        <p className="offer-create-container_general_no_ofertas">No hay ofertas en las que estés interesado/a.</p>
       )}
     </section>
   );

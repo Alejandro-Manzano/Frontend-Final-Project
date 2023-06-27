@@ -66,19 +66,21 @@ const FormProfile = () => {
   return (
     <>
       <div className="containerProfile">
-        <div className="containerDataNoChange"></div>
-        <div className="form-wrap formProfile">
+        <div className="containerDataNoChange">
+        </div>
+        <div className="form-wrap-formProfile">
           <p className="formProfile-text-new-profile">Cambiar datos del perfil</p>
           <div className="containerDataNoChange">
-            <FigureUser user={user} />
-          </div>
+          <FigureUser user={user} />
+        </div>
           <form onSubmit={handleSubmit(formSubmit)}>
             <div className="user_container-form-group">
               <label htmlFor="custom-input" className="custom-placeholder">
-                Nombre
+              
               </label>
               <input
-                className="input_user"
+                className="input_user-perfil"
+                placeholder='Introducir el Nombre'
                 type="text"
                 id="name"
                 name="name"
@@ -88,17 +90,19 @@ const FormProfile = () => {
               />
             </div>
             <Uploadfile />
-            <div className="btn_container-perfil">
+            <div className="btn_container-center-papa">
               <div className="btn_container">
                 <button
                   className="btn_profile_general"
                   type="submit"
                   disabled={send}
-                  style={
-                    {
-                      // background: send ? '#008000' : 'var(--background-color-button-login)',
-                    }
-                  }
+                  // style={{ background: send ? "#49c1a388" : "#49c1a2" }}
+                  // style={{ background: send ? "#008000" : "#37A08E" }}
+                  // style={
+                  //   {
+                  //     background: send ? '#008000' : 'var(--background-color-button-login)',
+                  //   }
+                  // }
                 >
                   CAMBIAR PERFIL
                 </button>
