@@ -27,7 +27,7 @@ export const technologies = [
   {
     name: 'PHP',
     image:
-      'https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687342000/GraphQL_s5qpvy.png',
+      'https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687855782/pngwing.com_11_ghyxuf.png',
   },
   {
     name: 'GraphQL',
@@ -76,7 +76,7 @@ export const technologies = [
   {
     name: 'React',
     image:
-      'https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687043578/ProjectFinalBOOTCAMP/Logos%20Tecnologias%20Proyecto/React_jjkuhu.png',
+      'https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687855912/ProjectFinalBOOTCAMP/Logos%20Tecnologias%20Proyecto/reactlogo_tqvp0j.png',
   },
   {
     name: 'Node',
