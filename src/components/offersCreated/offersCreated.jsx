@@ -14,7 +14,7 @@ const OffersCreated = () => {
 
         console.log(userOffer);
         if (userOffer) {
-          setOffers(userOffer);
+          setOffers(userOffer.data);
         }
       } catch (error) {
         console.error('Error al obtener el usuario:', error);
@@ -41,7 +41,9 @@ const OffersCreated = () => {
           ))}
         </ul>
       ) : (
-        <p className="offer-create-container_general_no_ofertas">No hay ofertas creadas.</p>
+        <p className="offer-create-container_general_no_ofertas">
+          No hay ofertas creadas.
+        </p>
       )}
     </section>
   );

@@ -40,14 +40,12 @@ i.fa {
   margin-bottom: 1rem;
   transition: all 0.2s ease-in-out;
 }
-
 #file-drag {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   clear: both;
   width: 100%;
-  max-height: 225px;
   padding: 9px 9px;
   text-align: center;
   background: #fff;

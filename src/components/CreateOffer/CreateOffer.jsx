@@ -259,9 +259,7 @@ const CreateOffer = () => {
             </div>
 
             <div id="btn-offer" className="form-field">
-              <NavLink to="/offers">
-                <input className="btn-submit-create-offer" type="submit" value="Submit" />
-              </NavLink>
+              <input className="btn-submit-create-offer" type="submit" value="Submit" />
             </div>
           </form>
         </div>

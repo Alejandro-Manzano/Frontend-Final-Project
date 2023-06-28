@@ -66,21 +66,18 @@ const FormProfile = () => {
   return (
     <>
       <div className="containerProfile">
-        <div className="containerDataNoChange">
-        </div>
+        <div className="containerDataNoChange"></div>
         <div className="form-wrap-formProfile">
           <p className="formProfile-text-new-profile">Cambiar datos del perfil</p>
           <div className="containerDataNoChange">
-          <FigureUser user={user} />
-        </div>
+            <FigureUser user={user} />
+          </div>
           <form onSubmit={handleSubmit(formSubmit)}>
             <div className="user_container-form-group">
-              <label htmlFor="custom-input" className="custom-placeholder">
-              
-              </label>
+              <label htmlFor="custom-input" className="custom-placeholder"></label>
               <input
                 className="input_user-perfil"
-                placeholder='Introducir el Nombre'
+                placeholder="Introducir el Nombre"
                 type="text"
                 id="name"
                 name="name"

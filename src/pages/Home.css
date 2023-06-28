@@ -25,7 +25,7 @@
 }
 
 .home-p {
-  color: rgb(130,130,130);
+  color: rgb(130, 130, 130);
 }
 
 .home-title {
@@ -61,9 +61,10 @@
   color: #25d366;
 }
 
-.home-contactUs:hover, .home-learnMore:hover {
+.home-contactUs:hover,
+.home-learnMore:hover {
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .home-company-container {
@@ -75,7 +76,7 @@
 }
 
 .home-p-company {
-  color: rgb(150,150,150);
+  color: rgb(150, 150, 150);
   text-transform: uppercase;
   text-align: center;
   font-size: 25px;
@@ -102,7 +103,7 @@
   margin-top: 30px;
 }
 
-.home-works-title{
+.home-works-title {
   font-weight: bolder;
   font-size: 22px;
   border-bottom: 1px solid #25d366;
@@ -110,7 +111,7 @@
 }
 
 .home-works-p {
-  color: rgb(130,130,130);
+  color: rgb(130, 130, 130);
   text-align: center;
   font-size: 15px;
   margin-top: 10px;
@@ -128,7 +129,7 @@
 .home-figure {
   width: 230px;
   height: 210px;
-  background-color: #FDFCFE;
+  background-color: #fdfcfe;
 }
 
 .home-figur:hover {
@@ -182,18 +183,18 @@
   gap: 30px;
 }
 
-.home-review-figure{
+.home-review-figure {
   width: 520px;
   min-height: 220px;
-  border: 0.1px solid rgb(200,200,200);
-  background-color: #FDFCFE;
+  border: 0.1px solid rgb(200, 200, 200);
+  background-color: #fdfcfe;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.home-review-developer{
+.home-review-developer {
   display: flex;
   gap: 15px;
 }
@@ -208,7 +209,7 @@
 .home-review-figure-p {
   font-size: 13px;
   font-style: italic;
-  color: rgb(110,110,110);
+  color: rgb(110, 110, 110);
 }
 
 .home-nameJob-person {
@@ -217,14 +218,14 @@
   justify-content: flex-end;
 }
 
-.home-person{
+.home-person {
   font-size: 13px;
   color: black;
 }
 
 .home-job {
   font-size: 11px;
-  color: rgb(110,110,110);
+  color: rgb(110, 110, 110);
 }
 
 @media screen and (max-width: 930px) {
@@ -236,18 +237,19 @@
     object-fit: cover;
   }
   .home-p {
-    font-size: 12px; 
+    font-size: 12px;
   }
-  .home-description{
+  .home-description {
     display: flex;
     flex-direction: row;
   }
-  .home-contactUs, .home-learnMore{
+  .home-contactUs,
+  .home-learnMore {
     height: 38px;
     width: 119px;
   }
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
   .home-description {
     display: flex;
     flex-direction: column;
@@ -257,7 +259,8 @@
     align-items: center;
     justify-content: center;
   }
-  .home-title, .home-p {
+  .home-title,
+  .home-p {
     text-align: center;
   }
   .home-br {
