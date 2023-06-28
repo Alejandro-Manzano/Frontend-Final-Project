@@ -26,6 +26,7 @@ import Experience from './components/Experience/Experience';
 import Offer from './components/Offers/Offers';
 import Tecnologias from './components/Tecnologias/Tecnologias';
 import PrivateComment from './components/PrivateComment/PrivateComment';
+// import PruebaEmotion from './pages/PruebaEmotion/PruebaEmotion';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter basename="/">
@@ -34,6 +35,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />}>
           {/* he cambiado home por register */}
           <Route index element={<Home />} />
+          {/* <Route index element={<PruebaEmotion />} /> */}
           <Route path="/developers" element={<Developers />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/offers" element={<Offers />} />

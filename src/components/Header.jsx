@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext';
+// import { ThemeProvider, useTheme } from "@emotion/react";
+// import GlobalStyles from '../../styles/globalStyles';
+// import { createTheme } from "../../styles/utils";
 
 const Header = () => {
   const { user, logout } = useAuth();

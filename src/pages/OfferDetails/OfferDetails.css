@@ -97,6 +97,12 @@
 
 .offerDetails-info-offer-detail {
     font-weight: 900;
+
+    /* limit the number of characters to show just 22 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 22ch;
 }
 
 .offerDetails-offer-rating-writeRating-container {
