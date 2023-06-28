@@ -61,45 +61,60 @@ const createExperienceUser = () => {
       });
     }
   };
-
+  
   useEffect(() => {
     console.log('🍟', arrayTech);
   }, [arrayTech]);
 
   return (
     <>
+    
       <form onSubmit={handleSubmit(formSubmit)} className="form_Create">
+
+      <section className="form_Create-empresa-duracion-descripcion">
+
         <div className="form-empresa-duracion">
-          <label className="form-label">
+
+          <label className="form-label-empresa form-label-global-empresa-duracion">
             <input
+            className="form-input-empresa"
               type="text"
               placeholder="Empresa"
               name="workedWith"
-              className="form-input"
+              
               {...register('workedWith', { required: true })}
             />
           </label>
-        </div>
-
-        <label className="form-label">
+          
+        
+        <label className="form-label-duracion form-label-empresa-duracion">
           <input
-            type="number"
+          className="form-input-duracion"
+            type="number" min="0" max="50"
+            
             placeholder={experienceData.duration ? '' : 'Duración'}
             name="duration"
-            className="form-input"
+            
             {...register('duration')}
           />
         </label>
+        </div>
+        
         <label className="form-label">
           <input
+          className="form-input-description-input"
             type="text"
             placeholder="Descripción"
             name="description"
-            className="form-input-description-input"
+            
             {...register('description')}
           />
         </label>
-        <label className="form-label">
+        </section>
+        
+
+        <section className="Create_Experiencia-tecnologías-Uploadfile_photo_profile">
+        <label className="form-label-Create_Experiencia-tecnologías-Uploadfile_photo_profile">
           {' '}
           Tecnologias
           <div className="tecnologies-experience">
@@ -123,14 +138,13 @@ const createExperienceUser = () => {
             ))}
           </div>
         </label>
-        
-
         <div className="form-Uploadfile_photo_profile">
           <Uploadfile
             className="form-Uploadfile_photo_profile"
             registerForm={{ ref: fileInput }}
           />
         </div>
+        </section>
         <button type="submit" className="btn_profile_general">
           GUARDAR EXPERIENCIA
         </button>

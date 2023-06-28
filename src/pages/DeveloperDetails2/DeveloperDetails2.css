@@ -315,10 +315,35 @@
     margin-top: 1rem;
 }
 
+.developerDetails2-private-comment-btn {
+    border: none;
+    border-radius: 30px;
+    height: 39px;
+    width: 270px;
+    background-color: #25d366;
+    color: white;
+    font-size: 16px;
+    transition: linear .2s;
+    margin-top: 30px;
+}
+
+.developerDetails2-private-comment-btn:hover {
+    border: 1.5px solid #25d366;
+    background-color: rgb(250, 250, 250);
+    color: #25d366;
+    font-size: 18px;
+    cursor: pointer;
+}
+
 @media (max-width: 600px) {
     .developerDetails2-image-and-info-container {
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .developerDetails2-private-comment-btn {
+        width: 120px;
+
     }
 
     .developerDetails2-info-city,

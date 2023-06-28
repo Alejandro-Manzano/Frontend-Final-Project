@@ -230,7 +230,7 @@ const OfferDetails = () => {
           </div>
         </div>
       </div>
-      <div className="offerDetails-horizontal-line"></div>
+      {/* <div className="offerDetails-horizontal-line"></div> */}
       {/* <div
                 className="offerDetails-offer-description"
                 dangerouslySetInnerHTML={{ __html: offer?.description }}
@@ -247,8 +247,8 @@ const OfferDetails = () => {
         <h3>Remunaración</h3>
         <p>{offer?.descriptionSalary}</p>
       </div>
-      <button className="private-comment-btn" onClick={() => setShow(!show)}>
-        Enviar mensaje
+      <button className="offerDetails-private-comment-btn" onClick={() => setShow(!show)}>
+        Chat privado
       </button>
       {show ? (
         <div className="container-privateMessage">
@@ -300,7 +300,7 @@ const OfferDetails = () => {
           </Paper>
         </div>
       ) : null}
-      <div className="offerDetails-horizontal-line"></div>
+      {/* <div className="offerDetails-horizontal-line"></div> */}
 
       {/* -------------------COMMENTS ----------------------------- */}
       <div style={{ padding: 14 }} className="offerDetails-comments-container">

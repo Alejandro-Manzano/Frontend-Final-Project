@@ -260,6 +260,45 @@
     margin: 1rem;
 }
 
+.offerDetails-private-comment-btn {
+    border: none;
+    border-radius: 30px;
+    height: 39px;
+    width: 270px;
+    background-color: #25d366;
+    color: white;
+    font-size: 16px;
+    transition: linear .2s;
+    margin-top: 30px;
+}
+
+.offerDetails-private-comment-btn:hover {
+    border: 1.5px solid #25d366;
+    background-color: rgb(250, 250, 250);
+    color: #25d366;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.offerDetails-private-comment-btn {
+    border: none;
+    border-radius: 30px;
+    height: 39px;
+    width: 270px;
+    background-color: #25d366;
+    color: white;
+    font-size: 16px;
+    transition: linear .2s;
+    margin-top: 30px;
+}
+
+.offerDetails-private-comment-btn:hover {
+    border: 1.5px solid #25d366;
+    background-color: rgb(250, 250, 250);
+    color: #25d366;
+    font-size: 18px;
+    cursor: pointer;
+}
 
 @media (max-width: 600px) {
     .offerDetails-image-and-info-container {
