@@ -65,6 +65,7 @@ export const Chat = () => {
 
       console.log(resChatUser.data.chats); // esto en un array de objetos con userOne._id y userTwo._id
       setChats(resChatUser.data.chats);
+      setResChatUser({});
     }
   }, [resChatUser]);
 

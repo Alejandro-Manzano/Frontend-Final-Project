@@ -57,6 +57,7 @@ export const AuthContextProvider = ({ children }) => {
   //! ----------------FUNCION QUE GESTIONA EL LOGOUT ----------------------------------------
   const logout = () => {
     localStorage.removeItem('user');
+    localStorage.removeItem('chatCurrent');
     setUser(null);
     navigate('/login');
   };
