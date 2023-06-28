@@ -165,12 +165,12 @@
   padding-top: 20px;
 }
 
-.developerDetails2-city-jobType > h3 {
+.developerDetails2-city-jobType>h3 {
   font-weight: 900;
   font-size: 25px;
 }
 
-.developerDetails2-technologies > h3 {
+.developerDetails2-technologies>h3 {
   font-weight: 900;
   font-size: 25px;
 }
@@ -186,7 +186,7 @@
   border: 0px solid red;
 }
 
-.developerDetails2-info-technologies > h5 {
+.developerDetails2-info-technologies>h5 {
   font-weight: 900;
   font-size: 18px;
 }
@@ -233,7 +233,7 @@
   border: 0.7px solid #e3e4e5;
   border-radius: 9px;
   background-color: #fcfcfc;
-  padding: 1rem;
+  padding: 0rem;
 }
 
 .developerDetails2-offer-rating-container {
@@ -283,13 +283,24 @@
   padding: 1.7rem;
 }
 
-.developerDetails2-comments-container {
+.developerDetails2-private-comments-container {
   width: 80%;
   border: 1px solid #e3e4e5;
   border-radius: 9px;
   background-color: #fcfcfc;
   /* border: 0px solid red; */
-  margin: 0.7rem 0 2rem 0;
+  /* margin: 0rem 0 1.7rem 0; */
+  margin-bottom: 1rem;
+}
+
+.developerDetails2-public-comments-container {
+  width: 80%;
+  border: 1px solid #e3e4e5;
+  border-radius: 9px;
+  background-color: #fcfcfc;
+  /* border: 0px solid red; */
+  /* margin: 0rem 0 1.7rem 0; */
+  margin-bottom: 2rem;
 }
 
 .developerDetails2-experiences-container {
@@ -322,7 +333,7 @@
   color: white;
   font-size: 16px;
   transition: linear 0.2s;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .developerDetails2-private-comment-btn:hover {
@@ -383,12 +394,12 @@
     padding: 0;
   }
 
-  .developerDetails2-technologies > h3 {
+  .developerDetails2-technologies>h3 {
     font-size: 20px;
     margin-top: 12px;
   }
 
-  .developerDetails2-info-technologies > h5 {
+  .developerDetails2-info-technologies>h5 {
     text-align: center;
   }
 
@@ -404,7 +415,7 @@
     width: 100%;
   }
 
-  .developerDetails2-single-experience-container > h3 {
+  .developerDetails2-single-experience-container>h3 {
     font-size: 18px;
     font-weight: 900;
   }

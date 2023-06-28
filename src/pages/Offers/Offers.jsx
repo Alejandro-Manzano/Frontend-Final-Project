@@ -7,6 +7,7 @@ import JobTypeSelect from "../../components/offersComponts/JobTypeSelect/JobType
 import OfferStateSelect from "../../components/offersComponts/OfferStateSelect/OfferStateSelect";
 import OfferTypeSelect from "../../components/offersComponts/OfferTypeSelect/OfferTypeSelect";
 import AnnualSalarySlider from "../../components/offersComponts/AnnualSalarySlider/AnnualSalarySlider";
+import { NavLink } from "react-router-dom";
 
 const Offers = () => {
     const isLargeScreen = useMediaQuery({ minWidth: 880 });
@@ -81,7 +82,7 @@ const Offers = () => {
             {isLargeScreen ?
                 <h2 className="offerTit">
                     ¡Ven y consulta nuestras ofertas de trabajo para Desarrolladores!
-                    
+
                 </h2>
                 :
                 <h2 className="offerTit">
@@ -94,51 +95,56 @@ const Offers = () => {
                 <div className="offers-filters-container">
                     <h2>Filtros</h2>
                     <section className="offers-filter-offerType-jobType-offerState-container">
-                    <div className="offers-filter-offerType-container">
-                        <OfferTypeSelect
-                            value={valueOfferTypeSelect}
-                            onChange={handleChangeOfferTypeSelect}
-                        />
-                    </div>
-                    <div className="offers-filter-jobType-container">
-                        <JobTypeSelect
-                            value={valueJobTypeSelect}
-                            onChange={handleChangeJobTypeSelect}
-                        />
-                    </div>
-                    <div className="offers-filter-offerState-container">
-                        <OfferStateSelect
-                            value={valueOfferStateSelect}
-                            onChange={handleChangeOfferStateSelect}
-                        />
-                    </div>
+                        <div className="offers-filter-offerType-container">
+                            <OfferTypeSelect
+                                value={valueOfferTypeSelect}
+                                onChange={handleChangeOfferTypeSelect}
+                            />
+                        </div>
+                        <div className="offers-filter-jobType-container">
+                            <JobTypeSelect
+                                value={valueJobTypeSelect}
+                                onChange={handleChangeJobTypeSelect}
+                            />
+                        </div>
+                        <div className="offers-filter-offerState-container">
+                            <OfferStateSelect
+                                value={valueOfferStateSelect}
+                                onChange={handleChangeOfferStateSelect}
+                            />
+                        </div>
                     </section>
                     <section className="offers-filter-experienceYears-annualSalary-container">
-                    <div className="offers-filter-experienceYears-container">
-                        <p>Años de experiencia:</p>
-                        <ExperienceYearsSlider
+                        <div className="offers-filter-experienceYears-container">
+                            <p>Años de experiencia:</p>
+                            <ExperienceYearsSlider
 
-                            onChange={handleChangeExperienceYearsSlider}
-                        />
-                        {typeof filtersToApply.experienceYears == "string" && (<p style={{ color: "red" }}>No utilizado</p>)}
-                    </div>
-                    <div className="offers-filter-annualSalary-container">
-                        <p>Salario anual:</p>
-                        <AnnualSalarySlider
-                            value={valueAnnualSalarySlider}
-                            onChange={handleChangeAnnualSalarySlider}
-                        />
-                        {typeof filtersToApply.annualSalary == "string" && (<p style={{ color: "red" }}>No utilizado</p>)}
-                    </div>
+                                onChange={handleChangeExperienceYearsSlider}
+                            />
+                            {typeof filtersToApply.experienceYears == "string" && (<p style={{ color: "red" }}>No utilizado</p>)}
+                        </div>
+                        <div className="offers-filter-annualSalary-container">
+                            <p>Salario anual:</p>
+                            <AnnualSalarySlider
+                                value={valueAnnualSalarySlider}
+                                onChange={handleChangeAnnualSalarySlider}
+                            />
+                            {typeof filtersToApply.annualSalary == "string" && (<p style={{ color: "red" }}>No utilizado</p>)}
+                        </div>
                     </section>
-                    <button className="offer-button-Create">
-                        Crear Oferta
-                    </button>
+                    <NavLink
+                        to="/createOffer"
+                    >
+                        <button className="offer-button-Create">
+                            Crear Oferta
+                        </button>
+                    </NavLink>
+
                 </div>
                 <div className="offers-offersList-container">
                     {/* {console.log("send --> filters to apply: ", filtersToApply)} */}
 
-                    { <OffersList filters={filtersToApply} itemsPerPage={10} /> }
+                    {<OffersList filters={filtersToApply} itemsPerPage={10} />}
                 </div>
             </div>
         </div>

@@ -237,7 +237,7 @@ const OfferDetails = () => {
                 dangerouslySetInnerHTML={{ __html: offer?.description }}
                 
             /> */}
-
+      {/* ----------------------- Offer Description ----------------------- */}
       <div className="offerDetails-offer-description">
         <h3>Descripción</h3>
         <p>{offer?.descriptionGeneral}</p>
@@ -248,13 +248,26 @@ const OfferDetails = () => {
         <h3>Remunaración</h3>
         <p>{offer?.descriptionSalary}</p>
       </div>
+      {/* ----------------------- Offer Description ----------------------- */}
+
+      {/* <Paper style={{ padding: '40px 20px 55px', backgroundColor: '#fcfcfc' }}> */}
+
       <button className="offerDetails-private-comment-btn" onClick={() => setShow(!show)}>
         Chat privado
       </button>
+
       {show ? (
-        <div className="container-privateMessage">
-          <Paper style={{ padding: '40px 20px', backgroundColor: '#fcfcfc' }}>
-            <h3>Envia tu mensaje privado!</h3>
+        <div className="offerDetails-private-comments-container">
+          <Paper
+            style={{
+              padding: '40px 20px 55px',
+              backgroundColor: '#fcfcfc',
+              border: '0px solid red',
+              width: '100%',
+            }}
+          >
+
+            <h3>Comentario privado</h3>
             <Grid container wrap="nowrap" spacing={2}>
               <Grid item>
                 <Avatar alt="Remy Sharp" src={offer?.image} />
@@ -300,13 +313,21 @@ const OfferDetails = () => {
             </Grid>
           </Paper>
         </div>
-      ) : null}
+      ) : null
+      }
       {/* <div className="offerDetails-horizontal-line"></div> */}
 
       {/* -------------------COMMENTS ----------------------------- */}
-      <div style={{ padding: 14 }} className="offerDetails-comments-container">
-        <Paper style={{ padding: '40px 20px', backgroundColor: '#fcfcfc' }}>
-          <h3>Comenta la oferta!</h3>
+      <div className="offerDetails-public-comments-container">
+        <Paper
+          style={{
+            padding: '40px 20px 0px',
+            backgroundColor: '#fcfcfc',
+            border: '0px solid red',
+            width: '100%',
+          }}
+        >
+          <h3>Comentario público</h3>
           <Grid container wrap="nowrap" spacing={2}>
             <Grid item>
               <Avatar alt="Remy Sharp" src={offer?.image} />
@@ -366,7 +387,7 @@ const OfferDetails = () => {
         </Paper>
       </div>
       {/* ------------------ COMMENTS ------------------------------- */}
-    </div>
+    </div >
   );
 };
 
