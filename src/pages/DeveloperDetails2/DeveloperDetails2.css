@@ -75,11 +75,8 @@
 }
 
 .developerDetails2-info-city,
-/* .developerDetails2-info-annualSalary, */
 .developerDetails2-info-email,
-/* .developerDetails2-info-jobType, */
 .developerDetails2-info-following,
-/* .developerDetails2-info-experienceYears { */
 .developerDetails2-info-followers {
     width: 250px;
     height: 110px;
@@ -93,11 +90,6 @@
     padding: 0 0 0 12px;
 }
 
-/* .developerDetails2-info-city:hover,
-.developerDetails2-info-annualSalary:hover,
-.developerDetails2-info-jobType:hover,
-.developerDetails2-info-experienceYears:hover { */
-
 .developerDetails2-info-city:hover,
 .developerDetails2-info-email:hover,
 .developerDetails2-info-following:hover,
@@ -109,6 +101,12 @@
 
 .developerDetails2-info-developer-detail {
     font-weight: 900;
+
+    /* limit the number of characters to show just 22 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 22ch;
 }
 
 /* .developerDetails2-offer-rating-writeRating-container { */
@@ -302,7 +300,7 @@
     border: 1px solid #e3e4e5;
     border-radius: 9px;
     background-color: #fcfcfc;
-    /* border: 0px solid red; */
+    /* border: 1px solid red; */
     margin-top: 0.7rem;
     padding: 1.7rem;
 }
@@ -313,6 +311,7 @@
     background-color: #fcfcfc;
     padding: 1.5rem;
     margin-top: 1rem;
+    /* border: 1px solid red; */
 }
 
 .developerDetails2-private-comment-btn {
@@ -405,5 +404,10 @@
 
     .developerDetails2-comments-container {
         width: 100%;
+    }
+
+    .developerDetails2-single-experience-container>h3 {
+        font-size: 18px;
+        font-weight: 900;
     }
 }

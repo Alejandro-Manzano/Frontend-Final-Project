@@ -1,11 +1,20 @@
 import './Home.css';
 import { NavLink } from 'react-router-dom';
+import ButtonStyle from '../components/ButtonStyle/ButtonStyle';
+//import { ThemeProvider, useTheme } from "@emotion/react";
+//import GlobalStyles from '../../styles/globalStyles';
 
 export const Home = () => {
   return (
     <div className="home-container">
       <div className="home-description">
         <div className="home-presentation">
+          {/* <ThemeProvider
+                //theme={createTheme(theme === "dark" ? themeDark : themeLight)}
+                theme={createTheme(theme === "dark" ? themeLight : themeDark)}
+            >
+            </ThemeProvider> */}
+
           <p className="home-title">
             Encuentra y contrata desarrolladores profesionales
             <br className="home-br"></br> con ganas de afrontar nuevos retos
@@ -19,8 +28,12 @@ export const Home = () => {
 
             <div className="home-subButton">
               <NavLink to="/aboutUs">
-                <button className="home-contactUs">Contact Us</button>
+                {/* <ButtonStyle variant="small">
+                  About Us
+                </ButtonStyle> */}
+                <button className="home-contactUs">About Us</button>
               </NavLink>
+
               <button className="home-learnMore">
                 <p>Learn more</p>
               </button>

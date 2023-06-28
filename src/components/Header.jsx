@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext';
+// import { ThemeProvider, useTheme } from "@emotion/react";
+// import GlobalStyles from '../../styles/globalStyles';
+// import { createTheme } from "../../styles/utils";
 
 const Header = () => {
   const { user, logout } = useAuth();
@@ -30,11 +33,12 @@ const Header = () => {
     };
   }, []);
 
-  useEffect(() => {}, [ancho]);
+  useEffect(() => { }, [ancho]);
 
   return (
     <>
       <header>
+
         <div className="titleFatherContainer">
           <NavLink to="/home" className="header-link-one">
             {/* <FontAwesomeIcon
@@ -44,12 +48,12 @@ const Header = () => {
                 '--fa-secondary-color': '#75807c',
               }}
             /> */}
-             <img
+            <img
               className="header-logo"
               alt="icon"
               src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687877185/ProjectFinalBOOTCAMP/Home/logoVerdesep120_wpsaja.png"
-            ></img> 
-           
+            ></img>
+
             <h3 className="titleWeb">Dev</h3>
             <h3 className="titleWeb-second">Link</h3>
           </NavLink>
@@ -109,6 +113,7 @@ const Header = () => {
             </button>
           </>
         )}
+
       </header>
     </>
   );
