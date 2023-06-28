@@ -40,7 +40,7 @@ const CardOffer = ({ offer }) => {
                     <p className="cardOffer-Info-Description">
                         {offer.description}
                     </p>
-                    <p className="cardOffer-Info-Ubicado"> 📋  {offer.city}</p>
+                    <p className="cardOffer-Info-Ubicado"> 📍 {offer.city}</p>
                     <p className="cardOffer-Info-Ubicado">
                         📅 {offer.experienceYears} año/s de experiencia
                     </p>
