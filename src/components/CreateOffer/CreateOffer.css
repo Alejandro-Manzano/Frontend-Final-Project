@@ -60,7 +60,6 @@
   gap: 0.5rem;
 }
 .input-create-offer {
-  width: 40vw;
   height: 30px;
   display: flex;
   justify-content: center;
@@ -74,7 +73,12 @@
   font-size: 16px;
   color: black;
 }
-
+.input-select {
+  height: 42px;
+  width: 350px;
+  border-radius: 12px;
+  border: 2px solid #cecfd0;
+}
 .error-message {
   color: red;
 }
