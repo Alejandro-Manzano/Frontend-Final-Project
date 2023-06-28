@@ -19,7 +19,39 @@ body {
 .header-link-one {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
 
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.chat-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+}
+.chat-logo:hover {
+  animation: bounce 2s ease infinite;
+}
+
+.header-link-two {
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -155,14 +187,13 @@ nav {
   visibility: visible;
 }
 .header-logo {
-  display:flex;
+  display: flex;
   margin-top: -8px;
-  margin-right:3px;
-  padding:3px;
+  margin-right: 3px;
+  padding: 3px;
   height: 36px;
   width: 40px;
   object-fit: cover;
- 
 }
 @media only screen and (max-width: 870px) {
   .navButton {
@@ -224,7 +255,6 @@ nav {
 
   header .responsive_nav {
     transform: translateY(100vh);
-
   }
 
   .anchors {

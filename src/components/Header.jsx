@@ -37,19 +37,12 @@ const Header = () => {
       <header>
         <div className="titleFatherContainer">
           <NavLink to="/home" className="header-link-one">
-            {/* <FontAwesomeIcon
-              icon="fa-duotone fa-code-simple"
-              style={{
-                '--fa-primary-color': '#5bd61d',
-                '--fa-secondary-color': '#75807c',
-              }}
-            /> */}
-             <img
+            <img
               className="header-logo"
               alt="icon"
               src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687877185/ProjectFinalBOOTCAMP/Home/logoVerdesep120_wpsaja.png"
-            ></img> 
-           
+            ></img>
+
             <h3 className="titleWeb">Dev</h3>
             <h3 className="titleWeb-second">Link</h3>
           </NavLink>
@@ -68,7 +61,13 @@ const Header = () => {
             <NavLink to="/aboutUs">
               <button className="buttonNav">AboutUs</button>
             </NavLink>
-
+            <NavLink to="/chat" className="header-link-two">
+              <img
+                className="chat-logo"
+                alt="icon"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687966558/comment-dots-regular_urt3iu.png"
+              ></img>
+            </NavLink>
             {user == null && (
               <>
                 <NavLink to="/register">
