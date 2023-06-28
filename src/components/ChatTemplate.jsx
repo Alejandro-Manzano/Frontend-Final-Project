@@ -14,30 +14,58 @@ import {
   MDBCardHeader,
 } from 'mdb-react-ui-kit';
 import { getUserById } from '../services/API_proyect/user.service';
+import { createMasChat } from '../services/API_proyect/chat.service';
 
 export const Chat = () => {
   const [resChatUser, setResChatUser] = useState({});
   const [chats, setChats] = useState([]);
-  const [message, setMessage] = useState([]);
+  const [message, setMessage] = useState(null);
   const { user } = useAuth();
+  const [send, setSend] = useState(false);
+  const [res, setRes] = useState(false);
+
+  const handleMessage = async () => {
+    const valueInput = document.querySelector('#textAreaExample').value;
+
+    const customFormData = {
+      commentContent: valueInput,
+      referenceUser: user._id == message.chat.userOne._id && message.chat.userTwo._id,
+    };
+    localStorage.setItem('chatCurrent', customFormData.referenceUser);
+    setSend(true);
+    setRes(await createMasChat(customFormData));
+    setSend(false);
+  };
+
+  const fetchUser = async () => {
+    try {
+      const userChat = await getUserById(user._id);
+      if (userChat?.status == 200) {
+        setResChatUser(userChat);
+      }
+    } catch (error) {
+      console.error('Error al obtener el usuario:', error);
+    }
+  };
 
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const userChat = await getUserById(user._id);
-        if (userChat) {
-          setResChatUser(userChat);
-        }
-      } catch (error) {
-        console.error('Error al obtener el usuario:', error);
-      }
-    };
-
     fetchUser();
   }, []);
 
   useEffect(() => {
-    if (resChatUser?.status == 200) setChats(resChatUser.data.chats);
+    if (resChatUser?.status == 200) {
+      if (localStorage.getItem('chatCurrent')) {
+        const filterdata = resChatUser.data.chats.filter(
+          (chat) =>
+            chat.userOne._id == localStorage.getItem('chatCurrent') ||
+            chat.userTwo._id == localStorage.getItem('chatCurrent'),
+        );
+        setMessage({ chat: filterdata[0], dataChat: filterdata[0].menssages });
+      }
+
+      console.log(resChatUser.data.chats); // esto en un array de objetos con userOne._id y userTwo._id
+      setChats(resChatUser.data.chats);
+    }
   }, [resChatUser]);
 
   useEffect(() => {
@@ -48,9 +76,21 @@ export const Chat = () => {
     console.log(message);
   }, [message]);
 
+  useEffect(() => {
+    console.log(res);
+    if (res?.status == 200) {
+      fetchUser();
+    }
+  }, [res]);
+
   return (
     <div>
-      <MDBContainer fluid className="py-5" style={{ minHeight: '700px' }}>
+      <MDBContainer
+        fluid
+        className="py-5"
+        // style={{ backgroundColor: '#eee' }}
+        // style={{ minHeight: '700px', maxWidth: '80vw' }}
+      >
         <MDBRow>
           <MDBCol md="6" lg="5" xl="4" className="mb-4 mb-md-0">
             <h5 className="font-weight-bold mb-3 text-center text-lg-start">Member</h5>
@@ -58,34 +98,18 @@ export const Chat = () => {
             {chats.map((chat) => (
               <MDBCard
                 onClick={() => {
-                  setMessage(chat.menssages);
-                }}
-                style={{
-                  backgroundColor: '#eee',
-                  width: '220px',
-                  height: '100px',
+                  setMessage({ chat, dataChat: chat.menssages });
                 }}
               >
-                <MDBCardBody
-                  style={{
-                    backgroundColor: '#eee',
-                    width: '250px',
-                    height: '100px',
-                  }}
-                >
+                <MDBCardBody>
                   <MDBTypography
                     listUnStyled
                     className="mb-0"
-                    style={{
-                      backgroundColor: '#eee',
-                    }}
+                    // style={{
+                    //   backgroundColor: '#eee',
+                    // }}
                   >
-                    <li
-                      className="p-2 border-bottom"
-                      style={{
-                        backgroundColor: '#eee',
-                      }}
-                    >
+                    <li className="p-2 border-bottom">
                       <a href="#!" className="d-flex justify-content-between">
                         <div className="d-flex flex-row">
                           <img
@@ -96,7 +120,7 @@ export const Chat = () => {
                             }
                             alt="avatar"
                             className="rounded-circle d-flex align-self-center me-3 shadow-1-strong"
-                            width="60"
+                            width="80"
                             style={{ objectFit: 'cover', width: '50px', height: '50px' }}
                           />
                           <div className="pt-1">
@@ -121,56 +145,88 @@ export const Chat = () => {
           </MDBCol>
 
           <MDBCol md="6" lg="7" xl="8">
-            <MDBTypography listUnStyled style={{ width: '500px' }}>
-              <div style={{ height: '450px', overflow: 'auto', padding: '2rem' }}>
-                {message.map((mss) => {
-                  console.log(mss);
-                  return (
-                    <>
-                      {user._id == mss.owner._id ? (
-                        <li className="d-flex justify-content-between mb-4">
-                          <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
-                            alt="avatar"
-                            className="rounded-circle d-flex align-self-start me-3 shadow-1-strong"
-                            width="60"
-                          />
-                          <MDBCard>
-                            <MDBCardHeader className="d-flex justify-content-between p-3">
-                              <p className="fw-bold mb-0">Brad Pitt</p>
-                              <p className="text-muted small mb-0">
-                                <MDBIcon far icon="clock" /> 12 mins ago
-                              </p>
-                            </MDBCardHeader>
-                            <MDBCardBody>
-                              <p className="mb-0">{mss.commentContent}</p>
-                            </MDBCardBody>
-                          </MDBCard>
-                        </li>
-                      ) : (
-                        <li class="d-flex justify-content-between mb-4">
-                          <MDBCard className="w-100">
-                            <MDBCardHeader className="d-flex justify-content-between p-3">
-                              <p class="fw-bold mb-0">Lara Croft</p>
-                              <p class="text-muted small mb-0">
-                                <MDBIcon far icon="clock" /> 13 mins ago
-                              </p>
-                            </MDBCardHeader>
-                            <MDBCardBody>
-                              <p className="mb-0">{mss.commentContent}</p>
-                            </MDBCardBody>
-                          </MDBCard>
-                          <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
-                            alt="avatar"
-                            className="rounded-circle d-flex align-self-start ms-3 shadow-1-strong"
-                            width="60"
-                          />
-                        </li>
-                      )}
-                    </>
-                  );
-                })}
+            <MDBTypography listUnStyled>
+              <div
+                style={{
+                  height: '450px',
+                  overflow: 'auto',
+                  padding: '2rem',
+                }}
+              >
+                {message != null ? (
+                  message?.dataChat.map((mss) => {
+                    console.log(mss);
+                    return (
+                      <>
+                        {user._id == mss.owner._id ? (
+                          <li className="d-flex justify-content-between mb-4">
+                            <MDBCard className="w-100">
+                              <MDBCardHeader className="d-flex justify-content-between p-3">
+                                <p className="fw-bold mb-0">
+                                  {user?._id == message?.chat?.userOne?._id
+                                    ? message?.chat?.userOne?.name
+                                    : message?.chat?.userTwo?.name}
+                                </p>
+                                <p className="text-muted small mb-0">
+                                  <MDBIcon far icon="clock" /> 12 mins ago
+                                </p>
+                              </MDBCardHeader>
+                              <MDBCardBody>
+                                <p className="mb-0">{mss.commentContent}</p>
+                              </MDBCardBody>
+                            </MDBCard>
+                            <img
+                              style={{
+                                objectFit: 'cover',
+                                width: '70px',
+                                height: '70px',
+                              }}
+                              src={user.image}
+                              alt="avatar"
+                              className="rounded-circle d-flex align-self-start me-3 shadow-1-strong"
+                              width="60"
+                            />
+                          </li>
+                        ) : (
+                          <li class="d-flex justify-content-between mb-4">
+                            <img
+                              style={{
+                                objectFit: 'cover',
+                                width: '70px',
+                                height: '70px',
+                              }}
+                              src={
+                                user?._id == message?.chat?.userOne?._id
+                                  ? message?.chat?.userTwo?.image
+                                  : message?.chat?.userOne?.image
+                              }
+                              alt="avatar"
+                              className="rounded-circle d-flex align-self-start ms-3 shadow-1-strong"
+                              width="60"
+                            />
+                            <MDBCard className="w-100">
+                              <MDBCardHeader className="d-flex justify-content-between p-3">
+                                <p class="fw-bold mb-0">
+                                  {user?._id == message?.chat?.userOne?._id
+                                    ? message?.chat?.userTwo?.name
+                                    : message?.chat?.userOne?.name}
+                                </p>
+                                <p class="text-muted small mb-0">
+                                  <MDBIcon far icon="clock" /> 13 mins ago
+                                </p>
+                              </MDBCardHeader>
+                              <MDBCardBody style={{ width: '100% !Important' }}>
+                                <p className="mb-0">{mss.commentContent}</p>
+                              </MDBCardBody>
+                            </MDBCard>
+                          </li>
+                        )}
+                      </>
+                    );
+                  })
+                ) : (
+                  <p>Selecciona un chat para ver los mensajes</p>
+                )}
               </div>
 
               <li className="bg-white mb-3">
@@ -180,7 +236,16 @@ export const Chat = () => {
                   style={{ marginTop: '2rem' }}
                 />
               </li>
-              <MDBBtn color="info" rounded className="float-end">
+              <MDBBtn
+                color="info"
+                rounded
+                className="float-end"
+                onClick={() => {
+                  console.log(message);
+
+                  handleMessage();
+                }}
+              >
                 Send
               </MDBBtn>
             </MDBTypography>
