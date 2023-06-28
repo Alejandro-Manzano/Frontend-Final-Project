@@ -29,9 +29,14 @@ export const Chat = () => {
 
     const customFormData = {
       commentContent: valueInput,
-      referenceUser: user._id == message.chat.userOne._id && message.chat.userTwo._id,
+      referenceUser:
+        user._id == message.chat.userOne._id
+          ? message.chat.userTwo._id
+          : message.chat.userOne._id,
     };
-    localStorage.setItem('chatCurrent', customFormData.referenceUser);
+
+    console.log(customFormData);
+
     setSend(true);
     setRes(await createMasChat(customFormData));
     setSend(false);
@@ -60,12 +65,12 @@ export const Chat = () => {
             chat.userOne._id == localStorage.getItem('chatCurrent') ||
             chat.userTwo._id == localStorage.getItem('chatCurrent'),
         );
+        console.log(filterdata);
         setMessage({ chat: filterdata[0], dataChat: filterdata[0].menssages });
+        console.log(resChatUser.data.chats);
+        setChats(resChatUser.data.chats);
       }
-
-      console.log(resChatUser.data.chats); // esto en un array de objetos con userOne._id y userTwo._id
       setChats(resChatUser.data.chats);
-      setResChatUser({});
     }
   }, [resChatUser]);
 
@@ -100,6 +105,10 @@ export const Chat = () => {
               {chats.map((chat) => (
                 <MDBCard
                   onClick={() => {
+                    localStorage.setItem(
+                      'chatCurrent',
+                      user._id === chat.userOne._id ? chat.userTwo._id : chat.userOne._id,
+                    );
                     setMessage({ chat, dataChat: chat.menssages });
                   }}
                 >
