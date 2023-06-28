@@ -72,8 +72,8 @@ const CreateOffer = () => {
   };
 
   return (
-    <>
-      <div className="toda-la-pagina-maki">
+
+      <div className="createOffer-container">
         <div className="crear-oferta-titulo">
           <h3 id="oferta-h3-general">¡Crea tu</h3>
           <p> </p>
@@ -102,7 +102,7 @@ const CreateOffer = () => {
             <div className="form-field">
               <label className="form-label">Tipo de oferta</label>
               <select
-                className={`input-select ${errors.offerType ? 'required-label' : ''}`}
+                id="createOffer-select" className={`input-select ${errors.offerType ? 'required-label' : ''}`}
                 {...register('offerType', { required: true })}
               >
                 {offerTypes.map((type, index) => (
@@ -116,10 +116,10 @@ const CreateOffer = () => {
               )}
             </div>
 
-            <div className="form-field">
+            <div className="form-field-one">
               <label className="form-label">Modalidad de trabajo</label>
               <select
-                className={`input-select ${errors.jobType ? 'required-label' : ''}`}
+                id="createOffer-select" className={`input-select ${errors.jobType ? 'required-label' : ''}`}
                 {...register('jobType', { required: true })}
               >
                 {jobTypes.map((type, index) => (
@@ -131,7 +131,7 @@ const CreateOffer = () => {
               {errors.jobType && <p className="error-message">This field is required</p>}
             </div>
 
-            <div className="form-field">
+            <div className="form-field-two">
               <label
                 className={`form-label ${errors.technologies ? 'required-label' : ''}`}
               >
@@ -171,7 +171,6 @@ const CreateOffer = () => {
               <textarea
                 className="input-create-offer"
                 {...register('descriptionGeneral', { required: true })}
-                placeholder=" Descripción general"
               ></textarea>
               {errors.description && (
                 <p className="error-message">This field is required</p>
@@ -187,7 +186,7 @@ const CreateOffer = () => {
               <textarea
                 className="input-create-offer"
                 {...register('descriptionResponsabilities', { required: true })}
-                placeholder="Responsabilidades"
+              
               ></textarea>
               {errors.description && (
                 <p className="error-message">This field is required</p>
@@ -203,7 +202,7 @@ const CreateOffer = () => {
               <textarea
                 className="input-create-offer"
                 {...register('descriptionRequires', { required: true })}
-                placeholder="Requisitos"
+               
               ></textarea>
               {errors.description && (
                 <p className="error-message">This field is required</p>
@@ -219,7 +218,7 @@ const CreateOffer = () => {
               <textarea
                 className="input-create-offer"
                 {...register('descriptionSalary', { required: true })}
-                placeholder="Remuneración"
+               
               ></textarea>
               {errors.description && (
                 <p className="error-message">This field is required</p>
@@ -235,7 +234,7 @@ const CreateOffer = () => {
               <input
                 className="input-create-offer"
                 {...register('annualSalary', { required: true })}
-                placeholder="Annual Salary"
+               
               />
               {errors.annualSalary && (
                 <p className="error-message">This field is required</p>
@@ -249,12 +248,12 @@ const CreateOffer = () => {
               <input
                 className="input-create-offer"
                 {...register('city', { required: true })}
-                placeholder="City"
+             
               />
               {errors.city && <p className="error-message">This field is required</p>}
             </div>
 
-            <div className="form-field">
+            <div className="form-field-four">
               <Uploadfile />
             </div>
 
@@ -264,7 +263,6 @@ const CreateOffer = () => {
           </form>
         </div>
       </div>
-    </>
   );
 };
 
