@@ -20,6 +20,7 @@ import { technologies } from '../../data/object.tecnologias';
 import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import { createChat, createMasChat } from '../../services/API_proyect/chat.service';
 import { useAuth } from '../../contexts/authContext';
+import DeleteCommentComponent from '../../components/DeleteComment/DeleteComment';
 
 const OfferDetails = () => {
   const [res, setRes] = useState({});
@@ -353,11 +354,13 @@ const OfferDetails = () => {
           <div className="Dev-comments" style={{ maxHeight: '400px', overflowY: 'auto' }}>
             {comments != null &&
               comments.map((singleComment) => (
-                <Comments
-                  key={singleComment._id}
-                  comment={singleComment}
-                  setComentsByChild={setComments}
-                />
+                <div className="singlecomment-div" key={singleComment._id}>
+                  <Comments comment={singleComment} setComentsByChild={setComments} />
+                  <DeleteCommentComponent
+                    className="trash-icon"
+                    commentId={singleComment._id}
+                  />
+                </div>
               ))}
           </div>
         </Paper>
@@ -366,24 +369,5 @@ const OfferDetails = () => {
     </div>
   );
 };
-
-// const showTechnologies = (offerTechnologies, technologies) => {
-//     console.log("showTechnologies -> offerTechnologies: ", offerTechnologies)
-//     console.log("showTechnologies -> technologies: ", technologies)
-//     return (<div className="offerDetails-icons-technologies-container">
-//         {technologies
-//             .filter(tech => offerTechnologies.includes(tech.name))
-//             .map((tech, index) => (
-//                 <figure key={`${tech.name}_${index}`} className="offerDetails-tecnologia-item" id={tech.name}>
-//                     <div className="offerDetails-icon-container">
-//                         <img className="offerDetails-tech-image" src={tech.image} alt={tech.name} />
-//                         <p>{tech.name}</p>
-//                     </div>
-
-//                 </figure>
-//             ))}
-//     </div>
-//     )
-// }
 
 export default OfferDetails;
