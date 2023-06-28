@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
+
+import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
 import "./ToggleBtnFollowOffer.css";
 
 import { offer_toggleInterestedOfferToUser, offer_getFollowingStatus } from "../../services/API_proyect/offer.service";
@@ -45,16 +47,18 @@ const ToggleBtnFollowOffer = ({ offerToFollowId }) => {
     };
 
     return (
-        <button
+        <div>
+        <button 
             onClick={handleAddToFavorites}
-            className={`ToggleHeartOffer ${isFavorite ? "favorite" : ""}`}
+            className={`no-border-button ${isFavorite ? "favorite" : ""}`}
         >
             {isFavorite ? (
-                <AiTwotoneHeart size={25} className="favorite-icon" />
+                <p> Sigue esta oferta  < RiUserUnfollowFill  size={25} className="favorite-icon-pendiente-seguir" /></p>
             ) : (
-                <AiOutlineHeart size={25} className="favorite-icon" />
-            )}
+                <p> Dejar de seguirla <RiUserFollowFill size={25} className="favorite-icon-siguiendo" /> </p>
+            )} 
         </button>
+        </div>
     );
 };
 

@@ -1,20 +1,11 @@
 
-  .cardOffer-BtnToggle {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
- 
-  
-  .cardOffer-link-to-offerDetails{
+.cardOffer-link-to-offerDetails{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
     width: 200px;
     margin-top: 14px;
-     
-    
   }
 
   .cardOffer-Info{
@@ -23,43 +14,61 @@
     width: 900px;
     background-color: #fcfcfc;
   }
+  
 .cardOffer-Info-tabla-name{
-    
+    display: flex;
+    flex-wrap: wrap;    
     font-size: 21px;
 }
-.cardOffer-Info-AnnualSalary{
-    font-size:smaller;
-    margin: 5px;
-    margin-bottom: 7px;
+
+.cardOffer-Info-AnnualSalary {
+  font-size: 12px;
+  margin-left: 12px;
 }
-  p{
-    margin: 1.5px;
-  }
+
+
 
 .cardOffer-Info-img{
     
-  height:115px;
+    height:115px;
     width: 115px;
     object-fit: cover;
     border-radius: 7px;
+    padding: 0 0 16px;
    
 }
 
 .cardOffer-Info-img:hover
 {
   cursor: pointer;
-  box-shadow: 2px 2px 2px black;
 }
 .cardOffer-paragraph{
    margin: 1rem;
+}
 
+.cardOffer-Info-img-ratings{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardOffer-Info-Ubicado{
+font-size: 14px;
+margin-top: 3px;
+color: #25d366;
+font-weight: 900;
 }
 
 .cardOffer-Info-technologies{
-font-size: 15px;
-/* gap: 2rem; */
-font-family: var(--font-bold);
+  font-size: 16px;
+  margin-top: 10px;
+}
 
+.cardOffer-BtnToggle {
+  display: flex;
+  justify-content: flex-end;
+  border: transparent;
 }
 
 .cardOffer-Profile{
@@ -67,15 +76,14 @@ font-family: var(--font-bold);
     flex-direction:column;
    justify-content:flex-start;
    align-items: space-around;
-   gap: 12px;
-   width: 25vw;
+   gap: 7px;
+   width: 700px;
 }
 
-.cardOffer-Info-Ubicado{
-    margin-right: 15px;
+.cardOffer-Info-Experiencia{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
 }
 .cardOffer-Info-OfferState{
     display: flex;
