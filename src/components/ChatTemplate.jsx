@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../contexts/authContext';
+import './ChatTemplate.css';
 import {
   MDBContainer,
   MDBRow,
@@ -59,10 +60,32 @@ export const Chat = () => {
                 onClick={() => {
                   setMessage(chat.menssages);
                 }}
+                style={{
+                  backgroundColor: '#eee',
+                  width: '220px',
+                  height: '100px',
+                }}
               >
-                <MDBCardBody>
-                  <MDBTypography listUnStyled className="mb-0">
-                    <li className="p-2 border-bottom" style={{ backgroundColor: '#eee' }}>
+                <MDBCardBody
+                  style={{
+                    backgroundColor: '#eee',
+                    width: '250px',
+                    height: '100px',
+                  }}
+                >
+                  <MDBTypography
+                    listUnStyled
+                    className="mb-0"
+                    style={{
+                      backgroundColor: '#eee',
+                    }}
+                  >
+                    <li
+                      className="p-2 border-bottom"
+                      style={{
+                        backgroundColor: '#eee',
+                      }}
+                    >
                       <a href="#!" className="d-flex justify-content-between">
                         <div className="d-flex flex-row">
                           <img

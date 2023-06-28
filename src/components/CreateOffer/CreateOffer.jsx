@@ -6,6 +6,7 @@ import { createOffer } from '../../services/API_proyect/offer.service';
 import './createOffer.css';
 import { technologies } from '../../data/object.tecnologias';
 import handleOfferCreationResponse from '../../hooks/useCreateOffer';
+import { NavLink } from 'react-router-dom';
 
 const CreateOffer = () => {
   const [res, setRes] = useState({});
@@ -258,7 +259,9 @@ const CreateOffer = () => {
             </div>
 
             <div id="btn-offer" className="form-field">
-              <input className="btn-submit-create-offer" type="submit" value="Submit" />
+              <NavLink to="/offers">
+                <input className="btn-submit-create-offer" type="submit" value="Submit" />
+              </NavLink>
             </div>
           </form>
         </div>
