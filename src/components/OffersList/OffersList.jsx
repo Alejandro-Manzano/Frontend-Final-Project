@@ -92,8 +92,9 @@ const OffersList = ({ filters, itemsPerPage }) => {
                 <Spinner />
             ) : (
                 <div className="offersList-paginate-and-offers-list-container">
-
+                    
                     <div className="offersList-offers-container">
+                    <h2>Ofertas</h2>
                         {itemPerPage.map((offer) => (
                             <div key={offer._id}>
                                 <CardOffer offer={offer} />

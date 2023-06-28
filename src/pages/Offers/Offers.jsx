@@ -1,141 +1,148 @@
-import { useMediaQuery } from 'react-responsive';
-import { useState, useEffect } from 'react';
-import './Offers.css';
-import OffersList from '../../components/OffersList/OffersList';
-import ExperienceYearsSlider from '../../components/offersComponts/ExperienceYearsSlider/ExperienceYearsSlider';
-import JobTypeSelect from '../../components/offersComponts/JobTypeSelect/JobTypeSelect';
-import OfferStateSelect from '../../components/offersComponts/OfferStateSelect/OfferStateSelect';
-import OfferTypeSelect from '../../components/offersComponts/OfferTypeSelect/OfferTypeSelect';
-import AnnualSalarySlider from '../../components/offersComponts/AnnualSalarySlider/AnnualSalarySlider';
-import { NavLink } from 'react-router-dom';
+import { useMediaQuery } from "react-responsive";
+import { useState, useEffect } from "react";
+import './Offers.css'
+import OffersList from "../../components/OffersList/OffersList";
+import ExperienceYearsSlider from "../../components/offersComponts/ExperienceYearsSlider/ExperienceYearsSlider";
+import JobTypeSelect from "../../components/offersComponts/JobTypeSelect/JobTypeSelect";
+import OfferStateSelect from "../../components/offersComponts/OfferStateSelect/OfferStateSelect";
+import OfferTypeSelect from "../../components/offersComponts/OfferTypeSelect/OfferTypeSelect";
+import AnnualSalarySlider from "../../components/offersComponts/AnnualSalarySlider/AnnualSalarySlider";
 
 const Offers = () => {
-  const isLargeScreen = useMediaQuery({ minWidth: 880 });
-  const [valueExperienceYearsSlider, setValueExperienceYearsSlider] = useState(() => '');
-  const [valueAnnualSalarySlider, setValueAnnualSalarySlider] = useState(10000);
-  const [valueJobTypeSelect, setValueJobTypeSelect] = useState('All');
-  const [valueOfferStateSelect, setValueOfferStateSelect] = useState('All');
-  const [valueOfferTypeSelect, setValueOfferTypeSelect] = useState('All');
+    const isLargeScreen = useMediaQuery({ minWidth: 880 });
+    const [valueExperienceYearsSlider, setValueExperienceYearsSlider] = useState(() => "");
+    const [valueAnnualSalarySlider, setValueAnnualSalarySlider] = useState(10000);
+    const [valueJobTypeSelect, setValueJobTypeSelect] = useState('All');
+    const [valueOfferStateSelect, setValueOfferStateSelect] = useState('All');
+    const [valueOfferTypeSelect, setValueOfferTypeSelect] = useState('All');
 
-  const [filtersToApply, setFiltersToApply] = useState({
-    // CompanyOffer, FreelandOffer
-    offerType: '',
+    const [filtersToApply, setFiltersToApply] = useState({
 
-    // 0 to 100
-    experienceYears: '',
+        // CompanyOffer, FreelandOffer
+        offerType: "",
 
-    // number
-    annualSalary: '',
+        // 0 to 100
+        experienceYears: "",
 
-    // Remote, Office, Hybrid
-    jobType: '',
+        // number
+        annualSalary: "",
 
-    // Close, Suspended, Open
-    offerState: '',
-  });
+        // Remote, Office, Hybrid
+        jobType: "",
 
-  const handleChangeExperienceYearsSlider = (event, newValue) => {
-    setValueExperienceYearsSlider(event.target.value);
-  };
+        // Close, Suspended, Open
+        offerState: "",
+    })
 
-  const handleChangeAnnualSalarySlider = (event, newValue) => {
-    setValueAnnualSalarySlider(newValue);
-  };
+    const handleChangeExperienceYearsSlider = (event, newValue) => {
+        setValueExperienceYearsSlider(event.target.value);
+    };
 
-  const handleChangeJobTypeSelect = (event) => {
-    setValueJobTypeSelect(event.target.value);
-  };
+    const handleChangeAnnualSalarySlider = (event, newValue) => {
+        setValueAnnualSalarySlider(newValue);
+    };
 
-  const handleChangeOfferStateSelect = (event) => {
-    setValueOfferStateSelect(event.target.value);
-  };
+    const handleChangeJobTypeSelect = (event) => {
+        setValueJobTypeSelect(event.target.value);
+    };
 
-  const handleChangeOfferTypeSelect = (event) => {
-    setValueOfferTypeSelect(event.target.value);
-  };
+    const handleChangeOfferStateSelect = (event) => {
+        setValueOfferStateSelect(event.target.value);
+    };
 
-  useEffect(() => {
-    //console.log("Offers --> Before --> setFiltersToApply(filters)", filters)
-    setFiltersToApply({ ...filtersToApply, experienceYears: valueExperienceYearsSlider });
-    //console.log("Offers --> After --> setFiltersToApply(filters)", filters)
-  }, [valueExperienceYearsSlider]);
+    const handleChangeOfferTypeSelect = (event) => {
+        setValueOfferTypeSelect(event.target.value);
+    };
 
-  useEffect(() => {
-    setFiltersToApply({ ...filtersToApply, annualSalary: valueAnnualSalarySlider });
-  }, [valueAnnualSalarySlider]);
+    useEffect(() => {
+        //console.log("Offers --> Before --> setFiltersToApply(filters)", filters)
+        setFiltersToApply({ ...filtersToApply, experienceYears: valueExperienceYearsSlider })
+        //console.log("Offers --> After --> setFiltersToApply(filters)", filters)
+    }, [valueExperienceYearsSlider]);
 
-  useEffect(() => {
-    setFiltersToApply({ ...filtersToApply, jobType: valueJobTypeSelect });
-  }, [valueJobTypeSelect]);
+    useEffect(() => {
+        setFiltersToApply({ ...filtersToApply, annualSalary: valueAnnualSalarySlider })
+    }, [valueAnnualSalarySlider]);
 
-  useEffect(() => {
-    setFiltersToApply({ ...filtersToApply, offerState: valueOfferStateSelect });
-  }, [valueOfferStateSelect]);
+    useEffect(() => {
+        setFiltersToApply({ ...filtersToApply, jobType: valueJobTypeSelect })
+    }, [valueJobTypeSelect]);
 
-  useEffect(() => {
-    setFiltersToApply({ ...filtersToApply, offerType: valueOfferTypeSelect });
-  }, [valueOfferTypeSelect]);
+    useEffect(() => {
+        setFiltersToApply({ ...filtersToApply, offerState: valueOfferStateSelect })
+    }, [valueOfferStateSelect]);
 
-  return (
-    <div className="outletContainer">
-      {isLargeScreen ? (
-        <h2 className="offerTit">
-          ¡Ven y consulta nuestras ofertas de trabajo para Desarrolladores!
-        </h2>
-      ) : (
-        <h2 className="offerTit">Sigue nuestras ofertas de trabajo</h2>
-      )}
+    useEffect(() => {
+        setFiltersToApply({ ...filtersToApply, offerType: valueOfferTypeSelect })
+    }, [valueOfferTypeSelect]);
 
-      <div className="spinner"></div>
-      <div className="offers-filters-and-offersList-container">
-        <div className="offers-filters-container">
-          <div className="offers-filter-offerType-container">
-            <OfferTypeSelect
-              value={valueOfferTypeSelect}
-              onChange={handleChangeOfferTypeSelect}
-            />
-          </div>
-          <div className="offers-filter-jobType-container">
-            <JobTypeSelect
-              value={valueJobTypeSelect}
-              onChange={handleChangeJobTypeSelect}
-            />
-          </div>
-          <div className="offers-filter-offerState-container">
-            <OfferStateSelect
-              value={valueOfferStateSelect}
-              onChange={handleChangeOfferStateSelect}
-            />
-          </div>
-          <div className="offers-filter-experienceYears-container">
-            <p>Años de experiencia:</p>
-            <ExperienceYearsSlider onChange={handleChangeExperienceYearsSlider} />
-            {typeof filtersToApply.experienceYears == 'string' && (
-              <p style={{ color: 'red' }}>No utilizado</p>
-            )}
-          </div>
-          <div className="offers-filter-annualSalary-container">
-            <p>Salario anual:</p>
-            <AnnualSalarySlider
-              value={valueAnnualSalarySlider}
-              onChange={handleChangeAnnualSalarySlider}
-            />
-            {typeof filtersToApply.annualSalary == 'string' && (
-              <p style={{ color: 'red' }}>No utilizado</p>
-            )}
-          </div>
-          <NavLink to="/createOffer">
-            <button className="offer-button-Create">Crear Oferta</button>
-          </NavLink>
+    return (
+        <div className="outletContainer">
+            {isLargeScreen ?
+                <h2 className="offerTit">
+                    ¡Ven y consulta nuestras ofertas de trabajo para Desarrolladores!
+                    
+                </h2>
+                :
+                <h2 className="offerTit">
+                    Sigue nuestras ofertas de trabajo
+                </h2>
+            }
+
+            <div className="spinner"></div>
+            <div className="offers-filters-and-offersList-container">
+                <div className="offers-filters-container">
+                    <h2>Filtros</h2>
+                    <section className="offers-filter-offerType-jobType-offerState-container">
+                    <div className="offers-filter-offerType-container">
+                        <OfferTypeSelect
+                            value={valueOfferTypeSelect}
+                            onChange={handleChangeOfferTypeSelect}
+                        />
+                    </div>
+                    <div className="offers-filter-jobType-container">
+                        <JobTypeSelect
+                            value={valueJobTypeSelect}
+                            onChange={handleChangeJobTypeSelect}
+                        />
+                    </div>
+                    <div className="offers-filter-offerState-container">
+                        <OfferStateSelect
+                            value={valueOfferStateSelect}
+                            onChange={handleChangeOfferStateSelect}
+                        />
+                    </div>
+                    </section>
+                    <section className="offers-filter-experienceYears-annualSalary-container">
+                    <div className="offers-filter-experienceYears-container">
+                        <p>Años de experiencia:</p>
+                        <ExperienceYearsSlider
+
+                            onChange={handleChangeExperienceYearsSlider}
+                        />
+                        {typeof filtersToApply.experienceYears == "string" && (<p style={{ color: "red" }}>No utilizado</p>)}
+                    </div>
+                    <div className="offers-filter-annualSalary-container">
+                        <p>Salario anual:</p>
+                        <AnnualSalarySlider
+                            value={valueAnnualSalarySlider}
+                            onChange={handleChangeAnnualSalarySlider}
+                        />
+                        {typeof filtersToApply.annualSalary == "string" && (<p style={{ color: "red" }}>No utilizado</p>)}
+                    </div>
+                    </section>
+                    <button className="offer-button-Create">
+                        Crear Oferta
+                    </button>
+                </div>
+                <div className="offers-offersList-container">
+                    {/* {console.log("send --> filters to apply: ", filtersToApply)} */}
+
+                    { <OffersList filters={filtersToApply} itemsPerPage={10} /> }
+                </div>
+            </div>
         </div>
-        <div className="offers-offersList-container">
-          {/* {console.log("send --> filters to apply: ", filtersToApply)} */}
+    );
+}
 
-          {<OffersList filters={filtersToApply} itemsPerPage={10} />}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Offers;
+export default Offers

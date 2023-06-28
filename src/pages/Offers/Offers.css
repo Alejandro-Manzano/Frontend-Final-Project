@@ -1,3 +1,8 @@
+.offers-filters-and-offersList-container{
+    display: flex;
+    justify-content: center;
+}
+
 .outletContainer {
     display: flex;
     align-items: center;
@@ -8,24 +13,26 @@
 }
 
 .offerTit {
-    font-size: 22px;
+    font-size: 21px;
     align-items: center;
     font-family: var(--font-bold);
+    padding: 0 0 30px 0;
 }
 
 .offers-filters-container {
     display: flex;
     flex-direction: column;
+    justify-content:center;
     align-items: center;
-    justify-content: center;
     gap: 10px;
-    margin-top: 20px;
 }
 
-.offers-filters-container > div {
-    width: 400px;
-   
+.offers-filters-container > h2 {
+    font-size: 23px;
+    margin-top: 9px;
+    font-weight: 700;
 }
+
 
 .offer-button-Create{
     border: none;
@@ -42,11 +49,11 @@
 }
 
 .offers-offersList-container {
-    margin-top: 25px;
-    padding: 20px;
-    width: 90%;
+    /* margin-top: 25px;
+    padding: 20px; */
+    padding-left: 27px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .offersList-paginate-and-offers-list-container {
@@ -59,7 +66,9 @@
 .offersList-paginate {
     display: flex;
     gap: 18px;
-    margin-top: 12px;
+    margin: 12px 0 0 0;
+    padding: 0 0 0 0;
+
 }
 
 .offers-offersList-container {
@@ -69,26 +78,82 @@
 
 .cardOffer-Info {
     margin-top: 10px;
+    
+}
+
+.offers-filter-experienceYears-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 340px;
+    margin-left: 12px;
+}
+.offers-filter-annualSalary-container{
+    margin-left: 12px;
+}
+
+.offers-filter-offerType-jobType-offerState-container{
+    width: 340px;
+}
+.offers-filter-offerType-container, .offers-filter-jobType-container, .offers-filter-offerState-container{
+    padding: 0 0 5px 0;
+}
+.offers-filter-experienceYears-annualSalary-container{
+    width: 320px;
 }
 
 @media screen and (max-width: 494px) {
-    .offers-filters-container > div {
-        width: 200px;
+    .offers-filters-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
+    .offers-filter-offerType-jobType-offerState-container{
+        width: 300px;
+    }
+
+    .offers-filter-offerType-container, .offers-filter-jobType-container, .offers-filter-offerState-container{
+        padding: 0 0 5px 0;
+    }
+
+    .offers-filter-experienceYears-annualSalary-container{
+        width: 270px;
+    }
+
+    .offers-filters-container > h2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .offers-offersList-container{
+   
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+
     .offerTit {
-        font-size: 20px;
+        font-size: 18px;
         align-items: center;
         font-family: var(--font-bold);
         text-align: center;
+        padding: 0 0 0 0;
+    }
+
+    .offersList-paginate{
+        padding: 0 0 0 0;
     }
 }
 @media screen and (max-width:991px) {
     .offersList-offers-container {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
-        gap: 10px;
     }
 
     .cardOffer-Info{
@@ -96,17 +161,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px;
-        max-width: 300px;
-        margin-left: 19px;
-        gap: 5px;
+        width: 300px;
+    
     }
     .cardOffer-link-to-offerDetails {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 5px;
     }
     .cardOffer-Profile {
         display: flex;
@@ -118,22 +180,26 @@
     }
 
     .cardOffer-Info-Description{
-        max-width: 200px;
+        max-width: 350px;
     }
     .cardOffer-Info-tabla-name {
         text-align: center;
+        width: 250px;
     }
     .cardOffer-Info-Ubicado, .cardOffer-Info-AnnualSalary {
         text-align: center;
+        width: 250px;
     }
     .cardOffer-Info-technologies{
-        text-align: center;        
+        text-align: center;  
+        width: 200px;      
     }
 }
 
-
 @media screen and (max-width: 458px) {
-    .cardOffer-Info {
-        margin-right: 10px;
+    .offers-filters-and-offersList-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
