@@ -45,6 +45,7 @@ body {
   height: 30px;
   width: 30px;
 }
+
 .chat-logo:hover {
   animation: bounce 2s ease infinite;
 }
@@ -53,6 +54,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #ccc;
 }
 
 .logoPlant {

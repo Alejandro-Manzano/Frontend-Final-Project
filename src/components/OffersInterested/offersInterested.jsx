@@ -12,7 +12,7 @@ const OffersInterested = () => {
       try {
         const userOffer = await getUserById(user._id);
         if (userOffer) {
-          setOffers(userOffer);
+          setOffers(userOffer.data.offersInterested);
         }
       } catch (error) {
         console.error('Error al obtener el usuario:', error);
@@ -39,7 +39,9 @@ const OffersInterested = () => {
           ))}
         </ul>
       ) : (
-        <p className="offer-create-container_general_no_ofertas">No hay ofertas en las que estés interesado/a.</p>
+        <p className="offer-create-container_general_no_ofertas">
+          No hay ofertas en las que estés interesado/a.
+        </p>
       )}
     </section>
   );

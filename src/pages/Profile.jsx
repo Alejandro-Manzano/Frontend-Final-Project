@@ -79,12 +79,6 @@ const Profile = () => {
                   </div>
                 </NavLink>
 
-                <NavLink to="/profile/mensajePrivado">
-                  <div className="mensajes-responsive">
-                    <span>Mensajes privados</span>
-                  </div>
-                </NavLink>
-
                 <div
                   className="borrar-perfil"
                   onClick={() => {
@@ -103,7 +97,7 @@ const Profile = () => {
         </div>
         <div className="mainContainer">
           {ancho > 800 ? (
-            <div className={`containerNavProfile `}>
+            <div className={`containerNavProfile`}>
               <button
                 className={`btn-profile ${activeButton === 'Profile' ? 'active' : ''}`}
                 onClick={() => {
@@ -161,16 +155,6 @@ const Profile = () => {
                 }}
               >
                 📳 Tecnologías
-              </button>
-
-              <button
-                className={`btn-profile ${activeButton === 'Message' ? 'active' : ''}`}
-                onClick={() => {
-                  setActiveButton('Message');
-                  navigate('/profile/mensajePrivado');
-                }}
-              >
-                💬 Tus mensajes
               </button>
 
               <button

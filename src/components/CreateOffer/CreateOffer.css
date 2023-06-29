@@ -1,11 +1,11 @@
- .createOffer-container {
+.createOffer-container {
   padding: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
   flex-direction: column;
-} 
+}
 
 .createOffer-container {
   text-align: center;
@@ -16,7 +16,6 @@
   justify-content: center;
   align-items: center;
   font-family: var(--font-bold);
-
 }
 .h3-oferta {
   color: #61d61d;
@@ -58,15 +57,6 @@
   margin-top: 30px;
 }
 
-#createOffer-select {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 200px;
-  height: 40px;
-  text-align: center;
-
-}
-
 .textarea-description {
   height: 150px;
   width: 40vw;
@@ -98,6 +88,22 @@
   margin: 0 auto;
   outline: none;
 }
+
+#createOffer-select {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+}
+
+/* .createOffer-select {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+} */
 
 .error-message {
   color: red;
