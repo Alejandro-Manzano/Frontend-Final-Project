@@ -15,6 +15,11 @@ const WriteRatingForDeveloper = ({ userToRate }) => {
 
     const userLoged = user
 
+    // console.log("WriteRatingForDeveloper -> userLoged: ", userLoged)
+
+    // If userLogged === null means that we're not logged
+    if (userLoged === null) return null
+
     // If the user to rate is the user loged, we just leave
     if (userToRate._id === userLoged._id) return null;
 
