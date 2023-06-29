@@ -141,7 +141,7 @@ const DeveloperDetails2 = () => {
   useEffect(() => {
     if (deletedCommentId) {
       const updatedComments = comments.filter(
-        (comment) => comment._id !== deletedCommentId,
+        (comment) => comment?._id !== deletedCommentId,
       );
       setComments(updatedComments);
       setDeletedCommentId(null);
@@ -280,7 +280,7 @@ const DeveloperDetails2 = () => {
           experiences.map((singleExperience) => (
             <div
               className="developerDetails2-single-experience-container"
-              key={singleExperience._id}
+              key={singleExperience?._id}
             >
               <h3>Projecto/Empresa</h3>
               <p>{singleExperience.workedWith}</p>
