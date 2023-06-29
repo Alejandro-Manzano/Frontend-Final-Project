@@ -30,10 +30,11 @@ export const Home = () => {
               <NavLink to="/aboutUs">
                 <button className="home-contactUs">About Us</button>
               </NavLink>
-
-              <button className="home-learnMore">
-                <p style={{ margin: 0 }}>Learn more</p>
-              </button>
+              <NavLink to="/offers">
+                <button className="home-learnMore">
+                  <p style={{ margin: 0 }}>Learn more</p>
+                </button>
+              </NavLink>
             </div>
           </div>
         </div>
