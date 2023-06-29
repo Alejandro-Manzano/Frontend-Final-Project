@@ -41,8 +41,6 @@ const DeveloperDetails2 = () => {
   const { state } = useLocation();
   const { id } = state;
 
-const id = "649d9d153f024fab5bd4da61"
-
   const [deletedCommentId, setDeletedCommentId] = useState(null);
 
   const handleCommentDelete = (commentId) => {
