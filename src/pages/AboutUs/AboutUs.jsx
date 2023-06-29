@@ -114,7 +114,7 @@ const AboutUs = () => {
           <div className="col-sm-6 col-md-4">
             <div className="team-item">
               <img
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688035853/ProjectFinalBOOTCAMP/Perfil/MarcPerfilweb_2_cch1ff.png"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688040986/ProjectFinalBOOTCAMP/Perfil/MarcPerfilweb_en_taman%CC%83o_pequen%CC%83o_gqybym.png"
                 alt="person-review"
                 className="team-img"
               />
@@ -256,7 +256,7 @@ const AboutUs = () => {
           <div className="col-sm-6 col-md-4">
             <div className="team-item">
               <img
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688032272/ProjectFinalBOOTCAMP/Perfil/JonathanPerfil_n2oj9d.png"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688032645/ProjectFinalBOOTCAMP/Perfil/JonathanPerfil_tf0hdq.png"
                 alt="person-review"
                 className="team-img"
               />
