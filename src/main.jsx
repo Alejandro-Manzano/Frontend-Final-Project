@@ -12,11 +12,12 @@ import { Chat } from './components/ChatTemplate.jsx';
 import Register from './pages/Register.jsx';
 import Profile from './pages/Profile';
 import Developers from './pages/Developers/Developers';
-import DeveloperDetails from './pages/DeveloperDetails/DeveloperDetails';
+//import DeveloperDetails from './pages/DeveloperDetails/DeveloperDetails';
 import DeveloperDetails2 from './pages/DeveloperDetails2/DeveloperDetails2';
 import OfferDetails from './pages/OfferDetails/OfferDetails';
 import Offers from './pages/Offers/Offers';
 import CreateOffer from './components/CreateOffer/CreateOffer';
+// import CreateOffer2 from './components/CreateOffer2/CreateOffer2';
 import AboutUs from './pages/AboutUs/AboutUs';
 import UserProfile from './components/HeaderProfile/HeaderProfile';
 import ChangePassword2 from './components/ChangePassword2/ChangePassword2';
@@ -45,6 +46,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/createOffer" element={<CreateOffer />} />
+          {/* <Route path="/createOffer2" element={<CreateOffer2 />} /> */}
           <Route path="/register" element={<Register />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/profile" element={<Profile />}>
