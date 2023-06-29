@@ -59,7 +59,7 @@ export const AuthContextProvider = ({ children }) => {
     localStorage.removeItem('user');
     localStorage.removeItem('chatCurrent');
     setUser(null);
-    navigate('/login');
+    navigate('/home');
   };
 
   const value = useMemo(
