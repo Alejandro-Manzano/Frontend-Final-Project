@@ -81,12 +81,17 @@
 }
 
 .register-button{
+  margin: 0 auto; 
   border: none;
   border-radius: 30px;
   height: 39px;
   width: 145px;
   background-color: #25d366;
   color: white;
+}
+
+.register-button > p {
+  margin: 0 auto;
 }
 
 .register-button:hover {
