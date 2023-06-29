@@ -209,3 +209,11 @@
         justify-content: center;
     }
 }
+
+@media screen and (max-width: 1270px) {
+    .offers-filters-and-offersList-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
