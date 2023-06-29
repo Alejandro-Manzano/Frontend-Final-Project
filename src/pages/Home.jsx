@@ -28,14 +28,11 @@ export const Home = () => {
 
             <div className="home-subButton">
               <NavLink to="/aboutUs">
-                {/* <ButtonStyle variant="small">
-                  About Us
-                </ButtonStyle> */}
                 <button className="home-contactUs">About Us</button>
               </NavLink>
 
               <button className="home-learnMore">
-                <p>Learn more</p>
+                <p style={{ margin: 0 }}>Learn more</p>
               </button>
             </div>
           </div>
@@ -156,7 +153,6 @@ export const Home = () => {
         </p>
 
         <section className="home-review-section">
-
           <figure className="home-review-figure">
             <p className="home-review-figure-p">
               Que pagina mas buenas me lo pase pirata ademas aprendi a comerme Monitores
@@ -213,7 +209,6 @@ export const Home = () => {
               </div>
             </div>
           </figure>
-          
         </section>
       </div>
     </div>
