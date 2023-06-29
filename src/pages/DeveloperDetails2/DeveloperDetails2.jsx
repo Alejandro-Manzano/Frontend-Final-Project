@@ -39,9 +39,7 @@ const DeveloperDetails2 = () => {
   const [experiences, setExperiences] = useState(null);
   const theme = useTheme();
   const { state } = useLocation();
-  //const { id } = state;
-
-const id = "649d9d153f024fab5bd4da61"
+  const { id } = state;
 
   const [deletedCommentId, setDeletedCommentId] = useState(null);
 
@@ -341,7 +339,7 @@ const id = "649d9d153f024fab5bd4da61"
             <h3>Comentario privado</h3>
             <Grid container wrap="nowrap" spacing={2}>
               <Grid item>
-                <Avatar alt="Remy Sharp" src={user?.image} />
+                <Avatar alt="Remy Sharp" src={user ? user?.image : imgLink} />
               </Grid>
               <Grid justifyContent="left" item xs zeroMinWidth>
                 <TextField
@@ -399,7 +397,7 @@ const id = "649d9d153f024fab5bd4da61"
           <h3>Comentario público</h3>
           <Grid container wrap="nowrap" spacing={2}>
             <Grid item>
-              <Avatar alt="Remy Sharp" src={user?.image} />
+              <Avatar alt="Remy Sharp" src={user ? user?.image : imgLink} />
             </Grid>
             <Grid justifyContent="left" item xs zeroMinWidth>
               <TextField
