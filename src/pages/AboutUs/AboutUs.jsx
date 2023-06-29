@@ -21,7 +21,7 @@ const AboutUs = () => {
           <div className="col-sm-6 col-md-4">
             <div className="team-item">
               <img
-                src="https://res.cloudinary.com/djglk3cso/image/upload/v1686559547/UserFTProyect/rfimrylpbiixauupnmwq.png"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688028713/ProjectFinalBOOTCAMP/Perfil/CarlosMartinPerfil_rj6cwn.png"
                 alt="person-review"
                 className="team-img"
               />
@@ -67,7 +67,7 @@ const AboutUs = () => {
           <div className="col-sm-6 col-md-4">
             <div className="team-item">
               <img
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687259001/UserFTProyect/vs86srsiqyurqmqeeppt.jpg"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688032676/ProjectFinalBOOTCAMP/Perfil/AitorPerfil_rjgben.png"
                 alt="person-review"
                 className="team-img"
               />
@@ -114,7 +114,7 @@ const AboutUs = () => {
           <div className="col-sm-6 col-md-4">
             <div className="team-item">
               <img
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687345050/ozi_dxjzjs.jpg"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688035853/ProjectFinalBOOTCAMP/Perfil/MarcPerfilweb_2_cch1ff.png"
                 alt="person-review"
                 className="team-img"
               />
@@ -162,7 +162,7 @@ const AboutUs = () => {
           <div className="col-sm-6 col-md-4">
             <div className="team-item">
               <img
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687353969/yandru_v7oq8i.jpg"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688035664/ProjectFinalBOOTCAMP/Perfil/AlexPerfilweb_lgjrmg.png"
                 alt="person-review"
                 className="team-img"
               />
@@ -256,7 +256,7 @@ const AboutUs = () => {
           <div className="col-sm-6 col-md-4">
             <div className="team-item">
               <img
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687627660/1675093921794_r3evad.jpg"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688032272/ProjectFinalBOOTCAMP/Perfil/JonathanPerfil_n2oj9d.png"
                 alt="person-review"
                 className="team-img"
               />
