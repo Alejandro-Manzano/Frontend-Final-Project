@@ -2,6 +2,7 @@
   {
     "name": "Juan",
     "surname": "García Hernandez",
+    "image": "https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688029760/Profilepictures/Captura26_wnvhjy.png" ,
     "description": "Soy un desarrollador apasionado con experiencia en software innovador. Especializado en aplicaciones web y móviles con JavaScript, Python y React Native. Enfocado en la calidad y la satisfacción del usuario, convierto ideas en realidades atractivas y funcionales. ¡Listo para colaborar en proyectos desafiantes y llevarlos al siguiente nivel!",
     "city": "Murcia",
     "password": "Juan2023.",
