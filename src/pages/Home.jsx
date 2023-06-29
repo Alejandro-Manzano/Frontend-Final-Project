@@ -156,62 +156,6 @@ export const Home = () => {
         </p>
 
         <section className="home-review-section">
-          <figure className="home-review-figure">
-            <p className="home-review-figure-p">
-              Llevo sin ducharme meses , pero es porque a mi tierra "Elda" no llueve desde
-              1869. Me gsutan los gusanos de seda
-            </p>
-            <div className="home-review-developer">
-              <img
-                className="home-person-review"
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687292684/samu_zngccx.jpg"
-                alt="person-review"
-              ></img>
-
-              <div className="home-nameJob-person">
-                <p className="home-person">Samuel Salazar de Jerusalen</p>
-                <p className="home-job">Desarrollador de hongos</p>
-              </div>
-            </div>
-          </figure>
-
-          <figure className="home-review-figure">
-            <p className="home-review-figure-p">
-              Empece a estudiar HTML y ahora estoy estudiando un poquito de Pascal bien
-              rico
-            </p>
-            <div className="home-review-developer">
-              <img
-                className="home-person-review"
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687110627/UserFTProyect/rqwetuzyrv36t1j48yfz.png"
-                alt="person-review"
-              ></img>
-
-              <div className="home-nameJob-person">
-                <p className="home-person">Cmrbolsa</p>
-                <p className="home-job">Habitante de Telde</p>
-              </div>
-            </div>
-          </figure>
-
-          <figure className="home-review-figure">
-            <p className="home-review-figure-p">
-              Me he criado en Grijota, pero ahora vivo en en la periferia Grijotana, me
-              gusta una chica que se llama MongoDB, un pequeño xascarrillo.
-            </p>
-            <div className="home-review-developer">
-              <img
-                className="home-person-review"
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687292673/PHOTO-2023-05-12-12-49-07_ziyeq9.jpg"
-                alt="person-review"
-              ></img>
-
-              <div className="home-nameJob-person">
-                <p className="home-person">Jaime Fati</p>
-                <p className="home-job">Solution architec en el lego</p>
-              </div>
-            </div>
-          </figure>
 
           <figure className="home-review-figure">
             <p className="home-review-figure-p">
@@ -226,8 +170,8 @@ export const Home = () => {
               ></img>
 
               <div className="home-nameJob-person">
-                <p className="home-person">Aitor Cifuentes</p>
-                <p className="home-job">Pascal Developer</p>
+                <p className="home-person">Aitor Gutierrez</p>
+                <p className="home-job">Full Stack Developer</p>
               </div>
             </div>
           </figure>
@@ -245,8 +189,8 @@ export const Home = () => {
               ></img>
 
               <div className="home-nameJob-person">
-                <p className="home-person">Jonatan Aquilino "Jona"</p>
-                <p className="home-job">Jugador de Lol and Documentation Engenier</p>
+                <p className="home-person">Jonatan Rodriguez</p>
+                <p className="home-job">Frontend Developer</p>
               </div>
             </div>
           </figure>
@@ -264,50 +208,12 @@ export const Home = () => {
               ></img>
 
               <div className="home-nameJob-person">
-                <p className="home-person">Ozillo</p>
-                <p className="home-job">ASIR Data Science y Ludopata en Castefa</p>
+                <p className="home-person">Marc Mateo</p>
+                <p className="home-job">Full Stack Developer</p>
               </div>
             </div>
           </figure>
-
-          <figure className="home-review-figure">
-            <p className="home-review-figure-p">
-              Me gusta la programacion asincronica y tu nuera, tambien se cocinar pollo al
-              chilindron, odio a Ozillo
-            </p>
-            <div className="home-review-developer">
-              <img
-                className="home-person-review"
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687353969/yandru_v7oq8i.jpg"
-                alt="person-review"
-              ></img>
-
-              <div className="home-nameJob-person">
-                <p className="home-person">Alexandru Berbatov</p>
-                <p className="home-job">Repostero</p>
-              </div>
-            </div>
-          </figure>
-
-          <figure className="home-review-figure">
-            <p className="home-review-figure-p">
-              Hola soy de Rusia, y estoy aprendiendo a invertir con{' '}
-              <a href="https://cmrbolsa.com/">Litos</a> muchas gracias crack, tambien odio
-              a Ozillo
-            </p>
-            <div className="home-review-developer">
-              <img
-                className="home-person-review"
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687346367/_Jiij7cMI_720x0__1_eftkxy.jpg"
-                alt="person-review"
-              ></img>
-
-              <div className="home-nameJob-person">
-                <p className="home-person">Hasbullah Magomedov</p>
-                <p className="home-job">Reponedor en Alcampo</p>
-              </div>
-            </div>
-          </figure>
+          
         </section>
       </div>
     </div>

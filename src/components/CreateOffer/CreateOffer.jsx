@@ -261,6 +261,7 @@ const CreateOffer = () => {
               <input className="btn-submit-create-offer" type="submit" value="Submit" />
             </div>
           </form>
+          
         </div>
       </div>
   );
