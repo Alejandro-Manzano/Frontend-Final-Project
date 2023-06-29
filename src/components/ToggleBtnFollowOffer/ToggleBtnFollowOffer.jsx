@@ -48,16 +48,16 @@ const ToggleBtnFollowOffer = ({ offerToFollowId }) => {
 
     return (
         <div>
-        <button 
-            onClick={handleAddToFavorites}
-            className={`no-border-button ${isFavorite ? "favorite" : ""}`}
-        >
-            {isFavorite ? (
-                <p> Sigue esta oferta  < RiUserUnfollowFill  size={25} className="favorite-icon-pendiente-seguir" /></p>
-            ) : (
-                <p> Dejar de seguirla <RiUserFollowFill size={25} className="favorite-icon-siguiendo" /> </p>
-            )} 
-        </button>
+            <button
+                onClick={handleAddToFavorites}
+                className={`no-border-button ${isFavorite ? "favorite" : ""}`}
+            >
+                {isFavorite ? (
+                    <p>   Dejar de seguirla < RiUserUnfollowFill size={25} className="favorite-icon-pendiente-seguir" /></p>
+                ) : (
+                    <p> Sigue esta oferta <RiUserFollowFill size={25} className="favorite-icon-siguiendo" /> </p>
+                )}
+            </button>
         </div>
     );
 };

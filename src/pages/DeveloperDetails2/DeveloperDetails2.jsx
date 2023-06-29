@@ -276,7 +276,7 @@ const DeveloperDetails2 = () => {
             {/* ------------------- Developer job experiences ---------------------*/}
 
             <div className="developerDetails2-experiences-container">
-                <h3>Experiecias</h3>
+                <h3>Experiencias</h3>
                 {experiences != null &&
                     experiences.map((singleExperience) => (
                         <div

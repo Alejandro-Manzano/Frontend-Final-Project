@@ -42,9 +42,11 @@ const CardDeveloper = ({ developer }) => {
         {/* {developer && <WriteRatingForDeveloper userToRate={developer} />} */}
         <p>({developer?.ratingsByOthers?.length} valoraciones)</p>
       </div>
-      <div className="developer-Info-grupo-technologies">
+
+      {/* Removed  because dosn´t look ok when the number of technologies is too long*/}
+      {/* <div className="developer-Info-grupo-technologies">
         <h4 className="developer-Info-technologies">{developer.technologies}</h4>
-      </div>
+      </div> */}
     </section>
   );
 };
