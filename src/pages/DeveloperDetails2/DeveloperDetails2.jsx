@@ -440,17 +440,17 @@ const DeveloperDetails2 = () => {
           </Grid>
           <Divider variant="fullWidth" style={{ margin: '30px 0' }} />
           <div className="Dev-comments" style={{ maxHeight: '400px', overflowY: 'auto' }}>
-            {comments != null &&
+            {comments != null ?
               comments.map((singleComment) => (
-                <div className="singlecomment-div" key={singleComment._id}>
+                <div className="singlecomment-div" key={singleComment?._id}>
                   <Comments comment={singleComment} setComentsByChild={setComments} />
                   <DeleteCommentComponent
                     className="trash-icon"
-                    commentId={singleComment._id}
+                    commentId={singleComment?._id}
                     onDelete={handleCommentDelete}
                   />
                 </div>
-              ))}
+              )) : null}
           </div>
         </Paper>
       </div>
