@@ -156,13 +156,12 @@ export const Home = () => {
         <section className="home-review-section">
           <figure className="home-review-figure">
             <p className="home-review-figure-p">
-              Que pagina mas buenas me lo pase pirata ademas aprendi a comerme Monitores
-              4k. No tengo watsap solo Mail
+            Gracias a DevLink, he podido encontrar proyectos emocionantes, colaborar con equipos talentosos y expandir mi red profesional.
             </p>
             <div className="home-review-developer">
               <img
                 className="home-person-review"
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687259001/UserFTProyect/vs86srsiqyurqmqeeppt.jpg"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688032676/ProjectFinalBOOTCAMP/Perfil/AitorPerfil_rjgben.png"
                 alt="person-review"
               ></img>
 
@@ -175,18 +174,17 @@ export const Home = () => {
 
           <figure className="home-review-figure">
             <p className="home-review-figure-p">
-              Soy de Coruña y me dedico a hacer doumentacion sabrosona si quieres la tuya
-              contactame por Telegram
+            Me complace compartir mi experiencia con DevLink, una plataforma que ha sido fundamental en mi búsqueda de empleo como frontend developer.
             </p>
             <div className="home-review-developer">
               <img
                 className="home-person-review"
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687344671/Captura_de_pantalla_2023-06-21_a_las_12.50.24_vx83nc.png"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688032645/ProjectFinalBOOTCAMP/Perfil/JonathanPerfil_tf0hdq.png"
                 alt="person-review"
               ></img>
 
               <div className="home-nameJob-person">
-                <p className="home-person">Jonatan Rodriguez</p>
+                <p className="home-person">Jonathan Rodriguez</p>
                 <p className="home-job">Frontend Developer</p>
               </div>
             </div>
@@ -194,13 +192,13 @@ export const Home = () => {
 
           <figure className="home-review-figure">
             <p className="home-review-figure-p">
-              Hola sóc un alcohòlic de Castefa, m'agrada la ruleta i la meva cosina, també
-              es desenvolupar aplicacions per a fumadors a pascal
+            He tenido la oportunidad de acceder a increíbles ofertas de trabajo a través de esta plataforma.
+
             </p>
             <div className="home-review-developer">
               <img
                 className="home-person-review"
-                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1687345050/ozi_dxjzjs.jpg"
+                src="https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688040986/ProjectFinalBOOTCAMP/Perfil/MarcPerfilweb_en_taman%CC%83o_pequen%CC%83o_gqybym.png"
                 alt="person-review"
               ></img>
 
