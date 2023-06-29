@@ -1,0 +1,24 @@
+{
+    "routes": [
+        { "src": "/", "dest": "/" },
+        { "src": "/developers", "dest": "/" },
+        { "src": "/aboutUs", "dest": "/" },
+        { "src": "/offers", "dest": "/" },
+        { "src": "/developerDetails", "dest": "/" },
+        { "src": "/offerDetails", "dest": "/" },
+        { "src": "/login", "dest": "/" },
+        { "src": "/home", "dest": "/" },
+        { "src": "/createOffer", "dest": "/" },
+        { "src": "/register", "dest": "/" },
+        { "src": "/chat", "dest": "/" },
+        { "src": "/profile", "dest": "/" },
+        { "src": "/changePassword", "dest": "/" },
+        { "src": "/profile/changeEmail", "dest": "/" },
+        { "src": "/profile/experience", "dest": "/" },
+        { "src": "/profile/Offer", "dest": "/" },
+        { "src": "/profile/tecnologias", "dest": "/" },
+        { "src": "/verifyCode", "dest": "/" },
+        { "src": "/forgotpassword", "dest": "/" },
+        { "src": "/[^.]+", "dest": "/", "status": 200 }
+    ]
+  }
