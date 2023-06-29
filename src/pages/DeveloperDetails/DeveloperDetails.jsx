@@ -223,13 +223,13 @@ const DeveloperDetails = () => {
               className="Dev-comments"
               style={{ maxHeight: '400px', overflowY: 'auto' }}
             >
-              {comments != null &&
+              {comments != null ? 
                 comments.map((singleComment) => (
-                  <div key={singleComment._id}>
+                  <div key={singleComment?._id}>
                     <Comments comment={singleComment} setComentsByChild={setComments} />
-                    <DeleteCommentComponent commentId={singleComment._id} />
+                    <DeleteCommentComponent commentId={singleComment?._id} />
                   </div>
-                ))}
+                )) : null}
             </div>
           </Paper>
         </div>
