@@ -47,7 +47,12 @@ footer {
 }
 
 .footer-icon {
-  height: 53px;
+  display: flex;
+  margin:6px;
+  padding: 3px;
+  height: 36px;
+  width: 40px;
+  object-fit: cover;
 }
 
 .footer-container-form {
