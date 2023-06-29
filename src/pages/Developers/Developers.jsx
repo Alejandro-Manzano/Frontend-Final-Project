@@ -8,10 +8,11 @@ const Developers = () => {
     <div className="outletContainer">
       {isLargeScreen ? (
         <h1>
-          ¡Echa un vistazo a nuestros <u>desarrolladores</u> freelance!
+          {/* ¡Echa un vistazo a nuestros <u>desarrolladores</u> freelance! */}
+          Conozca a nuestros <u>desarrolladores</u> freelance.
         </h1>
       ) : (
-         
+
         <h1>
           Sigue a nuestros <u>Developers</u>!
         </h1>

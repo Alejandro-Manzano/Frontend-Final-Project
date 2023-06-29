@@ -57,3 +57,16 @@ export const createOffer = async (formData) => {
       return error;
     });
 };
+
+export const updateOffer = async (id, formData) => {
+  return API.patch(`/offers/updateOffer/${id}`, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      Authorization: `Bearer ${updateToken()}`,
+    },
+  })
+    .then((res) => res)
+    .catch((error) => {
+      return error;
+    });
+};

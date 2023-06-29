@@ -1,8 +1,8 @@
 import Swal from 'sweetalert2/dist/sweetalert2.all.js';
-
 import { deleteUser } from '../services/API_proyect/user.service';
+import { Navigate } from 'react-router-dom';
 
-const useDeleteUser = (setUser) => {
+const useDeleteUser = (setUser, logout) => {
   Swal.fire({
     title: 'Estás seguro de que quieres borrar tu perfil?',
     text: 'Al borrarlo perderás toda la información del perfil ⛔',
@@ -25,7 +25,8 @@ const useDeleteUser = (setUser) => {
           });
           setUser(() => null);
           localStorage.removeItem('user');
-          break;
+          logout();
+          return <Navigate to="/home" />;
 
         default:
           Swal.fire({

@@ -1,21 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
-
-import ChangePassword2 from '../components/ChangePassword2/ChangePassword2';
-import FormProfile from '../components/FormProfile';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/authContext';
 import useDeleteUser from '../hooks/useDeleteUser';
-import ChangeEmail from '../components/ChangeEmail/ChangeEmail';
-import Experience from '../components/Experience/Experience';
-import Offer from '../components/Offers/Offers';
-import Tecnologias from '../components/Tecnologias/Tecnologias';
 import UserProfile from '../components/HeaderProfile/HeaderProfile';
 import './Profile.css';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const navigate = useNavigate();
-  const { setUser } = useAuth();
+  const { setUser, logout } = useAuth();
   const [activeButton, setActiveButton] = useState('Profile');
   // const navRef = useRef();
   // const showNavbar = () => {
@@ -82,7 +74,7 @@ const Profile = () => {
                 <div
                   className="borrar-perfil"
                   onClick={() => {
-                    useDeleteUser(setUser);
+                    useDeleteUser(setUser, logout());
                     setActiveButton('Delete');
                   }}
                 >
@@ -160,8 +152,9 @@ const Profile = () => {
               <button
                 className={`btn-profile ${activeButton === 'Delete' ? 'active' : ''}`}
                 onClick={() => {
-                  useDeleteUser(setUser);
+                  useDeleteUser(setUser, logout);
                   setActiveButton('Delete');
+                  // navigate('/home');
                 }}
               >
                 🚮 Borrar Perfil
