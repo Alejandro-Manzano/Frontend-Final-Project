@@ -39,9 +39,8 @@ const DeveloperDetails2 = () => {
   const [experiences, setExperiences] = useState(null);
   const theme = useTheme();
   const { state } = useLocation();
-  //const { id } = state;
+  const { id } = state;
 
-const id = "649d9d153f024fab5bd4da61"
 
   const [deletedCommentId, setDeletedCommentId] = useState(null);
 
