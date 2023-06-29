@@ -292,6 +292,7 @@
   {
     "name": "Alejandro",
     "surname": "Vargas",
+    "image": "https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688031354/Profilepictures/Captura34_cyjwsh.png",
     "description": "Con habilidades en desarrollo web y móvil, me especializo en la creación de aplicaciones funcionales y atractivas. Utilizando tecnologías como JavaScript, Python y React Native, busco brindar soluciones de calidad que satisfagan las expectativas de los usuarios. Estoy siempre dispuesto a afrontar nuevos desafíos y aportar ideas frescas y creativas a los proyectos que emprendo.",
     "city": "Madrid",
     "password": "Alejandro2023!",
@@ -303,6 +304,7 @@
   {
     "name": "Gonzalo",
     "surname": "López",
+    "image": "https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688031542/Profilepictures/Captura35_jj87fc.png",
     "description": "Con experiencia en desarrollo web y móvil, me enfoco en crear soluciones tecnológicas de vanguardia. Utilizando lenguajes como JavaScript y Python, junto con frameworks como React Native, busco brindar experiencias intuitivas y atractivas a los usuarios. Estoy constantemente aprendiendo y enfrentando nuevos desafíos para ofrecer resultados de calidad en cada proyecto.",
     "city": "Valencia",
     "password": "Gonzalo2023!",
@@ -314,6 +316,7 @@
   {
     "name": "Jorge",
     "surname": "Martínez",
+    "image": "https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688031755/Profilepictures/Captura37_khluc5.png",
     "description": "Con habilidades en el desarrollo de aplicaciones web y móviles, me dedico a crear productos de calidad y alto rendimiento. Utilizando tecnologías como JavaScript, Python y React Native, busco combinar la funcionalidad con un diseño atractivo y una experiencia de usuario excepcional. Estoy siempre en busca de nuevos desafíos para superar y contribuir al éxito de los proyectos.",
     "city": "Barcelona",
     "password": "Jorge2023!",
@@ -324,6 +327,7 @@
   {
     "name": "Daniel",
     "surname": "Gómez",
+    "image": "https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688031899/Profilepictures/Captura38_xna3tc.png",
     "description": "Con amplia experiencia en desarrollo de software, me especializo en aplicaciones web y móviles. Utilizando tecnologías como JavaScript, Python y React Native, busco crear soluciones innovadoras y funcionales. Mi enfoque se centra en brindar una experiencia de usuario excepcional, combinando un diseño atractivo con un rendimiento óptimo. Estoy listo para enfrentar nuevos retos y aportar valor a tus proyectos.",
     "city": "Madrid",
     "password": "Daniel2023!",
@@ -335,6 +339,7 @@
   {
     "name": "Sergio",
     "surname": "Brahms",
+    "image": "https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688032025/Profilepictures/Captura39_uoyziu.png",
     "description": "Con habilidades en el desarrollo de aplicaciones web y móviles, mi objetivo es ofrecer soluciones de alta calidad y rendimiento. Utilizando tecnologías como JavaScript, Python y React Native, me dedico a crear productos funcionales y atractivos para los usuarios. Estoy siempre en busca de nuevas oportunidades para crecer profesionalmente y contribuir al éxito de los proyectos en los que participo.",
     "city": "Barcelona",
     "password": "Sergio2023!",
@@ -345,6 +350,7 @@
   {
     "name": "Leonardo",
     "surname": "Contarini",
+    "image": "https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688032303/Profilepictures/Captura40_xwmt5t.png",
     "description": "Soy un desarrollador que encuentra inspiración en la belleza y el esplendor de la Venecia renacentista. Con experiencia en el desarrollo de aplicaciones web y móviles, busco fusionar la elegancia clásica con la innovación tecnológica. Mi objetivo es crear soluciones que reflejen la sofisticación y el encanto de una era pasada, brindando a los usuarios una experiencia memorable.",
     "city": "Venecia",
     "password": "Leonardo2023!",
@@ -367,6 +373,7 @@
   {
     "name": "Alejandro",
     "surname": "González",
+    "image": "https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688033094/Profilepictures/Captura41_uy5x5m.png",
     "description": "Soy un desarrollador apasionado por la creación de software. Especializado en el desarrollo de aplicaciones web y móviles, utilizo tecnologías como JavaScript, Python y React Native para crear soluciones de calidad. Mi enfoque se centra en brindar una experiencia excepcional al usuario, combinando funcionalidad y diseño atractivo. Estoy listo para enfrentar nuevos desafíos y aportar valor a los proyectos en los que participo.",
     "city": "Barcelona",
     "password": "Alejandro2023!",
@@ -388,6 +395,7 @@
   {
     "name": "Carlos",
     "surname": "Martínez",
+    "image":"https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688033248/Profilepictures/Captura43_b8000c.png",
     "description": "Soy un ingeniero de software con experiencia en el desarrollo de aplicaciones empresariales. Mi enfoque principal es la creación de soluciones escalables y seguras utilizando tecnologías como Java, Spring y MySQL. Me apasiona trabajar en proyectos desafiantes que requieran un alto nivel de calidad y rendimiento. Estoy constantemente aprendiendo y adoptando nuevas tecnologías para mantenerme actualizado en el campo del desarrollo de software.",
     "city": "Valencia",
     "password": "CarlosMartinez2023!",
@@ -409,6 +417,7 @@
   {
     "name": "Daniel",
     "surname": "Sánchez",
+    "image": "https://res.cloudinary.com/dhlr7fvd8/image/upload/v1688033361/Profilepictures/Captura44_mwgjjr.png",
     "description": "Soy un desarrollador web creando sitios web modernos y funcionales. Utilizo HTML, CSS y JavaScript para construir interfaces atractivas y optimizadas para una experiencia de usuario fluida. Me gusta mantenerme actualizado sobre las últimas tendencias en desarrollo web y aplicarlas en mis proyectos para brindar soluciones innovadoras.",
     "city": "Madrid",
     "password": "DanielSanchez2023!",
