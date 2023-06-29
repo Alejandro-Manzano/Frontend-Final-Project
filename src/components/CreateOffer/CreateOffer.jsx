@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useAuth } from '../../contexts/authContext';
 import Uploadfile from '../Uploadfile';
 import { createOffer } from '../../services/API_proyect/offer.service';
-import './createOffer.css';
+import './CreateOffer.css';
 import { technologies } from '../../data/object.tecnologias';
 import handleOfferCreationResponse from '../../hooks/useCreateOffer';
 import { NavLink } from 'react-router-dom';
