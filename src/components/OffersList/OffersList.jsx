@@ -5,6 +5,7 @@ import { offer_getAll } from "../../services/API_proyect/offer.service"
 import "./OffersList.css";
 import { Spinner } from "../Spinner/Spinner";
 import CardOffer from "../CardOffer/CardOffer";
+import { sortOfersByAverageScore_descendingOrder } from "../../util/filters/offer.filter";
 
 
 const OffersList = ({ filters, itemsPerPage }) => {
@@ -51,12 +52,19 @@ const OffersList = ({ filters, itemsPerPage }) => {
             }
             )
 
-            //console.log("🚴‍♂️", dataFiltered)
-            const dataFilteredZero = dataFiltered.slice(0, itemsPerPage)
-            const numerberPage = Math.ceil(dataFiltered.length / itemsPerPage)
+            // Igor 28-06-2023
+            // Filter offers by average score
+            const dataSortByAverageScore =
+                sortOfersByAverageScore_descendingOrder(dataFiltered);
+
+
+            // const dataFilteredZero = dataFiltered.slice(0, itemsPerPage)
+            // const numerberPage = Math.ceil(dataFiltered.length / itemsPerPage)
+            const dataFilteredZero = dataSortByAverageScore.slice(0, itemsPerPage)
+            const numerberPage = Math.ceil(dataSortByAverageScore.length / itemsPerPage)
+            // Igor 28-06-2023
 
             setPageCount(numerberPage)
-            //setDataDevelopersList(dataSortByAverageScore)
             setDataDevelopersList(dataFiltered)
             setItemPerPage(dataFilteredZero)
             setDownloading(false);
@@ -94,6 +102,7 @@ const OffersList = ({ filters, itemsPerPage }) => {
                 <div className="offersList-paginate-and-offers-list-container">
 
                     <div className="offersList-offers-container">
+                        <h2>Ofertas</h2>
                         {itemPerPage.map((offer) => (
                             <div key={offer._id}>
                                 <CardOffer offer={offer} />

@@ -14,6 +14,9 @@ const ButtonWrapper = styled.button(({ variant, theme }) => ({
 	[`${theme.mediaquery.desktop}`]: {
 		margin: theme.spacing(6),
 	},
+	// '&:hover': {
+	// 	color: "black",
+	// }
 }));
 
 const ButtonStyle = ({ children, variant }) => {

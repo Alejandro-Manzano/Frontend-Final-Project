@@ -87,7 +87,7 @@ const Uploadfile = ({ registerForm }) => {
           <div id="notimage" className="hidden">
             Please select an image
           </div>
-          <span id="file-upload-btn" className="btn btn-primary">
+          <span id="file-upload-btn" className="btn">
             Seleccione un archivo
           </span>
         </div>

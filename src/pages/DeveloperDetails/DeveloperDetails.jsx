@@ -12,6 +12,7 @@ import WriteRatingForDeveloper from '../../components/ratings/WriteRatingForDeve
 import { createMasChat } from '../../services/API_proyect/chat.service';
 import { useAuth } from '../../contexts/authContext';
 import Swal from 'sweetalert2/dist/sweetalert2.all.js';
+import DeleteCommentComponent from '../../components/DeleteComment/DeleteComment';
 
 const DeveloperDetails = () => {
   const { user } = useAuth();
@@ -224,11 +225,10 @@ const DeveloperDetails = () => {
             >
               {comments != null &&
                 comments.map((singleComment) => (
-                  <Comments
-                    key={singleComment._id}
-                    comment={singleComment}
-                    setComentsByChild={setComments}
-                  />
+                  <div key={singleComment._id}>
+                    <Comments comment={singleComment} setComentsByChild={setComments} />
+                    <DeleteCommentComponent commentId={singleComment._id} />
+                  </div>
                 ))}
             </div>
           </Paper>

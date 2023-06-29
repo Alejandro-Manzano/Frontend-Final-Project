@@ -1,29 +1,31 @@
-import "./DeveloperDetails2.css"
+import './DeveloperDetails2.css';
 //import "./OfferDetailsDescription.css"
 //import './OfferDetailsComments.css'
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getUserById } from "../../services/API_proyect/user.service";
+import { getUserById } from '../../services/API_proyect/user.service';
 import { useTheme, Divider, Avatar, Grid, Paper, TextField, Button } from '@mui/material';
 import {
     createComment,
     getByReference,
 } from '../../services/API_proyect/comment.service';
-import { getByUserExperience } from "../../services/API_proyect/experience.service";
+import { getByUserExperience } from '../../services/API_proyect/experience.service';
 import Comments from '../../components/Comments/Comments';
-import ReadOnlyDeveloperRating from "../../components/ratings/ReadOnlyUserRating/ReadOnlyUserRating";
-import WriteRatingForDeveloper from "../../components/ratings/WriteRatingForDeveloper/WriteRatingForDeveloper"
+import ReadOnlyDeveloperRating from '../../components/ratings/ReadOnlyUserRating/ReadOnlyUserRating';
+import WriteRatingForDeveloper from '../../components/ratings/WriteRatingForDeveloper/WriteRatingForDeveloper';
 import { FaMapMarker } from 'react-icons/fa';
 import { FaLaptopCode } from 'react-icons/fa';
 import { BiCodeAlt } from 'react-icons/bi';
 import { BsCalendarDay } from 'react-icons/bs';
 import { technologies } from '../../data/object.tecnologias';
-import { MdEmail } from "react-icons/md";
-import { MdPersonAdd, MdGroupAdd } from "react-icons/md";
-import { MdPeople, MdPerson } from "react-icons/md";
+import { MdEmail } from 'react-icons/md';
+import { MdPersonAdd, MdGroupAdd } from 'react-icons/md';
+import { MdPeople, MdPerson } from 'react-icons/md';
 import { createMasChat } from '../../services/API_proyect/chat.service';
 import { useAuth } from '../../contexts/authContext';
 import Swal from 'sweetalert2/dist/sweetalert2.all.js';
+import DeleteCommentComponent from '../../components/DeleteComment/DeleteComment';
+
 
 const DeveloperDetails2 = () => {
     const { user } = useAuth();
@@ -39,6 +41,12 @@ const DeveloperDetails2 = () => {
     const theme = useTheme();
     const { state } = useLocation();
     const { id } = state;
+
+    const [deletedCommentId, setDeletedCommentId] = useState(null);
+
+    const handleCommentDelete = (commentId) => {
+        setDeletedCommentId(commentId);
+    };
 
     const imgLink =
         'https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?w=800';
@@ -119,7 +127,7 @@ const DeveloperDetails2 = () => {
     useEffect(() => {
         if (developer != null) {
             getComments();
-            getExperiences()
+            getExperiences();
         }
     }, [developer]);
 
@@ -131,13 +139,24 @@ const DeveloperDetails2 = () => {
         // TODO: swal alert in case of error !!!!
     }, [resComment]);
 
-
-    //return developer ? developerLayout(developer) : null
+    useEffect(() => {
+        if (deletedCommentId) {
+            const updatedComments = comments.filter(
+                (comment) => comment._id !== deletedCommentId,
+            );
+            setComments(updatedComments);
+            setDeletedCommentId(null);
+        }
+    }, [deletedCommentId, comments]);
 
     return (
         <div className="developerDetails2-container">
             <div className="developerDetails2-image-and-info-container">
-                <img className="developerDetails2-image" src={developer?.image} alt="imagen developer"></img>
+                <img
+                    className="developerDetails2-image"
+                    src={developer?.image}
+                    alt="imagen developer"
+                ></img>
                 <div className="developerDetails2-info-container">
                     <div className="developerDetails2-name-surname-and-developerType">
                         <div className="developerDetails2-name-surname">
@@ -149,7 +168,8 @@ const DeveloperDetails2 = () => {
                         </div>
                     </div>
                     <div className="developerDetails2-read-ratings">
-                        {developer && <ReadOnlyDeveloperRating user={developer} />} ({developer?.ratingsByOthers.length})
+                        {developer && <ReadOnlyDeveloperRating user={developer} />} (
+                        {developer?.ratingsByOthers.length})
                     </div>
                     <div className="developerDetails2-info-city-email-following-followers">
                         <div className="developerDetails2-info-city">
@@ -157,28 +177,24 @@ const DeveloperDetails2 = () => {
                             <div className="developerDetails2-info-developer-detail">
                                 <FaMapMarker /> {developer?.city}
                             </div>
-
                         </div>
                         <div className="developerDetails2-info-email">
                             <p>Email</p>
                             <div className="developerDetails2-info-developer-detail">
                                 <MdEmail /> {developer?.email}
                             </div>
-
                         </div>
                         <div className="developerDetails2-info-following">
                             <p>Following</p>
                             <div className="developerDetails2-info-developer-detail">
                                 <MdGroupAdd /> ({developer?.following.length})
                             </div>
-
                         </div>
                         <div className="developerDetails2-info-followers">
                             <p>Followers</p>
                             <div className="developerDetails2-info-developer-detail">
                                 <MdPeople /> ({developer?.followers.length})
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -194,16 +210,18 @@ const DeveloperDetails2 = () => {
                     <h3>Localización e idiomas</h3>
                     <div className="developerDetails2-city-languages-without-title">
                         <div className="developerDetails2-city-localization">
-                            <h5><FaMapMarker /> Localización</h5>
+                            <h5>
+                                <FaMapMarker /> Localización
+                            </h5>
                             <div className="developerDetails2-info-city-languages">
                                 {developer?.city}
                             </div>
                         </div>
                         <div className="developerDetails2-languages">
-                            <h5><FaLaptopCode /> Idiomas</h5>
-                            <div className="developerDetails2-info-city-languages">
-                                Ingles Frances
-                            </div>
+                            <h5>
+                                <FaLaptopCode /> Idiomas
+                            </h5>
+                            <div className="developerDetails2-info-city-languages">Ingles Frances</div>
                         </div>
                     </div>
                 </div>
@@ -211,24 +229,32 @@ const DeveloperDetails2 = () => {
                     <h3>Habilidades profesionales</h3>
 
                     <div className="developerDetails2-info-technologies">
-                        <h5><BiCodeAlt /> Tecnologías</h5>
+                        <h5>
+                            <BiCodeAlt /> Tecnologías
+                        </h5>
                         <div className="developerDetails2-info-technology">
-
                             {/* //------------------------ Show Developer's Tecnologies -------------------- */}
                             <div className="developerDetails2-icons-technologies-container">
                                 {technologies
-                                    .filter(tech => developer?.technologies.includes(tech.name))
+                                    .filter((tech) => developer?.technologies.includes(tech.name))
                                     .map((tech, index) => (
-                                        <figure key={`${tech.name}_${index}`} className="developerDetails2-tecnologia-item" id={tech.name}>
+                                        <figure
+                                            key={`${tech.name}_${index}`}
+                                            className="developerDetails2-tecnologia-item"
+                                            id={tech.name}
+                                        >
                                             <div className="developerDetails2-icon-container">
-                                                <img className="developerDetails2-tech-image" src={tech.image} alt={tech.name} />
+                                                <img
+                                                    className="developerDetails2-tech-image"
+                                                    src={tech.image}
+                                                    alt={tech.name}
+                                                />
                                                 <p>{tech.name}</p>
                                             </div>
                                         </figure>
                                     ))}
                             </div>
                             {/* //------------------------ Show Developer's Tecnologies -------------------- */}
-
                         </div>
                     </div>
                 </div>
@@ -240,7 +266,7 @@ const DeveloperDetails2 = () => {
                 
             /> */}
 
-            <div className="developerDetails2-developer-description" >
+            <div className="developerDetails2-developer-description">
                 <h3>Descripción</h3>
                 <p>{developer?.description}</p>
             </div>
@@ -249,7 +275,7 @@ const DeveloperDetails2 = () => {
 
             {/* ------------------- Developer job experiences ---------------------*/}
 
-            <div className='developerDetails2-experiences-container'>
+            <div className="developerDetails2-experiences-container">
                 <h3>Experiecias</h3>
                 {experiences != null &&
                     experiences.map((singleExperience) => (
@@ -266,11 +292,19 @@ const DeveloperDetails2 = () => {
                             {/* //------------------------ Show job experience's Tecnologies -------------------- */}
                             <div className="developerDetails2-icons-technologies-container">
                                 {technologies
-                                    .filter(tech => singleExperience.technologies?.includes(tech.name))
+                                    .filter((tech) => singleExperience.technologies?.includes(tech.name))
                                     .map((tech, index) => (
-                                        <figure key={`${tech.name}_job_experience_${index}`} className="developerDetails2-tecnologia-item" id={tech.name}>
+                                        <figure
+                                            key={`${tech.name}_job_experience_${index}`}
+                                            className="developerDetails2-tecnologia-item"
+                                            id={tech.name}
+                                        >
                                             <div className="developerDetails2-icon-container">
-                                                <img className="developerDetails2-tech-image" src={tech.image} alt={tech.name} />
+                                                <img
+                                                    className="developerDetails2-tech-image"
+                                                    src={tech.image}
+                                                    alt={tech.name}
+                                                />
                                                 <p>{tech.name}</p>
                                             </div>
                                         </figure>
@@ -285,13 +319,27 @@ const DeveloperDetails2 = () => {
 
             {/* ------------------- Developer job experiences ---------------------*/}
 
-            <button className="developerDetails2-private-comment-btn" onClick={() => setShow(!show)}>
+            <button
+                className="developerDetails2-private-comment-btn"
+                onClick={() => setShow(!show)}
+            >
                 Chat privado
+                {/* <div className="container-privateMessage"> */}
             </button>
+
             {show ? (
-                <div className="container-privateMessage">
-                    <Paper style={{ padding: '40px 20px', backgroundColor: '#fcfcfc' }}>
-                        <h3>Envia tu mensaje privado!</h3>
+
+                <div className="developerDetails2-private-comments-container">
+
+                    <Paper
+                        style={{
+                            padding: '40px 20px 55px',
+                            backgroundColor: '#fcfcfc',
+                            border: '0px solid red',
+                            width: '100%',
+                        }}
+                    >
+                        <h3>Comentario privado</h3>
                         <Grid container wrap="nowrap" spacing={2}>
                             <Grid item>
                                 <Avatar alt="Remy Sharp" src={user?.image} />
@@ -339,23 +387,18 @@ const DeveloperDetails2 = () => {
                 </div>
             ) : null}
 
-            {/* -------------------COMMENTS ----------------------------- */}
-            <div style={{ padding: 0 }} className="developerDetails2-comments-container">
-
+            {/* ------------------- PUBLIC COMMENTS ----------------------------- */}
+            <div style={{ padding: 0 }} className="developerDetails2-public-comments-container">
                 <Paper
                     style={{
-                        padding: '40px 20px',
+                        padding: '40px 20px 0px',
                         backgroundColor: '#fcfcfc',
                         border: '0px solid red',
                         width: '100%',
                     }}
                 >
                     <h3>Comentario público</h3>
-                    <Grid
-                        container
-                        wrap="nowrap"
-                        spacing={2}
-                    >
+                    <Grid container wrap="nowrap" spacing={2}>
                         <Grid item>
                             <Avatar alt="Remy Sharp" src={developer?.image} />
                         </Grid>
@@ -371,50 +414,52 @@ const DeveloperDetails2 = () => {
                                 variant="contained"
                                 color="primary"
                                 sx={{
-                                    border: "none",
-                                    borderRadius: "30px",
-                                    height: "39px",
-                                    width: "270px",
+                                    border: 'none',
+                                    borderRadius: '30px',
+                                    height: '39px',
+                                    width: '270px',
                                     [theme.breakpoints.down('sm')]: {
-                                        width: "120px"
+                                        width: '120px',
                                     },
-                                    backgroundColor: "#25d366",
-                                    color: "white",
-                                    fontSize: "16px",
-                                    transition: "linear .2s",
-                                    marginTop: "30px",
-                                    ":hover": {
-                                        borderBottom: "1.5px solid #25d366",
-                                        backgroundColor: "rgb(250, 250, 250)",
-                                        color: "#25d366",
-                                        fontSize: "18px",
-                                        cursor: "pointer"
-                                    }
+                                    backgroundColor: '#25d366',
+                                    color: 'white',
+                                    fontSize: '16px',
+                                    transition: 'linear .2s',
+                                    marginTop: '30px',
+                                    ':hover': {
+                                        borderBottom: '1.5px solid #25d366',
+                                        backgroundColor: 'rgb(250, 250, 250)',
+                                        color: '#25d366',
+                                        fontSize: '18px',
+                                        cursor: 'pointer',
+                                    },
                                 }}
                                 onClick={() => handleComment()}
                                 disabled={loading}
                             >
                                 Enviar
                             </Button>
-
                         </Grid>
                     </Grid>
                     <Divider variant="fullWidth" style={{ margin: '30px 0' }} />
-                    <div className='Dev-comments' style={{ maxHeight: '400px', overflowY: 'auto' }}>
+                    <div className="Dev-comments" style={{ maxHeight: '400px', overflowY: 'auto' }}>
                         {comments != null &&
                             comments.map((singleComment) => (
-                                <Comments
-                                    key={singleComment._id}
-                                    comment={singleComment}
-                                    setComentsByChild={setComments}
-                                />
+                                <div className="singlecomment-div" key={singleComment._id}>
+                                    <Comments comment={singleComment} setComentsByChild={setComments} />
+                                    <DeleteCommentComponent
+                                        className="trash-icon"
+                                        commentId={singleComment._id}
+                                        onDelete={handleCommentDelete}
+                                    />
+                                </div>
                             ))}
                     </div>
                 </Paper>
             </div>
             {/* ------------------ COMMENTS ------------------------------- */}
-        </div >
+        </div>
     );
-}
+};
 
-export default DeveloperDetails2
+export default DeveloperDetails2;

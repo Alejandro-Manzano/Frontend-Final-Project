@@ -1,17 +1,21 @@
-/* .toda-la-pagina-maki {
-  background-image: url('https://res.cloudinary.com/djglk3cso/image/upload/v1687850237/Dise%C3%B1o_sin_t%C3%ADtulo_14_keddiy.png');
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: contain;
-  background-origin: content-box;
-} */
+.createOffer-container {
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.createOffer-container {
+  text-align: center;
+}
 
 .crear-oferta-titulo {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 700;
-  font-size: bold;
+  font-family: var(--font-bold);
 }
 .h3-oferta {
   color: #61d61d;
@@ -25,15 +29,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
 }
 
 .form-field {
-  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.textarea {
+  text-align: center;
 }
 
 .form-label {
@@ -41,8 +47,14 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  gap: 0.5rem;
+  gap: 25px;
   margin-bottom: 0.5rem;
+  margin-top: 15px;
+}
+
+.form-field-two {
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .textarea-description {
@@ -72,7 +84,26 @@
   padding: 20px;
   font-size: 16px;
   color: black;
+  text-align: center;
+  margin: 0 auto;
+  outline: none;
 }
+
+#createOffer-select {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 40px;
+  text-align: center;
+}
+
+/* .createOffer-select {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+} */
 
 .error-message {
   color: red;
@@ -91,4 +122,8 @@
 }
 #btn-offer {
   margin-top: 10px;
+}
+
+.form-field-four {
+  margin-top: 15px;
 }

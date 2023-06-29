@@ -20,6 +20,7 @@ import { technologies } from '../../data/object.tecnologias';
 import Swal from 'sweetalert2/dist/sweetalert2.all.js';
 import { createChat, createMasChat } from '../../services/API_proyect/chat.service';
 import { useAuth } from '../../contexts/authContext';
+import DeleteCommentComponent from '../../components/DeleteComment/DeleteComment';
 
 const OfferDetails = () => {
   const [res, setRes] = useState({});
@@ -236,7 +237,7 @@ const OfferDetails = () => {
                 dangerouslySetInnerHTML={{ __html: offer?.description }}
                 
             /> */}
-
+      {/* ----------------------- Offer Description ----------------------- */}
       <div className="offerDetails-offer-description">
         <h3>Descripción</h3>
         <p>{offer?.descriptionGeneral}</p>
@@ -247,13 +248,26 @@ const OfferDetails = () => {
         <h3>Remunaración</h3>
         <p>{offer?.descriptionSalary}</p>
       </div>
+      {/* ----------------------- Offer Description ----------------------- */}
+
+      {/* <Paper style={{ padding: '40px 20px 55px', backgroundColor: '#fcfcfc' }}> */}
+
       <button className="offerDetails-private-comment-btn" onClick={() => setShow(!show)}>
         Chat privado
       </button>
+
       {show ? (
-        <div className="container-privateMessage">
-          <Paper style={{ padding: '40px 20px', backgroundColor: '#fcfcfc' }}>
-            <h3>Envia tu mensaje privado!</h3>
+        <div className="offerDetails-private-comments-container">
+          <Paper
+            style={{
+              padding: '40px 20px 55px',
+              backgroundColor: '#fcfcfc',
+              border: '0px solid red',
+              width: '100%',
+            }}
+          >
+
+            <h3>Comentario privado</h3>
             <Grid container wrap="nowrap" spacing={2}>
               <Grid item>
                 <Avatar alt="Remy Sharp" src={offer?.image} />
@@ -299,13 +313,21 @@ const OfferDetails = () => {
             </Grid>
           </Paper>
         </div>
-      ) : null}
+      ) : null
+      }
       {/* <div className="offerDetails-horizontal-line"></div> */}
 
       {/* -------------------COMMENTS ----------------------------- */}
-      <div style={{ padding: 14 }} className="offerDetails-comments-container">
-        <Paper style={{ padding: '40px 20px', backgroundColor: '#fcfcfc' }}>
-          <h3>Comenta la oferta!</h3>
+      <div className="offerDetails-public-comments-container">
+        <Paper
+          style={{
+            padding: '40px 20px 0px',
+            backgroundColor: '#fcfcfc',
+            border: '0px solid red',
+            width: '100%',
+          }}
+        >
+          <h3>Comentario público</h3>
           <Grid container wrap="nowrap" spacing={2}>
             <Grid item>
               <Avatar alt="Remy Sharp" src={offer?.image} />
@@ -353,37 +375,20 @@ const OfferDetails = () => {
           <div className="Dev-comments" style={{ maxHeight: '400px', overflowY: 'auto' }}>
             {comments != null &&
               comments.map((singleComment) => (
-                <Comments
-                  key={singleComment._id}
-                  comment={singleComment}
-                  setComentsByChild={setComments}
-                />
+                <div className="singlecomment-div" key={singleComment._id}>
+                  <Comments comment={singleComment} setComentsByChild={setComments} />
+                  <DeleteCommentComponent
+                    className="trash-icon"
+                    commentId={singleComment._id}
+                  />
+                </div>
               ))}
           </div>
         </Paper>
       </div>
       {/* ------------------ COMMENTS ------------------------------- */}
-    </div>
+    </div >
   );
 };
-
-// const showTechnologies = (offerTechnologies, technologies) => {
-//     console.log("showTechnologies -> offerTechnologies: ", offerTechnologies)
-//     console.log("showTechnologies -> technologies: ", technologies)
-//     return (<div className="offerDetails-icons-technologies-container">
-//         {technologies
-//             .filter(tech => offerTechnologies.includes(tech.name))
-//             .map((tech, index) => (
-//                 <figure key={`${tech.name}_${index}`} className="offerDetails-tecnologia-item" id={tech.name}>
-//                     <div className="offerDetails-icon-container">
-//                         <img className="offerDetails-tech-image" src={tech.image} alt={tech.name} />
-//                         <p>{tech.name}</p>
-//                     </div>
-
-//                 </figure>
-//             ))}
-//     </div>
-//     )
-// }
 
 export default OfferDetails;
